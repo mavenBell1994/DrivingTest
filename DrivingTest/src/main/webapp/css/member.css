@@ -1,0 +1,229 @@
+.calendar .calendar-bd .calendar-panel .row:before, .calendar .calendar-bd .calendar-panel .row:after
+	{
+	display: table;
+	line-height: 0;
+	content: ""
+}
+
+.calendar .calendar-bd .calendar-panel .row:after {
+	clear: both
+}
+
+.f_bgimg {
+	background: url(images/bg.png) no-repeat;
+	_background: url(images/bg8.png) no-repeat
+}
+
+.page-protocol {
+	padding: 30px 0 60px
+}
+
+.page-protocol h1 {
+	text-align: center;
+	color: #333
+}
+
+.page-protocol .item {
+	margin-top: 30px
+}
+
+.page-protocol p {
+	text-indent: 2em;
+	font-size: 14px;
+	line-height: 1.722;
+	color: #4c4c4c;
+	margin-top: 15px
+}
+
+.page-protocol p strong {
+	font-weight: bold;
+	font-size: 16px
+}
+
+.page-protocol p.no-indent {
+	text-indent: 0
+}
+
+.page-member-reg {
+	width: 100%;
+	border: 0;
+	padding-top: 100px;
+	background: #f5f5f5
+}
+
+.page-member-reg .content-inner {
+	width: 850px;
+	height: 700px;
+	background: #fff;
+	margin: 0 auto
+}
+
+.page-member-reg .content-inner h1, .page-member-reg .content-inner .h1-title
+	{
+	font-size: 30px;
+	color: #4c4c4c;
+	padding-top: 98px;
+	text-align: center;
+	background-image:url("images/log-car.jpg") center no-repeat;
+	margin-bottom: 35px
+}
+
+.page-member-reg .content-inner .input-d {
+	height: auto;
+	margin-bottom: 16px;
+	position: relative
+}
+
+.page-member-reg .content-inner .input-d:last-child {
+	margin-bottom: 0
+}
+
+.page-member-reg .content-inner .input-d.error {
+	margin-bottom: 0
+}
+
+.page-member-reg .content-inner .input-d input {
+	width: 360px;
+	height: 40px
+}
+
+.page-member-reg .content-inner .input-d .see-psw {
+	display: block;
+	width: 28px;
+	height: 20px;
+	background: url('images/member/see.png') center no-repeat;
+	position: absolute;
+	top: 10px;
+	right: 12px;
+	cursor: pointer
+}
+
+.page-member-reg .content-inner .input-d .see-psw.active {
+	background-image: url('images/member/see2.png')
+}
+
+.page-member-reg .content-inner .yzm-d input {
+	width: 224px
+}
+
+.page-member-reg .content-inner .yzm-d .get {
+	width: 125px;
+	height: 42px
+}
+
+.page-member-reg .content-inner .submit {
+	margin-top: 10px;
+	width: 370px
+}
+
+.page-member-reg .content-inner .other-links {
+	color: #999;
+	font-size: 12px
+}
+
+.page-member-reg .content-inner .member-fotter {
+	height: 30px;
+	line-height: 30px;
+	border-radius: 15px;
+	background: #f9f9f9;
+	text-align: center;
+	color: #666;
+	font-size: 14px;
+	margin-top: 37px
+}
+
+.page-member-reg .content-inner .reg-content {
+	width: 370px;
+	margin: 0 auto
+}
+
+.page-member-reg .jkbd-main-footer {
+	padding-top: 65px;
+	background: #f5f5f5;
+	color: #ccc
+}
+
+.page-member-reg .jkbd-main-footer ul li.bd-line {
+	background: #ccc
+}
+
+.page-reg-protect h2 {
+	line-height: 30px;
+	height: 30px;
+	padding-bottom: 22px;
+	color: #666;
+	font-size: 18px;
+	font-weight: bold;
+	padding-left: 32px;
+	border-bottom: 1px solid #eee;
+	position: relative;
+	text-indent: 0
+}
+
+.page-reg-protect h2 i {
+	position: absolute;
+	left: 20px;
+	top: 8px;
+	width: 6px;
+	height: 18px;
+	background: #f00
+}
+
+.page-reg-protect h2 span {
+	position: absolute;
+	right: 10px;
+	top: 1px;
+	font-size: 35px;
+	color: #ccc;
+	text-decoration: none;
+	cursor: pointer
+}
+
+.page-reg-protect img {
+	width: 125px;
+	height: 45px;
+	display: block;
+	margin: 0 auto;
+	margin-top: 30px
+}
+
+.page-reg-protect .protect-code {
+	width: 220px;
+	height: 40px;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+	display: block;
+	margin: 0 auto;
+	margin-top: 16px;
+	text-indent: 10px
+}
+
+.page-member-thirdlogin h1 {
+	margin-top: 100px;
+	text-align: center
+}
+
+.page-member-thirdlogin #qq-login-s {
+	text-align: center;
+	display: block;
+	margin: 20px auto
+}
+
+.page-member-bind .third-info-d {
+	width: 370px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	display: none
+}
+
+.page-member-bind .third-info-d .logo {
+	width: 80px;
+	height: 80px;
+	border-radius: 5px
+}
+
+.page-member-bind .third-info-d .nickname {
+	font-size: 16px;
+	margin-left: 15px;
+	margin-top: 21px
+}

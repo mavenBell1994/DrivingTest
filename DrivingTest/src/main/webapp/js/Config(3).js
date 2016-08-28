@@ -1,0 +1,1 @@
+define("auth-sdk!app/Config",[],function(){"use strict";return{Initialize:function(){},Data:{},Ajax:{},Hosts:{}}});

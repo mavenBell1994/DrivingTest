@@ -18,7 +18,6 @@ public class Images {
         return num;
     }
     public static void main(String[] args) throws IOException {
-        // TODO Auto-generated method stub
         //在内存中创建一副图片
         int w=120;
         int h=50;
@@ -45,7 +44,5 @@ public class Images {
         File file =new File("D:/vcode.png");
         ImageIO.write(img, "png", file);
         System.out.println("图片输出完成");
-         
     }
- 
 }

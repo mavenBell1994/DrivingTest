@@ -14,7 +14,7 @@
 }
 
 body {
-	background-image: url("images/resiterBg.jpg");
+	/* background-image: url("images/resiterBg.jpg"); */
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-color: FFFAE8;
@@ -75,7 +75,7 @@ body {
 					<label for="userName" class="col-sm-3 control-label">用户名:</label>
 					<div class="col-sm-7">
 						<input type="text" class="form-control" id="cname" name="cname"
-							placeholder="请输入用户名">
+							placeholder="请输入用户名" onblur="checklogin()">
 					</div><span id="span1"></span>
 				</div>
 				<div class="form-group">
@@ -115,9 +115,11 @@ body {
 	</div>
 	<script type="text/javascript">
 		function register() {
-
+			
 		}
-
+		function Checkcname(){
+			$.post("user/checkcname");
+		}
 		function checkEmail()//检查邮箱名是否正确
 		{
 			var emailValue = $("#email").val();

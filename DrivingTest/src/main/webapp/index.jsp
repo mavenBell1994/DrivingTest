@@ -3,47 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
-<script type="text/javascript" src="js/login.js"></script>
-
-
-<script src="js/push.js"></script>
-<script type="text/javascript"  src="js/js"></script>
-<script src="js/hm.js"></script>
-<script type="text/javascript">
-	var _speedMark = new Date();
-	var _hmt = _hmt || [];
-	//_hmt.push(['_setAutoPageview', false]);
-</script>
 <base href="/DrivingTest/">
-<title>【驾考宝典】模拟考试_衡阳驾照考试</title>
-
-<meta http-equiv="X-UA-Compatible" content="edge">
-<meta name="renderer" content="webkit">
-<meta name="Keywords"
-	content="驾考宝典,科目一,科目四,资格证,科目一模拟考试,科目四模拟考试,模拟考试,驾照,考驾照,驾驶员模拟考试">
-<meta name="description"
-	content="驾考宝典提供衡阳2016最新科目一考试和驾校一点通科目四模拟考试，采用公安部2016最新驾校模拟考试，考驾照模拟试题2016，驾校一点通模拟考试c1，驾驶员考试科目一，考驾照、做驾驶员模拟考试试题就来驾考宝典！">
-
-<link rel="alternate" media="only screen and (max-width: 640px)"
-	href="http://m.jiakaobaodian.com/hengyang/">
-
-<!-- <link href="css/dialog.css"
-	id="simple-text-style-web-resource-mucang-cn-jiakaobaodian-web-jkbd-resources-css-dialog"
-	rel="stylesheet" type="text/css"> -->
-<link href="css/public.css"
-	id="simple-text-style-web-resource-mucang-cn-jiakaobaodian-web-jkbd-resources-css-public"
-	rel="stylesheet" type="text/css">
-<link href="css/main.css"
-	id="simple-text-style-web-resource-mucang-cn-jiakaobaodian-web-jkbd-resources-css-main"
-	rel="stylesheet" type="text/css">
-<link href="css/news.css"
-	id="simple-text-style-web-resource-mucang-cn-jiakaobaodian-web-jkbd-resources-css-news"
-	rel="stylesheet" type="text/css">
-<link href="css/home.css"
-	id="simple-text-style-web-resource-mucang-cn-jiakaobaodian-web-jkbd-resources-css-home"
-	rel="stylesheet" type="text/css">
+<title>【驾考宝典】</title>
 <style type="text/css">
 	#msgerror{
 		margin-left: 60px;
@@ -51,19 +12,8 @@
 		color: red;
 	}
 </style>
-<!-- <script src="js/Config.js"></script>
-<script src="js/Config(1).js"></script>
-<script src="js/Config(2).js"></script>
-<script src="js/Config(3).js"></script> -->
-<!-- <script src="js/Main.js"></script>
-<script src="js/api.js"></script>
-<script src="js/user.js"></script>
-<script src="js/constant.js"></script>
-<script src="js/Main(1).js"></script>
-<script src="js/public.js"></script>
-<script src="js/district.js"></script> -->
 </head>
-<body class=" ">
+<body  class=" " id="body">
 	<div id="simple-container" class="simple-container">
 		<div class="jkbd-main-header-top" data-item="jkbd-main-header-top">
 			<div class="inner jkbd-width wid-auto">
@@ -161,7 +111,6 @@
 					<div class="screen-ad-container" data-item="banner-ad-container">
 						<div class="content bd" data-item="content">
 							<ul>
-								<!--<li><a target="_blank" href="http://jx.jiakaobaodian.com/activity/jpjl?from=jkbd" class="a-dis"><img alt="2016第一届中国金牌教练评选" src="http://web.resource.mucang.cn/jiakaobaodian.web/jkbd/resources/images/banner/banner3.png" /></a></li>-->
 								<li><a target="_blank" href="http://www.maiche.com/"
 									class="a-dis"><img alt="汽车评测/报价大全_汽车销量排行榜_2016最新汽车报价"
 										src="images/maiche.png"></a></li>

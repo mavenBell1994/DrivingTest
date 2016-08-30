@@ -5,25 +5,29 @@ public class User {
 	private String cname;
 	private String cpwd;
 	private String email;
+	private String icon;
 	private String tel;
 	private String sex;
 	private String addr;
 	private Integer status;
-	private String utemp;
+	private String regdate;
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public User(String cname, String cpwd) {
+	public User(Integer cid, String cname, String cpwd, String email, String icon, String tel, String sex, String addr,
+			Integer status, String regdate) {
 		super();
-		this.cname = cname;
-		this.cpwd = cpwd;
-	}
-	public User(String cname, String cpwd, String email) {
-		super();
+		this.cid = cid;
 		this.cname = cname;
 		this.cpwd = cpwd;
 		this.email = email;
+		this.icon = icon;
+		this.tel = tel;
+		this.sex = sex;
+		this.addr = addr;
+		this.status = status;
+		this.regdate = regdate;
 	}
 	public Integer getCid() {
 		return cid;
@@ -49,6 +53,12 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public String getIcon() {
+		return icon;
+	}
+	public void setIcon(String icon) {
+		this.icon = icon;
+	}
 	public String getTel() {
 		return tel;
 	}
@@ -73,16 +83,17 @@ public class User {
 	public void setStatus(Integer status) {
 		this.status = status;
 	}
-	public String getUtemp() {
-		return utemp;
+	public String getRegdate() {
+		return regdate;
 	}
-	public void setUtemp(String utemp) {
-		this.utemp = utemp;
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
 	}
 	@Override
 	public String toString() {
-		return "User [cid=" + cid + ", cname=" + cname + ", cpwd=" + cpwd + ", email=" + email + ", tel=" + tel
-				+ ", sex=" + sex + ", addr=" + addr + ", status=" + status + ", utemp=" + utemp + "]";
+		return "User [cid=" + cid + ", cname=" + cname + ", cpwd=" + cpwd + ", email=" + email + ", icon=" + icon
+				+ ", tel=" + tel + ", sex=" + sex + ", addr=" + addr + ", status=" + status + ", regdate=" + regdate
+				+ "]";
 	}
 	
 }

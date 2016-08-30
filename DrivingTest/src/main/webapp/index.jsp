@@ -44,17 +44,24 @@
 <link href="css/home.css"
 	id="simple-text-style-web-resource-mucang-cn-jiakaobaodian-web-jkbd-resources-css-home"
 	rel="stylesheet" type="text/css">
-<script src="js/Config.js"></script>
+<style type="text/css">
+	#msgerror{
+		margin-left: 60px;
+		font-size: 12px;
+		color: red;
+	}
+</style>
+<!-- <script src="js/Config.js"></script>
 <script src="js/Config(1).js"></script>
 <script src="js/Config(2).js"></script>
-<script src="js/Config(3).js"></script>
-<script src="js/Main.js"></script>
+<script src="js/Config(3).js"></script> -->
+<!-- <script src="js/Main.js"></script>
 <script src="js/api.js"></script>
 <script src="js/user.js"></script>
 <script src="js/constant.js"></script>
 <script src="js/Main(1).js"></script>
 <script src="js/public.js"></script>
-<script src="js/district.js"></script>
+<script src="js/district.js"></script> -->
 </head>
 <body class=" ">
 	<div id="simple-container" class="simple-container">
@@ -98,7 +105,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="auth-info fl cl">
+				<div class="auth-info fl cl" >
 					<span class="login-span" data-action="login">
 					<a href="javascript:show()" >登录，保存做题进度</a>
 					</span> 
@@ -318,8 +325,7 @@
 							href="http://www.jiakaobaodian.com/about/contact.html"
 							class="a-link">商务合作</a></li>
 						<li class="bd-line"></li>
-						<li class="fankui" data-item="feedback"><a target="_blank"
-							__href="/feedback" class="a-link">意见反馈</a></li>
+						<li class="fankui" data-item="feedback"><a target="_blank" href="/feedback" class="a-link">意见反馈</a></li>
 					</ul>
 					<p>Copyright © ReadyGo&nbsp;&nbsp;</p>
 				</div>
@@ -349,7 +355,7 @@
  -->				</div>
 				<div class="modal-body">
 				<!-- 登陆表单 -->
-					<form class="form-horizontal" role="form" action="user/login" method="post">
+					<form class="form-horizontal" role="form" action="user/login" method="post" id="login" onsubmit="return login()">
 						<div class="form-group" >
 								<label for="userName" class="col-sm-3 control-label">用户名:</label>
 							<div class="col-sm-8">
@@ -360,25 +366,24 @@
 						<div class="form-group">
 							<label for="password" class="col-sm-3 control-label">密&nbsp;&nbsp;&nbsp;码:</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="cpwd" name="cpwd"
+								<input type="password" class="form-control" id="cpwd" name="cpwd"
 									placeholder="请输入密码" >
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-3 col-sm-10">
 								<div class="checkbox">
-									<label> <input type="checkbox">请记住我
-									</label>
+									<label> <input type="checkbox">请记住我</label><span id="msgerror"></span>
 								</div>
 							</div>
 						</div>
 						<div class="form-group">&nbsp;&nbsp;
-							  <a href="#" class="text-primary col-sm-offset-3" > 立即注册</a> 
+							  <a href="page/register.jsp" class="text-primary col-sm-offset-3" > 立即注册</a> 
 							  <a href="#" class="text-primary pull-right col-sm-4" >&nbsp;&nbsp;找回密码</a>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">
-						<br/><button  type="submit" class="btn btn-info btn-lg center-block" style="width:240px;">登  录</button>
+						<br/><button  class="btn btn-info btn-lg center-block"  style="width:240px;" type="submit">登  录</button>
 							</div>
 						</div>
 					</form>
@@ -406,7 +411,15 @@
 		});
 	
 	}
-
+	function login(){
+		if($("#cname").val().trim()=="" || $("#cpwd").val().trim()=="" ){
+			$("#msgerror").html("账号或密码不能为空！");
+			show();
+			return false;
+		}else{
+			return true;
+		}
+	}
 </script>
 </body>
 </html>

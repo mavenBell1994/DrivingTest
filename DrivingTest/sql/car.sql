@@ -5,7 +5,7 @@ create table CarUSER(
 	cname varchar2(20),
 	cpwd varchar2(20),
 	email varchar2(20),
-	icon varchar2(40),
+	icon varchar2(40),--头像
 	tel varchar2(20),
 	sex varchar2(2),
 	addr varchar2(10),

@@ -3,60 +3,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
-<script type="text/javascript" src="js/login.js"></script>
-
-
-<script src="js/push.js"></script>
-<script type="text/javascript"  src="js/js"></script>
-<script src="js/hm.js"></script>
-<script type="text/javascript">
-	var _speedMark = new Date();
-	var _hmt = _hmt || [];
-	//_hmt.push(['_setAutoPageview', false]);
-</script>
 <base href="/DrivingTest/">
-<title>【驾考宝典】模拟考试_衡阳驾照考试</title>
+<title>【驾考宝典】</title>
 
-<meta http-equiv="X-UA-Compatible" content="edge">
-<meta name="renderer" content="webkit">
-<meta name="Keywords"
-	content="驾考宝典,科目一,科目四,资格证,科目一模拟考试,科目四模拟考试,模拟考试,驾照,考驾照,驾驶员模拟考试">
-<meta name="description"
-	content="驾考宝典提供衡阳2016最新科目一考试和驾校一点通科目四模拟考试，采用公安部2016最新驾校模拟考试，考驾照模拟试题2016，驾校一点通模拟考试c1，驾驶员考试科目一，考驾照、做驾驶员模拟考试试题就来驾考宝典！">
+<link rel="stylesheet" id="bsCss">
+<link href="css/public.css" rel="stylesheet" type="text/css">
+<link href="css/main.css" rel="stylesheet" type="text/css">
+<link href="css/news.css" rel="stylesheet" type="text/css">
+<link href="css/home.css" rel="stylesheet" type="text/css">
 
-<link rel="alternate" media="only screen and (max-width: 640px)"
-	href="http://m.jiakaobaodian.com/hengyang/">
-
-<!-- <link href="css/dialog.css"
-	id="simple-text-style-web-resource-mucang-cn-jiakaobaodian-web-jkbd-resources-css-dialog"
-	rel="stylesheet" type="text/css"> -->
-<link href="css/public.css"
-	id="simple-text-style-web-resource-mucang-cn-jiakaobaodian-web-jkbd-resources-css-public"
-	rel="stylesheet" type="text/css">
-<link href="css/main.css"
-	id="simple-text-style-web-resource-mucang-cn-jiakaobaodian-web-jkbd-resources-css-main"
-	rel="stylesheet" type="text/css">
-<link href="css/news.css"
-	id="simple-text-style-web-resource-mucang-cn-jiakaobaodian-web-jkbd-resources-css-news"
-	rel="stylesheet" type="text/css">
-<link href="css/home.css"
-	id="simple-text-style-web-resource-mucang-cn-jiakaobaodian-web-jkbd-resources-css-home"
-	rel="stylesheet" type="text/css">
-<script src="js/Config.js"></script>
-<script src="js/Config(1).js"></script>
-<script src="js/Config(2).js"></script>
-<script src="js/Config(3).js"></script>
-<script src="js/Main.js"></script>
-<script src="js/api.js"></script>
-<script src="js/user.js"></script>
-<script src="js/constant.js"></script>
-<script src="js/Main(1).js"></script>
-<script src="js/public.js"></script>
-<script src="js/district.js"></script>
 </head>
-<body class=" ">
+<body class=" " id="body">
 	<div id="simple-container" class="simple-container">
 		<div class="jkbd-main-header-top" data-item="jkbd-main-header-top">
 			<div class="inner jkbd-width wid-auto">
@@ -99,11 +56,9 @@
 					</div>
 				</div>
 				<div class="auth-info fl cl">
-					<span class="login-span" data-action="login">
-					<a href="javascript:show()" >登录，保存做题进度</a>
-					</span> 
-					<span data-action="reg">
-					<a href="page/register.jsp">还没账号？</a>
+					<span class="login-span" data-action="login"> <a
+						href="javascript:show()">登录，保存做题进度</a>
+					</span> <span data-action="reg"> <a href="page/register.jsp">还没账号？</a>
 					</span>
 				</div>
 				<div class="other-product-wapper float-r">
@@ -129,7 +84,7 @@
 				<div class="inner jkbd-width wid-auto cl">
 					<a class="index-logo" href="http://www.jiakaobaodian.com/"><img
 						src="images/logo_erji.png" alt="驾考宝典" class="no-bg"></a>
-					<ul class="nav float-l float-l-ul cl">
+					<ul class="nav float-l float-l-ul cl" id="navUl">
 						<li data-item="nav-home" class="li-h current"><a
 							href="http://www.jiakaobaodian.com/hengyang">首页</a></li>
 						<li data-item="nav-mnks" class=""><a
@@ -143,7 +98,7 @@
 						<li data-item="nav-maiche"><a target="_blank"
 							href="http://www.maiche.com/rank/">新手买车</a></li>
 					</ul>
-					
+
 				</div>
 			</div>
 		</div>
@@ -154,26 +109,19 @@
 					<div class="screen-ad-container" data-item="banner-ad-container">
 						<div class="content bd" data-item="content">
 							<ul>
-								<!--<li><a target="_blank" href="http://jx.jiakaobaodian.com/activity/jpjl?from=jkbd" class="a-dis"><img alt="2016第一届中国金牌教练评选" src="http://web.resource.mucang.cn/jiakaobaodian.web/jkbd/resources/images/banner/banner3.png" /></a></li>-->
 								<li><a target="_blank" href="http://www.maiche.com/"
-									class="a-dis"><img alt="汽车评测/报价大全_汽车销量排行榜_2016最新汽车报价"
-										src="images/maiche.png"></a></li>
+									class="a-dis"><img src="images/maiche.png"></a></li>
 								<li><a target="_blank"
 									href="http://www.jiakaobaodian.com/about/honor.html"
-									class="a-dis"><img alt="2.5亿用户的选择，好评如流"
-										src="images/banner5.png"></a></li>
+									class="a-dis"><img 	src="images/banner5.png"></a></li>
 								<li><a target="_blank"
-									href="http://www.xiaozhu2.com/hengyang/" class="a-dis"><img
-										alt="全国车源最多的二手车平台，多快好省，更多品牌，尽在小猪二手车"
-										src="images/banner_xiaozhu.png"></a></li>
+									href="http://www.xiaozhu2.com/hengyang/" class="a-dis"><img	src="images/banner_xiaozhu.png"></a></li>
 								<li><a target="_blank"
 									href="http://www.jiakaobaodian.com/about/dynamic.html"
-									class="a-dis"><img alt="硕果累累驾考利器，获得奖项"
-										src="images/banner2.png"></a></li>
+									class="a-dis"><img src="images/banner2.png"></a></li>
 								<li><a target="_blank"
 									href="http://www.jiakaobaodian.com/about/intro.html"
-									class="a-dis"><img alt="驾考宝典-小米科技战略投资"
-										src="images/banner1.png"></a></li>
+									class="a-dis"><img src="images/banner1.png"></a></li>
 							</ul>
 						</div>
 						<div class="hd pagenation" data-item="pagenation">
@@ -201,12 +149,9 @@
 							<li class="li1 ke1"><a target="_blank"
 								href="http://www.jiakaobaodian.com/mnks/kemu1/car-hengyang.html"><span>科目一理论考</span></a>
 								<ul class="ul2">
-									<li class="li0"><a target="_blank"
-										href="http://www.jiakaobaodian.com/mnks/exam/car-kemu1-hengyang.html">全真模拟</a></li>
-									<li><a target="_blank"
-										href="http://www.jiakaobaodian.com/mnks/exercise/0-car-kemu1-hengyang.html">顺序练习</a></li>
-									<li><a target="_blank"
-										href="http://www.jiakaobaodian.com/mnks/exercise/8-car-kemu1-hengyang.html">难题练习</a></li>
+									<li class="li0"><a target="_blank" href="page/completeSimulation.jsp">全真模拟</a></li>
+									<li><a target="_blank" href="page/orderExercise.jsp">顺序练习</a></li>
+									<li><a target="_blank" href="page/difficultExercise.jsp">难题练习</a></li>
 								</ul></li>
 							<li class="li1 ke2"><a target="_blank"
 								href="http://www.jiakaobaodian.com/mnks/kemu2/car-hengyang.html"><span>科目二小路考</span></a>
@@ -231,12 +176,9 @@
 							<li class="ke4 li1"><a target="_blank"
 								href="http://www.jiakaobaodian.com/mnks/kemu4/car-hengyang.html"><span>科目四理论考</span></a>
 								<ul class="ul2">
-									<li class="li0"><a target="_blank"
-										href="http://www.jiakaobaodian.com/mnks/exam/car-kemu3-hengyang.html">全真模拟</a></li>
-									<li><a target="_blank"
-										href="http://www.jiakaobaodian.com/mnks/exercise/0-car-kemu3-hengyang.html">顺序练习</a></li>
-									<li><a target="_blank"
-										href="http://www.jiakaobaodian.com/mnks/exercise/8-car-kemu3-hengyang.html">难题练习</a></li>
+									<li class="li0"><a target="_blank" href="completeSimulation.jsp">全真模拟</a></li>
+									<li><a target="_blank" href="orderExercise.jsp">顺序练习</a></li>
+									<li><a target="_blank"	href=" difficultExercise.jsp">难题练习</a></li>
 								</ul></li>
 							<li class="kaixin li1"><a target="_blank"
 								href="http://www.jiakaobaodian.com/news/skill"><span>开心拿驾照</span></a>
@@ -248,7 +190,6 @@
 								</ul></li>
 						</ul>
 						<div class="left-door-bg"></div>
-
 					</div>
 				</div>
 				<div class="app-quick-container jkbd-width wid-auto cl"
@@ -325,43 +266,42 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
 
-
-
-<link rel="stylesheet" id="bsCss">
- <script src="bootstrap-3.3.7/js/jquery.min.js"></script>
-<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+	<script src="bootstrap-3.3.7/js/jquery.min.js"></script>
+	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
 	<!-- 模态框（Modal） -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel" aria-hidden="true" style="display: none">
-		<div class="modal-dialog" style="width: 400px;height: 650px">
+		aria-labelledby="myModalLabel" aria-hidden="true"
+		style="display: none">
+		<div class="modal-dialog" style="width: 400px; height: 650px">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">×</button>
-<!-- 						<img class="center-block" alt="" src="images/log-car.jpg"> -->	
-						<h3>
-							<span class="glyphicon glyphicon-user" id="myModalLabel" style="color:navy; margin-left: 123px;" >&nbsp;ReadyGo</span> 
-						</h3>
-			<!-- 					<h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4>
- -->				</div>
+					<!-- 						<img class="center-block" alt="" src="images/log-car.jpg"> -->
+					<h3>
+						<span class="glyphicon glyphicon-user" id="myModalLabel"
+							style="color: navy; margin-left: 123px;">&nbsp;ReadyGo</span>
+					</h3>
+					<!-- 					<h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4>
+ -->
+				</div>
 				<div class="modal-body">
-				<!-- 登陆表单 -->
-					<form class="form-horizontal" role="form" action="user/login" method="post">
-						<div class="form-group" >
-								<label for="userName" class="col-sm-3 control-label">用户名:</label>
+					<!-- 登陆表单 -->
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label for="userName" class="col-sm-3 control-label">用户名:</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="cname" name="cname"
-									placeholder="请输入用户名" >
+								<input type="text" class="form-control" id="userName"
+									placeholder="请输入用户名">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="password" class="col-sm-3 control-label">密&nbsp;&nbsp;&nbsp;码:</label>
+							<label for="password" class="col-sm-3 control-label">密码:</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="cpwd" name="cpwd"
-									placeholder="请输入密码" >
+								<input type="text" class="form-control" id="password"
+									placeholder="请输入密码">
 							</div>
 						</div>
 						<div class="form-group">
@@ -372,13 +312,15 @@
 								</div>
 							</div>
 						</div>
-						<div class="form-group">&nbsp;&nbsp;
-							  <a href="#" class="text-primary col-sm-offset-3" > 立即注册</a> 
-							  <a href="#" class="text-primary pull-right col-sm-4" >&nbsp;&nbsp;找回密码</a>
+						<div class="form-group">
+							&nbsp;&nbsp; <a href="#" class="text-primary col-sm-offset-3">
+								立即注册</a> <a href="#" class="text-primary pull-right col-sm-4">&nbsp;&nbsp;找回密码</a>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">
-						<br/><button  type="submit" class="btn btn-info btn-lg center-block" style="width:240px;">登  录</button>
+								<br />
+								<button type="submit" class="btn btn-info btn-lg center-block"
+									style="width: 240px;">登 录</button>
 							</div>
 						</div>
 					</form>
@@ -390,23 +332,20 @@
 	</div>
 	<!-- /.modal -->
 	<script>
-	function show(){
-		
-		$("#bsCss").attr("href","bootstrap-3.3.7/css/bootstrap.min.css");
-/* 		$("#myModal").append('<link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.min.css" >');
- */	
-		$('#myModal').modal({
-		keyboard: true ,
-		show:true,//设置模式窗关闭
-		backdrop:'static',
-		});
+		function show() {
+			$("#bsCss").attr("href", "bootstrap-3.3.7/css/bootstrap.min.css");
+			$("#navUl li").css("width", "98px");
+			$("#navUl").css("height", "70px");
+			$('#myModal').modal({
+				keyboard : true,
+				show : true,//设置模式窗关闭
+				backdrop : 'static',
+			});
 
-	 $('#myModal').on('hide.bs.modal', function () {
-		$("#bsCss").attr("href","");
-		});
-	
+			$('#myModal').on('hide.bs.modal', function() {
+				$("#bsCss").attr("href", "");
+			});
 	}
-
-</script>
+	</script>
 </body>
 </html>

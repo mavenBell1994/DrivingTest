@@ -10,8 +10,8 @@
 }
 
 .f_bgimg {
-	background: url(images/bg.png) no-repeat;
-	_background: url(images/bg8.png) no-repeat
+/* 	background: url(images/bg.png) no-repeat;
+ */	_background: url(images/bg8.png) no-repeat
 }
 
 .page-protocol {

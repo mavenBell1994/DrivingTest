@@ -1,0 +1,154 @@
+信息: 2016-08-31 20:22:22,903 DEBUG LoggerFactory (LoggerFactory.java:19) - Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+信息: 2016-08-31 20:22:22,904 INFO  Version (Version.java:17) - HV000001: Hibernate Validator 5.3.0.Alpha1
+信息: 2016-08-31 20:22:22,919 DEBUG DefaultTraversableResolver (DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+信息: 2016-08-31 20:22:22,933 DEBUG ConfigurationImpl (ConfigurationImpl.java:157) - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+信息: 2016-08-31 20:22:22,934 DEBUG ConfigurationImpl (ConfigurationImpl.java:179) - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+信息: 2016-08-31 20:22:22,935 DEBUG ConfigurationImpl (ConfigurationImpl.java:193) - Setting custom ParameterNameProvider of type $Proxy37
+信息: 2016-08-31 20:22:22,937 DEBUG ValidationXmlParser (ValidationXmlParser.java:91) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+信息: 2016-08-31 20:22:22,938 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:47) - Trying to load META-INF/validation.xml via user class loader
+信息: 2016-08-31 20:22:22,940 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+信息: 2016-08-31 20:22:22,941 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+信息: 2016-08-31 20:22:22,941 DEBUG ValidationXmlParser (ValidationXmlParser.java:98) - No META-INF/validation.xml found. Using annotation based configuration only.
+信息: 2016-08-31 20:25:37,282 DEBUG LoggerFactory (LoggerFactory.java:19) - Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+信息: 2016-08-31 20:25:37,284 INFO  Version (Version.java:17) - HV000001: Hibernate Validator 5.3.0.Alpha1
+信息: 2016-08-31 20:25:37,298 DEBUG DefaultTraversableResolver (DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+信息: 2016-08-31 20:25:37,309 DEBUG ConfigurationImpl (ConfigurationImpl.java:157) - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+信息: 2016-08-31 20:25:37,309 DEBUG ConfigurationImpl (ConfigurationImpl.java:179) - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+信息: 2016-08-31 20:25:37,311 DEBUG ConfigurationImpl (ConfigurationImpl.java:193) - Setting custom ParameterNameProvider of type $Proxy37
+信息: 2016-08-31 20:25:37,312 DEBUG ValidationXmlParser (ValidationXmlParser.java:91) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+信息: 2016-08-31 20:25:37,313 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:47) - Trying to load META-INF/validation.xml via user class loader
+信息: 2016-08-31 20:25:37,314 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+信息: 2016-08-31 20:25:37,314 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+信息: 2016-08-31 20:25:37,314 DEBUG ValidationXmlParser (ValidationXmlParser.java:98) - No META-INF/validation.xml found. Using annotation based configuration only.
+信息: 2016-08-31 20:28:09,710 DEBUG LoggerFactory (LoggerFactory.java:19) - Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+信息: 2016-08-31 20:28:09,712 INFO  Version (Version.java:17) - HV000001: Hibernate Validator 5.3.0.Alpha1
+信息: 2016-08-31 20:28:09,726 DEBUG DefaultTraversableResolver (DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+信息: 2016-08-31 20:28:09,737 DEBUG ConfigurationImpl (ConfigurationImpl.java:157) - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+信息: 2016-08-31 20:28:09,737 DEBUG ConfigurationImpl (ConfigurationImpl.java:179) - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+信息: 2016-08-31 20:28:09,739 DEBUG ConfigurationImpl (ConfigurationImpl.java:193) - Setting custom ParameterNameProvider of type $Proxy37
+信息: 2016-08-31 20:28:09,740 DEBUG ValidationXmlParser (ValidationXmlParser.java:91) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+信息: 2016-08-31 20:28:09,741 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:47) - Trying to load META-INF/validation.xml via user class loader
+信息: 2016-08-31 20:28:09,742 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+信息: 2016-08-31 20:28:09,742 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+信息: 2016-08-31 20:28:09,743 DEBUG ValidationXmlParser (ValidationXmlParser.java:98) - No META-INF/validation.xml found. Using annotation based configuration only.
+信息: 2016-08-31 20:31:56,241 DEBUG LoggerFactory (LoggerFactory.java:19) - Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+信息: 2016-08-31 20:31:56,243 INFO  Version (Version.java:17) - HV000001: Hibernate Validator 5.3.0.Alpha1
+信息: 2016-08-31 20:31:56,258 DEBUG DefaultTraversableResolver (DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+信息: 2016-08-31 20:31:56,270 DEBUG ConfigurationImpl (ConfigurationImpl.java:157) - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+信息: 2016-08-31 20:31:56,270 DEBUG ConfigurationImpl (ConfigurationImpl.java:179) - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+信息: 2016-08-31 20:31:56,272 DEBUG ConfigurationImpl (ConfigurationImpl.java:193) - Setting custom ParameterNameProvider of type $Proxy37
+信息: 2016-08-31 20:31:56,273 DEBUG ValidationXmlParser (ValidationXmlParser.java:91) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+信息: 2016-08-31 20:31:56,274 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:47) - Trying to load META-INF/validation.xml via user class loader
+信息: 2016-08-31 20:31:56,275 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+信息: 2016-08-31 20:31:56,276 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+信息: 2016-08-31 20:31:56,276 DEBUG ValidationXmlParser (ValidationXmlParser.java:98) - No META-INF/validation.xml found. Using annotation based configuration only.
+信息: 2016-08-31 20:37:46,235 DEBUG LoggerFactory (LoggerFactory.java:19) - Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+信息: 2016-08-31 20:37:46,309 INFO  Version (Version.java:17) - HV000001: Hibernate Validator 5.3.0.Alpha1
+信息: 2016-08-31 20:37:46,323 DEBUG DefaultTraversableResolver (DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+信息: 2016-08-31 20:37:46,334 DEBUG ConfigurationImpl (ConfigurationImpl.java:157) - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+信息: 2016-08-31 20:37:46,334 DEBUG ConfigurationImpl (ConfigurationImpl.java:179) - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+信息: 2016-08-31 20:37:46,335 DEBUG ConfigurationImpl (ConfigurationImpl.java:193) - Setting custom ParameterNameProvider of type $Proxy37
+信息: 2016-08-31 20:37:46,337 DEBUG ValidationXmlParser (ValidationXmlParser.java:91) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+信息: 2016-08-31 20:37:46,338 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:47) - Trying to load META-INF/validation.xml via user class loader
+信息: 2016-08-31 20:37:46,339 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+信息: 2016-08-31 20:37:46,339 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+信息: 2016-08-31 20:37:46,340 DEBUG ValidationXmlParser (ValidationXmlParser.java:98) - No META-INF/validation.xml found. Using annotation based configuration only.
+信息: 2016-08-31 20:40:07,747 DEBUG LoggerFactory (LoggerFactory.java:19) - Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+信息: 2016-08-31 20:40:07,749 INFO  Version (Version.java:17) - HV000001: Hibernate Validator 5.3.0.Alpha1
+信息: 2016-08-31 20:40:07,766 DEBUG DefaultTraversableResolver (DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+信息: 2016-08-31 20:40:07,782 DEBUG ConfigurationImpl (ConfigurationImpl.java:157) - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+信息: 2016-08-31 20:40:07,782 DEBUG ConfigurationImpl (ConfigurationImpl.java:179) - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+信息: 2016-08-31 20:40:07,784 DEBUG ConfigurationImpl (ConfigurationImpl.java:193) - Setting custom ParameterNameProvider of type $Proxy37
+信息: 2016-08-31 20:40:07,785 DEBUG ValidationXmlParser (ValidationXmlParser.java:91) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+信息: 2016-08-31 20:40:07,787 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:47) - Trying to load META-INF/validation.xml via user class loader
+信息: 2016-08-31 20:40:07,788 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+信息: 2016-08-31 20:40:07,788 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+信息: 2016-08-31 20:40:07,789 DEBUG ValidationXmlParser (ValidationXmlParser.java:98) - No META-INF/validation.xml found. Using annotation based configuration only.
+信息: 2016-08-31 20:42:54,066 DEBUG LoggerFactory (LoggerFactory.java:19) - Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+信息: 2016-08-31 20:42:54,068 INFO  Version (Version.java:17) - HV000001: Hibernate Validator 5.3.0.Alpha1
+信息: 2016-08-31 20:42:54,087 DEBUG DefaultTraversableResolver (DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+信息: 2016-08-31 20:42:54,099 DEBUG ConfigurationImpl (ConfigurationImpl.java:157) - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+信息: 2016-08-31 20:42:54,100 DEBUG ConfigurationImpl (ConfigurationImpl.java:179) - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+信息: 2016-08-31 20:42:54,101 DEBUG ConfigurationImpl (ConfigurationImpl.java:193) - Setting custom ParameterNameProvider of type $Proxy37
+信息: 2016-08-31 20:42:54,103 DEBUG ValidationXmlParser (ValidationXmlParser.java:91) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+信息: 2016-08-31 20:42:54,104 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:47) - Trying to load META-INF/validation.xml via user class loader
+信息: 2016-08-31 20:42:54,105 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+信息: 2016-08-31 20:42:54,105 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+信息: 2016-08-31 20:42:54,105 DEBUG ValidationXmlParser (ValidationXmlParser.java:98) - No META-INF/validation.xml found. Using annotation based configuration only.
+信息: 2016-08-31 20:44:11,407 DEBUG LoggerFactory (LoggerFactory.java:19) - Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+信息: 2016-08-31 20:44:11,408 INFO  Version (Version.java:17) - HV000001: Hibernate Validator 5.3.0.Alpha1
+信息: 2016-08-31 20:44:11,422 DEBUG DefaultTraversableResolver (DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+信息: 2016-08-31 20:44:11,433 DEBUG ConfigurationImpl (ConfigurationImpl.java:157) - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+信息: 2016-08-31 20:44:11,433 DEBUG ConfigurationImpl (ConfigurationImpl.java:179) - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+信息: 2016-08-31 20:44:11,434 DEBUG ConfigurationImpl (ConfigurationImpl.java:193) - Setting custom ParameterNameProvider of type $Proxy37
+信息: 2016-08-31 20:44:11,436 DEBUG ValidationXmlParser (ValidationXmlParser.java:91) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+信息: 2016-08-31 20:44:11,437 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:47) - Trying to load META-INF/validation.xml via user class loader
+信息: 2016-08-31 20:44:11,438 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+信息: 2016-08-31 20:44:11,438 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+信息: 2016-08-31 20:44:11,439 DEBUG ValidationXmlParser (ValidationXmlParser.java:98) - No META-INF/validation.xml found. Using annotation based configuration only.
+信息: 2016-08-31 20:48:55,579 DEBUG LoggerFactory (LoggerFactory.java:19) - Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+信息: 2016-08-31 20:48:55,580 INFO  Version (Version.java:17) - HV000001: Hibernate Validator 5.3.0.Alpha1
+信息: 2016-08-31 20:48:55,594 DEBUG DefaultTraversableResolver (DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+信息: 2016-08-31 20:48:55,604 DEBUG ConfigurationImpl (ConfigurationImpl.java:157) - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+信息: 2016-08-31 20:48:55,604 DEBUG ConfigurationImpl (ConfigurationImpl.java:179) - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+信息: 2016-08-31 20:48:55,605 DEBUG ConfigurationImpl (ConfigurationImpl.java:193) - Setting custom ParameterNameProvider of type $Proxy37
+信息: 2016-08-31 20:48:55,607 DEBUG ValidationXmlParser (ValidationXmlParser.java:91) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+信息: 2016-08-31 20:48:55,608 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:47) - Trying to load META-INF/validation.xml via user class loader
+信息: 2016-08-31 20:48:55,609 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+信息: 2016-08-31 20:48:55,609 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+信息: 2016-08-31 20:48:55,610 DEBUG ValidationXmlParser (ValidationXmlParser.java:98) - No META-INF/validation.xml found. Using annotation based configuration only.
+信息: 2016-08-31 20:53:45,861 DEBUG LoggerFactory (LoggerFactory.java:19) - Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+信息: 2016-08-31 20:53:45,863 INFO  Version (Version.java:17) - HV000001: Hibernate Validator 5.3.0.Alpha1
+信息: 2016-08-31 20:53:45,876 DEBUG DefaultTraversableResolver (DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+信息: 2016-08-31 20:53:45,887 DEBUG ConfigurationImpl (ConfigurationImpl.java:157) - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+信息: 2016-08-31 20:53:45,887 DEBUG ConfigurationImpl (ConfigurationImpl.java:179) - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+信息: 2016-08-31 20:53:45,889 DEBUG ConfigurationImpl (ConfigurationImpl.java:193) - Setting custom ParameterNameProvider of type $Proxy37
+信息: 2016-08-31 20:53:45,890 DEBUG ValidationXmlParser (ValidationXmlParser.java:91) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+信息: 2016-08-31 20:53:45,891 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:47) - Trying to load META-INF/validation.xml via user class loader
+信息: 2016-08-31 20:53:45,892 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+信息: 2016-08-31 20:53:45,892 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+信息: 2016-08-31 20:53:45,893 DEBUG ValidationXmlParser (ValidationXmlParser.java:98) - No META-INF/validation.xml found. Using annotation based configuration only.
+信息: 2016-08-31 20:55:35,600 DEBUG LoggerFactory (LoggerFactory.java:19) - Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+信息: 2016-08-31 20:55:35,602 INFO  Version (Version.java:17) - HV000001: Hibernate Validator 5.3.0.Alpha1
+信息: 2016-08-31 20:55:35,616 DEBUG DefaultTraversableResolver (DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+信息: 2016-08-31 20:55:35,626 DEBUG ConfigurationImpl (ConfigurationImpl.java:157) - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+信息: 2016-08-31 20:55:35,627 DEBUG ConfigurationImpl (ConfigurationImpl.java:179) - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+信息: 2016-08-31 20:55:35,628 DEBUG ConfigurationImpl (ConfigurationImpl.java:193) - Setting custom ParameterNameProvider of type $Proxy37
+信息: 2016-08-31 20:55:35,630 DEBUG ValidationXmlParser (ValidationXmlParser.java:91) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+信息: 2016-08-31 20:55:35,632 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:47) - Trying to load META-INF/validation.xml via user class loader
+信息: 2016-08-31 20:55:35,633 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+信息: 2016-08-31 20:55:35,633 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+信息: 2016-08-31 20:55:35,633 DEBUG ValidationXmlParser (ValidationXmlParser.java:98) - No META-INF/validation.xml found. Using annotation based configuration only.
+信息: 2016-08-31 20:56:36,863 DEBUG LoggerFactory (LoggerFactory.java:19) - Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+信息: 2016-08-31 20:56:36,864 INFO  Version (Version.java:17) - HV000001: Hibernate Validator 5.3.0.Alpha1
+信息: 2016-08-31 20:56:36,878 DEBUG DefaultTraversableResolver (DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+信息: 2016-08-31 20:56:36,888 DEBUG ConfigurationImpl (ConfigurationImpl.java:157) - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+信息: 2016-08-31 20:56:36,889 DEBUG ConfigurationImpl (ConfigurationImpl.java:179) - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+信息: 2016-08-31 20:56:36,890 DEBUG ConfigurationImpl (ConfigurationImpl.java:193) - Setting custom ParameterNameProvider of type $Proxy37
+信息: 2016-08-31 20:56:36,891 DEBUG ValidationXmlParser (ValidationXmlParser.java:91) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+信息: 2016-08-31 20:56:36,892 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:47) - Trying to load META-INF/validation.xml via user class loader
+信息: 2016-08-31 20:56:36,893 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+信息: 2016-08-31 20:56:36,893 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+信息: 2016-08-31 20:56:36,894 DEBUG ValidationXmlParser (ValidationXmlParser.java:98) - No META-INF/validation.xml found. Using annotation based configuration only.
+信息: 2016-08-31 20:58:26,404 DEBUG LoggerFactory (LoggerFactory.java:19) - Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+信息: 2016-08-31 20:58:26,405 INFO  Version (Version.java:17) - HV000001: Hibernate Validator 5.3.0.Alpha1
+信息: 2016-08-31 20:58:26,419 DEBUG DefaultTraversableResolver (DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+信息: 2016-08-31 20:58:26,430 DEBUG ConfigurationImpl (ConfigurationImpl.java:157) - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+信息: 2016-08-31 20:58:26,431 DEBUG ConfigurationImpl (ConfigurationImpl.java:179) - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+信息: 2016-08-31 20:58:26,432 DEBUG ConfigurationImpl (ConfigurationImpl.java:193) - Setting custom ParameterNameProvider of type $Proxy37
+信息: 2016-08-31 20:58:26,434 DEBUG ValidationXmlParser (ValidationXmlParser.java:91) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+信息: 2016-08-31 20:58:26,435 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:47) - Trying to load META-INF/validation.xml via user class loader
+信息: 2016-08-31 20:58:26,436 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+信息: 2016-08-31 20:58:26,436 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+信息: 2016-08-31 20:58:26,437 DEBUG ValidationXmlParser (ValidationXmlParser.java:98) - No META-INF/validation.xml found. Using annotation based configuration only.
+信息: 2016-08-31 21:00:03,053 DEBUG LoggerFactory (LoggerFactory.java:19) - Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+信息: 2016-08-31 21:00:03,055 INFO  Version (Version.java:17) - HV000001: Hibernate Validator 5.3.0.Alpha1
+信息: 2016-08-31 21:00:03,069 DEBUG DefaultTraversableResolver (DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+信息: 2016-08-31 21:00:03,079 DEBUG ConfigurationImpl (ConfigurationImpl.java:157) - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+信息: 2016-08-31 21:00:03,080 DEBUG ConfigurationImpl (ConfigurationImpl.java:179) - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+信息: 2016-08-31 21:00:03,081 DEBUG ConfigurationImpl (ConfigurationImpl.java:193) - Setting custom ParameterNameProvider of type $Proxy37
+信息: 2016-08-31 21:00:03,083 DEBUG ValidationXmlParser (ValidationXmlParser.java:91) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+信息: 2016-08-31 21:00:03,084 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:47) - Trying to load META-INF/validation.xml via user class loader
+信息: 2016-08-31 21:00:03,085 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+信息: 2016-08-31 21:00:03,085 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+信息: 2016-08-31 21:00:03,085 DEBUG ValidationXmlParser (ValidationXmlParser.java:98) - No META-INF/validation.xml found. Using annotation based configuration only.

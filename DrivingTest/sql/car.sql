@@ -11,14 +11,15 @@ create table CarUSER(
 	addr varchar2(10),			--地区，后期用来实现分地区考题
 	status number,
 	regdate date
-)
-drop sequence seq_caruser;
+);
+select *from CarUSER
+drop sequence seq_cid;
 create sequence seq_cid start with 1;
 
 
 --题目表
 drop table quiz;
-create table Quiz(
+create table quiz(
   qid number primary key,     --主键
   question varchar2(200),     --题目问题
   answer varchar2(100),       --答案  用@符号拼接，正确答案在最后再拼接一次
@@ -27,17 +28,16 @@ create table Quiz(
   qtype varchar2(10),         --题目类型  判断题，选择题
   
   errTotal number(12,0)       --错误总数
-)
+);
 drop sequence seq_qid;
 create sequence seq_qid start with 1;
 
 --章节表
-drop table Part;
+drop table part;
 create table part(
     pid number primary key,   --章节id
     pName varchar2(50)        --章节名
 )
-
 drop sequence seq_pid;
 create sequence seq_pid start with 1;
 
@@ -69,8 +69,8 @@ create table carAdmin(
 		
 drop sequence seq_caradmin_aid;
 create sequence seq_caradmin_aid start with 1001 increment by 1;
-insert into carAdmin values ( seq_caradmin_aid.nextval , "sa" , "ready" , 1 , "SA" );//super管理员
-insert into carAdmin values ( seq_caradmin_aid.nextval , "admin" , "a" , 0 , "正常" );//默认普通管理员
+insert into carAdmin values ( seq_caradmin_aid.nextval , "sa" , "a" , 1 , "SA" );--super管理员
+insert into carAdmin values ( seq_caradmin_aid.nextval , "admin" , "a" , 0 , "正常" );--默认普通管理员
 --insert into carAdmin values ( seq_caradmin_aid.nextval , ? , ? , ? , "正常" );//添加管理员模板
 select * from carAdmin;
 
@@ -87,14 +87,14 @@ create table TestRecord(
        testDate data,                       --to_date(sysdate,'yyyy-MM-dd')
                                             --为了防止用户量庞大，用户测试数据过多，定期删除。一周两周或者一个月。
        errorCount int,                     	--错误总数//测试结束的时候，统计details表中的同一个recId下的条数可得
-       qID varchar2(5000)                   --拼接错误题目使用@进行区分
+       qID varchar2(5000),                   --拼接错误题目使用@进行区分
        recTemp varchar2(50)
 );
 drop sequence seq_testRecord_recid ;
 create sequence seq_testRecord_recid start with 10001 increment by 1 ;
 --样例
 --insert into TestRecord values ( seq_testRecord_recid.val , ? , '科目一' ,'顺序练习' , to_date(sysdate,'yyyy-MM-dd') , ? ,?,null );
-selece * from testRecord;
+select * from testRecord;
 
 
 -------------------
@@ -108,7 +108,9 @@ create table SelfErrors(
 );
 --样例   insert into SelfErrors values ( ?,? );			
 select * form SelfErrors ;
-
+select * from testRecord;
+select * from carAdmin;
+select * from CARUSER;
 
 
 

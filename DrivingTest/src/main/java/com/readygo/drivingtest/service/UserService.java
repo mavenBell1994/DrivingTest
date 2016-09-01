@@ -11,4 +11,6 @@ public interface UserService {
 	boolean register(User user);
 
 	User checkcname(String cname);
+
+	int active(String cname);
 }

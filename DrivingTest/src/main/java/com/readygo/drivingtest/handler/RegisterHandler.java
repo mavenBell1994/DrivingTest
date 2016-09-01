@@ -11,25 +11,29 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.readygo.drivingtest.entity.User;
 import com.readygo.drivingtest.service.UserService;
 
 @Controller
 @RequestMapping("/user")
-public class UserHandler {
+@SessionAttributes(value={"cname"})
+public class RegisterHandler {
 	@Autowired
 	private UserService userService;
 	@Autowired
 	private JavaMailSender mailSender;
 	
-	@RequestMapping("/login")
-	public void login(User user,ModelMap map){
-		
+	@ModelAttribute
+	public void getModel(ModelMap map){
+		map.put("cname",new User());
 	}
 	
+	//验证账号是否已存在的处理类
 	@RequestMapping("/checkcname")
 	public void checkcname(HttpServletRequest request,PrintWriter out){
 		String cname=request.getParameter("cname");
@@ -37,10 +41,19 @@ public class UserHandler {
 		out.flush();
 		out.close();
 	}
-	
+	//激活邮箱并登录
+	@RequestMapping(value="/active",params={"cname"})
+	public String active(@ModelAttribute(value="cname")User user,ModelMap map){
+		userService.active(user.getCname());
+		User u=userService.checkcname(user.getCname());
+		map.put("cname",u.getCname());
+		System.out.println(user.getCname());
+		System.out.println(u.getCname());
+		return "redirect:/index.jsp";
+	}
+	//注册类
 	@RequestMapping(value="/register",method=RequestMethod.POST)
 	public String register(User user,PrintWriter out,HttpServletRequest request){
-		System.out.println( "register----->>>>>"  + user );
 		if( userService.register(user) ){
 			//成功注册，发送邮件，激活账号
 			//接收激活用户的连接地址
@@ -62,9 +75,10 @@ public class UserHandler {
 	 */
 	private String getSendContent(HttpServletRequest request, String cname) {
 		String activeURL = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() +
-				request.getContextPath() + "/user/active?username=" + cname;
-		activeURL = String.format("'%s'  <br/><br/>如果点击链接失败，请把此链接   %s   拷贝到地址栏激活。。。", 
-				activeURL,"激活用户",activeURL);
+				request.getContextPath() + "/user/active?cname=" + cname;
+		activeURL=activeURL+"\n如果点击链接失败，请把此链接拷贝到地址栏激活。";
+		/*activeURL = String.format("'%s',如果点击链接失败，请把此链接  '%s'拷贝到地址栏激活。。。", 
+				activeURL,activeURL,activeURL);*/
 		return activeURL;
 	}
 

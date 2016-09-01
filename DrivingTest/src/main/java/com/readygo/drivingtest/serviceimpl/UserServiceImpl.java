@@ -29,4 +29,13 @@ public class UserServiceImpl implements UserService {
 		
 		return mapper.checkcname(cname);
 	}
+	@Override
+	public int active(String cname) {
+		try {
+			mapper.active(cname);
+		} catch (Exception e) {
+			return 0;
+		}
+		return 1;
+	}
 }

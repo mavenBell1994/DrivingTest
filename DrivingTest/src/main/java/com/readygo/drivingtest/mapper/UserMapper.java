@@ -10,4 +10,6 @@ public interface UserMapper {
 
 	User checkcname(String cname);
 
+	void active(String cname);
+
 }

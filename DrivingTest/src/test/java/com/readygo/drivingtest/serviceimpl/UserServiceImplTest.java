@@ -34,4 +34,9 @@ public class UserServiceImplTest {
 		userMapper.register(new User("lcac","123456","94003@qq.com"));
 		
 	}
+	@Test
+	public void testActive() {
+		userMapper.active("zx");
+		
+	}
 }

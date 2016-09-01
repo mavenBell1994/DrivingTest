@@ -1,5 +1,8 @@
 package com.readygo.drivingtest.entity;
 
+import org.springframework.stereotype.Component;
+
+
 public class User {
 	private Integer cid;
 	private String cname;
@@ -28,6 +31,13 @@ public class User {
 		this.addr = addr;
 		this.status = status;
 		this.regdate = regdate;
+	}
+	
+	public User(String cname, String cpwd, String email) {
+		super();
+		this.cname = cname;
+		this.cpwd = cpwd;
+		this.email = email;
 	}
 	public Integer getCid() {
 		return cid;

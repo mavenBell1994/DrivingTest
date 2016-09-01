@@ -14,7 +14,7 @@ create table CarUSER(
 )
 drop sequence seq_caruser;
 create sequence seq_cid start with 1;
-
+select * from caruser
 
 --题目表
 drop table quiz;
@@ -53,7 +53,7 @@ insert into CARUSER values(seq_cid.nextval,'lc','123456','','13i59189@163.com','
 commit;
 
 
-
+insert into CARUSER values(seq_cid.nextval,'lcssa','12','124','','','','',0,sysdate);
 
 ------------------
 --管理员表carAdmin

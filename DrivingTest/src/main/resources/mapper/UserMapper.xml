@@ -7,4 +7,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="login" parameterType="User" resultType="User">
 		select * from caruser where cname=#{cname} and cpwd=#{cpwd}
 	</select>
+	<select id="checkcname" parameterType="String" resultType="User">
+		select * from caruser where cname=#{cname} 
+	</select>
+	<insert id="register" parameterType="User" >
+		insert into CARUSER values(seq_cid.nextval,#{cname},#{cpwd},#{email},'','','','',0,'')
+	</insert>
 </mapper>

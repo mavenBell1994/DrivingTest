@@ -21,6 +21,7 @@
 </head>
 <body class=" ">
 	<div id="simple-container" class="simple-container">
+<<<<<<< HEAD
 		<div class="jkbd-main-header-top" data-item="jkbd-main-header-top">
 			<div class="inner jkbd-width wid-auto">
 				<div class="float-l" data-item="header-cityinfo">
@@ -102,6 +103,9 @@
 					style="width: 100%;"></div>
 			</div>
 		</div>
+=======
+		<jsp:include page="/page/top.jsp"></jsp:include>
+>>>>>>> branch 'master' of ssh://git@github.com/mavenBell1994/DrivingTest.git
 		<div class="jkbd-main-header-nav-zhanwei" data-item="nav-zhanwei"></div>
 		<div class="jkbd-main-header-nav erjiyemian"
 			data-item="jkbd-main-header-nav">

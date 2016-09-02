@@ -8,6 +8,9 @@ public interface UserService {
 
 	User login(User user);
 
-	int register(User user);
-	
+	boolean register(User user);
+
+	User checkcname(String cname);
+
+	int active(String cname);
 }

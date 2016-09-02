@@ -16,7 +16,26 @@ public class UserServiceImpl implements UserService {
 		return mapper.login(user);
 	}
 	@Override
-	public int register(User user) {
-		return mapper.register(user);
-	}	
+	public boolean register(User user) {
+		try {
+			mapper.register(user);
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
+	}
+	@Override
+	public User checkcname(String cname) {
+		
+		return mapper.checkcname(cname);
+	}
+	@Override
+	public int active(String cname) {
+		try {
+			mapper.active(cname);
+		} catch (Exception e) {
+			return 0;
+		}
+		return 1;
+	}
 }

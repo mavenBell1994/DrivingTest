@@ -35,19 +35,12 @@ body {
 	width: 600px;;
 	height: 400px;
 	left: 15%;
-	top: 20%;
+	top: 10%;
 	background-color: white;
 	margin-top: 20px;
 }
 
-#error {
-	font-size: 13px;
-	color: red;
-	line-height: 13px;
-	margin-left: 44%;
-	height: 20px;
-}
-#span1,#span2,#span3{
+#span1,#span2,#span3,#span4{
 	font-size:13px;
 	color:red;
 	line-height: 13px;
@@ -58,6 +51,8 @@ body {
 #buttonlogin {
 	margin-top: 10px;
 }
+
+
 </style>
 </head>
 <body>
@@ -69,13 +64,13 @@ body {
 			</h1>
 			<p>
 			<p />
-			<form class="form-horizontal" role="form" action="user/register"
+			<form class="form-horizontal" role="form" action="user/register" method="post"
 				onsubmit="return register()">
 				<div class="form-group">
 					<label for="userName" class="col-sm-3 control-label">用户名:</label>
 					<div class="col-sm-7">
 						<input type="text" class="form-control" id="cname" name="cname"
-							placeholder="请输入用户名" onblur="checklogin()">
+							placeholder="请输入用户名" onblur="checkcname()">
 					</div><span id="span1"></span>
 				</div>
 				<div class="form-group">
@@ -100,9 +95,6 @@ body {
 							onblur="checkEmail()" placeholder="请输入电子邮箱">
 					</div><span id="span4"></span>
 				</div>
-				<div>
-					<span id="error"><br /></span>
-				</div>
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-8" id="buttonlogin">
 						<button type="submit" class="btn btn-info btn-lg center-block"
@@ -115,20 +107,43 @@ body {
 	</div>
 	<script type="text/javascript">
 		function register() {
-			
+			if($("#span1").text()=="" && $("#span2").text()=="" && $("#span3").text()=="" && $("#span4").text()=="" ){
+				if($("#cname").val()=="" || $("#cpwd").val()=="" || $("#checkpwd").val()=="" || $("#email").val()=="" ){
+					alert("请按要求填写！");
+					return false;
+				}
+				alert("注册成功，请前往邮箱激活后登录！");
+				return true;
+			} 
+			alert("请按要求填写！");
+			return false;
 		}
-		function Checkcname(){
-			$.post("user/checkcname");
+		function checkcname(){
+			if($("#cname").val().trim()==""){
+				$("#span1").html("用户名不能为空");
+				return false;
+			}
+			$("#span1").html("");
+			$.post("user/checkcname",{"cname":$("#cname").val().trim()},function(data){
+					if(data.length>4){
+						$("#span1").html("用户名已存在！");
+						return false;
+					}else{
+						$("#span1").html('<img src="images/1.gif" >');
+						return true;
+					}
+				}
+				
+			);
 		}
 		function checkEmail()//检查邮箱名是否正确
 		{
 			var emailValue = $("#email").val();
 			if (!isEmail(emailValue)) {
-				$("#error").html("您输入的邮箱有误,请重新核对后再输入!");
+				$("#span4").html("邮箱格式错误!");
 
 				return false;
 			}
-			$("#error").html("<br>");
 			$("#span4").html('<img src="images/1.gif" >');
 			return true;
 		}
@@ -167,6 +182,12 @@ body {
 			var reg = /^(\w){6,20}$/;
 			return reg.test(str);
 		}
+		$(function(){
+			$("#cname").val(""); 
+			$("#cpwd").val(""); 
+			$("#checkpwd").val("");
+			$("#email").val("");
+		});
 	</script>
 </body>
 </html>

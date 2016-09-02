@@ -16,96 +16,11 @@
 <link href="css/news.css" rel="stylesheet" type="text/css">
 <link href="css/webjkbd.css" rel="stylesheet" type="text/css">
 <link href="css/others.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
-<script type="text/javascript" src="js/difficultExercise.js"></script>
+
 </head>
 <body class=" ">
 	<div id="simple-container" class="simple-container">
-<<<<<<< HEAD
-		<div class="jkbd-main-header-top" data-item="jkbd-main-header-top">
-			<div class="inner jkbd-width wid-auto">
-				<div class="float-l" data-item="header-cityinfo">
-					<span class="info" data-item="info">衡阳</span> <a
-						class="switch colorpink" href="http://www.jiakaobaodian.com/city">[切换]</a>
-					<span class="split"></span>
-				</div>
-				<div class="tiku-select-container float-l"
-					data-hover="main-carchoose-container"
-					data-item="tiku-select-container">
-					<span class="tk-label">题库</span> <span class="split"></span>
-					<div class="current-wapper float-r">
-						<span class="colorpink current-tiku-span" data-item="current-tiku">小车</span>
-						<i class="arrow arrow-bottom"></i>
-					</div>
-					<div class="mask"></div>
-					<div class="main-carchoose-container"
-						data-item="main-carchoose-container" data-bind="0">
-						<div class="hack"></div>
-						<div class="car-h car-jsz">
-							<label>驾驶证：</label>
-							<ul class="cl float-l-ul">
-								<li><a
-									href="http://www.jiakaobaodian.com/mnks/car-kemu1-hengyang.html"
-									data-car="car" class="current">小车</a></li>
-								<li><a
-									href="http://www.jiakaobaodian.com/mnks/bus-kemu1-hengyang.html"
-									data-car="bus" class="">客车</a></li>
-								<li><a
-									href="http://www.jiakaobaodian.com/mnks/truck-kemu1-hengyang.html"
-									data-car="truck" class="">货车</a></li>
-								<li><a
-									href="http://www.jiakaobaodian.com/mnks/moto-kemu1-hengyang.html"
-									data-car="moto" class="">摩托车</a></li>
-							</ul>
-						</div>
-						<div class="car-h car-zgz">
-							<label>资格证：</label>
-							<ul class="cl float-l-ul">
-								<li><a
-									href="http://www.jiakaobaodian.com/mnks/keyun-zigezheng-hengyang.html"
-									data-car="keyun" class="">客运资格证</a></li>
-								<li><a
-									href="http://www.jiakaobaodian.com/mnks/huoyun-zigezheng-hengyang.html"
-									data-car="huoyun" class="">货运资格证</a></li>
-								<li><a
-									href="http://www.jiakaobaodian.com/mnks/weixian-zigezheng-hengyang.html"
-									data-car="weixian" class="">危险品资格证</a></li>
-								<li><a
-									href="http://www.jiakaobaodian.com/mnks/jiaolian-zigezheng-hengyang.html"
-									data-car="jiaolian" class="">教练员资格证</a></li>
-								<li><a
-									href="http://www.jiakaobaodian.com/mnks/chuzu-zigezheng-hengyang.html"
-									data-car="chuzu" class="">出租车资格证</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="auth-info fl cl">
-					<span class="login-span" data-action="login" > <a
-						href="javascript:show()">登录，保存做题进度</a>
-					</span> <span data-action="reg"> <a href="page/register.jsp">还没账号？</a>
-					</span>
-				</div>
-				<div class="other-product-wapper float-r">
-					<a target="_blank"
-						href="http://jx.jiakaobaodian.com/hengyang?src=jkbdweb&at=homenav">驾校之家</a>
-					<a target="_blank" href="http://www.maiche.com/">买车网</a> <a
-						target="_blank" rel="nofollow"
-						href="http://toutiao.kakamobi.com/?src=jkbdweb&at=homenav">汽车头条</a>
-					<a target="_blank"
-						href="http://www.xiaozhu2.com/hengyang?src=jkbdweb&at=homenav">小猪二手车</a>
-					<a target="_blank" rel="nofollow"
-						href="http://zhushou.so/?src=jkbdweb&at=homenav">违章查询</a>
-				</div>
-			</div>
-			<div class="jindu-bar fes" data-item="jindu">
-				<div class="inner-bar" data-item="jindu-inner-bar"
-					style="width: 100%;"></div>
-			</div>
-		</div>
-=======
 		<jsp:include page="/page/top.jsp"></jsp:include>
->>>>>>> branch 'master' of ssh://git@github.com/mavenBell1994/DrivingTest.git
 		<div class="jkbd-main-header-nav-zhanwei" data-item="nav-zhanwei"></div>
 		<div class="jkbd-main-header-nav erjiyemian"
 			data-item="jkbd-main-header-nav">
@@ -410,8 +325,6 @@
 			</div>
 		</div>
 	</div>
-	<script src="bootstrap-3.3.7/js/jquery.min.js"></script>
-	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
 	<!-- 模态框（Modal） -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true"
@@ -473,6 +386,11 @@
 		<!-- /.modal-dialog -->
 	</div>
 	<!-- /.modal -->
+	
+	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery.cookie.js"> </script>
+	<script type="text/javascript" src="js/difficultExercise.js"></script>
 	<script>
 		function show() {
 			$("#bsCss").attr("href", "bootstrap-3.3.7/css/bootstrap.min.css");
@@ -497,6 +415,7 @@
 				$("#datika-container").attr("class","datika-container close");
 			}
 		}
+		
 	</script>
 	
 </body>

@@ -185,7 +185,7 @@
 								<ul class="ul2">
 									<li class="li0"><a target="_blank" href="completeSimulation.jsp">全真模拟</a></li>
 									<li><a target="_blank" href="orderExercise.jsp">顺序练习</a></li>
-									<li><a target="_blank"	href=" difficultExercise.jsp">难题练习</a></li>
+									<li><a target="_blank"	href="difficultExercise.jsp">难题练习</a></li>
 								</ul></li>
 							<li class="kaixin li1"><a target="_blank"
 								href="http://www.jiakaobaodian.com/news/skill"><span>开心拿驾照</span></a>

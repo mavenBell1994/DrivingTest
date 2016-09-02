@@ -2,6 +2,7 @@
     pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
+
 <head>
 <base href="/DrivingTest/">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -15,7 +16,8 @@
 <link href="css/news.css" rel="stylesheet" type="text/css">
 <link href="css/webjkbd.css" rel="stylesheet" type="text/css">
 <link href="css/others.css" rel="stylesheet" type="text/css">
-
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="js/difficultExercise.js"></script>
 </head>
 <body class=" ">
 	<div id="simple-container" class="simple-container">
@@ -78,7 +80,7 @@
 					</div>
 				</div>
 				<div class="auth-info fl cl">
-					<span class="login-span" data-action="login"> <a
+					<span class="login-span" data-action="login" > <a
 						href="javascript:show()">登录，保存做题进度</a>
 					</span> <span data-action="reg"> <a href="page/register.jsp">还没账号？</a>
 					</span>
@@ -161,14 +163,15 @@
 				<div class="lianxi-container news-left">
 					<div class="shiti-container " data-item="shiti-container">
 						<div class="shiti-item cl">
-							<p class="shiti-content" data-item="shiti-content">
-								<b>难</b> 1/100. 对驾驶拼装机动车上路行驶的驾驶人，会受到下列哪种处罚？
+							<p class="shiti-content" data-item="shiti-content" >
+								<b>难</b>
+								<span id="quizTitle"><!-- 1/100. 对驾驶拼装机动车上路行驶的驾驶人，会受到下列哪种处罚？ --></span> 
 							</p>
 							<span class="favor-tag " data-action="login">收藏</span>
 							<div class="shiti-wapper cl">
 								<div class="shiti-item-left float-l">
-									<div class="options-container " data-item="options-container">
-										<p class="" data-answer="16">
+									<div class="options-container " data-item="options-container" id="options-container">
+										<!-- <p class="" data-answer="16">
 											<i></i><span>A. 处15日以下拘留</span>
 										</p>
 										<p class="" data-answer="32">
@@ -179,7 +182,7 @@
 										</p>
 										<p class="dui " data-answer="64">
 											<i></i><span>D. 处200以上2000元以下罚款</span>
-										</p>
+										</p> -->
 									</div>
 								</div>
 								<div class="shiti-item-right float-l"></div>
@@ -202,7 +205,7 @@
 					</div>
 					<div class="shiti-buttons cl">
 						<button class="li0 float-l" type="button" data-item="prev">上一题</button>
-						<button class="float-l" type="button" data-item="next">下一题</button>
+						<button class="float-l" type="button" data-item="next" onclick="javascript:showNext()">下一题</button>
 						<button class="datika grey-b zkdtk float-r" onclick="javascript:showCard()">展开答题卡</button>
 						<button class="grey-b float-r" type="button"
 							data-item="see-answer">查看详解</button>
@@ -482,8 +485,8 @@
 			});
 	}
 		
-		<!-- 展开答题卡-->
-		function showCard(){
+/* 		 展开答题卡 */	
+	function showCard(){
 			if($("#datika-container").attr("class")=="datika-container close"){
 				$("#datika-container").attr("class","datika-container");
 			}else{

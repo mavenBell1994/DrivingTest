@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,11 +16,19 @@
 <link href="css/news.css" rel="stylesheet" type="text/css">
 <link href="css/webjkbd.css" rel="stylesheet" type="text/css">
 <link href="css/others.css" rel="stylesheet" type="text/css">
+<link href="css/top.css" rel="stylesheet" type="text/css">
 
 </head>
 <body class=" ">
 	<div id="simple-container" class="simple-container">
+		<c:choose>
+	<c:when test="${cname.cname==null}">
 		<jsp:include page="/page/top.jsp"></jsp:include>
+	</c:when>
+	<c:otherwise>
+		<jsp:include page="/page/top1.jsp"></jsp:include>	
+	</c:otherwise>
+</c:choose>
 		<div class="jkbd-main-header-nav-zhanwei" data-item="nav-zhanwei"></div>
 		<div class="jkbd-main-header-nav erjiyemian"
 			data-item="jkbd-main-header-nav">

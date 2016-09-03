@@ -1,39 +1,55 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-	
+
 <!DOCTYPE html>
 <html>
 <head>
 <base href="/DrivingTest/">
 <title>【驾考宝典】</title>
-<style type="text/css">
-	#msgerror{
-		margin-left: 60px;
-		font-size: 12px;
-		color: red;
-	}
-	#login_cname{
-		margin-left: 50px;
-	}
-	#login_cname a{
-		text-decoration: none;
-		font-size: 13px;
-		font-weight: 700;
-	}
-</style>
 
 <link rel="stylesheet" id="bsCss">
 <link href="css/public.css" rel="stylesheet" type="text/css">
 <link href="css/main.css" rel="stylesheet" type="text/css">
 <link href="css/news.css" rel="stylesheet" type="text/css">
 <link href="css/home.css" rel="stylesheet" type="text/css">
+<link href="css/top.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+#verify {
+	width: 80px;
+}
+#errormsg{
+	color: red;
+	margin-left: 50px;
+}
+#verifyimg {
+	display: block;
+	float: right;
+	width: 120px;
+	text-align: right;
+	line-height: 34px;
+	height: 34px;
+	margin-right: 60px;
+}
+
+#verifyimg a {
+	margin-left: 5px;
+}
+</style>
 
 </head>
 <body class=" " id="body">
-<jsp:include page="/page/top1.jsp"></jsp:include>	
+
+	<c:choose>
+		<c:when test="${cname.cname==null}">
+			<jsp:include page="/page/top.jsp"></jsp:include>
+		</c:when>
+		<c:otherwise>
+			<jsp:include page="/page/top1.jsp"></jsp:include>
+		</c:otherwise>
+	</c:choose>
 	<div id="simple-container" class="simple-container">
-		
+
 		<div class="jkbd-main-header-nav-zhanwei" data-item="nav-zhanwei"></div>
 		<div class="jkbd-main-header-nav erjiyemian"
 			data-item="jkbd-main-header-nav">
@@ -70,9 +86,10 @@
 									class="a-dis"><img src="images/maiche.png"></a></li>
 								<li><a target="_blank"
 									href="http://www.jiakaobaodian.com/about/honor.html"
-									class="a-dis"><img 	src="images/banner5.png"></a></li>
+									class="a-dis"><img src="images/banner5.png"></a></li>
 								<li><a target="_blank"
-									href="http://www.xiaozhu2.com/hengyang/" class="a-dis"><img	src="images/banner_xiaozhu.png"></a></li>
+									href="http://www.xiaozhu2.com/hengyang/" class="a-dis"><img
+										src="images/banner_xiaozhu.png"></a></li>
 								<li><a target="_blank"
 									href="http://www.jiakaobaodian.com/about/dynamic.html"
 									class="a-dis"><img src="images/banner2.png"></a></li>
@@ -106,7 +123,8 @@
 							<li class="li1 ke1"><a target="_blank"
 								href="http://www.jiakaobaodian.com/mnks/kemu1/car-hengyang.html"><span>科目一理论考</span></a>
 								<ul class="ul2">
-									<li class="li0"><a target="_blank" href="page/completeSimulation.jsp">全真模拟</a></li>
+									<li class="li0"><a target="_blank"
+										href="page/completeSimulation.jsp">全真模拟</a></li>
 									<li><a target="_blank" href="page/orderExercise.jsp">顺序练习</a></li>
 									<li><a target="_blank" href="page/difficultExercise.jsp">难题练习</a></li>
 								</ul></li>
@@ -133,9 +151,10 @@
 							<li class="ke4 li1"><a target="_blank"
 								href="http://www.jiakaobaodian.com/mnks/kemu4/car-hengyang.html"><span>科目四理论考</span></a>
 								<ul class="ul2">
-									<li class="li0"><a target="_blank" href="completeSimulation.jsp">全真模拟</a></li>
+									<li class="li0"><a target="_blank"
+										href="completeSimulation.jsp">全真模拟</a></li>
 									<li><a target="_blank" href="orderExercise.jsp">顺序练习</a></li>
-									<li><a target="_blank"	href=" difficultExercise.jsp">难题练习</a></li>
+									<li><a target="_blank" href=" difficultExercise.jsp">难题练习</a></li>
 								</ul></li>
 							<li class="kaixin li1"><a target="_blank"
 								href="http://www.jiakaobaodian.com/news/skill"><span>开心拿驾照</span></a>
@@ -245,38 +264,54 @@
  -->
 				</div>
 				<div class="modal-body">
-				<!-- 登陆表单 -->
-					<form class="form-horizontal" role="form" action="user/login" method="post" id="login" onsubmit="return login()">
-						<div class="form-group" >
-								<label for="userName" class="col-sm-3 control-label">用户名:</label>
+					<!-- 登陆表单 -->
+					<form class="form-horizontal" role="form" action="user/login"
+						method="post" id="login" onsubmit="return login()">
+						<div class="form-group">
+							<label for="userName" class="col-sm-3 control-label">用户名:</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" id="cname" name="cname"
-									placeholder="请输入用户名" >
+									placeholder="请输入用户名">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="password" class="col-sm-3 control-label">密&nbsp;&nbsp;&nbsp;码:</label>
 							<div class="col-sm-8">
-								<input type="password" class="form-control" id="cpwd" name="cpwd"
-									placeholder="请输入密码" >
+								<input type="password" class="form-control" id="cpwd"
+									name="cpwd" placeholder="请输入密码">
 							</div>
+						</div>
+						<div class="form-group">
+							<label for="captcha" class="col-sm-3 control-label ">验证码:</label>
+							<div class="col-sm-8" style="width: 100px;">
+								<input type="text" class="form-control" id="verify" onblur="checkverify()"
+									name="cname">
+							</div>
+							<span id="verifyimg"><img id="signcode" alt="验证码"
+								src="signcode/authcode">
+								<a href="javascript:changeimg()">看不清？</a></span>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-3 col-sm-10">
 								<div class="checkbox">
-									<label> <input type="checkbox">请记住我</label><span id="msgerror"></span>
+									<label> <input type="checkbox">请记住我
+									</label><span id="errormsg"></span>
 								</div>
 							</div>
 						</div>
-						<div class="form-group">&nbsp;&nbsp;
-							  <a href="page/register.jsp" class="text-primary col-sm-offset-3" > 立即注册</a> 
-							  <a href="#" class="text-primary pull-right col-sm-4" >&nbsp;&nbsp;找回密码</a>
+						<div class="form-group">
+							&nbsp;&nbsp; <a href="page/register.jsp"
+								class="text-primary col-sm-offset-3"> 立即注册</a> <a href="#"
+								class="text-primary pull-right col-sm-4">&nbsp;&nbsp;找回密码</a>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">
-						<br/><button  class="btn btn-info btn-lg center-block"  style="width:240px;" type="submit">登  录</button>
+								<br />
+								<button class="btn btn-info btn-lg center-block"
+									style="width: 240px;" type="submit">登 录</button>
 							</div>
 						</div>
+
 					</form>
 				</div>
 			</div>
@@ -287,6 +322,10 @@
 	<!-- /.modal -->
 	<script>
 		function show() {
+			$("#cname").val("");
+			$("#cpwd").val("");
+			$("#verify").val("");
+			changeimg();
 			$("#bsCss").attr("href", "bootstrap-3.3.7/css/bootstrap.min.css");
 			$("#navUl li").css("width", "98px");
 			$("#navUl").css("height", "70px");
@@ -299,15 +338,31 @@
 			$('#myModal').on('hide.bs.modal', function() {
 				$("#bsCss").attr("href", "");
 			});
-	}
-		function login(){
-			if($("#cname").val().trim()=="" || $("#cpwd").val().trim()=="" ){
-				$("#msgerror").html("账号或密码不能为空！");
-				show();
+		}
+		function login() {
+			if ($("#cname").val().trim() == "" || $("#cpwd").val().trim() == "") {
+				$("#errormsg").html("账号或密码不能为空！");
 				return false;
-			}else{
+			} else  if($("#verify").val().trim()==""){
+				$("#errormsg").html("请输入验证码！");
+				return false;
+			}else if($("#errormsg").html()==""){
+				
 				return true;
 			}
+		}
+		function changeimg() {
+			$('#signcode').attr('src', 'signcode/authcode?abc=' + Math.random());//链接后添加Math.random，确保每次产生新的验证码，避免缓存问题。\
+		}
+		function checkverify(){
+			$.post("login/checkverify",{"verify":$("#verify").val()},function(data){
+				if(data=="true"){
+					$("#errormsg").html("");
+					return true;
+				}
+				$("#errormsg").html("验证码输入有误！");
+				return false;
+			});
 		}
 	</script>
 </body>

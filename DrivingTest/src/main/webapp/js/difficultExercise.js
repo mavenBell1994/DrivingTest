@@ -8,38 +8,40 @@ $(function(){
 	$.post("quiz/findAllDiffQuizs",function(data){
 			QuizData=data;
 			length=data.length;
-			alert($.cookie('index'));
-			if($.cookie('index')==undefined || $.cookie('index')==null ){
+			if($.cookie('index')==undefined || $.cookie('index')==null ||  $.cookie('index')==0){
 				alert("index"+index);
-				showQuiz(data[index]);
+				showQuiz(data[0]);
 			}else{
-				alert("cookieIndex=="+$.cookie('index'));
-				showQuiz(data[$.cookie('index')]);
+				index=$.cookie('index');
+				alert("cookieIndex=="+index);
+				showQuiz(data[index]);
 				
 			}
 	},"json");
 });
 
 function showNext(){
-	index++;
-	if(index<=length){
-		$.cookie('index',index);
+	if(index<length-1 && index>=0){
+		index++;
+		$.cookie('index',index,{path:'/'});
 		showQuiz(QuizData[index]);
 	}
 }
 
 function showPre(){
-	index--;
-	$.cookie('index',index);
-	showQuiz(QuizData[index]);
-}
-//显示一条测试题的内容
-function showQuiz(data){
-	
-	if($.cookie('index')!=undefined){
-		index=$.cookie('index');
+	if(index>=1){
+		index--;
+		$.cookie('index',index,{path:'/'});
+		showQuiz(QuizData[index]);
 	}
-	$("#quizTitle").text((index)+"/100. "+data.question);
+	
+}
+//显示一条测试题的内容data，题号应该和data对应
+function showQuiz(data){
+	//num题号
+	var num=index;
+		num++;
+		$("#quizTitle").text((num)+"/100. "+data.question);
 	var answers=data.answer.split("@");
 	var str="";
 	for(var i=0;i<answers.length-1;i++){

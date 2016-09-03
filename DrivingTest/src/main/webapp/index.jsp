@@ -113,7 +113,7 @@
 									<li class="li0"><a target="_blank"
 										href="page/completeSimulation.jsp">全真模拟</a></li>
 									<li><a target="_blank" href="page/orderExercise.jsp">顺序练习</a></li>
-									<li><a target="_blank" href="page/difficultExercise.jsp">难题练习</a></li>
+									<li><a  href="javascript:void(0)" onclick="toPageDiff()">难题练习</a></li>
 								</ul></li>
 							<li class="li1 ke2"><a target="_blank"
 								href="http://www.jiakaobaodian.com/mnks/kemu2/car-hengyang.html"><span>科目二小路考</span></a>
@@ -325,11 +325,14 @@
 				return true;
 			}
 		}
-		$(function() {
-			/*使cookie里的值变为undefined  */
-			/* $.cookie('index', null,{path:'index.jsp'});  */
+		function toPageDiff(){
+			/*使cookie里的值变为undefined,必须指明路径  */
 			alert($.cookie('index'));
-		});
+			alert("a");
+			$.cookie('index', '', {path:'/', expires: -1 }); 
+			 alert($.cookie('index'));
+			location.href="page/difficultExercise.jsp";
+		}
 	</script>
 </body>
 </html>

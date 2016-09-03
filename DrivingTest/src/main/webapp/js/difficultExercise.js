@@ -1,7 +1,7 @@
 
 var index=0;
 //QuizData将一部加载的数据存起来
-var right="";
+var right='';
 var QuizData;
 var length;
 $(function(){
@@ -44,11 +44,35 @@ function showQuiz(data){
 		$("#quizTitle").text((num)+"/100. "+data.question);
 	var answers=data.answer.split("@");
 	var str="";
+	right=answers[answers.length-1];
+	
 	for(var i=0;i<answers.length-1;i++){
-		str+='<p class="" data-answer="16" >';
-			str+='<i></i><span style="font-size: 18px;">'+answers[i]+'</span>';
+		str+='<p  data-answer="16" onclick="choseAnswer(\''+answers[i]+'\','+i+')" class="choseP">';
+			str+='<i id="optionImg'+i+'" ></i><span style="font-size: 18px;">'+answers[i]+'</span>';
 				str+='</p>';
 	}
-	//right=answer[answers.length-1];
+	
 	$("#options-container").html(str);
+}
+function choseAnswer(answer,i){
+	/*alert(answer.charAt(0));*/
+	var answer=answer.charAt(0);
+	alert("right:"+right);
+	if(right==answer){
+		$("#optionImg"+i).css({"background-image":"url(images/optionRight.png)"});
+	}else{
+		$("#optionImg"+i).css({"background-image":"url(images/optionError.png)"});
+		switch (right) {
+		case 'A':
+			$("#optionImg"+0).css({"background-image":"url(images/optionRight.png)"});break;
+		case 'B':
+			$("#optionImg"+1).css({"background-image":"url(images/optionRight.png)"});break;
+		case 'C':
+			$("#optionImg"+2).css({"background-image":"url(images/optionRight.png)"});break;
+		case 'D':
+			$("#optionImg"+3).css({"background-image":"url(images/optionRight.png)"});break;
+			
+		}
+		$(".choseP").removeAttr("onclick");
+	}
 }

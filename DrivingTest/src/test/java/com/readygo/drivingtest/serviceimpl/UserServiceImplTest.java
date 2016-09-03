@@ -37,6 +37,5 @@ public class UserServiceImplTest {
 	@Test
 	public void testActive() {
 		userMapper.active("zx");
-		
 	}
 }

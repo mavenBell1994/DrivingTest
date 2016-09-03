@@ -1,26 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-	
+
 <!DOCTYPE html>
 <html>
 <head>
 <base href="/DrivingTest/">
 <title>【驾考宝典】</title>
 <style type="text/css">
-	#msgerror{
-		margin-left: 60px;
-		font-size: 12px;
-		color: red;
-	}
-	#login_cname{
-		margin-left: 50px;
-	}
-	#login_cname a{
-		text-decoration: none;
-		font-size: 13px;
-		font-weight: 700;
-	}
+#msgerror {
+	margin-left: 60px;
+	font-size: 12px;
+	color: red;
+}
+
+#login_cname {
+	margin-left: 50px;
+}
+
+#login_cname a {
+	text-decoration: none;
+	font-size: 13px;
+	font-weight: 700;
+}
 </style>
 
 <link rel="stylesheet" id="bsCss">
@@ -30,10 +32,11 @@
 <link href="css/home.css" rel="stylesheet" type="text/css">
 
 </head>
+
 <body class=" " id="body">
-<jsp:include page="/page/top1.jsp"></jsp:include>	
+	<jsp:include page="/page/top1.jsp"></jsp:include>
 	<div id="simple-container" class="simple-container">
-		
+
 		<div class="jkbd-main-header-nav-zhanwei" data-item="nav-zhanwei"></div>
 		<div class="jkbd-main-header-nav erjiyemian"
 			data-item="jkbd-main-header-nav">
@@ -70,9 +73,10 @@
 									class="a-dis"><img src="images/maiche.png"></a></li>
 								<li><a target="_blank"
 									href="http://www.jiakaobaodian.com/about/honor.html"
-									class="a-dis"><img 	src="images/banner5.png"></a></li>
+									class="a-dis"><img src="images/banner5.png"></a></li>
 								<li><a target="_blank"
-									href="http://www.xiaozhu2.com/hengyang/" class="a-dis"><img	src="images/banner_xiaozhu.png"></a></li>
+									href="http://www.xiaozhu2.com/hengyang/" class="a-dis"><img
+										src="images/banner_xiaozhu.png"></a></li>
 								<li><a target="_blank"
 									href="http://www.jiakaobaodian.com/about/dynamic.html"
 									class="a-dis"><img src="images/banner2.png"></a></li>
@@ -106,7 +110,8 @@
 							<li class="li1 ke1"><a target="_blank"
 								href="http://www.jiakaobaodian.com/mnks/kemu1/car-hengyang.html"><span>科目一理论考</span></a>
 								<ul class="ul2">
-									<li class="li0"><a target="_blank" href="page/completeSimulation.jsp">全真模拟</a></li>
+									<li class="li0"><a target="_blank"
+										href="page/completeSimulation.jsp">全真模拟</a></li>
 									<li><a target="_blank" href="page/orderExercise.jsp">顺序练习</a></li>
 									<li><a target="_blank" href="page/difficultExercise.jsp">难题练习</a></li>
 								</ul></li>
@@ -133,9 +138,10 @@
 							<li class="ke4 li1"><a target="_blank"
 								href="http://www.jiakaobaodian.com/mnks/kemu4/car-hengyang.html"><span>科目四理论考</span></a>
 								<ul class="ul2">
-									<li class="li0"><a target="_blank" href="completeSimulation.jsp">全真模拟</a></li>
+									<li class="li0"><a target="_blank"
+										href="completeSimulation.jsp">全真模拟</a></li>
 									<li><a target="_blank" href="orderExercise.jsp">顺序练习</a></li>
-									<li><a target="_blank"	href="difficultExercise.jsp">难题练习</a></li>
+									<li><a target="_blank" href="difficultExercise.jsp">难题练习</a></li>
 								</ul></li>
 							<li class="kaixin li1"><a target="_blank"
 								href="http://www.jiakaobaodian.com/news/skill"><span>开心拿驾照</span></a>
@@ -245,36 +251,41 @@
  -->
 				</div>
 				<div class="modal-body">
-				<!-- 登陆表单 -->
-					<form class="form-horizontal" role="form" action="user/login" method="post" id="login" onsubmit="return login()">
-						<div class="form-group" >
-								<label for="userName" class="col-sm-3 control-label">用户名:</label>
+					<!-- 登陆表单 -->
+					<form class="form-horizontal" role="form" action="user/login"
+						method="post" id="login" onsubmit="return login()">
+						<div class="form-group">
+							<label for="userName" class="col-sm-3 control-label">用户名:</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" id="cname" name="cname"
-									placeholder="请输入用户名" >
+									placeholder="请输入用户名">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="password" class="col-sm-3 control-label">密&nbsp;&nbsp;&nbsp;码:</label>
 							<div class="col-sm-8">
-								<input type="password" class="form-control" id="cpwd" name="cpwd"
-									placeholder="请输入密码" >
+								<input type="password" class="form-control" id="cpwd"
+									name="cpwd" placeholder="请输入密码">
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-3 col-sm-10">
 								<div class="checkbox">
-									<label> <input type="checkbox">请记住我</label><span id="msgerror"></span>
+									<label> <input type="checkbox">请记住我
+									</label><span id="msgerror"></span>
 								</div>
 							</div>
 						</div>
-						<div class="form-group">&nbsp;&nbsp;
-							  <a href="page/register.jsp" class="text-primary col-sm-offset-3" > 立即注册</a> 
-							  <a href="#" class="text-primary pull-right col-sm-4" >&nbsp;&nbsp;找回密码</a>
+						<div class="form-group">
+							&nbsp;&nbsp; <a href="page/register.jsp"
+								class="text-primary col-sm-offset-3"> 立即注册</a> <a href="#"
+								class="text-primary pull-right col-sm-4">&nbsp;&nbsp;找回密码</a>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">
-						<br/><button  class="btn btn-info btn-lg center-block"  style="width:240px;" type="submit">登  录</button>
+								<br />
+								<button class="btn btn-info btn-lg center-block"
+									style="width: 240px;" type="submit">登 录</button>
 							</div>
 						</div>
 					</form>
@@ -285,6 +296,11 @@
 		<!-- /.modal-dialog -->
 	</div>
 	<!-- /.modal -->
+	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery.cookie.js">
+		
+	</script>
 	<script>
 		function show() {
 			$("#bsCss").attr("href", "bootstrap-3.3.7/css/bootstrap.min.css");
@@ -299,16 +315,21 @@
 			$('#myModal').on('hide.bs.modal', function() {
 				$("#bsCss").attr("href", "");
 			});
-	}
-		function login(){
-			if($("#cname").val().trim()=="" || $("#cpwd").val().trim()=="" ){
+		}
+		function login() {
+			if ($("#cname").val().trim() == "" || $("#cpwd").val().trim() == "") {
 				$("#msgerror").html("账号或密码不能为空！");
 				show();
 				return false;
-			}else{
+			} else {
 				return true;
 			}
 		}
+		$(function() {
+			/*使cookie里的值变为undefined  */
+			/* $.cookie('index', null,{path:'index.jsp'});  */
+			alert($.cookie('index'));
+		});
 	</script>
 </body>
 </html>

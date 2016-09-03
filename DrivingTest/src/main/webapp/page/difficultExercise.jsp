@@ -123,7 +123,7 @@
 						</div>
 					</div>
 					<div class="shiti-buttons cl">
-						<button class="li0 float-l" type="button" data-item="prev">上一题</button>
+						<button class="li0 float-l" type="button" data-item="prev" onclick="javascript:showPre()">上一题</button>
 						<button class="float-l" type="button" data-item="next" onclick="javascript:showNext()">下一题</button>
 						<button class="datika grey-b zkdtk float-r" onclick="javascript:showCard()">展开答题卡</button>
 						<button class="grey-b float-r" type="button"

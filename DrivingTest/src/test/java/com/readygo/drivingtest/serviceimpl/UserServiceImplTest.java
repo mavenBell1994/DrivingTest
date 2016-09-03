@@ -24,7 +24,7 @@ public class UserServiceImplTest {
 		User user=userservice.checkcname("lc");
 		System.out.println(user);
 	}
-	@Test
+/*	@Test
 	public void testRegister() {
 		boolean i=userservice.register(new User("lcac","123456","94003@qq.com"));
 		System.out.println(i);
@@ -33,7 +33,7 @@ public class UserServiceImplTest {
 	public void testRegister1() {
 		userMapper.register(new User("lcac","123456","94003@qq.com"));
 		
-	}
+	}*/
 	@Test
 	public void testActive() {
 		userMapper.active("zx");

@@ -151,7 +151,7 @@ html, body {
 						</div>
 						<div class="form-group form-actions">
 							<div class="col-xs-4 col-xs-offset-4 " style="margin: 0 37%;">
-								<a href="backpages/index.html" class="btn btn-sm btn-info"><span
+								<a href="backpages/index.jsp" class="btn btn-sm btn-info"><span
 									class="glyphicon glyphicon-off"></span> 登录</a>
 							</div>
 						</div>

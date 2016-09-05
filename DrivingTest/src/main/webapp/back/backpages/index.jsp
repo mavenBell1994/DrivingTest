@@ -14,7 +14,7 @@
 		<link href="../css/bootstrap.css" rel="stylesheet">
 		<link rel="stylesheet" href="../css/mmss.css" />
 		<link rel="stylesheet" href="../css/font-awesome.min.css" />
-		<!--[if lt IE 9]>
+	<!--[if lt IE 9]>
     <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
@@ -59,7 +59,7 @@
 								<a href="#"></a>
 							</li>
 							<li class="text-center">
-								<a href="../login.html"><span class="text-primary">退出</span></a>
+								<a href="../login.jsp"><span class="text-primary">退出</span></a>
 							</li>
 						</ul>
 					</li>
@@ -90,13 +90,13 @@
 											<a href="p1.html"><i class="icon-user"></i> 表格p1留着做样本</a>
 										</li>-->
 										<li>
-											<a href="p2.html"><i class="icon-edit"></i> 图表p2留着做样本</a>
+											<a href="p2.jsp"><i class="icon-edit"></i> 图表p2留着做样本</a>
 										</li>
 										<li>
-											<a href="checkAdmin.html"><i class="icon-trash"></i> 查看所有管理员</a>
+											<a href="checkAdmin.jsp"><i class="icon-trash"></i> 查看所有管理员</a>
 										</li>
 										<li>
-											<a href="checkAdminSelf.html"><i class="icon-list"></i>查看当前管理员</a>
+											<a href="checkAdminSelf.jsp"><i class="icon-list"></i>查看当前管理员</a>
 										</li>
 									</ul>
 								</div>

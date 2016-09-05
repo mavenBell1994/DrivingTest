@@ -115,15 +115,15 @@
 										</p> -->
 									</div>
 								</div>
-								<div class="shiti-item-right float-l"></div>
+								<div class="shiti-item-right float-l" id="quizPics"></div>
 							</div>
 						</div>
 					</div>
-					<div class="tip-container" data-item="tip-container">
-						<p class="weizuo">单选题，请选择你认为正确的答案！</p>
+					<div class="tip-container" data-item="tip-container" id="qtype">
+					<!-- 	<p class="weizuo">单选题，请选择你认为正确的答案！</p> -->
 					</div>
-					<div class="static-container" data-item="static-container">
-						错误率<b>45%</b>做错人数<b>40782638</b>
+					<div class="static-container" data-item="static-container" id="quizResult">
+						<!-- 错误率<b>45%</b>做错人数<b>40782638</b> -->
 					</div>
 					<div class="tiku-jindu-container cl"
 						data-item="tiku-jindu-container">
@@ -426,7 +426,6 @@
 	}
 		}
 	</script>
-
 </body>
 
 </html>

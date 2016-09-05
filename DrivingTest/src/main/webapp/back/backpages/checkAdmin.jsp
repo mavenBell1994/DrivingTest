@@ -192,6 +192,7 @@
 						<table class="table table-bordered table-striped text-center bg-info">
 							<thead>
 								<tr class="info">
+									<th class="text-center" check="true"></th>
 									<th class="text-center">序号</th>
 									<th class="text-center">用户名</th>
 									<th class="text-center">状态</th>

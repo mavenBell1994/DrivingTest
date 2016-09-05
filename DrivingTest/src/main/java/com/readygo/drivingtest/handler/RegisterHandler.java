@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -27,10 +28,11 @@ public class RegisterHandler {
 	private UserService userService;
 	@Autowired
 	private JavaMailSender mailSender;
-	
 	@ModelAttribute
 	public void getModel(ModelMap map){
-		map.put("cname",new User());
+		
+			map.put("cname",new User());
+		
 	}
 	
 	//验证账号是否已存在的处理类
@@ -46,9 +48,7 @@ public class RegisterHandler {
 	public String active(@ModelAttribute(value="cname")User user,ModelMap map){
 		userService.active(user.getCname());
 		User u=userService.checkcname(user.getCname());
-		map.put("cname",u.getCname());
-		System.out.println(user.getCname());
-		System.out.println(u.getCname());
+		map.put("cname",u);
 		return "redirect:/index.jsp";
 	}
 	//注册类
@@ -66,6 +66,15 @@ public class RegisterHandler {
 			return "redirect:/index.jsp";
 		}
 		return "register";
+	}
+	@RequestMapping(value="/quit",params={"url"})
+	public String quit(HttpSession session,HttpServletRequest request,String url){
+		session.removeAttribute("cname");
+		url.substring(12);
+		System.out.println(url);
+		System.out.println(url.substring(13)+".....");
+		return "redirect:/"+url.substring(13);
+		
 	}
 	/**
 	 * 生成用户激活地址

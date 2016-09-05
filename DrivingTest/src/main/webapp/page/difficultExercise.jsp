@@ -4,6 +4,7 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
 <base href="/DrivingTest/">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -92,14 +93,15 @@
 				<div class="lianxi-container news-left">
 					<div class="shiti-container " data-item="shiti-container">
 						<div class="shiti-item cl">
-							<p class="shiti-content" data-item="shiti-content">
-								<b>难</b> 1/100. 对驾驶拼装机动车上路行驶的驾驶人，会受到下列哪种处罚？
+							<p class="shiti-content" data-item="shiti-content" >
+								<b>难</b>
+								<span id="quizTitle"><!-- 1/100. 对驾驶拼装机动车上路行驶的驾驶人，会受到下列哪种处罚？ --></span> 
 							</p>
 							<span class="favor-tag " data-action="login">收藏</span>
 							<div class="shiti-wapper cl">
 								<div class="shiti-item-left float-l">
-									<div class="options-container " data-item="options-container">
-										<p class="" data-answer="16">
+									<div class="options-container " data-item="options-container" id="options-container">
+										<!-- <p class="" data-answer="16">
 											<i></i><span>A. 处15日以下拘留</span>
 										</p>
 										<p class="" data-answer="32">
@@ -110,7 +112,7 @@
 										</p>
 										<p class="dui " data-answer="64">
 											<i></i><span>D. 处200以上2000元以下罚款</span>
-										</p>
+										</p> -->
 									</div>
 								</div>
 								<div class="shiti-item-right float-l"></div>
@@ -132,16 +134,15 @@
 						</div>
 					</div>
 					<div class="shiti-buttons cl">
-						<button class="li0 float-l" type="button" data-item="prev">上一题</button>
-						<button class="float-l" type="button" data-item="next">下一题</button>
-						<button class="datika grey-b zkdtk float-r"
-							onclick="javascript:showCard()">展开答题卡</button>
+						<button class="li0 float-l" type="button" data-item="prev" onclick="javascript:showPre()">上一题</button>
+						<button class="float-l" type="button" data-item="next" onclick="javascript:showNext()">下一题</button>
+						<button class="datika grey-b zkdtk float-r" onclick="javascript:showCard()">展开答题卡</button>
 						<button class="grey-b float-r" type="button"
 							data-item="see-answer">查看详解</button>
 					</div>
 					<div class="tongji-container cl" data-item="tongji-container">
 						<label class="daduinext float-l"><input type="checkbox"
-							checked="" data-item="daduinext"><span>答对自动下一题</span></label> <label
+							checked="checked" data-item="daduinext"><span>答对自动下一题</span></label> <label
 							class="x-dadui float-l">答对：<span>0题</span></label> <label
 							class="x-dacuo float-l">答错：<span>0题</span></label> <label
 							class="x-lv float-l">正确率：<span>100%</span></label> <label
@@ -280,7 +281,6 @@
 								<p>
 									《道路交通安全法》第一百条：<br>驾驶拼装的机动车或者已达到报废标准的机动车上道路行驶的，公安机关交通管理部门应当予以收缴，强制报废。<br>对驾驶前款所列机动车上道路行驶的驾驶人，处200元以上2000元以下罚款，并吊销机动车驾驶证（非行驶证）。
 								</p>
-								</p>
 							</div>
 						</div>
 						<div class="fenxi-container">
@@ -335,8 +335,6 @@
 			</div>
 		</div>
 	</div>
-	<script src="bootstrap-3.3.7/js/jquery.min.js"></script>
-	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
 	<!-- 模态框（Modal） -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true"
@@ -398,6 +396,11 @@
 		<!-- /.modal-dialog -->
 	</div>
 	<!-- /.modal -->
+	
+	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery.cookie.js"> </script>
+	<script type="text/javascript" src="js/difficultExercise.js"></script>
 	<script>
 		function show() {
 			$("#bsCss").attr("href", "bootstrap-3.3.7/css/bootstrap.min.css");
@@ -420,7 +423,7 @@
 				$("#datika-container").attr("class", "datika-container");
 			} else {
 				$("#datika-container").attr("class", "datika-container close");
-			}
+	}
 		}
 	</script>
 

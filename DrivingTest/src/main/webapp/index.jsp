@@ -7,6 +7,23 @@
 <head>
 <base href="/DrivingTest/">
 <title>【驾考宝典】</title>
+<style type="text/css">
+#msgerror {
+	margin-left: 60px;
+	font-size: 12px;
+	color: red;
+}
+
+#login_cname {
+	margin-left: 50px;
+}
+
+#login_cname a {
+	text-decoration: none;
+	font-size: 13px;
+	font-weight: 700;
+}
+</style>
 
 <link rel="stylesheet" id="bsCss">
 <link href="css/public.css" rel="stylesheet" type="text/css">
@@ -126,7 +143,7 @@
 									<li class="li0"><a target="_blank"
 										href="page/completeSimulation.jsp">全真模拟</a></li>
 									<li><a target="_blank" href="page/orderExercise.jsp">顺序练习</a></li>
-									<li><a target="_blank" href="page/difficultExercise.jsp">难题练习</a></li>
+									<li><a  href="javascript:void(0)" onclick="toPageDiff()">难题练习</a></li>
 								</ul></li>
 							<li class="li1 ke2"><a target="_blank"
 								href="http://www.jiakaobaodian.com/mnks/kemu2/car-hengyang.html"><span>科目二小路考</span></a>
@@ -154,7 +171,7 @@
 									<li class="li0"><a target="_blank"
 										href="completeSimulation.jsp">全真模拟</a></li>
 									<li><a target="_blank" href="orderExercise.jsp">顺序练习</a></li>
-									<li><a target="_blank" href=" difficultExercise.jsp">难题练习</a></li>
+									<li><a target="_blank" href="difficultExercise.jsp">难题练习</a></li>
 								</ul></li>
 							<li class="kaixin li1"><a target="_blank"
 								href="http://www.jiakaobaodian.com/news/skill"><span>开心拿驾照</span></a>
@@ -320,6 +337,11 @@
 		<!-- /.modal-dialog -->
 	</div>
 	<!-- /.modal -->
+	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery.cookie.js">
+		
+	</script>
 	<script>
 		function show() {
 			$("#cname").val("");
@@ -342,6 +364,7 @@
 		function login() {
 			if ($("#cname").val().trim() == "" || $("#cpwd").val().trim() == "") {
 				$("#errormsg").html("账号或密码不能为空！");
+				show();
 				return false;
 			} else  if($("#verify").val().trim()==""){
 				$("#errormsg").html("请输入验证码！");
@@ -363,6 +386,14 @@
 				$("#errormsg").html("验证码输入有误！");
 				return false;
 			});
+		function toPageDiff(){
+			/*使cookie里的值变为undefined,必须指明路径  */
+			alert($.cookie('index'));
+			alert("a");
+			$.cookie('index', '', {path:'/', expires: -1 }); 
+			 alert($.cookie('index'));
+			location.href="page/difficultExercise.jsp";
+		}
 		}
 	</script>
 </body>

@@ -364,7 +364,6 @@
 		function login() {
 			if ($("#cname").val().trim() == "" || $("#cpwd").val().trim() == "") {
 				$("#errormsg").html("账号或密码不能为空！");
-				show();
 				return false;
 			} else  if($("#verify").val().trim()==""){
 				$("#errormsg").html("请输入验证码！");
@@ -386,6 +385,7 @@
 				$("#errormsg").html("验证码输入有误！");
 				return false;
 			});
+		}
 		function toPageDiff(){
 			/*使cookie里的值变为undefined,必须指明路径  */
 			alert($.cookie('index'));
@@ -394,7 +394,7 @@
 			 alert($.cookie('index'));
 			location.href="page/difficultExercise.jsp";
 		}
-		}
+		
 	</script>
 </body>
 </html>

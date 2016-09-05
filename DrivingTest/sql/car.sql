@@ -114,6 +114,7 @@ create table SelfErrors(
        cid	int,
        constraint SelfErrors_caruser_cid foreign key(cid) references caruser(cid),
        qID varchar2(4000)        --进行字符拼接。1,2,23,55   ,可以使用@或者,    
+       
 );
 --样例   insert into SelfErrors values ( ?,? );			
 select * form SelfErrors ;

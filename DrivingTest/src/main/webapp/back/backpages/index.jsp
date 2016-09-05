@@ -43,7 +43,7 @@
 					</li>
 					<li class="bg-info dropdown">
 						<a class="dropdown-toggle" href="#" data-toggle="dropdown">
-							<span class="glyphicon glyphicon-user"></span>&nbsp;<span>系统管理员</span><span class="caret"></span>
+							<span class="glyphicon glyphicon-user"></span>&nbsp;<span>管理员管理</span><span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu dropdown-menu-right">
 							<li class="text-center">

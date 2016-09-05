@@ -114,7 +114,7 @@
 											<a href="checkChartInfo.jsp"><i class="icon-edit"></i> 查看聊天记录</a>
 										</li>
 										<li>
-											<a href="checkRoport.jsp"><i class="icon-edit"></i> 查看举报建议</a>
+											<a href="checkReport.jsp"><i class="icon-edit"></i> 查看举报建议</a>
 										</li>
 
 									</ul>
@@ -191,23 +191,10 @@
 						<br/><br/>
 						<table class="table table-bordered table-striped text-center bg-info">
 							<thead>
-								<tr class="info">
-									<th class="text-center" check="true"></th>
-									<th class="text-center">序号</th>
-									<th class="text-center">用户名</th>
-									<th class="text-center">状态</th>
-									<th class="text-center">操作</th>
-								</tr>
+								
 							</thead>
 							<tbody>
-								<tr>
-									<td>1</td>
-									<td>mmss</td>
-									<td>正常</td>
-									<td>
-										<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit">编辑</a>
-										<a href="#" class="btn btn-primary btn-sm">删除</a>
-									</td>
+
 									<!-- Modal begin-->
 									
 									<!--添加-->
@@ -300,18 +287,7 @@
 									</div>
 									
 									<!--Modal end-->
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>mmss</td>
-									<td>正常</td>
-									<td>
-										<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit" data-whatever="编辑">编辑</a>
-										<a href="#" class="btn btn-primary btn-sm">删除</a>
-									</td>
-								</tr>
 
-								
 							</tbody>
 						</table>
 						<!--

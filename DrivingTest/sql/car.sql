@@ -116,6 +116,7 @@ create table SelfErrors(
        errorSave varchar2(4000),        --进行字符拼接。1,2,23,55   ,可以使用@或者,    
        save varchar2(4000)
 );
+insert into SelfErrors values();
 
 --样例   insert into SelfErrors values ( ?,? );			
 select * form SelfErrors ;

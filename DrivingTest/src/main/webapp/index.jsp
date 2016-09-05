@@ -30,11 +30,41 @@
 <link href="css/main.css" rel="stylesheet" type="text/css">
 <link href="css/news.css" rel="stylesheet" type="text/css">
 <link href="css/home.css" rel="stylesheet" type="text/css">
+<link href="css/top.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+#verify {
+	width: 80px;
+}
+#errormsg{
+	color: red;
+	margin-left: 50px;
+}
+#verifyimg {
+	display: block;
+	float: right;
+	width: 120px;
+	text-align: right;
+	line-height: 34px;
+	height: 34px;
+	margin-right: 60px;
+}
+
+#verifyimg a {
+	margin-left: 5px;
+}
+</style>
 
 </head>
-
 <body class=" " id="body">
-	<jsp:include page="/page/top1.jsp"></jsp:include>
+
+	<c:choose>
+		<c:when test="${cname.cname==null}">
+			<jsp:include page="/page/top.jsp"></jsp:include>
+		</c:when>
+		<c:otherwise>
+			<jsp:include page="/page/top1.jsp"></jsp:include>
+		</c:otherwise>
+	</c:choose>
 	<div id="simple-container" class="simple-container">
 
 		<div class="jkbd-main-header-nav-zhanwei" data-item="nav-zhanwei"></div>
@@ -269,10 +299,20 @@
 							</div>
 						</div>
 						<div class="form-group">
+							<label for="captcha" class="col-sm-3 control-label ">验证码:</label>
+							<div class="col-sm-8" style="width: 100px;">
+								<input type="text" class="form-control" id="verify" onblur="checkverify()"
+									name="cname">
+							</div>
+							<span id="verifyimg"><img id="signcode" alt="验证码"
+								src="signcode/authcode">
+								<a href="javascript:changeimg()">看不清？</a></span>
+						</div>
+						<div class="form-group">
 							<div class="col-sm-offset-3 col-sm-10">
 								<div class="checkbox">
 									<label> <input type="checkbox">请记住我
-									</label><span id="msgerror"></span>
+									</label><span id="errormsg"></span>
 								</div>
 							</div>
 						</div>
@@ -288,6 +328,7 @@
 									style="width: 240px;" type="submit">登 录</button>
 							</div>
 						</div>
+
 					</form>
 				</div>
 			</div>
@@ -303,6 +344,10 @@
 	</script>
 	<script>
 		function show() {
+			$("#cname").val("");
+			$("#cpwd").val("");
+			$("#verify").val("");
+			changeimg();
 			$("#bsCss").attr("href", "bootstrap-3.3.7/css/bootstrap.min.css");
 			$("#navUl li").css("width", "98px");
 			$("#navUl").css("height", "70px");
@@ -318,13 +363,29 @@
 		}
 		function login() {
 			if ($("#cname").val().trim() == "" || $("#cpwd").val().trim() == "") {
-				$("#msgerror").html("账号或密码不能为空！");
+				$("#errormsg").html("账号或密码不能为空！");
 				show();
 				return false;
-			} else {
+			} else  if($("#verify").val().trim()==""){
+				$("#errormsg").html("请输入验证码！");
+				return false;
+			}else if($("#errormsg").html()==""){
+				
 				return true;
 			}
 		}
+		function changeimg() {
+			$('#signcode').attr('src', 'signcode/authcode?abc=' + Math.random());//链接后添加Math.random，确保每次产生新的验证码，避免缓存问题。\
+		}
+		function checkverify(){
+			$.post("login/checkverify",{"verify":$("#verify").val()},function(data){
+				if(data=="true"){
+					$("#errormsg").html("");
+					return true;
+				}
+				$("#errormsg").html("验证码输入有误！");
+				return false;
+			});
 		function toPageDiff(){
 			/*使cookie里的值变为undefined,必须指明路径  */
 			alert($.cookie('index'));
@@ -332,6 +393,7 @@
 			$.cookie('index', '', {path:'/', expires: -1 }); 
 			 alert($.cookie('index'));
 			location.href="page/difficultExercise.jsp";
+		}
 		}
 	</script>
 </body>

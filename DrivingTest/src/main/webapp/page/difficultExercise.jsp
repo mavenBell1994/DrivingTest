@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+	pageEncoding="utf-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 
@@ -9,18 +11,27 @@
 
 <title>小车科目一难题练习</title>
 <link rel="stylesheet" id="bsCss">
-<link rel="alternate" media="only screen and (max-width: 640px)" href="http://m.jiakaobaodian.com/mnks/exercise/8-car-kemu1-hengyang.html">
+<link rel="alternate" media="only screen and (max-width: 640px)"
+	href="http://m.jiakaobaodian.com/mnks/exercise/8-car-kemu1-hengyang.html">
 <link href="css/public.css" rel="stylesheet" type="text/css">
 <link href="css/dialog.css" rel="stylesheet" type="text/css">
 <link href="css/main.css" rel="stylesheet" type="text/css">
 <link href="css/news.css" rel="stylesheet" type="text/css">
 <link href="css/webjkbd.css" rel="stylesheet" type="text/css">
 <link href="css/others.css" rel="stylesheet" type="text/css">
+<link href="css/top.css" rel="stylesheet" type="text/css">
 
 </head>
 <body class=" ">
 	<div id="simple-container" class="simple-container">
+		<c:choose>
+	<c:when test="${cname.cname==null}">
 		<jsp:include page="/page/top.jsp"></jsp:include>
+	</c:when>
+	<c:otherwise>
+		<jsp:include page="/page/top1.jsp"></jsp:include>	
+	</c:otherwise>
+</c:choose>
 		<div class="jkbd-main-header-nav-zhanwei" data-item="nav-zhanwei"></div>
 		<div class="jkbd-main-header-nav erjiyemian"
 			data-item="jkbd-main-header-nav">
@@ -42,7 +53,7 @@
 						<li data-item="nav-maiche"><a target="_blank"
 							href="http://www.maiche.com/rank/">新手买车</a></li>
 					</ul>
-					
+
 				</div>
 			</div>
 		</div>
@@ -104,15 +115,15 @@
 										</p> -->
 									</div>
 								</div>
-								<div class="shiti-item-right float-l"></div>
+								<div class="shiti-item-right float-l" id="quizPics"></div>
 							</div>
 						</div>
 					</div>
-					<div class="tip-container" data-item="tip-container">
-						<p class="weizuo">单选题，请选择你认为正确的答案！</p>
+					<div class="tip-container" data-item="tip-container" id="qtype">
+					<!-- 	<p class="weizuo">单选题，请选择你认为正确的答案！</p> -->
 					</div>
-					<div class="static-container" data-item="static-container">
-						错误率<b>45%</b>做错人数<b>40782638</b>
+					<div class="static-container" data-item="static-container" id="quizResult">
+						<!-- 错误率<b>45%</b>做错人数<b>40782638</b> -->
 					</div>
 					<div class="tiku-jindu-container cl"
 						data-item="tiku-jindu-container">
@@ -131,13 +142,13 @@
 					</div>
 					<div class="tongji-container cl" data-item="tongji-container">
 						<label class="daduinext float-l"><input type="checkbox"
-							checked="" data-item="daduinext"><span>答对自动下一题</span></label> <label
+							checked="checked" data-item="daduinext"><span>答对自动下一题</span></label> <label
 							class="x-dadui float-l">答对：<span>0题</span></label> <label
 							class="x-dacuo float-l">答错：<span>0题</span></label> <label
 							class="x-lv float-l">正确率：<span>100%</span></label> <label
 							class="x-sync float-l" data-action="tips_sync">登录保存做题进度</label>
 					</div>
-			
+
 					<div class="datika-container close" id="datika-container">
 						<table class="datika">
 							<tbody>
@@ -270,7 +281,6 @@
 								<p>
 									《道路交通安全法》第一百条：<br>驾驶拼装的机动车或者已达到报废标准的机动车上道路行驶的，公安机关交通管理部门应当予以收缴，强制报废。<br>对驾驶前款所列机动车上道路行驶的驾驶人，处200元以上2000元以下罚款，并吊销机动车驾驶证（非行驶证）。
 								</p>
-								</p>
 							</div>
 						</div>
 						<div class="fenxi-container">
@@ -301,7 +311,7 @@
 			</div>
 		</div>
 		<div class="jkbd-main-footer" data-item="jkbd-main-footer">
-			
+
 			<div class="footer2">
 				<div class="jkbd-width wid-auto">
 					<ul class="cl">
@@ -318,7 +328,7 @@
 							class="a-link">商务合作</a></li>
 						<li class="bd-line"></li>
 						<li class="fankui" data-item="feedback"><a target="_blank"
-							__href="/feedback" class="a-link">意见反馈</a></li>
+							_href="/feedback" class="a-link">意见反馈</a></li>
 					</ul>
 					<p>Copyright © &nbsp;&nbsp;ReadyGo</p>
 				</div>
@@ -405,19 +415,17 @@
 			$('#myModal').on('hide.bs.modal', function() {
 				$("#bsCss").attr("href", "");
 			});
-	}
-		
-/* 		 展开答题卡 */	
-	function showCard(){
-			if($("#datika-container").attr("class")=="datika-container close"){
-				$("#datika-container").attr("class","datika-container");
-			}else{
-				$("#datika-container").attr("class","datika-container close");
-			}
 		}
-		
+
+		/* 展开答题卡 */
+		function showCard() {
+			if ($("#datika-container").attr("class") == "datika-container close") {
+				$("#datika-container").attr("class", "datika-container");
+			} else {
+				$("#datika-container").attr("class", "datika-container close");
+	}
+		}
 	</script>
-	
 </body>
 
 </html>

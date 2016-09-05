@@ -25,6 +25,8 @@ function showNext(){
 		index++;
 		$.cookie('index',index,{path:'/'});
 		showQuiz(QuizData[index]);
+	}else{
+		alert("已经是最后一题了");
 	}
 }
 
@@ -45,23 +47,32 @@ function showQuiz(data){
 	var answers=data.answer.split("@");
 	var str="";
 	right=answers[answers.length-1];
-	
+	var img='<img src="'+data.pic+'"/>';
 	for(var i=0;i<answers.length-1;i++){
 		str+='<p  data-answer="16" onclick="choseAnswer(\''+answers[i]+'\','+i+')" class="choseP">';
 			str+='<i id="optionImg'+i+'" ></i><span style="font-size: 18px;">'+answers[i]+'</span>';
 				str+='</p>';
 	}
-	
+	var type;
+	type='<p class="weizuo">'+data.qtype+'，请选择你认为正确的答案！</p>';
+	$("#qtype").html(type);
 	$("#options-container").html(str);
+	$("#quizPics").html(img);
 }
 function choseAnswer(answer,i){
+	
 	/*alert(answer.charAt(0));*/
 	var answer=answer.charAt(0);
 	alert("right:"+right);
 	if(right==answer){
 		$("#optionImg"+i).css({"background-image":"url(images/optionRight.png)"});
+		var type='<p style="color:#2da5ec;font-size: 18px;">回答正确!</p>';
+		$("#qtype").html(type);
+		$(".choseP").removeAttr("onclick");
 	}else{
 		$("#optionImg"+i).css({"background-image":"url(images/optionError.png)"});
+		var type='<p style="font-size: 18px;"><label style="color:red;">回答错误!&nbsp;&nbsp;&nbsp;&nbsp;</label>正确答案: <b style="color:#2da5ec;">'+right+'</b></p>';
+		$("#qtype").html(type);
 		switch (right) {
 		case 'A':
 			$("#optionImg"+0).css({"background-image":"url(images/optionRight.png)"});break;
@@ -71,7 +82,6 @@ function choseAnswer(answer,i){
 			$("#optionImg"+2).css({"background-image":"url(images/optionRight.png)"});break;
 		case 'D':
 			$("#optionImg"+3).css({"background-image":"url(images/optionRight.png)"});break;
-			
 		}
 		$(".choseP").removeAttr("onclick");
 	}

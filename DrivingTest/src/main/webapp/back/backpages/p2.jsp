@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -14,9 +18,7 @@
     <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-		<style>
-
-		</style>
+		<script src="../js/Chart.js"></script>
 	</head>
 
 	<body>
@@ -39,7 +41,7 @@
 					</li>
 					<li class="bg-info dropdown">
 						<a class="dropdown-toggle" href="#" data-toggle="dropdown">
-							<span class="glyphicon glyphicon-user"></span>&nbsp;<span>管理员管理</span><span class="caret"></span>
+							<span class="glyphicon glyphicon-user"></span>&nbsp;<span>系统管理员</span><span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu dropdown-menu-right">
 							<li class="text-center">
@@ -156,7 +158,6 @@
 									</ul>
 								</div>
 							</div>
-
 						</div>
 					</div>
 					<!--左侧导航结束-->
@@ -168,120 +169,20 @@
 							<li>
 								<a href="index.html"><span class="glyphicon glyphicon-home"></span>&nbsp;后台首页</a>
 							</li>
-							<li class="active">系统管理 - 表格</li>
+							<li class="active">系统管理 - 图表</li>
 						</ol>
-						<div class="input-group line left">
-							<span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-search"></span></span>
-							<input type="text" class="form-control" placeholder="输入关键字搜索" aria-describedby="basic-addon2">
-						</div>
-						<select class="form-control line left">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-						<a href="#" class=" btn btn-primary "><span class="glyphicon glyphicon-search"></span></a>
-						<a href="#" class=" btn btn-primary "><span class="glyphicon glyphicon-download"></span></a>
-						<br/><br/>
-						<table class="table table-bordered table-striped text-center bg-info">
-							<thead>
-								<tr class="info">
-									<th class="text-center">序号</th>
-									<th class="text-center">用户名</th>
-									<th class="text-center">密码</th>
-									<th class="text-center">状态</th>
-									<th class="text-center">操作</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td>mmss</td>
-									<td>aaaaa</td>
-									<td>正常</td>
-									<td>
-										
-										<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit">编辑</a>
-										
-									</td>
-									<!-- Modal begin-->
-									<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit">
-										<div class="modal-dialog" role="document">
-											<div class="modal-content">
-												<div class="modal-header">
-													<button type="button" class="close" data-dismiss="edit" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-													<h4 class="modal-title" id="myModalLabel1">编辑</h4>
-												</div>
-												<div class="modal-body">
-													<ul>
-														<li>
-															<label><span>序号 ：</span></label>
-															<input type="text" disabled="disabled" />
-														</li>
-														<li>
-															<label><span>状态 ：</span></label>
-															<input type="text" disabled="disabled"/>
-														</li>
-														<li>
-															<label><span>用户名 ：</span></label>
-															<input type="text" />
-														</li>
-														<li>
-															<label><span>原密码 ：</span></label>
-															<input type="password" disabled="" value="a"/>
-														</li>
-														<li>
-															<label><span>新密码 ：</span></label>
-															<input type="password" />
-														</li>
-														
-													</ul>
-												</div>
-												<div class="modal-footer">
-													<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">取消</button>
-													<button type="button" class="btn btn-primary btn-sm">保存</button>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!--Modal end-->
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>mmss</td>
-									<td>aaaa</td>
-									<td>正常</td>
-									<td>
-										<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit" data-whatever="编辑">编辑</a>
-									</td>
-								</tr>
+						<div class="chart">
+							<div class="canvas">
+								<h3 class="text-primary">折线图</h3>
+								<canvas id="canvas"></canvas>
+							</div>
+							<div class="canvas">
+								<h3 class="text-primary">柱状图</h3>
+								<canvas id="canvas1"></canvas>
+							</div>
 
-							</tbody>
-						</table>
-						<ul class="pagination right">
-							<li class="disabled">
-								<a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-							</li>
-							<li class="active">
-								<a href="#">1 <span class="sr-only">(current)</span></a>
-							</li>
-							<li>
-								<a href="#">2</a>
-							</li>
-							<li>
-								<a href="#">3</a>
-							</li>
-							<li>
-								<a href="#">4</a>
-							</li>
-							<li>
-								<a href="#">5</a>
-							</li>
-							<li>
-								<a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-							</li>
-						</ul>
+						</div>
+
 					</div>
 					<!--右侧内容结束-->
 				</div>
@@ -304,17 +205,63 @@
 				s.src = "../js/bootlint.js";
 				document.body.appendChild(s)
 			})();
+			/*Chart的数据*/
+			function lineChart() {
+				var ctx = document.getElementById('canvas').getContext("2d")
+				var data = {
+					labels: ["2014-10", "2014-11", "2014-12", "2015-1", "2015-2", "2015-3"],
+					datasets: [{
+						label: "My First dataset",
+						fillColor: "rgba(200,200,200,0.2)",
+						strokeColor: "rgba(200,200,200,1)",
+						pointColor: "rgba(200,200,200,1)",
+						pointStrokeColor: "#fff",
+						pointHighlightFill: "#fff",
+						pointHighlightStroke: "rgba(200,200,200,1)",
+						data: [65, 59, 80, 81, 56, 55, 40]
+					}, {
+						label: "My Second dataset",
+						fillColor: "rgba(151,187,205,0.2)",
+						strokeColor: "rgba(151,187,205,1)",
+						pointColor: "rgba(151,187,205,1)",
+						pointStrokeColor: "#fff",
+						pointHighlightFill: "#fff",
+						pointHighlightStroke: "rgba(151,187,205,1)",
+						data: [28, 48, 40, 19, 86, 27, 90]
+					}]
+				};
+				var salesVolumeChart = new Chart(ctx).Line(data);
+			}
 
-			//    添加编辑模态框
-			$('#add').on('show.bs.modal', function(event) {
-				var button = $(event.relatedTarget) // Button that triggered the modal
-				var recipient = button.data('whatever') // Extract info from data-* attributes
-					// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-					// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-				var modal = $(this)
-				modal.find('.modal-title').text('' + recipient)
-				modal.find('.modal-body input').val(recipient)
-			})
+			function barChart() {
+				var ctx = document.getElementById('canvas1').getContext("2d")
+				var data = {
+					labels: ["2014-10", "2014-11", "2014-12", "2015-1", "2015-2", "2015-3"],
+					datasets: [{
+						label: "",
+						fillColor: "rgba(151,187,205,0.2)",
+						strokeColor: "rgba(151,187,205,1)",
+						pointColor: "rgba(151,187,205,1)",
+						pointStrokeColor: "#fff",
+						pointHighlightFill: "#fff",
+						pointHighlightStroke: "rgba(151,187,205,1)",
+
+						data: [1.27, 1.30, 1.30, 1.41, 1.04, 1.29]
+					}]
+				};
+				
+			}
+			// 启动
+			setTimeout(function() {
+				// 避免IE7-8 调用getContext报错，使用setTimeout
+				lineChart()
+				barChart()
+			}, 0)
+			if(/Mobile/i.test(navigator.userAgent)) {
+				//针对手机，性能做一些降级，看起来就不会那么卡了
+				Chart.defaults.global.animationSteps = Chart.defaults.global.animationSteps / 6
+				Chart.defaults.global.animationEasing = "linear"
+			}
 		</script>
 	</body>
 

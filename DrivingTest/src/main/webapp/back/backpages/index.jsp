@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -14,7 +18,9 @@
     <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-		<script src="../js/Chart.js"></script>
+		<style>
+
+		</style>
 	</head>
 
 	<body>
@@ -78,7 +84,7 @@
 									<i class="icon-user-md icon-large"></i> 管理员管理</a>
 								</a>
 
-								<div id="collapseOne" class="panel-collapse collapse in">
+								<div id="collapseOne" class="panel-collapse collapse ">
 									<ul class="nav nav-list menu-second">
 										<!--<li>
 											<a href="p1.html"><i class="icon-user"></i> 表格p1留着做样本</a>
@@ -136,7 +142,6 @@
 									</ul>
 								</div>
 							</div>
-
 							<div class="panel panel-default menu-first">
 								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
 									<i class="icon-book icon-large"></i> 测试管理</a>
@@ -154,6 +159,8 @@
 									</ul>
 								</div>
 							</div>
+
+							
 						</div>
 					</div>
 					<!--左侧导航结束-->
@@ -162,23 +169,10 @@
 					<div class="col-xs-10">
 						<br/>
 						<ol class="breadcrumb">
-							<li>
-								<a href="index.html"><span class="glyphicon glyphicon-home"></span>&nbsp;后台首页</a>
-							</li>
-							<li class="active">系统管理 - 图表</li>
+							<li class="active"><span class="glyphicon glyphicon-home"></span>&nbsp;后台首页</li>
 						</ol>
-						<div class="chart">
-							<div class="canvas">
-								<h3 class="text-primary">折线图</h3>
-								<canvas id="canvas"></canvas>
-							</div>
-							<div class="canvas">
-								<h3 class="text-primary">柱状图</h3>
-								<canvas id="canvas1"></canvas>
-							</div>
-
-						</div>
-
+						<h1 class="text-center text-white">DrivingTest后台管理系统</h1>
+						<!----------------------------------------------------------    ------------------------------------------->
 					</div>
 					<!--右侧内容结束-->
 				</div>
@@ -201,66 +195,13 @@
 				s.src = "../js/bootlint.js";
 				document.body.appendChild(s)
 			})();
-			/*Chart的数据*/
-			function lineChart() {
-				var ctx = document.getElementById('canvas').getContext("2d")
-				var data = {
-					labels: ["2014-10", "2014-11", "2014-12", "2015-1", "2015-2", "2015-3"],
-					datasets: [{
-						label: "My First dataset",
-						fillColor: "rgba(200,200,200,0.2)",
-						strokeColor: "rgba(200,200,200,1)",
-						pointColor: "rgba(200,200,200,1)",
-						pointStrokeColor: "#fff",
-						pointHighlightFill: "#fff",
-						pointHighlightStroke: "rgba(200,200,200,1)",
-						data: [65, 59, 80, 81, 56, 55, 40]
-					}, {
-						label: "My Second dataset",
-						fillColor: "rgba(151,187,205,0.2)",
-						strokeColor: "rgba(151,187,205,1)",
-						pointColor: "rgba(151,187,205,1)",
-						pointStrokeColor: "#fff",
-						pointHighlightFill: "#fff",
-						pointHighlightStroke: "rgba(151,187,205,1)",
-						data: [28, 48, 40, 19, 86, 27, 90]
-					}]
-				};
-				var salesVolumeChart = new Chart(ctx).Line(data);
-			}
 
-			function barChart() {
-				var ctx = document.getElementById('canvas1').getContext("2d")
-				var data = {
-					labels: ["2014-10", "2014-11", "2014-12", "2015-1", "2015-2", "2015-3"],
-					datasets: [{
-						label: "",
-						fillColor: "rgba(151,187,205,0.2)",
-						strokeColor: "rgba(151,187,205,1)",
-						pointColor: "rgba(151,187,205,1)",
-						pointStrokeColor: "#fff",
-						pointHighlightFill: "#fff",
-						pointHighlightStroke: "rgba(151,187,205,1)",
-
-						data: [1.27, 1.30, 1.30, 1.41, 1.04, 1.29]
-					}]
-				};
-				var salesVolumeChart = new Chart(ctx).Bar(data, {
-					// 点击的小提示
-					tooltipTemplate: "<%if (label){%><%=label%> 销量：<%}%><%= value %>万辆"
+			$(function() {
+				$('dt').click(function() {
+					$(this).parent().find('dd').show().end().siblings().find('dd').hide();
 				});
-			}
-			// 启动
-			setTimeout(function() {
-				// 避免IE7-8 调用getContext报错，使用setTimeout
-				lineChart()
-				barChart()
-			}, 0)
-			if(/Mobile/i.test(navigator.userAgent)) {
-				//针对手机，性能做一些降级，看起来就不会那么卡了
-				Chart.defaults.global.animationSteps = Chart.defaults.global.animationSteps / 6
-				Chart.defaults.global.animationEasing = "linear"
-			}
+			});
+
 		</script>
 	</body>
 

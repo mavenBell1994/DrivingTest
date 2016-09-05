@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -189,12 +193,8 @@
 								<tr class="info">
 									<th class="text-center">序号</th>
 									<th class="text-center">用户名</th>
-									<th class="text-center">姓名</th>
-									<th class="text-center">性别</th>
-									<th class="text-center">身份证</th>
-									<th class="text-center">职位</th>
-									<th class="text-center">邮箱</th>
-									<th class="text-center">备注</th>
+									<th class="text-center">密码</th>
+									<th class="text-center">状态</th>
 									<th class="text-center">操作</th>
 								</tr>
 							</thead>
@@ -202,69 +202,14 @@
 								<tr>
 									<td>1</td>
 									<td>mmss</td>
-									<td>小小</td>
-									<td>女</td>
-									<td>12345678901</td>
-									<td>经理</td>
-									<td>1234567@163.com</td>
-									<td>无</td>
+									<td>aaaaa</td>
+									<td>正常</td>
 									<td>
-										<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add1">添加</a>
+										
 										<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit">编辑</a>
-										<a href="#" class="btn btn-primary btn-sm">删除</a>
+										
 									</td>
 									<!-- Modal begin-->
-									<!--添加-->
-									<div class="modal fade" id="add1" tabindex="-1" role="dialog" aria-labelledby="add11">
-										<div class="modal-dialog" role="document">
-											<div class="modal-content">
-												<div class="modal-header">
-													<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-													<h4 class="modal-title" id="add11">添加</h4>
-												</div>
-												<div class="modal-body">
-													<ul>
-														<li>
-															<label><span>序号 ：</span></label>
-															<input type="text" />
-														</li>
-														<li>
-															<label><span>用户名 ：</span></label>
-															<input type="text" />
-														</li>
-														<li>
-															<label><span>姓名 ：</span></label>
-															<input type="text" />
-														</li>
-														<li>
-															<label><span>性别 ：</span></label>
-															<input type="text" />
-														</li>
-														<li>
-															<label><span>身份证 ：</span></label>
-															<input type="text" />
-														</li>
-														<li>
-															<label><span>职位 ：</span></label>
-															<input type="text" />
-														</li>
-														<li>
-															<label><span>邮箱 ：</span></label>
-															<input type="text" />
-														</li>
-														<li>
-															<label><span>备注 ：</span></label>
-															<input type="text" />
-														</li>
-													</ul>
-												</div>
-												<div class="modal-footer">
-													<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">取消</button>
-													<button type="button" class="btn btn-primary btn-sm">保存</button>
-												</div>
-											</div>
-										</div>
-									</div>
 									<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit">
 										<div class="modal-dialog" role="document">
 											<div class="modal-content">
@@ -276,36 +221,25 @@
 													<ul>
 														<li>
 															<label><span>序号 ：</span></label>
-															<input type="text" />
+															<input type="text" disabled="disabled" />
+														</li>
+														<li>
+															<label><span>状态 ：</span></label>
+															<input type="text" disabled="disabled"/>
 														</li>
 														<li>
 															<label><span>用户名 ：</span></label>
 															<input type="text" />
 														</li>
 														<li>
-															<label><span>姓名 ：</span></label>
-															<input type="text" />
+															<label><span>原密码 ：</span></label>
+															<input type="password" disabled="" value="a"/>
 														</li>
 														<li>
-															<label><span>性别 ：</span></label>
-															<input type="text" />
+															<label><span>新密码 ：</span></label>
+															<input type="password" />
 														</li>
-														<li>
-															<label><span>身份证 ：</span></label>
-															<input type="text" />
-														</li>
-														<li>
-															<label><span>职位 ：</span></label>
-															<input type="text" />
-														</li>
-														<li>
-															<label><span>邮箱 ：</span></label>
-															<input type="text" />
-														</li>
-														<li>
-															<label><span>备注 ：</span></label>
-															<input type="text" />
-														</li>
+														
 													</ul>
 												</div>
 												<div class="modal-footer">
@@ -320,93 +254,13 @@
 								<tr>
 									<td>1</td>
 									<td>mmss</td>
-									<td>小小</td>
-									<td>女</td>
-									<td>12345678901</td>
-									<td>经理</td>
-									<td>1234567@163.com</td>
-									<td>无</td>
+									<td>aaaa</td>
+									<td>正常</td>
 									<td>
-										<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add" data-whatever="添加">添加</a>
-										<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add" data-whatever="编辑">编辑</a>
-										<a href="#" class="btn btn-primary btn-sm">删除</a>
+										<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit" data-whatever="编辑">编辑</a>
 									</td>
 								</tr>
-								<tr>
-									<td>1</td>
-									<td>mmss</td>
-									<td>小小</td>
-									<td>女</td>
-									<td>12345678901</td>
-									<td>经理</td>
-									<td>1234567@163.com</td>
-									<td>无</td>
-									<td>
-										<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add" data-whatever="添加">添加</a>
-										<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add" data-whatever="编辑">编辑</a>
-										<a href="#" class="btn btn-primary btn-sm">删除</a>
-									</td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>mmss</td>
-									<td>小小</td>
-									<td>女</td>
-									<td>12345678901</td>
-									<td>经理</td>
-									<td>1234567@163.com</td>
-									<td>无</td>
-									<td>
-										<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add" data-whatever="添加">添加</a>
-										<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add" data-whatever="编辑">编辑</a>
-										<a href="#" class="btn btn-primary btn-sm">删除</a>
-									</td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>mmss</td>
-									<td>小小</td>
-									<td>女</td>
-									<td>12345678901</td>
-									<td>经理</td>
-									<td>1234567@163.com</td>
-									<td>无</td>
-									<td>
-										<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add" data-whatever="添加">添加</a>
-										<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add" data-whatever="编辑">编辑</a>
-										<a href="#" class="btn btn-primary btn-sm">删除</a>
-									</td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>mmss</td>
-									<td>小小</td>
-									<td>女</td>
-									<td>12345678901</td>
-									<td>经理</td>
-									<td>1234567@163.com</td>
-									<td>无</td>
-									<td>
-										<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add" data-whatever="添加">添加</a>
-										<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add" data-whatever="编辑">编辑</a>
-										<a href="#" class="btn btn-primary btn-sm">删除</a>
-									</td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>mmss</td>
-									<td>小小</td>
-									<td>女</td>
-									<td>12345678901</td>
-									<td>经理</td>
-									<td>1234567@163.com</td>
-									<td>无</td>
-									<td>
-										<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add" data-whatever="添加">添加</a>
-										<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add" data-whatever="编辑">编辑</a>
-										<a href="#" class="btn btn-primary btn-sm">删除</a>
-									</td>
-								</tr>
+
 							</tbody>
 						</table>
 						<ul class="pagination right">
@@ -454,9 +308,7 @@
 				s.src = "../js/bootlint.js";
 				document.body.appendChild(s)
 			})();
-			
 
-			
 			//    添加编辑模态框
 			$('#add').on('show.bs.modal', function(event) {
 				var button = $(event.relatedTarget) // Button that triggered the modal

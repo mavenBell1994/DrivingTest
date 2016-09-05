@@ -52,7 +52,7 @@
 						<li class="text-center"><a href="#"><span
 								class="text-primary">帮助中心</span></a></li>
 						<li class="divider"><a href="#"></a></li>
-						<li class="text-center"><a href="../login.html"><span
+						<li class="text-center"><a href="../login.jsp"><span
 								class="text-primary">退出</span></a></li>
 					</ul></li>
 			</ul>
@@ -69,7 +69,7 @@
 						aria-multiselectable="true">
 						<div class="panel panel-default menu-first menu-first-active">
 							<a data-toggle="collapse" data-parent="#accordion"
-								href="index.html" aria-expanded="true"
+								href="index.jsp" aria-expanded="true"
 								aria-controls="collapseOne"> <i class="icon-home icon-large"></i>
 								主页
 							</a>
@@ -84,11 +84,11 @@
 							<div id="collapseOne" class="panel-collapse collapse in">
 								<ul class="nav nav-list menu-second">
 									<!--<li>
-											<a href="p1.html"><i class="icon-user"></i> 表格p1留着做样本</a>
+											<a href="p1.jsp"><i class="icon-user"></i> 表格p1留着做样本</a>
 										</li>-->
-									<li><a href="p2.html"><i class="icon-edit"></i>
+									<li><a href="p2.jsp"><i class="icon-edit"></i>
 											图表p2留着做样本</a></li>
-									<li><a href="p3.html"><i class="icon-trash"></i>
+									<li><a href="p3.jsp"><i class="icon-trash"></i>
 											这里是"查看所有管理员"</a></li>
 									<li><a href="#"><i class="icon-list"></i>这里是"查看个人信息"</a></li>
 								</ul>
@@ -150,7 +150,7 @@
 				<div class="col-xs-10">
 					<br />
 					<ol class="breadcrumb">
-						<li><a href="index.html"><span
+						<li><a href="index.jsp"><span
 								class="glyphicon glyphicon-home"></span>&nbsp;后台首页</a></li>
 						<li class="active">系统管理 - 表格</li>
 					</ol>

@@ -14,6 +14,7 @@
 	color: red;
 }
 
+
 #login_cname {
 	margin-left: 50px;
 }

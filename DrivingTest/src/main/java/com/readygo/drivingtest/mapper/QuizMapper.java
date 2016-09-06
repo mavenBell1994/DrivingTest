@@ -9,5 +9,5 @@ public interface QuizMapper {
 	List<Quiz> getAllDiffQuizs();
 
 	Quiz getDiffQuizById(int qid);
-
+	int updateErrorTotal(int qid);
 }

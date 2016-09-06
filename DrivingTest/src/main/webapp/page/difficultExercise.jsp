@@ -11,8 +11,8 @@
 
 <title>小车科目一难题练习</title>
 <link rel="stylesheet" id="bsCss">
-<link rel="alternate" media="only screen and (max-width: 640px)"
-	href="http://m.jiakaobaodian.com/mnks/exercise/8-car-kemu1-hengyang.html">
+<!-- <link rel="alternate" media="only screen and (max-width: 640px)"
+	href="http://m.jiakaobaodian.com/mnks/exercise/8-car-kemu1-hengyang.html"> -->
 <link href="css/public.css" rel="stylesheet" type="text/css">
 <link href="css/dialog.css" rel="stylesheet" type="text/css">
 <link href="css/main.css" rel="stylesheet" type="text/css">
@@ -85,7 +85,7 @@
 					href="http://www.jiakaobaodian.com/mnks/car-hengyang.html">模拟考试</a><span
 					class="gap">&gt;</span> <a
 					href="http://www.jiakaobaodian.com/mnks/car-kemu1-hengyang.html">科目一</a><span
-					class="gap">&gt;</span> <a class="mylink">难题练习</a>
+					class="gap">&gt;</span> <a class="mylink"  >难题练习</a>
 				</label>
 			</div>
 			<div

@@ -387,14 +387,14 @@
 				$("#errormsg").html("验证码输入有误！");
 				return false;
 			});
+		}
 		function toPageDiff(){
 			/*使cookie里的值变为undefined,必须指明路径  */
-			alert($.cookie('index'));
-			alert("a");
+/* 			alert($.cookie('index'));
+ */			
 			$.cookie('index', '', {path:'/', expires: -1 }); 
-			 alert($.cookie('index'));
-			location.href="page/difficultExercise.jsp";
-		}
+/* 			 alert($.cookie('index'));
+ */			location.href="page/difficultExercise.jsp";
 		}
 	</script>
 </body>

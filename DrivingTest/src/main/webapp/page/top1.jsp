@@ -43,7 +43,9 @@
 		</div>
 		<div class="auth-info fl cl">
 			<span id="login_cname"> <a href="javascript:show()">用户：${cname.cname}</a>
-			</span> <span id="quit_login"> <a href="user/quit?url=<%=request.getRequestURI()%>">[退出]</a>
+			</span>
+			<span style="display: none" id="cid">${cname.cid}</span>
+			 <span id="quit_login"> <a href="user/quit?url=<%=request.getRequestURI()%>">[退出]</a>
 			</span>
 		</div>
 		<div class="other-product-wapper float-r">

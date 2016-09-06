@@ -5,23 +5,20 @@ var right='';
 var QuizData;
 var length;
 $(function(){
+	var cid=$("#cid").val();
+	alert(cid);
 	$.post("quiz/findAllDiffQuizs",function(data){
 			QuizData=data;
 			length=data.length;
 			if($.cookie('index')==undefined || $.cookie('index')==null ||  $.cookie('index')==0){
-				alert("index"+index);
 				showQuiz(data[0]);
 			}else{
 				index=$.cookie('index');
-				alert("cookieIndex=="+index);
 				showQuiz(data[index]);
 				
 			}
 	},"json");
-	var userid=$("#login_cname").val();
-	
 });
-
 function showNext(){
 	if(index<length-1 && index>=0){
 		index++;
@@ -51,7 +48,7 @@ function showQuiz(data){
 	right=answers[answers.length-1];
 	var img='<img src="'+data.pic+'"/>';
 	for(var i=0;i<answers.length-1;i++){
-		str+='<p  data-answer="16" onclick="choseAnswer(\''+answers[i]+'\','+i+')" class="choseP">';
+		str+='<p  data-answer="16" onclick="choseAnswer(\''+answers[i]+'\','+i+','+data.qid+','+data.errTotal+')" class="choseP">';
 			str+='<i id="optionImg'+i+'" ></i><span style="font-size: 18px;">'+answers[i]+'</span>';
 				str+='</p>';
 	}
@@ -61,7 +58,8 @@ function showQuiz(data){
 	$("#options-container").html(str);
 	$("#quizPics").html(img);
 }
-function choseAnswer(answer,i){
+function choseAnswer(answer,i,qid,errTotal){
+	var cid=$("#cid").text();
 	/*alert(answer.charAt(0));*/
 	var answer=answer.charAt(0);
 	alert("right:"+right);
@@ -84,6 +82,17 @@ function choseAnswer(answer,i){
 		case 'D':
 			$("#optionImg"+3).css({"background-image":"url(images/optionRight.png)"});break;
 		}
+		/*	记录用户的错题
+		*/	
+		var errorSave=qid;
+	if(cid>0){
+		$.post("selfErrors/saveSelfErrors",{"cid":cid,"errorSave":errorSave},function(data){
+			if(data){
+				alert(data);
+			}
+		},"json");
 		$(".choseP").removeAttr("onclick");
+		}
 	}
+	
 }

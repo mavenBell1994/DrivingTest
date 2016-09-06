@@ -69,19 +69,17 @@ commit;
 --管理员表carAdmin
 drop table carAdmin;
 create table carAdmin(
-		aid int primary key ,
-		aname varchar2(20),
-		apwassword	varchar2(20),
-		super int,          --只能使用1或0代表是否
-				
-		status varchar2(10) --使用SA，正常，注销，使用中
+		aid number primary key ,
+		aname varchar2(20) unique,
+		apwd	varchar2(20),
+		issuper number,          --1为超级管理员，0为普通管理员
+		status number          --1正常，可以登录，0使用中，有人在使用无法登录
 );
 		
 drop sequence seq_caradmin_aid;
 create sequence seq_caradmin_aid start with 1001 increment by 1;
-insert into carAdmin values ( seq_caradmin_aid.nextval , 'sa', 'a', 1 , 'SA' );--super管理员
-insert into carAdmin values ( seq_caradmin_aid.nextval , 'admin', 'a' , 0 , '正常' );--默认普通管理员
---insert into carAdmin values ( seq_caradmin_aid.nextval , ? , ? , ? , "正常" );//添加管理员模板
+insert into carAdmin values ( seq_caradmin_aid.nextval , 'lc','a',1,1 );--super管理员
+insert into carAdmin values ( seq_caradmin_aid.nextval , 'hmm','a',0,1 );--默认普通管理员
 select * from carAdmin;
 
 

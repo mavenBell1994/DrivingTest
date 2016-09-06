@@ -80,11 +80,11 @@
 								</a>
 							</div>
 							<div class="panel panel-default menu-first">
-								<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
 									<i class="icon-user-md icon-large"></i> 管理员管理</a>
 								</a>
 
-								<div id="collapseOne" class="panel-collapse collapse in">
+								<div id="collapseOne" class="panel-collapse collapse">
 									<ul class="nav nav-list menu-second">
 										<!--<li>
 											<a href="p1.jsp"><i class="icon-user"></i> 表格p1留着做样本</a>
@@ -125,7 +125,7 @@
 									<i class="icon-book icon-large"></i> 题库管理</a>
 								</a>
 
-								<div id="collapseThree" class="panel-collapse collapse">
+								<div id="collapseThree" class="panel-collapse collapse in">
 									<ul class="nav nav-list menu-second">
 										<li>
 											<a href="checkAllQuiz.jsp"><i class="icon-user"></i> 查看题库</a>
@@ -144,7 +144,7 @@
 							</div>
 
 							<div class="panel panel-default menu-first">
-								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
 									<i class="icon-book icon-large"></i> 测试管理</a>
 								</a>
 

@@ -82,7 +82,6 @@
 							<div class="panel panel-default menu-first">
 								<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 									<i class="icon-user-md icon-large"></i> 管理员管理</a>
-								</a>
 
 								<div id="collapseOne" class="panel-collapse collapse in">
 									<ul class="nav nav-list menu-second">
@@ -104,7 +103,6 @@
 							<div class="panel panel-default menu-first">
 								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 									<i class="icon-book icon-large"></i> 用户管理</a>
-								</a>
 								<div id="collapseTwo" class="panel-collapse collapse">
 									<ul class="nav nav-list menu-second">
 										<li>
@@ -123,7 +121,6 @@
 							<div class="panel panel-default menu-first">
 								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 									<i class="icon-book icon-large"></i> 题库管理</a>
-								</a>
 
 								<div id="collapseThree" class="panel-collapse collapse">
 									<ul class="nav nav-list menu-second">
@@ -146,7 +143,6 @@
 							<div class="panel panel-default menu-first">
 								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
 									<i class="icon-book icon-large"></i> 测试管理</a>
-								</a>
 
 								<div id="collapseFour" class="panel-collapse collapse">
 									<ul class="nav nav-list menu-second">
@@ -156,7 +152,7 @@
 										<li>
 											<a href="checkDifficulty.jsp"><i class="icon-edit"></i> 查看难题</a>
 										</li>
-
+											
 									</ul>
 								</div>
 							</div>
@@ -192,7 +188,7 @@
 						<table class="table table-bordered table-striped text-center bg-info">
 							<thead>
 								<tr class="info">
-									<th class="text-center" check="true"></th>
+									<th class="text-center" checkbox="true"></th>
 									<th class="text-center">序号</th>
 									<th class="text-center">用户名</th>
 									<th class="text-center">状态</th>

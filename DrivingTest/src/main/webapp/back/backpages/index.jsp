@@ -196,11 +196,7 @@
 				document.body.appendChild(s)
 			})();
 
-			$(function() {
-				$('dt').click(function() {
-					$(this).parent().find('dd').show().end().siblings().find('dd').hide();
-				});
-			});
+
 
 		</script>
 	</body>

@@ -30,7 +30,6 @@ public class RegisterHandler {
 	private JavaMailSender mailSender;
 	@ModelAttribute
 	public void getModel(ModelMap map){
-		
 			map.put("cname",new User());
 		
 	}
@@ -63,8 +62,10 @@ public class RegisterHandler {
 					getSendContent(request,user.getCname()),
 					"18274763345@163.com",
 					user.getEmail());
+			System.out.println("邮件发送了");
 			return "redirect:/index.jsp";
 		}
+		System.out.println("注册失败");
 		return "register";
 	}
 	@RequestMapping(value="/quit",params={"url"})

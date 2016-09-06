@@ -11,7 +11,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from caruser where cname=#{cname} 
 	</select>
 	<insert id="register" parameterType="User" >
-		insert into CARUSER values(seq_cid.nextval,#{cname},#{cpwd},#{email},'','','','',0,sysdata)
+		insert into CARUSER values(seq_cid.nextval,#{cname},#{cpwd},#{email},'','','','',0,sysdate)
 	</insert>
 	<update id="active">
 		update caruser set status=1 where cname=#{cname} 

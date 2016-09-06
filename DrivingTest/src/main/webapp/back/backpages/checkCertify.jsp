@@ -102,7 +102,7 @@
 								</div>
 							</div>
 							<div class="panel panel-default menu-first">
-								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 									<i class="icon-book icon-large"></i> 用户管理</a>
 								</a>
 								<div id="collapseTwo" class="panel-collapse collapse">

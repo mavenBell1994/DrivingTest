@@ -102,7 +102,7 @@
 								</div>
 							</div>
 							<div class="panel panel-default menu-first">
-								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
 									<i class="icon-book icon-large"></i> 用户管理</a>
 								</a>
 								<div id="collapseTwo" class="panel-collapse collapse">
@@ -121,7 +121,7 @@
 								</div>
 							</div>
 							<div class="panel panel-default menu-first">
-								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
 									<i class="icon-book icon-large"></i> 题库管理</a>
 								</a>
 
@@ -144,7 +144,7 @@
 							</div>
 
 							<div class="panel panel-default menu-first">
-								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
 									<i class="icon-book icon-large"></i> 测试管理</a>
 								</a>
 

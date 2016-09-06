@@ -59,7 +59,7 @@
 								<a href="#"></a>
 							</li>
 							<li class="text-center">
-								<a href="../login.html"><span class="text-primary">退出</span></a>
+								<a href="../login.jsp"><span class="text-primary">退出</span></a>
 							</li>
 						</ul>
 					</li>
@@ -75,7 +75,7 @@
 						<br/>
 						<div class="panel-group sidebar-menu" id="accordion" aria-multiselectable="true">
 							<div class="panel panel-default menu-first menu-first-active">
-								<a data-toggle="collapse" data-parent="#accordion" href="index.html" aria-expanded="true" aria-controls="collapseOne">
+								<a data-toggle="collapse" data-parent="#accordion" href="index.jsp" aria-expanded="true" aria-controls="collapseOne">
 									<i class="icon-home icon-large"></i> 主页
 								</a>
 							</div>
@@ -87,16 +87,16 @@
 								<div id="collapseOne" class="panel-collapse collapse in">
 									<ul class="nav nav-list menu-second">
 										<!--<li>
-											<a href="p1.html"><i class="icon-user"></i> 表格p1留着做样本</a>
+											<a href="p1.jsp"><i class="icon-user"></i> 表格p1留着做样本</a>
 										</li>-->
 										<li>
-											<a href="p2.html"><i class="icon-edit"></i> 图表p2留着做样本</a>
+											<a href="p2.jsp"><i class="icon-edit"></i> 图表p2留着做样本</a>
 										</li>
 										<li>
-											<a href="checkAdmin.html"><i class="icon-trash"></i> 查看所有管理员</a>
+											<a href="checkAdmin.jsp"><i class="icon-trash"></i> 查看所有管理员</a>
 										</li>
 										<li>
-											<a href="checkAdminSelf.html"><i class="icon-list"></i>查看当前管理员</a>
+											<a href="checkAdminSelf.jsp"><i class="icon-list"></i>查看当前管理员</a>
 										</li>
 									</ul>
 								</div>
@@ -170,7 +170,7 @@
 						<br/>
 						<ol class="breadcrumb">
 							<li>
-								<a href="index.html"><span class="glyphicon glyphicon-home"></span>&nbsp;后台首页</a>
+								<a href="index.jsp"><span class="glyphicon glyphicon-home"></span>&nbsp;后台首页</a>
 							</li>
 							<li class="active">系统管理 - 表格</li>
 						</ol>
@@ -192,6 +192,7 @@
 						<table class="table table-bordered table-striped text-center bg-info">
 							<thead>
 								<tr class="info">
+									<th class="text-center" check="true"></th>
 									<th class="text-center">序号</th>
 									<th class="text-center">用户名</th>
 									<th class="text-center">状态</th>

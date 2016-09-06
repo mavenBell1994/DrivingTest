@@ -18,6 +18,8 @@ $(function(){
 				
 			}
 	},"json");
+	var userid=$("#login_cname").val();
+	
 });
 
 function showNext(){
@@ -60,7 +62,6 @@ function showQuiz(data){
 	$("#quizPics").html(img);
 }
 function choseAnswer(answer,i){
-	
 	/*alert(answer.charAt(0));*/
 	var answer=answer.charAt(0);
 	alert("right:"+right);

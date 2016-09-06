@@ -39,7 +39,7 @@ insert into quiz values (seq_qid.nextval,' 这个标志是何含义？  ','A. �
 insert into quiz values (seq_qid.nextval,' 这一组交通警察手势是什么信号？ ','A. 左转弯待转信号@B. 左转弯信号@C. 减速慢行信号@D. 右转弯信号@A',1,null,'选择题',400);
 insert into quiz values (seq_qid.nextval,' 湿滑路面制动过程中，发现车辆偏离方向，以下做法正确的是？ ','A. 连续轻踩轻放制动踏板@B. 任意踩制动踏板@C. 不要踩制动踏板@D. 用力踩制动踏板@C',1,null,'选择题',500);
 insert into quiz values (seq_qid.nextval,' 驾驶机动车在道路上靠路边停车过程中如何使用灯光？   ','A. 变换使用远近光灯@B. 开启危险报警闪光灯@C. 不用指示灯提示@D. 提前开启右转向灯@D',1,null,'选择题',300);
-
+insert into quiz values (seq_qid.nextval,'  在这种天气条件下行车如何使用灯光？   ','A. 使用近光灯@B. 使用雾灯@C. 使用远光灯@D. 不使用灯光@A',1,'../pics/quiz1.png','选择题',300);
 select *from quiz;
 --章节表
 drop table part;
@@ -113,9 +113,11 @@ drop table SelfErrors ;
 create table SelfErrors(
        cid	int,
        constraint SelfErrors_caruser_cid foreign key(cid) references caruser(cid),
-       qID varchar2(4000)        --进行字符拼接。1,2,23,55   ,可以使用@或者,    
-       
+       errorSave varchar2(4000),        --进行字符拼接。1,2,23,55   ,可以使用@或者,    
+       save varchar2(4000)
 );
+insert into SelfErrors values();
+
 --样例   insert into SelfErrors values ( ?,? );			
 select * form SelfErrors ;
 select * from testRecord;

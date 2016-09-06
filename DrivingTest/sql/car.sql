@@ -2,7 +2,7 @@
 drop table caruser;
 create table CarUSER(
 	cid number primary key,
-	cname varchar2(20),
+	cname varchar2(20) unique,
 	cpwd varchar2(20),
 	email varchar2(20),
 	icon varchar2(40),          --头像
@@ -16,6 +16,9 @@ select *from CarUSER
 drop sequence seq_cid;
 create sequence seq_cid start with 1;
 delete from CarUSER;
+
+insert into CARUSER values(seq_cid.nextval,'lc','123456','15273423853@163.com','','','','',0,sysdate)
+
 insert into caruser values(seq_cid.nextval,'hmm','a','2947432415@qq.com',null,'18274727632','女',null,0,to_date('2016-3-4','yyyy-MM-dd'));
 insert into CARUSER values(seq_cid.nextval,'lc','123456','','13i59189@163.com','','男','',1,sysdate);
 

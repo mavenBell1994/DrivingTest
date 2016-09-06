@@ -29,6 +29,10 @@ public class User {
 		this.status = status;
 		this.regdate = regdate;
 	}
+	public User(String cname, String cpwd) {
+		this.cname = cname;
+		this.cpwd = cpwd;
+	}
 	public Integer getCid() {
 		return cid;
 	}

@@ -14,7 +14,6 @@
 	color: red;
 }
 
-
 #login_cname {
 	margin-left: 50px;
 }
@@ -36,10 +35,12 @@
 #verify {
 	width: 80px;
 }
-#errormsg{
+
+#errormsg {
 	color: red;
 	margin-left: 50px;
 }
+
 #verifyimg {
 	display: block;
 	float: right;
@@ -144,7 +145,7 @@
 									<li class="li0"><a target="_blank"
 										href="page/completeSimulation.jsp">全真模拟</a></li>
 									<li><a target="_blank" href="page/orderExercise.jsp">顺序练习</a></li>
-									<li><a  href="javascript:void(0)" onclick="toPageDiff()">难题练习</a></li>
+									<li><a href="javascript:void(0)" onclick="toPageDiff()">难题练习</a></li>
 								</ul></li>
 							<li class="li1 ke2"><a target="_blank"
 								href="http://www.jiakaobaodian.com/mnks/kemu2/car-hengyang.html"><span>科目二小路考</span></a>
@@ -283,7 +284,7 @@
 				</div>
 				<div class="modal-body">
 					<!-- 登陆表单 -->
-					<form class="form-horizontal" role="form" action="user/login"
+					<form class="form-horizontal" role="form" action="login/login"
 						method="post" id="login" onsubmit="return login()">
 						<div class="form-group">
 							<label for="userName" class="col-sm-3 control-label">用户名:</label>
@@ -302,12 +303,11 @@
 						<div class="form-group">
 							<label for="captcha" class="col-sm-3 control-label ">验证码:</label>
 							<div class="col-sm-8" style="width: 100px;">
-								<input type="text" class="form-control" id="verify" onblur="checkverify()"
-									name="cname">
+								<input type="text" class="form-control" id="verify"
+									onblur="checkverify()" name="cname">
 							</div>
 							<span id="verifyimg"><img id="signcode" alt="验证码"
-								src="signcode/authcode">
-								<a href="javascript:changeimg()">看不清？</a></span>
+								src="signcode/authcode"> <a href="javascript:changeimg()">看不清？</a></span>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-3 col-sm-10">
@@ -365,28 +365,47 @@
 		function login() {
 			if ($("#cname").val().trim() == "" || $("#cpwd").val().trim() == "") {
 				$("#errormsg").html("账号或密码不能为空！");
-				show();
 				return false;
 			} else  if($("#verify").val().trim()==""){
 				$("#errormsg").html("请输入验证码！");
 				return false;
-			}else if($("#errormsg").html()==""){
+			}else if($("#errormsg").text()!=""){
 				
-				return true;
+				return false;
+			}else{
+				$.post("login/login",{"cname":$("#cname").val().trim(),"cpwd":$("#cpwd").val().trim()},function(data){
+					if(!data){
+						$("#errormsg").html("账号或密码错误！");
+						show();
+						console.info(data+"登录失败");
+						return false;
+					}else{
+						console.info(data+"登录成功");
+						location.href="index.jsp";
+						return false;
+					}
+				});
+				return false;
 			}
 		}
 		function changeimg() {
 			$('#signcode').attr('src', 'signcode/authcode?abc=' + Math.random());//链接后添加Math.random，确保每次产生新的验证码，避免缓存问题。\
 		}
 		function checkverify(){
-			$.post("login/checkverify",{"verify":$("#verify").val()},function(data){
-				if(data=="true"){
-					$("#errormsg").html("");
-					return true;
-				}
-				$("#errormsg").html("验证码输入有误！");
+			if($("#verify").val().trim()==""){
+				$("#errormsg").html("请输入验证码！");
 				return false;
+			}else{
+			$.post("login/checkverify",{"verify":$("#verify").val()},function(data){
+				if(data.length>4){
+					$("#errormsg").html("验证码输入有误！");
+					changeimg();
+				}else{
+					$("#errormsg").html("");
+				}
 			});
+			}
+		}
 		function toPageDiff(){
 			/*使cookie里的值变为undefined,必须指明路径  */
 			alert($.cookie('index'));
@@ -395,7 +414,7 @@
 			 alert($.cookie('index'));
 			location.href="page/difficultExercise.jsp";
 		}
-		}
+		
 	</script>
 </body>
 </html>

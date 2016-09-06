@@ -71,8 +71,6 @@ public class RegisterHandler {
 	public String quit(HttpSession session,HttpServletRequest request,String url){
 		session.removeAttribute("cname");
 		url.substring(12);
-		System.out.println(url);
-		System.out.println(url.substring(13)+".....");
 		return "redirect:/"+url.substring(13);
 		
 	}

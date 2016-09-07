@@ -9,5 +9,5 @@ public interface QuizService {
 	List<Quiz> findAllDiffQuizs();
 
 	Quiz findDiffQuizById(int qid);
-
+	boolean addErrTotal(int qid);
 }

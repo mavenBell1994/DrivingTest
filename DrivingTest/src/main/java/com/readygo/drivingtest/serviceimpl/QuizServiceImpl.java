@@ -23,5 +23,8 @@ public class QuizServiceImpl implements QuizService {
 	public Quiz findDiffQuizById(int qid) {
 		return quizMapper.getDiffQuizById(qid);
 	}
-
+	@Override
+	public boolean addErrTotal(int qid) {
+		return quizMapper.updateErrorTotal(qid)>0;
+	}
 }

@@ -157,20 +157,19 @@ create table SelfErrors(
        errorSave varchar2(4000),        --进行字符拼接。1,2,23,55   ,可以使用@或者,    
        save varchar2(4000)
 );
-insert into SelfErrors values();
-
+insert into SelfErrors values(1,'','');
 --样例   insert into SelfErrors values ( ?,? );			
-select * form SelfErrors ;
+select * from SelfErrors ;
 select * from testRecord;
 select * from carAdmin;
 select * from CARUSER;
+update SelfErrors  set errorSave=(errorSave||'@'||4) where cid=1
 
 select * from (select qq*,rownum rn from (select * from quiz  order by errTotal) q )qqq  where qqq.rn<=100;
 --查询前100个难题              
 select *from(
 select q.*,rownum rn from(select * from quiz  order by errTotal desc) q
 ) where rn<=100
-
 
 select qq.* from
 (select q.*,rownum rn from quiz q  order by errTotal desc) qq where 100>=rn;

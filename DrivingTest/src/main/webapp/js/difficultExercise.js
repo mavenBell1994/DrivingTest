@@ -4,24 +4,40 @@ var index=0;
 var right='';
 var QuizData;
 var length;
+var rightCount=0;
+var errorCount=0;
+var rightRate=0;
 $(function(){
+	var cid=$("#cid").val();
+	if($.cookie('rightCount')!=undefined){
+		rightCount=$.cookie('rightCount');
+	}
+	$("#answerRight").text(rightCount+"题");
+	if($.cookie('errorCount')!=undefined){
+		errorCount=$.cookie('errorCount');
+	}
+	$("#answerError").text(errorCount+"题");
+	rightCount=parseInt(rightCount);
+	errorCount=parseInt(errorCount);
+	if((rightCount+errorCount)!=0){
+			rightRate=(100*rightCount/(rightCount+errorCount)).toFixed(0);
+			alert(rightRate);
+			$("#rightRate").text(rightRate+"%");
+	}else{
+		$("#rightRate").text(100+"%");
+	}
 	$.post("quiz/findAllDiffQuizs",function(data){
 			QuizData=data;
 			length=data.length;
 			if($.cookie('index')==undefined || $.cookie('index')==null ||  $.cookie('index')==0){
-				alert("index"+index);
 				showQuiz(data[0]);
 			}else{
 				index=$.cookie('index');
-				alert("cookieIndex=="+index);
 				showQuiz(data[index]);
-				
 			}
+			
 	},"json");
-	var userid=$("#login_cname").val();
-	
 });
-
 function showNext(){
 	if(index<length-1 && index>=0){
 		index++;
@@ -41,7 +57,10 @@ function showPre(){
 	
 }
 //显示一条测试题的内容data，题号应该和data对应
+var quiz;
 function showQuiz(data){
+	showFavorSave(data.qid);
+	quiz=data;
 	//num题号
 	var num=index;
 		num++;
@@ -51,7 +70,7 @@ function showQuiz(data){
 	right=answers[answers.length-1];
 	var img='<img src="'+data.pic+'"/>';
 	for(var i=0;i<answers.length-1;i++){
-		str+='<p  data-answer="16" onclick="choseAnswer(\''+answers[i]+'\','+i+')" class="choseP">';
+		str+='<p  data-answer="16" onclick="choseAnswer(\''+answers[i]+'\','+i+','+data.qid+','+data.errTotal+')" class="choseP">';
 			str+='<i id="optionImg'+i+'" ></i><span style="font-size: 18px;">'+answers[i]+'</span>';
 				str+='</p>';
 	}
@@ -61,7 +80,8 @@ function showQuiz(data){
 	$("#options-container").html(str);
 	$("#quizPics").html(img);
 }
-function choseAnswer(answer,i){
+function choseAnswer(answer,i,qid,errTotal){
+	var cid=$("#cid").text();
 	/*alert(answer.charAt(0));*/
 	var answer=answer.charAt(0);
 	alert("right:"+right);
@@ -69,6 +89,17 @@ function choseAnswer(answer,i){
 		$("#optionImg"+i).css({"background-image":"url(images/optionRight.png)"});
 		var type='<p style="color:#2da5ec;font-size: 18px;">回答正确!</p>';
 		$("#qtype").html(type);
+		//答对几题
+		rightCount++;
+		$.cookie('rightCount',rightCount,{path:'/'});
+		if(cid>0){
+			$.post("selfErrors/removeErrorSave",{"cid":cid,"errorSave":qid},function(data){
+				if(data){
+					alert("已经从错题表中移除");
+				}
+			},"json");
+		}
+		$("#answerRight").text(rightCount+"题")
 		$(".choseP").removeAttr("onclick");
 	}else{
 		$("#optionImg"+i).css({"background-image":"url(images/optionError.png)"});
@@ -84,6 +115,44 @@ function choseAnswer(answer,i){
 		case 'D':
 			$("#optionImg"+3).css({"background-image":"url(images/optionRight.png)"});break;
 		}
+		//答对几题
+		errorCount++;
+		$.cookie('errorCount',errorCount,{path:'/'});
+		$("#answerError").text(errorCount+"题")
+		/*	记录用户的错题
+		*/	
+		var errorSave=qid;
+	if(cid>0){
+		$.post("selfErrors/saveSelfErrors",{"cid":cid,"errorSave":errorSave},function(data){
+			if(data){
+				alert("加入到了错体表");
+			}
+		},"json");
 		$(".choseP").removeAttr("onclick");
+		}
 	}
+	
+	 rightRate=(rightCount/(rightCount+errorCount)).toFixed(2)*100;
+	$("#rightRate").text(rightRate+"%");
+}
+function favorSave(){
+	var cid=$("#cid").text();
+	var qid=quiz.qid;
+	if(cid>0){
+		$.post("selfErrors/addfavorSave",{"cid":cid,"save":qid},function(data){
+			/*if(data){
+				$("#favor-tag").css({"background-image":"url(images/fovor1.png)"});
+			}*/
+		},"json")
+	}
+}
+function showFavorSave(qid){
+	$.post("selfErrors/getFavorSave",function(data){
+		var favorSaves=data[0].save.split("@");
+		for(var i=1;i<favorSaves.length;i++){
+			if(qid==favorSaves[i]){
+				$("#favor-tag").css({"background-image":"url(images/fovor1.png)"});
+			}
+		}
+	},"json");
 }

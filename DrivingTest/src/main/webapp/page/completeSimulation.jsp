@@ -13,7 +13,6 @@
 <link rel="stylesheet" id="bsCss">
 <link href="css/public.css" rel="stylesheet" type="text/css">
 <link href="css/top.css" rel="stylesheet" type="text/css">
-
 <!--bootstrap的引入  -->
 <script src="bootstrap-3.3.7/js/jquery.min.js"></script>
 <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -266,6 +265,7 @@
 
 	<script src="bootstrap-3.3.7/js/jquery.min.js"></script>
 	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/formlogin.js"></script>
 	<!-- 模态框（Modal） -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true"
@@ -285,40 +285,52 @@
 				</div>
 				<div class="modal-body">
 					<!-- 登陆表单 -->
-					<form class="form-horizontal" role="form">
+					<form class="form-horizontal" role="form" action=""
+						method="post" id="login" onsubmit="return login()">
 						<div class="form-group">
 							<label for="userName" class="col-sm-3 control-label">用户名:</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="userName"
+								<input type="text" class="form-control" id="cname" name="cname"
 									placeholder="请输入用户名">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="password" class="col-sm-3 control-label">密码:</label>
+							<label for="password" class="col-sm-3 control-label">密&nbsp;&nbsp;&nbsp;码:</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="password"
-									placeholder="请输入密码">
+								<input type="password" class="form-control" id="cpwd"
+									name="cpwd" placeholder="请输入密码">
 							</div>
+						</div>
+						<div class="form-group">
+							<label for="captcha" class="col-sm-3 control-label ">验证码:</label>
+							<div class="col-sm-8" style="width: 100px;">
+								<input type="text" class="form-control" id="verify"
+									onblur="checkverify()" name="cname">
+							</div>
+							<span id="verifyimg"><img id="signcode" alt="验证码"
+								src="signcode/authcode"> <a href="javascript:changeimg()">看不清？</a></span>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-3 col-sm-10">
 								<div class="checkbox">
 									<label> <input type="checkbox">请记住我
-									</label>
+									</label><span id="errormsg"></span>
 								</div>
 							</div>
 						</div>
 						<div class="form-group">
-							&nbsp;&nbsp; <a href="#" class="text-primary col-sm-offset-3">
-								立即注册</a> <a href="#" class="text-primary pull-right col-sm-4">&nbsp;&nbsp;找回密码</a>
+							&nbsp;&nbsp; <a href="page/register.jsp"
+								class="text-primary col-sm-offset-3"> 立即注册</a> <a href="#"
+								class="text-primary pull-right col-sm-4">&nbsp;&nbsp;找回密码</a>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">
 								<br />
-								<button type="submit" class="btn btn-info btn-lg center-block"
-									style="width: 240px;">登 录</button>
+								<button class="btn btn-info btn-lg center-block"
+									style="width: 240px;" type="submit">登 录</button>
 							</div>
 						</div>
+
 					</form>
 				</div>
 			</div>

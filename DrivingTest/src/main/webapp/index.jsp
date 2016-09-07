@@ -7,54 +7,12 @@
 <head>
 <base href="/DrivingTest/">
 <title>【驾考宝典】</title>
-<style type="text/css">
-#msgerror {
-	margin-left: 60px;
-	font-size: 12px;
-	color: red;
-}
-
-#login_cname {
-	margin-left: 50px;
-}
-
-#login_cname a {
-	text-decoration: none;
-	font-size: 13px;
-	font-weight: 700;
-}
-</style>
-
 <link rel="stylesheet" id="bsCss">
 <link href="css/public.css" rel="stylesheet" type="text/css">
 <link href="css/main.css" rel="stylesheet" type="text/css">
 <link href="css/news.css" rel="stylesheet" type="text/css">
 <link href="css/home.css" rel="stylesheet" type="text/css">
 <link href="css/top.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-#verify {
-	width: 80px;
-}
-
-#errormsg {
-	color: red;
-	margin-left: 50px;
-}
-
-#verifyimg {
-	display: block;
-	float: right;
-	width: 120px;
-	text-align: right;
-	line-height: 34px;
-	height: 34px;
-	margin-right: 60px;
-}
-
-#verifyimg a {
-	margin-left: 5px;
-}
-</style>
 
 </head>
 <body class=" " id="body">
@@ -284,7 +242,7 @@
 				</div>
 				<div class="modal-body">
 					<!-- 登陆表单 -->
-					<form class="form-horizontal" role="form" action="login/login"
+					<form class="form-horizontal" role="form" action=""
 						method="post" id="login" onsubmit="return login()">
 						<div class="form-group">
 							<label for="userName" class="col-sm-3 control-label">用户名:</label>
@@ -340,72 +298,9 @@
 	<!-- /.modal -->
 	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
 	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/jquery.cookie.js">
-		
-	</script>
+	<script type="text/javascript" src="js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="js/formlogin.js"></script>
 	<script>
-		function show() {
-			$("#cname").val("");
-			$("#cpwd").val("");
-			$("#verify").val("");
-			changeimg();
-			$("#bsCss").attr("href", "bootstrap-3.3.7/css/bootstrap.min.css");
-			$("#navUl li").css("width", "98px");
-			$("#navUl").css("height", "70px");
-			$('#myModal').modal({
-				keyboard : true,
-				show : true,//设置模式窗关闭
-				backdrop : 'static',
-			});
-
-			$('#myModal').on('hide.bs.modal', function() {
-				$("#bsCss").attr("href", "");
-			});
-		}
-		function login() {
-			if ($("#cname").val().trim() == "" || $("#cpwd").val().trim() == "") {
-				$("#errormsg").html("账号或密码不能为空！");
-				return false;
-			} else  if($("#verify").val().trim()==""){
-				$("#errormsg").html("请输入验证码！");
-				return false;
-			}else if($("#errormsg").text()!=""){
-				
-				return false;
-			}else{
-				$.post("login/login",{"cname":$("#cname").val().trim(),"cpwd":$("#cpwd").val().trim()},function(data){
-					if(!data){
-						$("#errormsg").html("账号或密码错误！");
-						show();
-						console.info(data+"登录失败");
-						return false;
-					}else{
-						console.info(data+"登录成功");
-						location.href="index.jsp";
-						return false;
-					}
-				});
-				return false;
-			}
-		}
-		function changeimg() {
-			$('#signcode').attr('src', 'signcode/authcode?abc=' + Math.random());//链接后添加Math.random，确保每次产生新的验证码，避免缓存问题。\
-		}
-		function checkverify(){
-			if($("#verify").val().trim()==""){
-				$("#errormsg").html("请输入验证码！");
-				return false;
-			}else{
-			$.post("login/checkverify",{"verify":$("#verify").val()},function(data){
-				if(data.length>4){
-					$("#errormsg").html("验证码输入有误！");
-					changeimg();
-				}else{
-					$("#errormsg").html("");
-				}
-			});
-			}
-		}
 		function toPageDiff(){
 			/*使cookie里的值变为undefined,必须指明路径  */
 			alert($.cookie('index'));
@@ -414,7 +309,6 @@
 			 alert($.cookie('index'));
 			location.href="page/difficultExercise.jsp";
 		}
-		
 	</script>
 </body>
 </html>

@@ -1,4 +1,43 @@
-﻿--用户表
+/*注意，使用的是system进行操作*/
+/*创建表空间和数据文件分为四步 */
+
+/*第1步：创建临时表空间  */
+create temporary tablespace car_temp 
+tempfile 'F:\mygit\orcl\car_temp.dbf' --修改为某个路径，最后放到项目路径下，可以打包
+size 50m  
+autoextend on  
+next 50m maxsize 20480m  
+extent management local;  
+ 
+/*第2步：创建数据表空间  */
+create tablespace car_data  
+logging  
+datafile 'F:\mygit\orcl\car_data.dbf' --修改为某个路径，两个dbf应当放一个目录下
+size 50m  
+autoextend on  
+next 50m maxsize 20480m  
+extent management local;  
+ 
+/*第3步：创建用户并指定表空间  */
+create user car identified by a  
+default tablespace car_data  
+temporary tablespace car_temp;  
+/*如果已创建car用户，修改用户的默认表空间*/ 
+alter user car 
+default tablespace car_data  
+temporary tablespace car_temp;  
+
+/*第4步：给用户授予权限  */
+grant connect,resource,dba to car;
+commit;
+
+
+
+---------------------------------
+---------------------------------
+
+
+--用户表
 drop table caruser;
 create table CarUSER(
 	cid number primary key,

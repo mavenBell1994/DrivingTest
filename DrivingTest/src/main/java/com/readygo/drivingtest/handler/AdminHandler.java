@@ -21,5 +21,9 @@ public class AdminHandler {
 	@Autowired
 	private UserService userService;
 	
+	@RequestMapping("/allAdmin")
+	public void allAdmin(){
+		
+	}
 
 }

@@ -11,8 +11,8 @@
 
 <title>小车科目一难题练习</title>
 <link rel="stylesheet" id="bsCss">
-<link rel="alternate" media="only screen and (max-width: 640px)"
-	href="http://m.jiakaobaodian.com/mnks/exercise/8-car-kemu1-hengyang.html">
+<!-- <link rel="alternate" media="only screen and (max-width: 640px)"
+	href="http://m.jiakaobaodian.com/mnks/exercise/8-car-kemu1-hengyang.html"> -->
 <link href="css/public.css" rel="stylesheet" type="text/css">
 <link href="css/dialog.css" rel="stylesheet" type="text/css">
 <link href="css/main.css" rel="stylesheet" type="text/css">
@@ -85,7 +85,7 @@
 					href="http://www.jiakaobaodian.com/mnks/car-hengyang.html">模拟考试</a><span
 					class="gap">&gt;</span> <a
 					href="http://www.jiakaobaodian.com/mnks/car-kemu1-hengyang.html">科目一</a><span
-					class="gap">&gt;</span> <a class="mylink">难题练习</a>
+					class="gap">&gt;</span> <a class="mylink"  >难题练习</a>
 				</label>
 			</div>
 			<div
@@ -97,7 +97,7 @@
 								<b>难</b>
 								<span id="quizTitle"><!-- 1/100. 对驾驶拼装机动车上路行驶的驾驶人，会受到下列哪种处罚？ --></span> 
 							</p>
-							<span class="favor-tag " data-action="login">收藏</span>
+							<span class="favor-tag " data-action="login" onclick="favorSave()" id="favor-tag">收藏</span>
 							<div class="shiti-wapper cl">
 								<div class="shiti-item-left float-l">
 									<div class="options-container " data-item="options-container" id="options-container">
@@ -142,11 +142,11 @@
 					</div>
 					<div class="tongji-container cl" data-item="tongji-container">
 						<label class="daduinext float-l"><input type="checkbox"
-							checked="checked" data-item="daduinext"><span>答对自动下一题</span></label> <label
-							class="x-dadui float-l">答对：<span>0题</span></label> <label
-							class="x-dacuo float-l">答错：<span>0题</span></label> <label
-							class="x-lv float-l">正确率：<span>100%</span></label> <label
-							class="x-sync float-l" data-action="tips_sync">登录保存做题进度</label>
+							checked="checked" data-item="daduinext"><span>答对自动下一题</span></label> 
+							<label class="x-dadui float-l" >答对：<span id="answerRight"></span></label> 
+							<label class="x-dacuo float-l">答错：<span id="answerError"></span></label> 
+							<label class="x-lv float-l">正确率：<span id="rightRate"></span></label>
+							<label class="x-sync float-l" data-action="tips_sync">登录保存做题进度</label>
 					</div>
 
 					<div class="datika-container close" id="datika-container">

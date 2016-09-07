@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 使用映射接口的方式，命名空间的值必须与映射接口的全限定名一样 -->
+<mapper namespace="com.readygo.drivingtest.mapper.SelfErrorsMapper">
+	<update id="updateErrorSave" parameterType="SelfErrors">
+		update SelfErrors  set errorSave=(errorSave||'@'||#{errorSave}) where cid=#{cid}
+	</update>
+	<update id="updateSave" parameterType="SelfErrors">
+		update SelfErrors  set save=(save||'@'||#{save}) where cid=#{cid}
+	</update>
+	
+	<select id="getSelfErrors" parameterType="int" resultType="SelfErrors" >
+		 select * from SelfErrors where cid=#{cid}
+	</select>
+	<update id="updateRemoveErrorSave" parameterType="string">
+		update SelfErrors  set errorSave=#{errorSave}
+	</update>
+</mapper>

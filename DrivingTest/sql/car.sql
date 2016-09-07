@@ -1,4 +1,43 @@
-﻿--用户表
+/*注意，使用的是system进行操作*/
+/*创建表空间和数据文件分为四步 */
+
+/*第1步：创建临时表空间  */
+create temporary tablespace car_temp 
+tempfile 'F:\mygit\orcl\car_temp.dbf' --修改为某个路径，最后放到项目路径下，可以打包
+size 50m  
+autoextend on  
+next 50m maxsize 20480m  
+extent management local;  
+ 
+/*第2步：创建数据表空间  */
+create tablespace car_data  
+logging  
+datafile 'F:\mygit\orcl\car_data.dbf' --修改为某个路径，两个dbf应当放一个目录下
+size 50m  
+autoextend on  
+next 50m maxsize 20480m  
+extent management local;  
+ 
+/*第3步：创建用户并指定表空间  */
+create user car identified by a  
+default tablespace car_data  
+temporary tablespace car_temp;  
+/*如果已创建car用户，修改用户的默认表空间*/ 
+alter user car 
+default tablespace car_data  
+temporary tablespace car_temp;  
+
+/*第4步：给用户授予权限  */
+grant connect,resource,dba to car;
+commit;
+
+
+
+---------------------------------
+---------------------------------
+
+
+--用户表
 drop table caruser;
 create table CarUSER(
 	cid number primary key,
@@ -117,20 +156,19 @@ create table SelfErrors(
        errorSave varchar2(4000),        --进行字符拼接。1,2,23,55   ,可以使用@或者,    
        save varchar2(4000)
 );
-insert into SelfErrors values();
-
+insert into SelfErrors values(1,'','');
 --样例   insert into SelfErrors values ( ?,? );			
-select * form SelfErrors ;
+select * from SelfErrors ;
 select * from testRecord;
 select * from carAdmin;
 select * from CARUSER;
+update SelfErrors  set errorSave=(errorSave||'@'||4) where cid=1
 
 select * from (select qq*,rownum rn from (select * from quiz  order by errTotal) q )qqq  where qqq.rn<=100;
 --查询前100个难题              
 select *from(
 select q.*,rownum rn from(select * from quiz  order by errTotal desc) q
 ) where rn<=100
-
 
 select qq.* from
 (select q.*,rownum rn from quiz q  order by errTotal desc) qq where 100>=rn;

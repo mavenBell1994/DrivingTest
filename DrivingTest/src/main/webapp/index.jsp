@@ -393,6 +393,8 @@
 /* 			alert($.cookie('index'));
  */			
 			$.cookie('index', '', {path:'/', expires: -1 }); 
+			 $.cookie('rightCount', '', {path:'/', expires: -1 }); 
+			 $.cookie('errorCount', '', {path:'/', expires: -1 }); 
 /* 			 alert($.cookie('index'));
  */			location.href="page/difficultExercise.jsp";
 		}

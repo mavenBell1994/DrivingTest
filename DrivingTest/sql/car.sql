@@ -122,13 +122,13 @@ select * from SelfErrors ;
 select * from testRecord;
 select * from carAdmin;
 select * from CARUSER;
+update SelfErrors  set errorSave=(errorSave||'@'||4) where cid=1
 
 select * from (select qq*,rownum rn from (select * from quiz  order by errTotal) q )qqq  where qqq.rn<=100;
 --查询前100个难题              
 select *from(
 select q.*,rownum rn from(select * from quiz  order by errTotal desc) q
 ) where rn<=100
-
 
 select qq.* from
 (select q.*,rownum rn from quiz q  order by errTotal desc) qq where 100>=rn;

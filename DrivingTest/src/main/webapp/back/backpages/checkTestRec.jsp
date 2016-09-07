@@ -80,10 +80,11 @@
 								</a>
 							</div>
 							<div class="panel panel-default menu-first">
-								<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
 									<i class="icon-user-md icon-large"></i> 管理员管理</a>
+								</a>
 
-								<div id="collapseOne" class="panel-collapse collapse in">
+								<div id="collapseOne" class="panel-collapse collapse">
 									<ul class="nav nav-list menu-second">
 										<!--<li>
 											<a href="p1.jsp"><i class="icon-user"></i> 表格p1留着做样本</a>
@@ -103,6 +104,7 @@
 							<div class="panel panel-default menu-first">
 								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 									<i class="icon-book icon-large"></i> 用户管理</a>
+								</a>
 								<div id="collapseTwo" class="panel-collapse collapse">
 									<ul class="nav nav-list menu-second">
 										<li>
@@ -112,7 +114,7 @@
 											<a href="checkChartInfo.jsp"><i class="icon-edit"></i> 查看聊天记录</a>
 										</li>
 										<li>
-											<a href="checkRoport.jsp"><i class="icon-edit"></i> 查看举报建议</a>
+											<a href="checkReport.jsp"><i class="icon-edit"></i> 查看举报建议</a>
 										</li>
 
 									</ul>
@@ -121,6 +123,7 @@
 							<div class="panel panel-default menu-first">
 								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 									<i class="icon-book icon-large"></i> 题库管理</a>
+								</a>
 
 								<div id="collapseThree" class="panel-collapse collapse">
 									<ul class="nav nav-list menu-second">
@@ -141,10 +144,11 @@
 							</div>
 
 							<div class="panel panel-default menu-first">
-								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
 									<i class="icon-book icon-large"></i> 测试管理</a>
+								</a>
 
-								<div id="collapseFour" class="panel-collapse collapse">
+								<div id="collapseFour" class="panel-collapse collapse in">
 									<ul class="nav nav-list menu-second">
 										<li>
 											<a href="checkTestRec.jsp"><i class="icon-user"></i> 查看测试成绩</a>
@@ -152,7 +156,7 @@
 										<li>
 											<a href="checkDifficulty.jsp"><i class="icon-edit"></i> 查看难题</a>
 										</li>
-											
+
 									</ul>
 								</div>
 							</div>
@@ -187,23 +191,10 @@
 						<br/><br/>
 						<table class="table table-bordered table-striped text-center bg-info">
 							<thead>
-								<tr class="info">
-									<th class="text-center" checkbox="true"></th>
-									<th class="text-center">序号</th>
-									<th class="text-center">用户名</th>
-									<th class="text-center">状态</th>
-									<th class="text-center">操作</th>
-								</tr>
+								
 							</thead>
 							<tbody>
-								<tr>
-									<td>1</td>
-									<td>mmss</td>
-									<td>正常</td>
-									<td>
-										<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit">编辑</a>
-										<a href="#" class="btn btn-primary btn-sm">删除</a>
-									</td>
+
 									<!-- Modal begin-->
 									
 									<!--添加-->
@@ -296,18 +287,7 @@
 									</div>
 									
 									<!--Modal end-->
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>mmss</td>
-									<td>正常</td>
-									<td>
-										<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit" data-whatever="编辑">编辑</a>
-										<a href="#" class="btn btn-primary btn-sm">删除</a>
-									</td>
-								</tr>
 
-								
 							</tbody>
 						</table>
 						<!--

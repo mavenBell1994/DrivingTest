@@ -1,8 +1,47 @@
-﻿--用户表
+/*注意，使用的是system进行操作*/
+/*创建表空间和数据文件分为四步 */
+
+/*第1步：创建临时表空间  */
+create temporary tablespace car_temp 
+tempfile 'F:\mygit\orcl\car_temp.dbf' --修改为某个路径，最后放到项目路径下，可以打包
+size 50m  
+autoextend on  
+next 50m maxsize 20480m  
+extent management local;  
+ 
+/*第2步：创建数据表空间  */
+create tablespace car_data  
+logging  
+datafile 'F:\mygit\orcl\car_data.dbf' --修改为某个路径，两个dbf应当放一个目录下
+size 50m  
+autoextend on  
+next 50m maxsize 20480m  
+extent management local;  
+ 
+/*第3步：创建用户并指定表空间  */
+create user car identified by a  
+default tablespace car_data  
+temporary tablespace car_temp;  
+/*如果已创建car用户，修改用户的默认表空间*/ 
+alter user car 
+default tablespace car_data  
+temporary tablespace car_temp;  
+
+/*第4步：给用户授予权限  */
+grant connect,resource,dba to car;
+commit;
+
+
+
+---------------------------------
+---------------------------------
+
+
+--用户表
 drop table caruser;
 create table CarUSER(
 	cid number primary key,
-	cname varchar2(20),
+	cname varchar2(20) unique,
 	cpwd varchar2(20),
 	email varchar2(20),
 	icon varchar2(40),          --头像
@@ -16,6 +55,9 @@ select *from CarUSER
 drop sequence seq_cid;
 create sequence seq_cid start with 1;
 delete from CarUSER;
+
+insert into CARUSER values(seq_cid.nextval,'lc','123456','15273423853@163.com','','','','',0,sysdate)
+
 insert into caruser values(seq_cid.nextval,'hmm','a','2947432415@qq.com',null,'18274727632','女',null,0,to_date('2016-3-4','yyyy-MM-dd'));
 insert into CARUSER values(seq_cid.nextval,'lc','123456','','13i59189@163.com','','男','',1,sysdate);
 
@@ -66,19 +108,17 @@ commit;
 --管理员表carAdmin
 drop table carAdmin;
 create table carAdmin(
-		aid int primary key ,
-		aname varchar2(20),
-		apwassword	varchar2(20),
-		super int,          --只能使用1或0代表是否
-				
-		status varchar2(10) --使用SA，正常，注销，使用中
+		aid number primary key ,
+		aname varchar2(20) unique,
+		apwd	varchar2(20),
+		issuper number,          --1为超级管理员，0为普通管理员
+		status number          --1正常，可以登录，0使用中，有人在使用无法登录
 );
 		
 drop sequence seq_caradmin_aid;
 create sequence seq_caradmin_aid start with 1001 increment by 1;
-insert into carAdmin values ( seq_caradmin_aid.nextval , 'sa', 'a', 1 , 'SA' );--super管理员
-insert into carAdmin values ( seq_caradmin_aid.nextval , 'admin', 'a' , 0 , '正常' );--默认普通管理员
---insert into carAdmin values ( seq_caradmin_aid.nextval , ? , ? , ? , "正常" );//添加管理员模板
+insert into carAdmin values ( seq_caradmin_aid.nextval , 'lc','a',1,1 );--super管理员
+insert into carAdmin values ( seq_caradmin_aid.nextval , 'hmm','a',0,1 );--默认普通管理员
 select * from carAdmin;
 
 

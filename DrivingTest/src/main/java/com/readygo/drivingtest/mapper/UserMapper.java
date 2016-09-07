@@ -4,12 +4,12 @@ import com.readygo.drivingtest.entity.User;
 
 public interface UserMapper {
 
-	User login(User user);
-
 	void register(User user);
 
 	User checkcname(String cname);
 
 	void active(String cname);
+
+	User login(User user);
 
 }

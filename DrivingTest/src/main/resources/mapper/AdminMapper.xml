@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 使用映射接口的方式，命名空间的值必须与映射接口的全限定名一样 -->
+<mapper namespace="com.readygo.drivingtest.mapper.AdminMapper">
+	<update id="islogin" parameterType="Admin">
+		update carAdmin set status=0 where aname=#{aname} 
+	</update>
+	<select id="login" parameterType="Admin" resultType="Admin">
+		select * from carAdmin where aname=#{aname}  apwd=#{apwd}
+	</select>
+</mapper>

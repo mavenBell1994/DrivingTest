@@ -106,13 +106,13 @@
 								<div id="collapseTwo" class="panel-collapse collapse">
 									<ul class="nav nav-list menu-second">
 										<li>
-											<a href="#"><i class="icon-user"></i> 查看所有用户</a>
+											<a href="checkAllUsers.jsp"><i class="icon-user"></i> 查看所有用户</a>
 										</li>
 										<li>
-											<a href="#"><i class="icon-edit"></i> 查看聊天记录</a>
+											<a href="checkChartInfo.jsp"><i class="icon-edit"></i> 查看聊天记录</a>
 										</li>
 										<li>
-											<a href="#"><i class="icon-edit"></i> 查看举报建议</a>
+											<a href="checkReport.jsp"><i class="icon-edit"></i> 查看举报建议</a>
 										</li>
 
 									</ul>
@@ -126,13 +126,13 @@
 								<div id="collapseThree" class="panel-collapse collapse">
 									<ul class="nav nav-list menu-second">
 										<li>
-											<a href="#"><i class="icon-user"></i> 查看题库</a>
+											<a href="checkAllQuiz.jsp"><i class="icon-user"></i> 查看题库</a>
 										</li>
 										<li>
-											<a href="#"><i class="icon-edit"></i> 查看章节</a>
+											<a href="checkChapter.jsp"><i class="icon-edit"></i> 查看章节</a>
 										</li>
 										<li>
-											<a href="#"><i class="icon-trash"></i>查看资格证</a>
+											<a href="checkCertify.jsp"><i class="icon-trash"></i>查看资格证</a>
 										</li>
 										<li>
 											<a href="#"><i class="icon-list"></i> 子选项4</a>
@@ -149,10 +149,10 @@
 								<div id="collapseFour" class="panel-collapse collapse">
 									<ul class="nav nav-list menu-second">
 										<li>
-											<a href="#"><i class="icon-user"></i> 查看测试成绩</a>
+											<a href="checkTestRec.jsp"><i class="icon-user"></i> 查看测试成绩</a>
 										</li>
 										<li>
-											<a href="#"><i class="icon-edit"></i> 查看难题</a>
+											<a href="checkDifficulty.jsp"><i class="icon-edit"></i> 查看难题</a>
 										</li>
 
 									</ul>

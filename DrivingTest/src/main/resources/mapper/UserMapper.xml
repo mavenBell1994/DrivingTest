@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper
+<!DOCTYPE mapper 
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 使用映射接口的方式，命名空间的值必须与映射接口的全限定名一样 -->
@@ -11,7 +11,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from caruser where cname=#{cname} 
 	</select>
 	<insert id="register" parameterType="User" >
-		insert into CARUSER values(seq_cid.nextval,#{cname},#{cpwd},#{email},'','','','',0,'')
+		insert into CARUSER values(seq_cid.nextval,#{cname},#{cpwd},#{email},'','','','',0,sysdate)
 	</insert>
 	<update id="active">
 		update caruser set status=1 where cname=#{cname} 

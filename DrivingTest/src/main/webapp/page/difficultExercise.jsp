@@ -423,7 +423,7 @@
 				$("#datika-container").attr("class", "datika-container");
 			} else {
 				$("#datika-container").attr("class", "datika-container close");
-	}
+		}
 		}
 	</script>
 </body>

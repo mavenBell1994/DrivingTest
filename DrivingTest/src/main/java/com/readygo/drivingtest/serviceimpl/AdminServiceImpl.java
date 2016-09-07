@@ -1,5 +1,7 @@
 package com.readygo.drivingtest.serviceimpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,5 +27,14 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public void islogin(Admin admin) {
 		mapper.islogin(admin);
+	}
+	
+	/**
+	 * 查询出所有的管理员
+	 * hong
+	 */
+	@Override
+	public List<Admin> getAllAdmin() {
+		return mapper.getAllAdmin();
 	}
 }

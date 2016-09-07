@@ -8,17 +8,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.readygo.drivingtest.entity.Quiz;
-import com.readygo.drivingtest.service.QuizService;
+import com.readygo.drivingtest.entity.Admin;
+import com.readygo.drivingtest.service.AdminService;
+/**
+ * 测试adminMapper等
+ * @author Hong
+ *
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:spring.xml")
-public class QuizServiceImplTest {
+public class AdminServiceImplTest {
 	@Autowired
-	private QuizService quizService;
+	private AdminService as;
 	@Test
 	public void testFindAllDiffQuizs() {
-		List<Quiz> ls=quizService.findAllDiffQuizs();
-		System.out.println(ls);
+		List<Admin> allAdmin = as.getAllAdmin();
+		System.out.println( allAdmin );
 	}
 
 }

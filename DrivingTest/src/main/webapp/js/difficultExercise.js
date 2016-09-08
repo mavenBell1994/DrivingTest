@@ -86,10 +86,11 @@ function showQuiz(data){
 	
 	//点击选项的时候把值存在cookie里，在显示题目的时候，根据qid进行匹配，匹配到显示自己的做题记录
 	if($.cookie('recordAnswer')!=undefined && $.cookie('recordAnswer')!=null){
-		if($.cookie('recordAnswer').contains(data.qid)){
+		if($.cookie('recordAnswer').contains("@"+data.qid+",")){
 			var recordAnswers= $.cookie('recordAnswer').split("@");
 			for(var i=0;i<recordAnswers.length;i++){
-				if(recordAnswers[i].contains(data.qid)){
+				alert(recordAnswers[i]+"===="+(data.qid+",")+"==="+recordAnswers[i].contains(data.qid+","));
+				if(recordAnswers[i].charAt(0)==data.qid){
 					var ra=recordAnswers[i].split(",");
 					if(ra[0]==data.qid){
 						var j;
@@ -121,7 +122,7 @@ function choseAnswer(answer,i,qid,errTotal){
 	if($.cookie('recordAnswer')!=undefined){
 		recordAnswer=$.cookie('recordAnswer');
 	}
-	if(!recordAnswer.contains(qid)){
+	if(!recordAnswer.contains("@"+qid+",")){
 		recordAnswer+=qid+","+answer+"@";
 		$.cookie('recordAnswer',recordAnswer,{path:'/'});
 	}

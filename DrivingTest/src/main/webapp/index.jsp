@@ -301,6 +301,7 @@
 	<script type="text/javascript" src="js/jquery.cookie.js"></script>
 	<script type="text/javascript" src="js/formlogin.js"></script>
 	<script>
+	//显示模态框
 		function show() {
 			$("#cname").val("");
 			$("#cpwd").val("");

@@ -59,6 +59,13 @@ function showPre(){
 //显示一条测试题的内容data，题号应该和data对应
 var quiz;
 function showQuiz(data){
+	//点击上一题的时候把值存在cookie里，在显示题目的时候，根据qid进行匹配，匹配到显示自己的做题记录
+	if($.cookie('recordAnswer')!=undefined && $.cookie('recordAnswer')!=null){
+		var recordAnswer= $.cookie('recordAnswer');
+		
+	}
+	
+	
 	//通过异步加载把是否收藏显示出来
 	showFavorSave(data.qid);
 	quiz=data;
@@ -86,6 +93,11 @@ function choseAnswer(answer,i,qid,errTotal){
 	/*alert(answer.charAt(0));*/
 	var answer=answer.charAt(0);
 	alert("right:"+right);
+	//把自己的选项和题号存在cookie里
+	var recordAnswer;
+	 recordAnswer+=qid+","+answer+"@";
+	$.cookie('recordAnswer',recordAnswer,{path:'/'});
+	
 	if(right==answer){
 		$("#optionImg"+i).css({"background-image":"url(images/optionRight.png)"});
 		var type='<p style="color:#2da5ec;font-size: 18px;">回答正确!</p>';

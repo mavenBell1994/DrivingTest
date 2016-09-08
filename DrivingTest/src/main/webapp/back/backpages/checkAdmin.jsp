@@ -168,7 +168,7 @@
 							<li>
 								<a href="index.jsp"><span class="glyphicon glyphicon-home"></span>&nbsp;后台首页</a>
 							</li>
-							<li class="active">系统管理 - 表格</li>
+							<li class="active">管理员管理 - 表格</li>
 						</ol>
 						<div class="input-group line left">
 							<span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-search"></span></span>
@@ -185,130 +185,8 @@
 						<a href="#" class=" btn btn-primary "><span class="glyphicon glyphicon-download"></span></a>
 						<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#add1" title="添加"><span class="glyphicon glyphicon-plus" ></a>
 						<br/><br/>
-						<table class="table table-bordered table-striped text-center bg-info">
-							<thead>
-								<tr class="info">
-									<th class="text-center" checkbox="true"></th>
-									<th class="text-center">序号</th>
-									<th class="text-center">用户名</th>
-									<th class="text-center">状态</th>
-									<th class="text-center">操作</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td>mmss</td>
-									<td>正常</td>
-									<td>
-										<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit">编辑</a>
-										<a href="#" class="btn btn-primary btn-sm">删除</a>
-									</td>
-									<!-- Modal begin-->
-									
-									<!--添加-->
-									<!--
-                                    	作者：18274763345@163.com
-                                    	时间：2016-08-31
-                                    	描述：添加操作
-                                    -->
-									<div class="modal fade" id="add1" tabindex="-1" role="dialog" aria-labelledby="add11">
-										<div class="modal-dialog" role="document">
-											<div class="modal-content">
-												<div class="modal-header">
-													<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-													<h4 class="modal-title" id="add11">添加</h4>
-												</div>
-												<div class="modal-body">
-													<ul>
-														<li>
-															<label><span>序号 ：</span></label>
-															<input type="text" disabled="disabled" value="1001"/>
-														</li>
-														<li>
-															<label><span>用户名 ：</span></label>
-															<input type="text" />
-														</li>
-														<li>
-															<label><span>密码 ：</span></label>
-															<input type="text" />
-														</li>
-														<li>
-															<label><span>状态：</span></label>
-															<select>
-																<option>正常</option>
-																<option>使用中</option>
-																<option>销毁</option>
-															</select>																									
-														</li>
-														
-													</ul>
-												</div>
-												<div class="modal-footer">
-													<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">取消</button>
-													<button type="button" class="btn btn-primary btn-sm">保存</button>
-												</div>
-											</div>
-										</div>
-									</div>
-									
-									<!--
-                                    	修改
-                                    -->
-									<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit">
-										<div class="modal-dialog" role="document">
-											<div class="modal-content">
-												<div class="modal-header">
-													<button type="button" class="close" data-dismiss="edit" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-													<h4 class="modal-title" id="myModalLabel1">编辑</h4>
-												</div>
-												<div class="modal-body">
-													<ul>
-														<li>
-															<label><span>序号 ：</span></label>
-															<input type="text" disabled="disabled" value="1001"/>
-														</li>
-														<li>
-															<label><span>用户名 ：</span></label>
-															<input type="text" />
-														</li>
-														<li>
-															<label><span>密码 ：</span></label>
-															<input type="text" />
-														</li>
-														<li>
-															<label><span>状态 ：</span></label>
-															<select>
-																<option>正常</option>
-																<option>使用中</option>
-																<option>销毁</option>
-															</select>
-														</li>
-														
-													</ul>
-												</div>
-												<div class="modal-footer">
-													<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">取消</button>
-													<button type="button" class="btn btn-primary btn-sm">保存</button>
-												</div>
-											</div>
-										</div>
-									</div>
-									
-									<!--Modal end-->
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>mmss</td>
-									<td>正常</td>
-									<td>
-										<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit" data-whatever="编辑">编辑</a>
-										<a href="#" class="btn btn-primary btn-sm">删除</a>
-									</td>
-								</tr>
-
-								
-							</tbody>
+						<table  id="checkAdmin">
+							
 						</table>
 						<!--
                         	作者：18274763345@163.com
@@ -350,6 +228,9 @@
 
 		<script src="../js/jquery-1.11.3.js"></script>
 		<script src="../js/bootstrap.js"></script>
+		<script src="../js/bootstrap-table.js"></script>
+		<script src="../js/bootstrap-table-zh-CN.js"></script>
+		<script src="../js/checkAdmin.js"></script>
 		<script>
 			/*Bootlint工具用于对页面中的HTML标签以及Bootstrapclass的使用进行检测*/
 			(function() {

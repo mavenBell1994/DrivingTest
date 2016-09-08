@@ -216,7 +216,6 @@ function showFavorSave(qid){
 			}else{
 				$("#favor-tag").css({"background-image":"url(images/fovor.png)"});
 			}
-			
 		},"json");
 	}
 }

@@ -301,7 +301,7 @@
 	<script type="text/javascript" src="js/jquery.cookie.js"></script>
 	<script type="text/javascript" src="js/formlogin.js"></script>
 	<script>
-		
+	
 		function toPageDiff(){
 			/*使cookie里的值变为undefined,必须指明路径  */
 /* 			alert($.cookie('index'));

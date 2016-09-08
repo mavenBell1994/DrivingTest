@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<base href="/DrivingTest/back/">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -177,15 +178,15 @@ html, body {
 	<script src="js/jquery-1.11.3.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script>
-    /*Bootlint工具用于对页面中的HTML标签以及Bootstrapclass的使用进行检测
-    (function () {
-        var s = document.createElement("script");
-        s.onload = function () {
-            bootlint.showLintReportForCurrentDocument([]);
-        };
-        s.src = "js/bootlint.js";
-        document.body.appendChild(s)
-    })();*/
-</script>
+		/*Bootlint工具用于对页面中的HTML标签以及Bootstrapclass的使用进行检测
+		(function () {
+		    var s = document.createElement("script");
+		    s.onload = function () {
+		        bootlint.showLintReportForCurrentDocument([]);
+		    };
+		    s.src = "js/bootlint.js";
+		    document.body.appendChild(s)
+		})();*/
+	</script>
 </body>
 </html>

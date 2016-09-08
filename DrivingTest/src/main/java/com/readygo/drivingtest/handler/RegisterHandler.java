@@ -68,6 +68,7 @@ public class RegisterHandler {
 		System.out.println("注册失败");
 		return "register";
 	}
+	//退出
 	@RequestMapping(value="/quit",params={"url"})
 	public String quit(HttpSession session,HttpServletRequest request,String url){
 		session.removeAttribute("cname");

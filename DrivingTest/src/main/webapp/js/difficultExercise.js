@@ -94,7 +94,7 @@ function showQuiz(data){
 					var ra=recordAnswers[i].split(",");
 					if(ra[0]==data.qid){
 						var j;
-						switch (ra[1]) {
+			 			switch (ra[1]) {
 						case 'A':j=0;	break;
 						case 'B':j=1;	break;
 						case 'C':j=2;	break;
@@ -192,7 +192,8 @@ function choseAnswer(answer,i,qid,errTotal){
 	$(".choseP").removeAttr("onclick");
 
 }
-//点击收藏
+
+//点击收藏难题
 function favorSave(){
 	var cid=$("#cid").text();
 	var qid=quiz.qid;
@@ -204,6 +205,7 @@ function favorSave(){
 		},"json")
 	}
 }
+
 function showFavorSave(qid){
 	var cid=$("#cid").text();
 	if(cid>0){

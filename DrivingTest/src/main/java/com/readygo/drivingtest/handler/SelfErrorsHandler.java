@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.google.gson.Gson;
 import com.readygo.drivingtest.entity.SelfErrors;
 import com.readygo.drivingtest.service.QuizService;
 import com.readygo.drivingtest.service.SelfErrorsService;
@@ -78,11 +79,13 @@ public class SelfErrorsHandler {
 		out.flush();
 		out.close();
 	}
-
-	@RequestMapping(value = "/getFavorSave")
-	public void getFavorSave(PrintWriter out) {
-
-		out.println();
+	
+	//收藏
+	@RequestMapping(value ="/getFavorSave")
+	public void getFavorSave(SelfErrors selfErrors,PrintWriter out) {
+		SelfErrors error = selfErrorsService.getSelfErrors(selfErrors.getCid());
+		Gson gson=new Gson();
+		out.println(gson.toJson(error));
 		out.flush();
 		out.close();
 	}

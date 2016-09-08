@@ -21,7 +21,6 @@ $(function(){
 	errorCount=parseInt(errorCount);
 	if((rightCount+errorCount)!=0){
 			rightRate=(100*rightCount/(rightCount+errorCount)).toFixed(0);
-			alert(rightRate);
 			$("#rightRate").text(rightRate+"%");
 	}else{
 		$("#rightRate").text(100+"%");
@@ -37,6 +36,7 @@ $(function(){
 			}
 			
 	},"json");
+	
 });
 function showNext(){
 	if(index<length-1 && index>=0){
@@ -59,6 +59,7 @@ function showPre(){
 //显示一条测试题的内容data，题号应该和data对应
 var quiz;
 function showQuiz(data){
+	//通过异步加载把是否收藏显示出来
 	showFavorSave(data.qid);
 	quiz=data;
 	//num题号
@@ -131,28 +132,38 @@ function choseAnswer(answer,i,qid,errTotal){
 		$(".choseP").removeAttr("onclick");
 		}
 	}
-	
-	 rightRate=(rightCount/(rightCount+errorCount)).toFixed(2)*100;
+	rightCount=parseInt(rightCount);
+	errorCount=parseInt(errorCount);
+	if((rightCount+errorCount)!=0){
+		rightRate=(100*rightCount/(rightCount+errorCount)).toFixed(0);
+	}
 	$("#rightRate").text(rightRate+"%");
+	$(".choseP").removeAttr("onclick");
+
 }
+//点击收藏
 function favorSave(){
 	var cid=$("#cid").text();
 	var qid=quiz.qid;
 	if(cid>0){
 		$.post("selfErrors/addfavorSave",{"cid":cid,"save":qid},function(data){
-			/*if(data){
-				$("#favor-tag").css({"background-image":"url(images/fovor1.png)"});
-			}*/
+			if(data){
+				showFavorSave(qid);
+			}
 		},"json")
 	}
 }
 function showFavorSave(qid){
-	$.post("selfErrors/getFavorSave",function(data){
-		var favorSaves=data[0].save.split("@");
-		for(var i=1;i<favorSaves.length;i++){
-			if(qid==favorSaves[i]){
+	var cid=$("#cid").text();
+	if(cid>0){
+		$.post("selfErrors/getFavorSave",{"cid":cid},function(data){
+			var saves=data.save;
+			if(saves.contains(qid)){
 				$("#favor-tag").css({"background-image":"url(images/fovor1.png)"});
+			}else{
+				$("#favor-tag").css({"background-image":"url(images/fovor.png)"});
 			}
-		}
-	},"json");
+			
+		},"json");
+	}
 }

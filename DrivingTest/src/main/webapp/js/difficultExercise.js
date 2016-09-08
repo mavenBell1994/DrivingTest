@@ -88,9 +88,9 @@ function showQuiz(data){
 	if($.cookie('recordAnswer')!=undefined && $.cookie('recordAnswer')!=null){
 		if($.cookie('recordAnswer').contains("@"+data.qid+",")){
 			var recordAnswers= $.cookie('recordAnswer').split("@");
-			for(var i=0;i<recordAnswers.length;i++){
-				alert(recordAnswers[i]+"===="+(data.qid+",")+"==="+recordAnswers[i].contains(data.qid+","));
-				if(recordAnswers[i].charAt(0)==data.qid){
+			for(var i=1;i<recordAnswers.length;i++){
+/*				alert(recordAnswers[i]+"===="+(data.qid+",")+"==="+recordAnswers[i].contains(data.qid+",")+"=="+recordAnswers[i].substring(0,recordAnswers[i].indexOf(",") ));
+*/				if(recordAnswers[i].substring(0,recordAnswers[i].indexOf(","))==data.qid){
 					var ra=recordAnswers[i].split(",");
 					if(ra[0]==data.qid){
 						var j;
@@ -122,8 +122,8 @@ function choseAnswer(answer,i,qid,errTotal){
 	if($.cookie('recordAnswer')!=undefined){
 		recordAnswer=$.cookie('recordAnswer');
 	}
-	if(!recordAnswer.contains("@"+qid+",")){
-		recordAnswer+=qid+","+answer+"@";
+	if(!recordAnswer.contains(("@"+qid+","+answer))){
+		recordAnswer+="@"+qid+","+answer;
 		$.cookie('recordAnswer',recordAnswer,{path:'/'});
 	}
 	if(right==answer){

@@ -248,7 +248,7 @@
 		//进来后显示所有管理员的信息,需要判定是sa								
 		$('#checkAdmin').bootstrapTable({
 			method : 'get',
-			url : 'admin/allAdmin',
+			url : '../../admin/allAdmin',
 			cache : false,
 			striped : true,
 			pagination : true,
@@ -272,11 +272,9 @@
 			}, {
 				field : 'aname',
 				title : '姓名',
-				sortable : true
 			}, {
 				field : 'apwd',
 				title : '密码',
-				sortable : true
 			}, {
 				field : 'issuper',
 				title : '管理员级别',
@@ -297,7 +295,7 @@
 				mif.showErrorMessageBox("数据加载失败！");
 			}
 
-		});
+		},"json");
 	</script>
 </body>
 

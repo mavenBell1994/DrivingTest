@@ -20,6 +20,9 @@ public class AdminHandler {
 	public void allAdmin(PrintWriter out){
 		List<Admin> allAdmin = asimpl.getAllAdmin();
 		System.out.println("here...");
+		for(Admin a : allAdmin){
+			System.out.println(a);
+		}
 		Gson gson=new Gson();
 		out.println(gson.toJson(allAdmin));
 		out.flush();

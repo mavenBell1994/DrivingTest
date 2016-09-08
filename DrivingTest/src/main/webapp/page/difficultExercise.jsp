@@ -411,9 +411,9 @@
 	
 	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
 	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/formlogin.js"></script>
 	<script type="text/javascript" src="js/jquery.cookie.js"> </script>
 	<script type="text/javascript" src="js/difficultExercise.js"></script>
-	<script type="text/javascript" src="js/formlogin.js"></script>
 	<script>
 		function show() {
 			$("#bsCss").attr("href", "bootstrap-3.3.7/css/bootstrap.min.css");

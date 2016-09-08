@@ -7,6 +7,8 @@ var length;
 var rightCount=0;
 var errorCount=0;
 var rightRate=0;
+var flag=true;
+//作为是否记录对错的标志
 $(function(){
 	var cid=$("#cid").val();
 	if($.cookie('rightCount')!=undefined){
@@ -38,6 +40,7 @@ $(function(){
 	},"json");
 	
 });
+
 function showNext(){
 	if(index<length-1 && index>=0){
 		index++;
@@ -59,13 +62,6 @@ function showPre(){
 //显示一条测试题的内容data，题号应该和data对应
 var quiz;
 function showQuiz(data){
-	//点击上一题的时候把值存在cookie里，在显示题目的时候，根据qid进行匹配，匹配到显示自己的做题记录
-	if($.cookie('recordAnswer')!=undefined && $.cookie('recordAnswer')!=null){
-		var recordAnswer= $.cookie('recordAnswer');
-		
-	}
-	
-	
 	//通过异步加载把是否收藏显示出来
 	showFavorSave(data.qid);
 	quiz=data;
@@ -87,32 +83,57 @@ function showQuiz(data){
 	$("#qtype").html(type);
 	$("#options-container").html(str);
 	$("#quizPics").html(img);
+	
+	//点击选项的时候把值存在cookie里，在显示题目的时候，根据qid进行匹配，匹配到显示自己的做题记录
+	if($.cookie('recordAnswer')!=undefined && $.cookie('recordAnswer')!=null){
+		if($.cookie('recordAnswer').contains(data.qid)){
+			var recordAnswers= $.cookie('recordAnswer').split("@");
+			for(var i=0;i<recordAnswers.length;i++){
+				if(recordAnswers[i].contains(data.qid)){
+					var ra=recordAnswers[i].split(",");
+					if(ra[0]==data.qid){
+						$(".choseP").removeAttr("onclick");
+						var j;
+						switch (ra[1]) {
+						case 'A':j=0;	break;
+						case 'B':j=1;	break;
+						case 'C':j=2;	break;
+						case 'D':j=3;	break;
+						}
+						flag=false;
+						choseAnswer(ra[1],j,ra[0],data.errTotal);
+						flag=true;
+					}
+				}
+			}
+		}
+	}
+	
 }
 function choseAnswer(answer,i,qid,errTotal){
 	var cid=$("#cid").text();
 	/*alert(answer.charAt(0));*/
 	var answer=answer.charAt(0);
+	var recordAnswer="";
 	alert("right:"+right);
-	//把自己的选项和题号存在cookie里
-	var recordAnswer;
-	 recordAnswer+=qid+","+answer+"@";
-	$.cookie('recordAnswer',recordAnswer,{path:'/'});
-	
 	if(right==answer){
 		$("#optionImg"+i).css({"background-image":"url(images/optionRight.png)"});
 		var type='<p style="color:#2da5ec;font-size: 18px;">回答正确!</p>';
 		$("#qtype").html(type);
 		//答对几题
-		rightCount++;
-		$.cookie('rightCount',rightCount,{path:'/'});
-		if(cid>0){
+		if(flag){
+			rightCount++;
+			$.cookie('rightCount',rightCount,{path:'/'});
+		}
+		$("#answerRight").text(rightCount+"题");
+		if(cid>0 && flag){
 			$.post("selfErrors/removeErrorSave",{"cid":cid,"errorSave":qid},function(data){
 				if(data){
 					alert("已经从错题表中移除");
 				}
 			},"json");
 		}
-		$("#answerRight").text(rightCount+"题")
+		
 		$(".choseP").removeAttr("onclick");
 	}else{
 		$("#optionImg"+i).css({"background-image":"url(images/optionError.png)"});
@@ -128,14 +149,16 @@ function choseAnswer(answer,i,qid,errTotal){
 		case 'D':
 			$("#optionImg"+3).css({"background-image":"url(images/optionRight.png)"});break;
 		}
-		//答对几题
-		errorCount++;
-		$.cookie('errorCount',errorCount,{path:'/'});
+		//答错几题
+		if(flag){
+			errorCount++;
+			$.cookie('errorCount',errorCount,{path:'/'});
+		}
 		$("#answerError").text(errorCount+"题")
 		/*	记录用户的错题
 		*/	
 		var errorSave=qid;
-	if(cid>0){
+	if(cid>0 && flag){
 		$.post("selfErrors/saveSelfErrors",{"cid":cid,"errorSave":errorSave},function(data){
 			if(data){
 				alert("加入到了错体表");
@@ -150,6 +173,16 @@ function choseAnswer(answer,i,qid,errTotal){
 		rightRate=(100*rightCount/(rightCount+errorCount)).toFixed(0);
 	}
 	$("#rightRate").text(rightRate+"%");
+	//把自己的选项和题号存在cookie里
+	
+	if($.cookie('recordAnswer')!=undefined){
+		recordAnswer=$.cookie('recordAnswer');
+	}
+	if(!recordAnswer.contains(qid)){
+		recordAnswer+=qid+","+answer+"@";
+		$.cookie('recordAnswer',recordAnswer,{path:'/'});
+	}
+	//把点击属性移除
 	$(".choseP").removeAttr("onclick");
 
 }

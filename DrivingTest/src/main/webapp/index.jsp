@@ -370,6 +370,7 @@
 			$.cookie('index', '', {path:'/', expires: -1 }); 
 			 $.cookie('rightCount', '', {path:'/', expires: -1 }); 
 			 $.cookie('errorCount', '', {path:'/', expires: -1 }); 
+			 $.cookie('recordAnswer', '', {path:'/', expires: -1 }); 
  			location.href="page/difficultExercise.jsp";
 		}
 		

@@ -49,6 +49,7 @@ public class LoginHandler {
 		if(userService.login(user)!=null){
 			System.out.println(userService.login(user)+"查询到数据");
 			map.put("cname", userService.login(user));
+
 			return true;
 		}else{
 			System.out.println(userService.login(user)+"未查询");

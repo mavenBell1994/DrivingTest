@@ -142,7 +142,7 @@
 					</div>
 					<div class="tongji-container cl" data-item="tongji-container">
 						<label class="daduinext float-l"><input type="checkbox"
-							checked="checked" data-item="daduinext"><span>答对自动下一题</span></label> 
+							checked="checked" data-item="daduinext" id="autoNext"><span>答对自动下一题</span></label> 
 							<label class="x-dadui float-l" >答对：<span id="answerRight"></span></label> 
 							<label class="x-dacuo float-l">答错：<span id="answerError"></span></label> 
 							<label class="x-lv float-l">正确率：<span id="rightRate"></span></label>

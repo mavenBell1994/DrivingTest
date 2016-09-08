@@ -92,7 +92,6 @@ function showQuiz(data){
 				if(recordAnswers[i].contains(data.qid)){
 					var ra=recordAnswers[i].split(",");
 					if(ra[0]==data.qid){
-						$(".choseP").removeAttr("onclick");
 						var j;
 						switch (ra[1]) {
 						case 'A':j=0;	break;
@@ -100,6 +99,7 @@ function showQuiz(data){
 						case 'C':j=2;	break;
 						case 'D':j=3;	break;
 						}
+						$(".choseP").removeAttr("onclick");
 						flag=false;
 						choseAnswer(ra[1],j,ra[0],data.errTotal);
 						flag=true;
@@ -111,21 +111,24 @@ function showQuiz(data){
 	
 }
 function choseAnswer(answer,i,qid,errTotal){
+//把自己的选项和题号存在cookie里
 	var cid=$("#cid").text();
 	/*alert(answer.charAt(0));*/
 	var answer=answer.charAt(0);
 	var recordAnswer="";
 	alert("right:"+right);
+	//点击选项后存取选项和题目的id
+	if($.cookie('recordAnswer')!=undefined){
+		recordAnswer=$.cookie('recordAnswer');
+	}
+	if(!recordAnswer.contains(qid)){
+		recordAnswer+=qid+","+answer+"@";
+		$.cookie('recordAnswer',recordAnswer,{path:'/'});
+	}
 	if(right==answer){
 		$("#optionImg"+i).css({"background-image":"url(images/optionRight.png)"});
 		var type='<p style="color:#2da5ec;font-size: 18px;">回答正确!</p>';
 		$("#qtype").html(type);
-		//答对几题
-		if(flag){
-			rightCount++;
-			$.cookie('rightCount',rightCount,{path:'/'});
-		}
-		$("#answerRight").text(rightCount+"题");
 		if(cid>0 && flag){
 			$.post("selfErrors/removeErrorSave",{"cid":cid,"errorSave":qid},function(data){
 				if(data){
@@ -133,7 +136,18 @@ function choseAnswer(answer,i,qid,errTotal){
 				}
 			},"json");
 		}
-		
+		//答对几题
+		if(flag){
+			rightCount++;
+			$.cookie('rightCount',rightCount,{path:'/'});
+			$("#answerRight").text(rightCount+"题");
+			//选中直接下一题
+			if($("#autoNext").prop("checked")){
+				showNext();
+				return;
+			}
+		}
+		$("#answerRight").text(rightCount+"题");
 		$(".choseP").removeAttr("onclick");
 	}else{
 		$("#optionImg"+i).css({"background-image":"url(images/optionError.png)"});
@@ -173,15 +187,6 @@ function choseAnswer(answer,i,qid,errTotal){
 		rightRate=(100*rightCount/(rightCount+errorCount)).toFixed(0);
 	}
 	$("#rightRate").text(rightRate+"%");
-	//把自己的选项和题号存在cookie里
-	
-	if($.cookie('recordAnswer')!=undefined){
-		recordAnswer=$.cookie('recordAnswer');
-	}
-	if(!recordAnswer.contains(qid)){
-		recordAnswer+=qid+","+answer+"@";
-		$.cookie('recordAnswer',recordAnswer,{path:'/'});
-	}
 	//把点击属性移除
 	$(".choseP").removeAttr("onclick");
 

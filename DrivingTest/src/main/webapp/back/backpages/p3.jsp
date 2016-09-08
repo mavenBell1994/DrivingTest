@@ -6,6 +6,7 @@
 <html lang="zh-CN">
 
 <head>
+<base href="/DrivingTest/back/backpages/">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -169,8 +170,7 @@
 					</select> <a href="#" class=" btn btn-primary "><span
 						class="glyphicon glyphicon-search"></span></a> <a href="#"
 						class=" btn btn-primary "><span
-						class="glyphicon glyphicon-download"></span></a> <br />
-					<br />
+						class="glyphicon glyphicon-download"></span></a> <br /> <br />
 					<table
 						class="table table-bordered table-striped text-center bg-info">
 						<thead>

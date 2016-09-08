@@ -87,12 +87,11 @@
 									<!--<li>
 											<a href="p1.jsp"><i class="icon-user"></i> 表格p1留着做样本</a>
 										</li>-->
-									<li><a href="p2.jsp"><i
-											class="icon-edit"></i> 图表p2留着做样本</a></li>
-									<li><a href="checkAdmin.jsp"><i
-											class="icon-trash"></i> 查看所有管理员</a></li>
-									<li><a href="checkAdminSelf.jsp"><i
-											class="icon-list"></i>查看当前管理员</a></li>
+									<li><a href="p2.jsp"><i class="icon-edit"></i>
+											图表p2留着做样本</a></li>
+									<li><a href="checkAdmin.jsp"><i class="icon-trash"></i>
+											查看所有管理员</a></li>
+									<li><a href="checkAdminSelf.jsp"><i class="icon-list"></i>查看当前管理员</a></li>
 								</ul>
 							</div>
 						</div>
@@ -104,12 +103,12 @@
 							</a> </a>
 							<div id="collapseTwo" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
-									<li><a href="checkAllUsers.jsp"><i
-											class="icon-user"></i> 查看所有用户</a></li>
-									<li><a href="checkChartInfo.jsp"><i
-											class="icon-edit"></i> 查看聊天记录</a></li>
-									<li><a href="checkReport.jsp"><i
-											class="icon-edit"></i> 查看举报建议</a></li>
+									<li><a href="checkAllUsers.jsp"><i class="icon-user"></i>
+											查看所有用户</a></li>
+									<li><a href="checkChartInfo.jsp"><i class="icon-edit"></i>
+											查看聊天记录</a></li>
+									<li><a href="checkReport.jsp"><i class="icon-edit"></i>
+											查看举报建议</a></li>
 
 								</ul>
 							</div>
@@ -123,12 +122,11 @@
 
 							<div id="collapseThree" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
-									<li><a href="checkAllQuiz.jsp"><i
-											class="icon-user"></i> 查看题库</a></li>
-									<li><a href="checkChapter.jsp"><i
-											class="icon-edit"></i> 查看章节</a></li>
-									<li><a href="checkCertify.jsp"><i
-											class="icon-trash"></i>查看资格证</a></li>
+									<li><a href="checkAllQuiz.jsp"><i class="icon-user"></i>
+											查看题库</a></li>
+									<li><a href="checkChapter.jsp"><i class="icon-edit"></i>
+											查看章节</a></li>
+									<li><a href="checkCertify.jsp"><i class="icon-trash"></i>查看资格证</a></li>
 									<li><a href="#"><i class="icon-list"></i> 子选项4</a></li>
 								</ul>
 							</div>
@@ -143,10 +141,10 @@
 
 							<div id="collapseFour" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
-									<li><a href="checkTestRec.jsp"><i
-											class="icon-user"></i> 查看测试成绩</a></li>
-									<li><a href="checkDifficulty.jsp"><i
-											class="icon-edit"></i> 查看难题</a></li>
+									<li><a href="checkTestRec.jsp"><i class="icon-user"></i>
+											查看测试成绩</a></li>
+									<li><a href="checkDifficulty.jsp"><i class="icon-edit"></i>
+											查看难题</a></li>
 
 								</ul>
 							</div>
@@ -179,8 +177,7 @@
 					</select> <a href="#" class=" btn btn-primary "><span
 						class="glyphicon glyphicon-search"></span></a> <a href="#"
 						class=" btn btn-primary "><span
-						class="glyphicon glyphicon-download"></span></a> <br />
-					<br />
+						class="glyphicon glyphicon-download"></span></a> <br /> <br />
 					<table
 						class="table table-bordered table-striped text-center bg-info">
 						<thead>
@@ -274,27 +271,29 @@
 	<script src="../js/jquery-1.11.3.js"></script>
 	<script src="../js/bootstrap.js"></script>
 	<script>
-			/*Bootlint工具用于对页面中的HTML标签以及Bootstrapclass的使用进行检测*/
-			(function() {
-				var s = document.createElement("script");
-				s.onload = function() {
-					bootlint.showLintReportForCurrentDocument([]);
-				};
-				s.src = "../js/bootlint.js";
-				document.body.appendChild(s)
-			})();
+		/*Bootlint工具用于对页面中的HTML标签以及Bootstrapclass的使用进行检测*/
+		(function() {
+			var s = document.createElement("script");
+			s.onload = function() {
+				bootlint.showLintReportForCurrentDocument([]);
+			};
+			s.src = "../js/bootlint.js";
+			document.body.appendChild(s)
+		})();
 
-			//    添加编辑模态框
-			$('#add').on('show.bs.modal', function(event) {
-				var button = $(event.relatedTarget) // Button that triggered the modal
-				var recipient = button.data('whatever') // Extract info from data-* attributes
-					// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-					// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-				var modal = $(this)
-				modal.find('.modal-title').text('' + recipient)
-				modal.find('.modal-body input').val(recipient)
-			})
-		</script>
+		//    添加编辑模态框
+		$('#add').on('show.bs.modal', function(event) {
+			var button = $(event.relatedTarget) // Button that triggered the modal
+			var recipient = button.data('whatever') // Extract info from data-* attributes
+			// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+			// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+			var modal = $(this)
+			modal.find('.modal-title').text('' + recipient)
+			modal.find('.modal-body input').val(recipient)
+		})
+
+		
+	</script>
 </body>
 
 </html>

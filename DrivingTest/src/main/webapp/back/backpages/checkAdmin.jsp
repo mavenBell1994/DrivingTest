@@ -21,7 +21,7 @@
 <script src="../js/bootstrap.js"></script>
 <script src="../js/bootstrap-table.js"></script>
 <script src="../js/bootstrap-table-zh-CN.js"></script>
-<script src="../js/checkAdmin.js"></script>
+
 
 <!--[if lt IE 9]>
     <script src="js/html5shiv.min.js"></script>
@@ -84,9 +84,8 @@
 							</a>
 						</div>
 						<div class="panel panel-default menu-first">
-							<a data-toggle="collapse" data-parent="#accordion"
-								href="#One" aria-expanded="true"
-								aria-controls="collapseOne"> <i
+							<a data-toggle="collapse" data-parent="#accordion" href="#One"
+								aria-expanded="true" aria-controls="collapseOne"> <i
 								class="icon-user-md icon-large"></i> 管理员管理
 							</a>
 
@@ -106,9 +105,9 @@
 						</div>
 						<div class="panel panel-default menu-first">
 							<a class="collapsed" data-toggle="collapse"
-								data-parent="#accordion" href="#Two"
-								aria-expanded="false" aria-controls="collapseTwo"> <i
-								class="icon-book icon-large"></i> 用户管理
+								data-parent="#accordion" href="#Two" aria-expanded="false"
+								aria-controls="collapseTwo"> <i class="icon-book icon-large"></i>
+								用户管理
 							</a>
 							<div id="collapseTwo" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
@@ -124,8 +123,8 @@
 						</div>
 						<div class="panel panel-default menu-first">
 							<a class="collapsed" data-toggle="collapse"
-								data-parent="#accordion" href="#Three"
-								aria-expanded="false" aria-controls="collapseThree"> <i
+								data-parent="#accordion" href="#Three" aria-expanded="false"
+								aria-controls="collapseThree"> <i
 								class="icon-book icon-large"></i> 题库管理
 							</a>
 
@@ -144,8 +143,8 @@
 
 						<div class="panel panel-default menu-first">
 							<a class="collapsed" data-toggle="collapse"
-								data-parent="#accordion" href="#Four"
-								aria-expanded="false" aria-controls="collapseFour"> <i
+								data-parent="#accordion" href="#Four" aria-expanded="false"
+								aria-controls="collapseFour"> <i
 								class="icon-book icon-large"></i> 测试管理
 							</a>
 
@@ -193,7 +192,7 @@
 					<br />
 
 					<table id="checkAdmin">
-
+						
 					</table>
 					<!--
                         	作者：18274763345@163.com
@@ -225,27 +224,81 @@
 
 
 	<script>
-			/*Bootlint工具用于对页面中的HTML标签以及Bootstrapclass的使用进行检测*/
-			(function() {
-				var s = document.createElement("script");
-				s.onload = function() {
-					bootlint.showLintReportForCurrentDocument([]);
-				};
-				s.src = "../js/bootlint.js";
-				document.body.appendChild(s)
-			})();
+		/*Bootlint工具用于对页面中的HTML标签以及Bootstrapclass的使用进行检测*/
+		(function() {
+			var s = document.createElement("script");
+			s.onload = function() {
+				bootlint.showLintReportForCurrentDocument([]);
+			};
+			s.src = "../js/bootlint.js";
+			document.body.appendChild(s)
+		})();
 
-			//    添加编辑模态框
-			$('#add').on('show.bs.modal', function(event) {
-				var button = $(event.relatedTarget) // Button that triggered the modal
-				var recipient = button.data('whatever') // Extract info from data-* attributes
-					// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-					// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-				var modal = $(this)
-				modal.find('.modal-title').text('' + recipient)
-				modal.find('.modal-body input').val(recipient)
-			})
-		</script>
+		//    添加编辑模态框
+		$('#add').on('show.bs.modal', function(event) {
+			var button = $(event.relatedTarget) // Button that triggered the modal
+			var recipient = button.data('whatever') // Extract info from data-* attributes
+			// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+			// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+			var modal = $(this)
+			modal.find('.modal-title').text('' + recipient)
+			modal.find('.modal-body input').val(recipient)
+		})
+
+		//进来后显示所有管理员的信息,需要判定是sa								
+		$('#checkAdmin').bootstrapTable({
+			method : 'get',
+			url : 'admin/allAdmin',
+			cache : false,
+			striped : true,
+			pagination : true,
+			dataType : "json",
+			pageList : [ 2, 5, 8 ],
+			pageSize : 2,
+			pageNumber : 1,
+			search : true,
+			sidePagination : 'server',
+			showColumns : true,
+			minimumCountColumns : 2,
+			clickToSelect : true,
+			showToggle : true,
+			columns : [ {
+				field : 'state',
+				checkbox : true
+			}, {
+				field : 'aid',
+				title : 'ID',
+				sortable : true
+			}, {
+				field : 'aname',
+				title : '姓名',
+				sortable : true
+			}, {
+				field : 'apwd',
+				title : '密码',
+				sortable : true
+			}, {
+				field : 'issuper',
+				title : '管理员级别',
+				sortable : true
+			}, {
+				field : 'status',
+				title : '状态',
+				sortable : true
+			} //,
+			//	            {field : 'operate',title: '操作',width: 100,align: 'center',valign: 'middle',formatter:function(){
+			//	            		
+			//	            }} 
+			],
+			onLoadSuccess : function() {
+				//mif.showErrorMessageBox("数据加载成功");
+			},
+			onLoadError : function() {
+				mif.showErrorMessageBox("数据加载失败！");
+			}
+
+		});
+	</script>
 </body>
 
 </html>

@@ -412,33 +412,8 @@
 	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
 	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/jquery.cookie.js"> </script>
-	<script type="text/javascript" src="js/difficultExercise.js"></script>
 	<script type="text/javascript" src="js/formlogin.js"></script>
-	<script>
-		function show() {
-			$("#bsCss").attr("href", "bootstrap-3.3.7/css/bootstrap.min.css");
-			$("#navUl li").css("width", "98px");
-			$("#navUl").css("height", "70px");
-			$('#myModal').modal({
-				keyboard : true,
-				show : true,//设置模式窗关闭
-				backdrop : 'static',
-			});
-
-			$('#myModal').on('hide.bs.modal', function() {
-				$("#bsCss").attr("href", "");
-			});
-		}
-
-		/* 展开答题卡 */
-		function showCard() {
-			if ($("#datika-container").attr("class") == "datika-container close") {
-				$("#datika-container").attr("class", "datika-container");
-			} else {
-				$("#datika-container").attr("class", "datika-container close");
-		}
-		}
-	</script>
+	<script type="text/javascript" src="js/difficultExercise.js"></script>
 </body>
 
 </html>

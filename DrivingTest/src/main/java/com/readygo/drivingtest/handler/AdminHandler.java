@@ -19,7 +19,6 @@ public class AdminHandler {
 	@RequestMapping("/allAdmin")
 	public void allAdmin(PrintWriter out){
 		List<Admin> allAdmin = asimpl.getAllAdmin();
-		System.out.println("here...");
 		for(Admin a : allAdmin){
 			System.out.println(a);
 		}

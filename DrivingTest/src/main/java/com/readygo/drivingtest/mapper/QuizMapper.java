@@ -6,8 +6,8 @@ import com.readygo.drivingtest.entity.Quiz;
 
 public interface QuizMapper {
 
-	List<Quiz> getAllDiffQuizs();
+	public List<Quiz> getAllDiffQuizs();
 
-	Quiz getDiffQuizById(int qid);
-	int updateErrorTotal(int qid);
+	public Quiz getDiffQuizById(int qid);
+	public int updateErrorTotal(int qid);
 }

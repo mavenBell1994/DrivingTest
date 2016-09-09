@@ -1,5 +1,8 @@
 package com.readygo.drivingtest.entity;
-
+/**
+ * @author lcc
+ * 后台用户实体类
+ */
 public class Admin {
 	private Integer aid;
 	private String aname;

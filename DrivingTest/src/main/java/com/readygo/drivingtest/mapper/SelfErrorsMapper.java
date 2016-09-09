@@ -11,4 +11,6 @@ public interface SelfErrorsMapper {
 	SelfErrors getSelfErrors(int cid);
 
 	int updateRemoveErrorSave(String errorSave);
+
+	int updateRemoveFavorSave(String saves);
 }

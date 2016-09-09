@@ -71,7 +71,7 @@ public class SelfErrorsHandler {
 				e.printStackTrace();
 				out.println(false);
 			}
-			
+
 			out.println(selfErrorsService.updateRemoveErrorSave(save));
 		}else{
 			out.println(false);
@@ -79,7 +79,7 @@ public class SelfErrorsHandler {
 		out.flush();
 		out.close();
 	}
-	
+
 	//收藏
 	@RequestMapping(value ="/getFavorSave")
 	public void getFavorSave(SelfErrors selfErrors,PrintWriter out) {
@@ -89,7 +89,19 @@ public class SelfErrorsHandler {
 		out.flush();
 		out.close();
 	}
-
+	//取消收藏
+	@RequestMapping(value ="/removeFavorSave")
+	public void removeFavorSave(SelfErrors selfErrors,PrintWriter out) {
+		SelfErrors error = selfErrorsService.getSelfErrors(selfErrors.getCid());
+		String saves=error.getSave();
+		String qid=selfErrors.getSave();
+		if(saves.indexOf("@"+qid)!=-1){
+			saves=saves.replace("@"+qid, "");
+		}
+		out.println(selfErrorsService.removeFavorSave(saves));
+		out.flush();
+		out.close();
+	}
 	public int getSelf(int cid, String qid) {
 		SelfErrors error = selfErrorsService.getSelfErrors(cid);
 		int errorIndex = -1;

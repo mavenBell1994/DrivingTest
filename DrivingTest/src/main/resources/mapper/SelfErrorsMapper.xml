@@ -17,4 +17,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="updateRemoveErrorSave" parameterType="string">
 		update SelfErrors  set errorSave=#{errorSave}
 	</update>
+	<update id="updateRemoveFavorSave" parameterType="string">
+		update SelfErrors  set save=#{saves}
+	</update>
 </mapper>

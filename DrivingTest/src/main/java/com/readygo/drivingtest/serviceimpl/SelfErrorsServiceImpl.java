@@ -26,6 +26,10 @@ public class SelfErrorsServiceImpl implements SelfErrorsService{
 	public boolean updateRemoveErrorSave(String save) {
 		return selfErrorsMapper.updateRemoveErrorSave(save)>0;
 	}
+	@Override
+	public boolean removeFavorSave(String saves) {
+		return selfErrorsMapper.updateRemoveFavorSave(saves)>0;
+	}
 	
 	
 }

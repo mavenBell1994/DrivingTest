@@ -8,5 +8,6 @@ public interface SelfErrorsService {
 	boolean updateSave(SelfErrors selfErrors);
 	SelfErrors getSelfErrors(int cid);
 	boolean updateRemoveErrorSave(String errorSave);
+	boolean removeFavorSave(String saves);
 	
 }

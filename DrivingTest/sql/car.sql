@@ -70,18 +70,18 @@ create table quiz(
   pid number,                 --章节id
   pic varchar2(20),           --图片路径
   qtype varchar2(10),         --题目类型  判断题，选择题
-  
+  explain varchar2(200),	  --题目详解 题目的答案	
   errTotal number(12,0)       --错误总数
 );
 drop sequence seq_qid;
 create sequence seq_qid start with 1;
-insert into quiz values (seq_qid.nextval,'对驾驶拼装机动车上路行驶的驾驶人，会受到下列哪种处罚？ ','A. 依法追究刑事责任@B. 处15日以下拘留@C. 吊销机动车行驶证@D. 处200以上2000元以下罚款@D',1,null,'选择题',100);
-insert into quiz values (seq_qid.nextval,' 在这条公路上行驶的最高速度不能超过多少？ ','A. 60公里/小时@B. 110公里/小时@C. 100公里/小时@D. 90公里/小时@C',1,null,'选择题',200);
-insert into quiz values (seq_qid.nextval,' 这个标志是何含义？  ','A. 单行路@B. 禁止直行@C. 只准直行@D. 直行车道@C',1,null,'选择题',300);
-insert into quiz values (seq_qid.nextval,' 这一组交通警察手势是什么信号？ ','A. 左转弯待转信号@B. 左转弯信号@C. 减速慢行信号@D. 右转弯信号@A',1,null,'选择题',400);
-insert into quiz values (seq_qid.nextval,' 湿滑路面制动过程中，发现车辆偏离方向，以下做法正确的是？ ','A. 连续轻踩轻放制动踏板@B. 任意踩制动踏板@C. 不要踩制动踏板@D. 用力踩制动踏板@C',1,null,'选择题',500);
-insert into quiz values (seq_qid.nextval,' 驾驶机动车在道路上靠路边停车过程中如何使用灯光？   ','A. 变换使用远近光灯@B. 开启危险报警闪光灯@C. 不用指示灯提示@D. 提前开启右转向灯@D',1,null,'选择题',300);
-insert into quiz values (seq_qid.nextval,'  在这种天气条件下行车如何使用灯光？   ','A. 使用近光灯@B. 使用雾灯@C. 使用远光灯@D. 不使用灯光@A',1,'../pics/quiz1.png','选择题',300);
+insert into quiz values (seq_qid.nextval,'驾驶机动车在道路上违反道路交通安全法的行为，属于什么行为？','A. 违法行为@B. 违章行为@C. 过失行为@D. 违规行为@A',1,null,'选择题','“违反道路交通安全法”，违反法律法规即为违法行为。官方已无违章/违规的说法。',100);
+insert into quiz values (seq_qid.nextval,'机动车驾驶人违法驾驶造成重大交通事故构成犯罪的，依法追究什么责任？ ','A.刑事责任@B.经济责任@C.直接责任@D.民事责任@A',1,null,'选择题','《道路交通安全法》第一百零一条：违反道路交通安全法律、法规的规定，发生重大交通事故，构成犯罪的，依法追究刑事责任，并由公安机关交通管理部门吊销机动车驾驶证。',200);
+insert into quiz values (seq_qid.nextval,' 机动车驾驶人造成事故后逃逸构成犯罪的，吊销驾驶证且多长时间不得重新取得驾驶证？  ','A.20年内@B.10年内@C.5年内@D. 终生@D',1,null,'选择题','《道路交通安全法》第一百零一条：造成交通事故后逃逸的，由公安机关交通管理部门吊销机动车驾驶证，且终生不得重新取得机动车驾驶证。',300);
+insert into quiz values (seq_qid.nextval,' 驾驶机动车违反道路交通安全法律法规发生交通事故属于交通违章行为。 ','A. 正确@B.错误@A',1,null,'判断题','“违反道路交通安全法”，违反法律法规即为违法行为。现在官方已无违章/违规的说法。',400);
+insert into quiz values (seq_qid.nextval,'  驾驶机动车在道路上违反道路通行规定应当接受相应的处罚。','A. 正确@B. 错误@A',1,null,'判断题','常识题，违反规定，就得接受相应的处罚。',500);
+insert into quiz values (seq_qid.nextval,' 对未取得驾驶证驾驶机动车的，追究其法律责任。   ','A.正确@B. 错误@A',1,null,'判断题','《道路交通安全法》第九十九条：<br/>未取得机动车驾驶证、机动车驾驶证被吊销或者机动车驾驶证被暂扣期间驾驶机动车的，由公安机关交通管理部门处二百元以上二千元以下罚款，可以并处十五日以下拘留。',300);
+insert into quiz values (seq_qid.nextval,'  对违法驾驶发生重大交通事故且构成犯罪的，不追究其刑事责任。','A.正确@B.错误@B',1,null,'判断题','《道路交通安全法》第一百零一条：违反道路交通安全法律、法规的规定，发生重大交通事故，构成犯罪的，依法追究刑事责任，并由公安机关交通管理部门吊销机动车驾驶证。',300);
 select *from quiz;
 --章节表
 drop table part;
@@ -157,7 +157,7 @@ create table SelfErrors(
        errorSave varchar2(4000),        --进行字符拼接。1,2,23,55   ,可以使用@或者,    
        save varchar2(4000)
 );
-insert into SelfErrors values(1,'','');
+insert into SelfErrors values(121,'','');
 --样例   insert into SelfErrors values ( ?,? );			
 select * from SelfErrors ;
 select * from testRecord;

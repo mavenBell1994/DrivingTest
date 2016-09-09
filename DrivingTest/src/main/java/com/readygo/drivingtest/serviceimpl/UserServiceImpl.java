@@ -1,5 +1,7 @@
 package com.readygo.drivingtest.serviceimpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,5 +39,12 @@ public class UserServiceImpl implements UserService {
 			return 0;
 		}
 		return 1;
+	}
+	/**
+	 * hong
+	 */
+	@Override
+	public List<User> allUsers() {
+		return mapper.allUsers();
 	}
 }

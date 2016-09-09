@@ -1,15 +1,18 @@
 package com.readygo.drivingtest.mapper;
 
+import java.util.List;
+
 import com.readygo.drivingtest.entity.User;
 
 public interface UserMapper {
 
-	void register(User user);
+	public User login(User user);
 
-	User checkcname(String cname);
+	public boolean register(User user);
 
-	void active(String cname);
+	public User checkcname(String cname);
 
-	User login(User user);
-
+	public int active(String cname);
+	
+	public List<User> allUsers();
 }

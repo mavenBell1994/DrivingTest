@@ -191,24 +191,7 @@
 					<table id="checkAdmin">
 						
 					</table>
-					<!--
-                        	作者：18274763345@163.com
-                        	时间：2016-08-31
-                        	描述：下侧页码，做分页操作
-                       -->
-					<!-- <ul class="pagination right">
-						<li class="disabled"><a href="#" aria-label="Previous"><span
-								aria-hidden="true">&laquo;</span></a></li>
-						<li class="active">
-						<a href="#">1 <span class="sr-only">(current)</span></a>
-						</li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li><a href="#" aria-label="Next"><span
-								aria-hidden="true">&raquo;</span></a></li>
-					</ul> -->
+				
 				</div>
 				<!--右侧内容结束-->
 			</div>
@@ -267,21 +250,26 @@
 			}, {
 				field : 'aid',
 				title : 'ID',
-				sortable : true
+				sortable : true,
+				align: 'center'
 			}, {
 				field : 'aname',
 				title : '姓名',
+				align: 'center'
 			}, {
 				field : 'apwd',
 				title : '密码',
+				align: 'center'
 			}, {
 				field : 'issuper',
 				title : '管理员级别',
-				sortable : true
+				sortable : true,
+				align: 'center'
 			}, {
 				field : 'status',
 				title : '状态',
-				sortable : true
+				sortable : true,
+				align: 'center'
 			} //,
 			//	            {field : 'operate',title: '操作',width: 100,align: 'center',valign: 'middle',formatter:function(){
 			//	            		

@@ -210,3 +210,14 @@
 信息: 2016-09-08 21:19:30,773 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
 信息: 2016-09-08 21:19:30,774 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
 信息: 2016-09-08 21:19:30,774 DEBUG ValidationXmlParser (ValidationXmlParser.java:98) - No META-INF/validation.xml found. Using annotation based configuration only.
+信息: 2016-09-09 21:18:21,117 DEBUG LoggerFactory (LoggerFactory.java:19) - Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+信息: 2016-09-09 21:18:21,119 INFO  Version (Version.java:17) - HV000001: Hibernate Validator 5.3.0.Alpha1
+信息: 2016-09-09 21:18:21,145 DEBUG DefaultTraversableResolver (DefaultTraversableResolver.java:70) - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+信息: 2016-09-09 21:18:21,161 DEBUG ConfigurationImpl (ConfigurationImpl.java:157) - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+信息: 2016-09-09 21:18:21,162 DEBUG ConfigurationImpl (ConfigurationImpl.java:179) - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+信息: 2016-09-09 21:18:21,164 DEBUG ConfigurationImpl (ConfigurationImpl.java:193) - Setting custom ParameterNameProvider of type com.sun.proxy.$Proxy44
+信息: 2016-09-09 21:18:21,166 DEBUG ValidationXmlParser (ValidationXmlParser.java:91) - Trying to load META-INF/validation.xml for XML based Validator configuration.
+信息: 2016-09-09 21:18:21,168 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:47) - Trying to load META-INF/validation.xml via user class loader
+信息: 2016-09-09 21:18:21,214 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:54) - Trying to load META-INF/validation.xml via TCCL
+信息: 2016-09-09 21:18:21,215 DEBUG ResourceLoaderHelper (ResourceLoaderHelper.java:60) - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+信息: 2016-09-09 21:18:21,215 DEBUG ValidationXmlParser (ValidationXmlParser.java:98) - No META-INF/validation.xml found. Using annotation based configuration only.

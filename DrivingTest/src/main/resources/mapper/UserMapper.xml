@@ -17,4 +17,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		update caruser set status=1 where cname=#{cname} 
 	</update>
 	
+	<select id="allUsers" resultType="User">
+		select * from carUser
+	</select>
+	
 </mapper>

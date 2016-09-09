@@ -137,8 +137,7 @@
 						<button class="li0 float-l" type="button" data-item="prev" onclick="javascript:showPre()">上一题</button>
 						<button class="float-l" type="button" data-item="next" onclick="javascript:showNext()">下一题</button>
 						<button class="datika grey-b zkdtk float-r" onclick="javascript:showCard()">展开答题卡</button>
-						<button class="grey-b float-r" type="button"
-							data-item="see-answer">查看详解</button>
+						<button class="grey-b float-r" type="button" data-item="see-answer" onclick="seeDetail()">查看详解</button>
 					</div>
 					<div class="tongji-container cl" data-item="tongji-container">
 						<label class="daduinext float-l"><input type="checkbox"
@@ -150,7 +149,7 @@
 					</div>
 
 					<div class="datika-container close" id="datika-container">
-						<table class="datika">
+						<table class="datika" id="choseQuiz">
 							<tbody>
 								<tr>
 									<td class="tr-first" data-id="802200">1</td>
@@ -264,6 +263,332 @@
 								</tr>
 							</tbody>
 						</table>
+					</div>
+					<div data-item="explain-fenxi-container"
+						class="explain-fenxi-container close" id="analyseContainer">
+						<div class="explain-container fenxi-container">
+							<div class="title">
+								<span class="name">试题详解</span>
+								<button data-item="baocuo" type="button">我要报错</button>
+							</div>
+							<div class="ef-content">
+								<p class="dengji cl">
+									<span class="float-l">难度等级：</span><i class="star-gray"><i
+										data-item="explain-star" class="star-leave star-5"></i></i>
+								</p>
+								<p data-item="explain-content" class="wapper">
+								<p>
+									《道路交通安全法》第一百条：<br>驾驶拼装的机动车或者已达到报废标准的机动车上道路行驶的，公安机关交通管理部门应当予以收缴，强制报废。<br>对驾驶前款所列机动车上道路行驶的驾驶人，处200元以上2000元以下罚款，并吊销机动车驾驶证（非行驶证）。
+								</p>
+								</p>
+							</div>
+						</div>
+						<div class="fenxi-container">
+							<div class="title">
+								<span class="name">我来分析</span>
+								<button data-action="login_refresh" data-item="woyaofenxi"
+									type="button" class="">我要分析</button>
+							</div>
+							<div data-item="fenxi-content-container"
+								class="fenxi-content-container ef-content">
+								<ul data-item="list">
+									<li class="li0"><img
+										src="http://avatar.user.mucang.cn/201826/0/2e2a6e9b-2a48-4c4e-9533-db4c3e898ad4/original">
+										<div class="item">
+											<p class="header">
+												<span title="快点拿到手吧！！" class="nickname">快点拿到手吧！！</span> <span
+													class="jinhua">精华</span>
+											</p>
+											<p class="word-break">200以上！2000以下！吊销驾驶证，不是行驶证！！</p>
+											<p class="date">2015-12-20</p>
+										</div></li>
+									<li class=""><img
+										src="http://q.qlogo.cn/qqapp/100289478/D49932715EC027D28C8AF6FA10800BE6/100">
+										<div class="item">
+											<p class="header">
+												<span title="我这样不对" class="nickname">我这样不对</span> <span
+													class="jinhua">精华</span>
+											</p>
+											<p class="word-break">题干上是行驶证，不是驾驶证</p>
+											<p class="date">2015-12-23</p>
+										</div></li>
+									<li class=""><img
+										src="http://wx.qlogo.cn/mmopen/n8N22hwOUfm3Rn6zA6M4lLM2XZEBGLaFGeGYcP23RUmcQ1oNtzsPiaUAIUP2lekkQup3xDg19RxtkdBaeGqpRWDGf4xu7QQLr/0">
+										<div class="item">
+											<p class="header">
+												<span title="👿👿" class="nickname">👿👿</span>
+											</p>
+											<p class="word-break">又看错了😣</p>
+											<p class="date">14:49</p>
+										</div></li>
+									<li class=""><img
+										src="http://avatar.user.mucang.cn/user-avatar/2016/09/08/09/681f31c47ab948a0a4553da22d001692!100x100">
+										<div class="item">
+											<p class="header">
+												<span title="狼吃肉狗吃屎" class="nickname">狼吃肉狗吃屎</span>
+											</p>
+											<p class="word-break">都是坑，文字坑</p>
+											<p class="date">14:16</p>
+										</div></li>
+									<li class=""><img
+										src="http://avatar.user.mucang.cn/user-avatar/2016/09/05/13/68e1e5bafb4c47a9ac0f8ee9cddf8d1b!100x100">
+										<div class="item">
+											<p class="header">
+												<span title="harden13" class="nickname">harden13</span>
+											</p>
+											<p class="word-break">看错字了，要小心啊</p>
+											<p class="date">14:10</p>
+										</div></li>
+									<li class=""><img
+										src="http://avatar.user.mucang.cn/user-avatar/2016/09/09/14/c242911f96084dab99952a888a7a2e7a!100x100">
+										<div class="item">
+											<p class="header">
+												<span title="雪穗" class="nickname">雪穗</span>
+											</p>
+											<p class="word-break">行驶证和驾驶证有什么不一样</p>
+											<p class="date">14:08</p>
+										</div></li>
+									<li class=""><img
+										src="http://qzapp.qlogo.cn/qzapp/100289478/DDB865BCCF51F4EBC2404230EFE19D41/100">
+										<div class="item">
+											<p class="header">
+												<span title="遗忘一切-_-" class="nickname">遗忘一切-_-</span>
+											</p>
+											<p class="word-break">没有看清楚 唉</p>
+											<p class="date">14:00</p>
+										</div></li>
+									<li class=""><img
+										src="http://avatar.kakamobi.cn/user/avatar/3.jpg">
+										<div class="item">
+											<p class="header">
+												<span title="大郡" class="nickname">大郡</span>
+											</p>
+											<p class="word-break">这题做五次错五次。死在这上面了。</p>
+											<p class="date">13:24</p>
+										</div></li>
+									<li class=""><img
+										src="http://wx.qlogo.cn/mmopen/4h0Uv4XOMvMo2WdIhbYRacrVE57qgK4edkGel8xAI8CdgeI9bLPbvnZRGmVYuM8xq3wOptr6hFhqvoIwPE2KZhXaITAQOA9Z/0">
+										<div class="item">
+											<p class="header">
+												<span title="倾城倾下" class="nickname">倾城倾下</span>
+											</p>
+											<p class="word-break">驾驶证，不是行驶证</p>
+											<p class="date">13:17</p>
+										</div></li>
+									<li class=""><img
+										src="http://qzapp.qlogo.cn/qzapp/100289478/A766ADD67896AC3271E0D6A0B3F85B4D/100">
+										<div class="item">
+											<p class="header">
+												<span title="💋&#12288;" class="nickname">💋&#12288;</span>
+											</p>
+											<p class="word-break">一定要看清楚题</p>
+											<p class="date">12:54</p>
+										</div></li>
+									<li class=""><img
+										src="http://qzapp.qlogo.cn/qzapp/100289478/94B4D1920EEC1131D8DF869A5FB25FBA/100">
+										<div class="item">
+											<p class="header">
+												<span title="逍遥大叔" class="nickname">逍遥大叔</span>
+											</p>
+											<p class="word-break">这出题的人好贱啊，要看清选择答案！！！</p>
+											<p class="date">12:50</p>
+										</div></li>
+									<li class=""><img
+										src="http://qzapp.qlogo.cn/qzapp/100289478/1C70404BAABD109A9AF94D6498F24045/100">
+										<div class="item">
+											<p class="header">
+												<span title="愚亽啯喥" class="nickname">愚亽啯喥</span>
+											</p>
+											<p class="word-break">全是套路😱😱😱</p>
+											<p class="date">12:34</p>
+										</div></li>
+									<li class="li0"><img
+										src="http://saturn.image.mucang.cn/201168/0/83d82434-73dd-458d-aa81-49c7ac471ee5/original">
+										<div class="item">
+											<p class="header">
+												<span title="2016果果拿驾照" class="nickname">2016果果拿驾照</span>
+											</p>
+											<p class="word-break">咬文嚼字对驾车学车学规定有帮助吗？渣渣渣</p>
+											<p class="date">12:27</p>
+										</div></li>
+									<li class=""><img
+										src="http://saturn.image.mucang.cn/201168/0/83d82434-73dd-458d-aa81-49c7ac471ee5/original">
+										<div class="item">
+											<p class="header">
+												<span title="用户7323467077" class="nickname">用户7323467077</span>
+											</p>
+											<p class="word-break">破题毁一生 看错</p>
+											<p class="date">12:17</p>
+										</div></li>
+									<li class=""><img
+										src="http://wx.qlogo.cn/mmopen/4h0Uv4XOMvNQbnH5ibZmG0DkehqOwbvjqDzvrSSAic60v98RIHh7oAOt5tmEPe7F6bpSJKuBDhODNwbbB8I6sj75zJRZYCAC7H/0">
+										<div class="item">
+											<p class="header">
+												<span title="漃寞の笩誩亽" class="nickname">漃寞の笩誩亽</span>
+											</p>
+											<p class="word-break">懵逼了唉唉唉………</p>
+											<p class="date">12:05</p>
+										</div></li>
+									<li class=""><img
+										src="http://avatar.user.mucang.cn/user-avatar/2016/09/09/11/a25c9738f8c24824abaac30886d5a027!100x100">
+										<div class="item">
+											<p class="header">
+												<span title="小公举" class="nickname">小公举</span>
+											</p>
+											<p class="word-break">看错了。。。。</p>
+											<p class="date">11:58</p>
+										</div></li>
+									<li class=""><img
+										src="http://qzapp.qlogo.cn/qzapp/100289478/662638E723B426230D6E9E31F00A0130/100">
+										<div class="item">
+											<p class="header">
+												<span title="陌路" class="nickname">陌路</span>
+											</p>
+											<p class="word-break">太急了又掉坑里了……</p>
+											<p class="date">11:35</p>
+										</div></li>
+									<li class=""><img
+										src="http://q.qlogo.cn/qqapp/100289478/6B5D1E7E12A56066D9D2AD539301A727/100">
+										<div class="item">
+											<p class="header">
+												<span title="恩凡。" class="nickname">恩凡。</span>
+											</p>
+											<p class="word-break">看错字，卧槽。</p>
+											<p class="date">11:22</p>
+										</div></li>
+									<li class=""><img
+										src="http://wx.qlogo.cn/mmopen/4h0Uv4XOMvMJ0eiclicictwTcicpZ8VNq98K5rWMbEKHYCcLticoHl7035mtSxCYYOw0IQzib9sGemdgLlBmbI6Xicib1A/0">
+										<div class="item">
+											<p class="header">
+												<span title="张新桥大妹砸" class="nickname">张新桥大妹砸</span>
+											</p>
+											<p class="word-break">做3次错3次</p>
+											<p class="date">10:45</p>
+										</div></li>
+									<li class=""><img
+										src="http://wx.qlogo.cn/mmopen/axTNXYuSHWdV8zVStibt4ctXOFRVXKkKVxomRibJ2MdJicJIbq1jtKze29zgT6gOFDcfMciaLhMVOe54de0saPh2kKFkEfB7IqkZ/0">
+										<div class="item">
+											<p class="header">
+												<span title="熟悉er陌生" class="nickname">熟悉er陌生</span>
+											</p>
+											<p class="word-break">又看错选错了，考试的时候一定要细心啊</p>
+											<p class="date">10:43</p>
+										</div></li>
+									<li class=""><img
+										src="http://wx.qlogo.cn/mmopen/axTNXYuSHWdV8zVStibt4cpCsKvuuAyjR2tTqdH0zXsbsibnPBHDn4vvJShAg3t102PqYz36AMYOTZvgt9IicnibvQDj2cS3PQ8ic/0">
+										<div class="item">
+											<p class="header">
+												<span title="爱生活。" class="nickname">爱生活。</span>
+											</p>
+											<p class="word-break">卧槽，看错字了</p>
+											<p class="date">10:20</p>
+										</div></li>
+									<li class=""><img
+										src="http://wx.qlogo.cn/mmopen/n8N22hwOUfkzSeFuqZibyicUuSvaoVhbwibtb0p5zOM5L5lQU6AZQXm3fX1fC84UUgOlma8heKJ1zUvByibVNkFgMpLR1CUnHamR/0">
+										<div class="item">
+											<p class="header">
+												<span title="勿忘我" class="nickname">勿忘我</span>
+											</p>
+											<p class="word-break">做三次错三次</p>
+											<p class="date">09:28</p>
+										</div></li>
+									<li class="li0"><img
+										src="http://q.qlogo.cn/qqapp/100289478/5041955FCC7DBEE3830D19ABED5765CA/100">
+										<div class="item">
+											<p class="header">
+												<span title="或许丶不该遇见" class="nickname">或许丶不该遇见</span>
+											</p>
+											<p class="word-break">脑抽，看错了 以为是驾驶证</p>
+											<p class="date">09:20</p>
+										</div></li>
+									<li class=""><img
+										src="http://wx.qlogo.cn/mmopen/PiajxSqBRaEKnUKd19Oc7RP7Z1QelglS7miaLibZr6XEhW2nBv7GL3F0Th7TMr60E9NUbSQeFtGzxzZ2T2kMeCWoA/0">
+										<div class="item">
+											<p class="header">
+												<span title="《森淼造型》" class="nickname">《森淼造型》</span>
+											</p>
+											<p class="word-break">七次错七次无语</p>
+											<p class="date">08:36</p>
+										</div></li>
+									<li class=""><img
+										src="http://avatar.user.mucang.cn/user-avatar/2016/09/09/08/aed200d55bbb42cbadc3c280a7a5c912.png!100x100">
+										<div class="item">
+											<p class="header">
+												<span title="A༤唔爱华少、🇨🇳（总代）" class="nickname">A༤唔爱华少、🇨🇳（总代）</span>
+											</p>
+											<p class="word-break">表示有同感！ 都是套路</p>
+											<p class="date">08:30</p>
+										</div></li>
+									<li class=""><img
+										src="http://avatar.user.mucang.cn/user-avatar/2016/09/09/08/aed200d55bbb42cbadc3c280a7a5c912.png!100x100">
+										<div class="item">
+											<p class="header">
+												<span title="A༤唔爱华少、🇨🇳（总代）" class="nickname">A༤唔爱华少、🇨🇳（总代）</span>
+											</p>
+											<p class="word-break">哈哈。 哈哈。 吊销.......毛啊。 文字编辑。
+												我表示无语😓了。</p>
+											<p class="date">08:30</p>
+										</div></li>
+									<li class=""><img
+										src="http://wx.qlogo.cn/mmopen/n8N22hwOUfkzSeFuqZibyicYWunyG3sHpEIJq1gmYKBOPcibGu4PLOgl9xNvZnJRia3NKQPCeuhdXFDOxQ5jmnpHQS2Z43tBMzHic/0">
+										<div class="item">
+											<p class="header">
+												<span title="敏儿" class="nickname">敏儿</span>
+											</p>
+											<p class="word-break">没看透题目手点错了，</p>
+											<p class="date">08:22</p>
+										</div></li>
+									<li class=""><img
+										src="http://wx.qlogo.cn/mmopen/n8N22hwOUfkzSeFuqZibyicYWunyG3sHpEIJq1gmYKBOPcibGu4PLOgl9xNvZnJRia3NKQPCeuhdXFDOxQ5jmnpHQS2Z43tBMzHic/0">
+										<div class="item">
+											<p class="header">
+												<span title="敏儿" class="nickname">敏儿</span>
+											</p>
+											<p class="word-break">手快了，没看透题目点错了</p>
+											<p class="date">08:21</p>
+										</div></li>
+									<li class=""><img
+										src="http://wx.qlogo.cn/mmopen/4h0Uv4XOMvNMHQoWPRut5X0NWKLFEOCMFBmXyKbQFictOgicvKiaZOrzKdAfsLeZwyticNSTFfpT20ruxe8vHnAtqgyNzuicsWcYz/0">
+										<div class="item">
+											<p class="header">
+												<span title="W（XY）Z" class="nickname">W（XY）Z</span>
+											</p>
+											<p class="word-break">连环坑！(=￣&nbsp;ρ￣=)&nbsp;..zzZZ</p>
+											<p class="date">07:46</p>
+										</div></li>
+									<li class=""><img
+										src="http://wx.qlogo.cn/mmopen/4h0Uv4XOMvNMHQoWPRut5X0NWKLFEOCMFBmXyKbQFictOgicvKiaZOrzKdAfsLeZwyticNSTFfpT20ruxe8vHnAtqgyNzuicsWcYz/0">
+										<div class="item">
+											<p class="header">
+												<span title="W（XY）Z" class="nickname">W（XY）Z</span>
+											</p>
+											<p class="word-break">连环坑d(ŐдŐ๑)！</p>
+											<p class="date">07:45</p>
+										</div></li>
+									<li class=""><img
+										src="http://qzapp.qlogo.cn/qzapp/100289478/ACDE51387346320F2C47035F994118CB/100">
+										<div class="item">
+											<p class="header">
+												<span title="💋深知我不好i" class="nickname">💋深知我不好i</span>
+											</p>
+											<p class="word-break">自己还能不能用点心了😂</p>
+											<p class="date">07:09</p>
+										</div></li>
+									<li class=""><img
+										src="http://qzapp.qlogo.cn/qzapp/100289478/ACDE51387346320F2C47035F994118CB/100">
+										<div class="item">
+											<p class="header">
+												<span title="💋深知我不好i" class="nickname">💋深知我不好i</span>
+											</p>
+											<p class="word-break">每次都点错，不长急性，每次都是一眼扫过，要考试了，自己还能不能用点心了😂</p>
+											<p class="date">07:08</p>
+										</div></li>
+								</ul>
+								<button data-item="loadmore-dianping" type="button"
+									class="more-btn loadmore disable" data-cursor="11166575"
+									data-topic="802200">加载中...</button>
+							</div>
+						</div>
 					</div>
 					<div class="explain-fenxi-container close"
 						data-item="explain-fenxi-container">

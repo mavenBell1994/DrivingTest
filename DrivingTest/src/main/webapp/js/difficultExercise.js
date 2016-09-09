@@ -28,6 +28,7 @@ $(function(){
 		$("#rightRate").text(100+"%");
 	}
 	$.post("quiz/findAllDiffQuizs",function(data){
+		if(data!=null){
 			QuizData=data;
 			length=data.length;
 			if($.cookie('index')==undefined || $.cookie('index')==null ||  $.cookie('index')==0){
@@ -36,7 +37,7 @@ $(function(){
 				index=$.cookie('index');
 				showQuiz(data[index]);
 			}
-			
+		}
 	},"json");
 	
 });
@@ -103,7 +104,6 @@ function showQuiz(data){
 						$(".choseP").removeAttr("onclick");
 						flag=false;
 						choseAnswer(ra[1],j,ra[0],data.errTotal);
-						flag=true;
 					}
 				}
 			}
@@ -190,7 +190,7 @@ function choseAnswer(answer,i,qid,errTotal){
 	$("#rightRate").text(rightRate+"%");
 	//把点击属性移除
 	$(".choseP").removeAttr("onclick");
-
+	flag=true;
 }
 
 //点击收藏难题
@@ -235,3 +235,30 @@ function showFavorSave(qid){
 		},"json");
 	}
 }
+$("#choseQuiz td").bind("click",function(data){
+	index=$(this).text()-1;
+	$.cookie('index',index,{path:'/'});
+	if(QuizData[index]!=null){
+		showQuiz(QuizData[index]);
+	}
+});
+
+//查看详解
+function seeDetail(){
+	if ($("#analyseContainer").attr("class") == "explain-fenxi-container close") {
+		$("#analyseContainer").attr("class", "explain-fenxi-container");
+	} else {
+		$("#analyseContainer").attr("class", "explain-fenxi-container close");
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

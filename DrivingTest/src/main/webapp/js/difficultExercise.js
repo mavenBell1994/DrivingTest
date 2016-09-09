@@ -194,27 +194,43 @@ function choseAnswer(answer,i,qid,errTotal){
 }
 
 //点击收藏难题
+var saveFlag;
 function favorSave(){
 	var cid=$("#cid").text();
 	var qid=quiz.qid;
 	if(cid>0){
-		$.post("selfErrors/addfavorSave",{"cid":cid,"save":qid},function(data){
-			if(data){
-				showFavorSave(qid);
-			}
-		},"json")
+		if(saveFlag){
+			//点击收藏
+			$.post("selfErrors/addfavorSave",{"cid":cid,"save":qid},function(data){
+				if(data){
+					showFavorSave(qid);
+				}
+			},"json");
+		}else{
+			//点击取消收藏
+			$.post("selfErrors/removeFavorSave",{"cid":cid,"save":qid},function(data){
+				if(data){
+					alert("取消收藏成功！！！");
+					showFavorSave(qid);
+				}
+			},"json");
+		}
 	}
 }
-
+//获取所有难题
 function showFavorSave(qid){
 	var cid=$("#cid").text();
 	if(cid>0){
 		$.post("selfErrors/getFavorSave",{"cid":cid},function(data){
-			var saves=data.save;
-			if(saves.indexOf(qid)!=-1){
-				$("#favor-tag").css({"background-image":"url(images/fovor1.png)"});
-			}else{
-				$("#favor-tag").css({"background-image":"url(images/fovor.png)"});
+			if(data!=null){
+				var saves=data.save;
+				if(saves!=null && saves.indexOf("@"+qid)!=-1){
+					saveFlag=false;
+					$("#favor-tag").css({"background-image":"url(images/fovor1.png)"});
+				}else{
+					saveFlag=true;//说明可以收藏
+					$("#favor-tag").css({"background-image":"url(images/fovor.png)"});
+				}
 			}
 		},"json");
 	}

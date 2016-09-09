@@ -86,7 +86,7 @@ function showQuiz(data){
 	
 	//点击选项的时候把值存在cookie里，在显示题目的时候，根据qid进行匹配，匹配到显示自己的做题记录
 	if($.cookie('recordAnswer')!=undefined && $.cookie('recordAnswer')!=null){
-		if($.cookie('recordAnswer').contains("@"+data.qid+",")){
+		if($.cookie('recordAnswer').indexOf("@"+data.qid+",")!=-1){
 			var recordAnswers= $.cookie('recordAnswer').split("@");
 			for(var i=1;i<recordAnswers.length;i++){
 /*				alert(recordAnswers[i]+"===="+(data.qid+",")+"==="+recordAnswers[i].contains(data.qid+",")+"=="+recordAnswers[i].substring(0,recordAnswers[i].indexOf(",") ));
@@ -122,7 +122,7 @@ function choseAnswer(answer,i,qid,errTotal){
 	if($.cookie('recordAnswer')!=undefined){
 		recordAnswer=$.cookie('recordAnswer');
 	}
-	if(!recordAnswer.contains(("@"+qid+","+answer))){
+	if(recordAnswer.indexOf(("@"+qid+","+answer))==-1){
 		recordAnswer+="@"+qid+","+answer;
 		$.cookie('recordAnswer',recordAnswer,{path:'/'});
 	}
@@ -211,7 +211,7 @@ function showFavorSave(qid){
 	if(cid>0){
 		$.post("selfErrors/getFavorSave",{"cid":cid},function(data){
 			var saves=data.save;
-			if(saves.contains(qid)){
+			if(saves.indexOf(qid)!=-1){
 				$("#favor-tag").css({"background-image":"url(images/fovor1.png)"});
 			}else{
 				$("#favor-tag").css({"background-image":"url(images/fovor.png)"});

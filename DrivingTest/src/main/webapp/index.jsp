@@ -312,7 +312,6 @@
 			 $.cookie('recordAnswer', '', {path:'/', expires: -1 }); 
  			location.href="page/difficultExercise.jsp";
 		}
-		
 	</script>
 </body>
 </html>

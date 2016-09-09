@@ -287,7 +287,7 @@
 							<div class="title">
 								<span class="name">我来分析</span>
 								<button data-action="login_refresh" data-item="woyaofenxi"
-									type="button" class="">我要分析</button>
+									type="button" class="" onclick="WeAnalyse()">我要分析</button>
 							</div>
 							<div data-item="fenxi-content-container"
 								class="fenxi-content-container ef-content">

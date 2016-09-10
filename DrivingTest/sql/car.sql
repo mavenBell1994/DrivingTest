@@ -157,6 +157,18 @@ create table SelfErrors(
        errorSave varchar2(4000),        --进行字符拼接。1,2,23,55   ,可以使用@或者,    
        save varchar2(4000)
 );
+
+--用户评论表
+drop table comments;
+create table comments(
+	ctid number primary key, --表主键
+	cid number, --用户ID 
+	content varchar(200),--用户评论内容
+	reply varchar(200),--用户被评论的内容
+	support number --被支持点赞的次数
+)
+create sequence seq_comments_ctid start with 1 ;
+
 insert into SelfErrors values(121,'','');
 --样例   insert into SelfErrors values ( ?,? );			
 select * from SelfErrors ;

@@ -46,6 +46,8 @@
 			<span id="login_cname"> <a href="javascript:show()">用户：${cname.cname}</a>
 			</span>
 			<span style="display: none" id="cid">${cname.cid}</span>
+			<span style="display: none" id="cname">${cname.cname}</span>
+			<span style="display: none" id="icon">${cname.icon}</span>
 			 <span id="quit_login"> <a href="user/quit?url=<%=request.getRequestURI()%>">[退出]</a>
 			</span>
 		</div>

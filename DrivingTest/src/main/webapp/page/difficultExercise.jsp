@@ -291,8 +291,29 @@
 							</div>
 							<div data-item="fenxi-content-container"
 								class="fenxi-content-container ef-content">
-								<ul data-item="list">
-									<li class="li0"><img
+								<ul data-item="list" id="listComs">
+								<%-- <c:forEach items="comments" >
+									<li class="li0">
+										<c:choose>
+											<c:when test="${cname.icon!=null }">
+												<img src="../pics/"+${cnmae.icon }/>
+											</c:when>
+											<c:otherwise>
+												<img src="images/diandian.png" }/>
+											</c:otherwise>
+										</c:choose>
+										<div class="item">
+											<p class="header">
+												<span title="快点拿到手吧！！" class="nickname">${cname.cname}</span> <span
+													class="jinhua">精华</span>
+											</p>
+											<p class="word-break">${comments.comContent }</p>
+											<p class="date">${comments.comDate }</p>
+										</div>
+									</li>
+								</c:forEach> --%>
+								
+									<!-- <li class="li0"><img
 										src="http://avatar.user.mucang.cn/201826/0/2e2a6e9b-2a48-4c4e-9533-db4c3e898ad4/original">
 										<div class="item">
 											<p class="header">
@@ -302,8 +323,8 @@
 											<p class="word-break">200以上！2000以下！吊销驾驶证，不是行驶证！！</p>
 											<p class="date">2015-12-20</p>
 										</div>
-									</li>
-									<li class=""><img
+									</li>  -->
+									<!-- <li class=""><img
 										src="http://q.qlogo.cn/qqapp/100289478/D49932715EC027D28C8AF6FA10800BE6/100">
 										<div class="item">
 											<p class="header">
@@ -584,6 +605,7 @@
 											<p class="word-break">每次都点错，不长急性，每次都是一眼扫过，要考试了，自己还能不能用点心了😂</p>
 											<p class="date">07:08</p>
 										</div></li>
+										-->
 								</ul>
 								<button data-item="loadmore-dianping" type="button"
 									class="more-btn loadmore disable" data-cursor="11166575"
@@ -736,7 +758,7 @@
 	<!-- /.modal -->
 	<!-- 我要分析 -->
 	<div id="dialog-base-container" style="display: none;">
-		<div data-item="dialog-6" class="dialog-wrap " style="">
+		<div data-item="dialog-6" class="dialog-wrap " style="" id="analyseDialog">
 			<div class="jkbd-dialog-backdrop"></div>
 			<div style="width: 390px;" class="dialog-main nofotter"
 				data-item="dialog-main">
@@ -754,7 +776,23 @@
 				<div class="footer btns0"></div>
 			</div>
 		</div>
+		<!--点击放大图片  -->
+		<div data-item="dialog-2" class="dialog-wrap alert" style="" id="bigImgDialog">
+			<div class="jkbd-dialog-backdrop"></div>
+			<div style="width: 550px;" class="dialog-main "
+				data-item="dialog-main">
+				<h2 class="title">查看大图</h2>
+				<div class="body " data-item="body" id="bigImg">
+					<!-- <img style="width: 500px; height: auto;" src="images/banner1.png"> -->
+				</div>
+				<div class="footer btns1">
+					<button class="i0" data-value="0" type="button" onclick="bigImgClose()">确定</button>
+				</div>
+			</div>
+		</div>
 	</div>
+	
+	
 	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
 	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/formlogin.js"></script>

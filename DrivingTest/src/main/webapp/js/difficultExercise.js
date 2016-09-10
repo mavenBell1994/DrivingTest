@@ -76,7 +76,7 @@ function showQuiz(data){
 	right=answers[answers.length-1];
 	var img;
 	if(data.pic!=null){
-		 img='<img src="'+data.pic+'"/><p style="margin-top: 10px;text-align: center;"><span style="color: #1dacf9; cursor: pointer; font-size: 12px;">点击放大</span></p>';
+		 img='<img src="'+data.pic+'"/><p style="margin-top: 10px;text-align: center;"><span style="color: #1dacf9; cursor: pointer; font-size: 15px;" onclick="javascript:showBigImg(\''+data.pic+'\')">点击放大</span></p>';
 		$("#quizPics").html(img);
 	}
 	
@@ -116,6 +116,7 @@ function showQuiz(data){
 		}
 	}
 	$("#DiffQuizExplain").html(quiz.explain);//难题解析
+	
 }
 function choseAnswer(answer,i,qid,errTotal){
 //把自己的选项和题号存在cookie里
@@ -251,18 +252,24 @@ $("#choseQuiz td").bind("click",function(data){
 
 //查看详解
 function seeDetail(){
+
+	//拿到所有的用户评论 显示评论,根据qid拿到所有的评论,根据日期进行排列
+	showAnalyse();
 	if ($("#analyseContainer").attr("class") == "explain-fenxi-container close") {
 		$("#analyseContainer").attr("class", "explain-fenxi-container");
 		
 	} else {
 		$("#analyseContainer").attr("class", "explain-fenxi-container close");
 	}
+	
 }
 
 /*我要分析
 */function WeAnalyse(){
 	content=$("#comContent").val("");
 	$("#dialog-base-container").css("display","block");
+	$("#analyseDialog").css("display","block");
+	$("#bigImgDialog").css("display","none");
 }
 /*点击X关闭*/
 function dialogClose(){
@@ -286,14 +293,51 @@ function addComments(cid){
 	var comContent=$("#comContent").val();
 	if(cid>0){
 		$.post("comments/addComments",{"cid":cid,"qid":quiz.qid,"comContent":comContent},function(data){
-			alert(data);
 			if(data){
 				$("#dialog-base-container").css("display","none");
+				 showAnalyse();
 			}
 		},"json");
 	}
 }
+//显示评论的方法
+function showAnalyse(){
+	var cname=$("#cname").text();
+	var icon=$("#icon").text();
+	$.post("comments/getAllComByQid",{"qid":quiz.qid},function(data){
+		if(data!=null){
+			var strCom="";
+			for(var i=0;i<data.length;i++){
+				strCom+=' <li >';
+				if(icon==null || icon==""){
+					strCom+=' <img src="images/diandian.png">';
+				}else{
+					strCom+=' <img src="../pics"'+icon+'>';
+				}
+				strCom+='<div class="item">';
+				strCom+='<p class="header">';
+				strCom+='<span title="快点拿到手吧！！" style="font-size: 16px;color: #999;">'+cname+'</span>';
+				strCom+='</p>';
+				strCom+='<p class="word-break" style="font-size: 18px;margin-bottom: 8px;">'+data[i].comContent+'</p>';
+				strCom+='<p style="color: #a09f9f; position: absolute;right: 0;top: 0;">'+data[i].comDate.substring(0,data[i].comDate.indexOf(" ") )+'</p>';
+				strCom+='</div>';
+				strCom+='</li> ';
+			}
+			$("#listComs").html(strCom);
+		}
+	},"json");
+}
 
-
-
-
+//点击放大图片的功能
+function showBigImg(pic){
+	pic="../"+pic;
+	$("#dialog-base-container").css("display","block");
+	$("#analyseDialog").css("display","none");
+	$("#bigImgDialog").css("display","block");
+	var strImg='<img style="width: 500px; height: auto;" src="'+pic+'">';
+	$("#bigImg").html(strImg);
+}
+//关闭大图
+function bigImgClose(){
+	$("#dialog-base-container").css("display","none");
+}

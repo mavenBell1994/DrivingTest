@@ -9,12 +9,13 @@ public class Quiz {
 	private String qtype;
 	private int errTotal;
 	private int rn;
+	private String explain;
 
 	public Quiz() {
 	}
 
 	public Quiz(int qid, String question, String answer, int pid, String pic, String qtype, int errTotal, int rn,
-			int totalDiff) {
+			String explain) {
 		super();
 		this.qid = qid;
 		this.question = question;
@@ -24,6 +25,15 @@ public class Quiz {
 		this.qtype = qtype;
 		this.errTotal = errTotal;
 		this.rn = rn;
+		this.explain = explain;
+	}
+
+	public String getExplain() {
+		return explain;
+	}
+
+	public void setExplain(String explain) {
+		this.explain = explain;
 	}
 
 	public int getQid() {
@@ -92,8 +102,8 @@ public class Quiz {
 
 	@Override
 	public String toString() {
-		return "Quiz \n [qid=" + qid + ", question=" + question + ", answer=" + answer + ", pid=" + pid + ", pic=" + pic
-				+ ", qtype=" + qtype + ", errTotal=" + errTotal + ", rn=" + rn + "]";
+		return "Quiz [qid=" + qid + ", question=" + question + ", answer=" + answer + ", pid=" + pid + ", pic=" + pic
+				+ ", qtype=" + qtype + ", errTotal=" + errTotal + ", rn=" + rn + ", explain=" + explain + "]";
 	}
-	
+
 }

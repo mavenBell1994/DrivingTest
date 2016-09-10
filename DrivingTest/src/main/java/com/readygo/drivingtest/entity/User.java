@@ -11,13 +11,11 @@ public class User {
 	private String addr;
 	private Integer status;
 	private String regdate;
+	
 	public User() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 	public User(Integer cid, String cname, String cpwd, String email, String icon, String tel, String sex, String addr,
 			Integer status, String regdate) {
-		super();
 		this.cid = cid;
 		this.cname = cname;
 		this.cpwd = cpwd;

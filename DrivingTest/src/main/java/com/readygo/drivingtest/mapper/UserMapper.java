@@ -1,5 +1,7 @@
 package com.readygo.drivingtest.mapper;
 
+import java.util.List;
+
 import com.readygo.drivingtest.entity.User;
 
 public interface UserMapper {
@@ -10,6 +12,8 @@ public interface UserMapper {
 
 	public void active(String cname);
 
-	public User login(User user);
 
+	public User login(User user);
+	
+	public List<User> allUsers();
 }

@@ -10,7 +10,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="back/img/logo.png" />
+<link rel="icon" href="../img/logo.png" />
 <title>DrivingTest后台管理系统</title>
 <link href="../css/bootstrap.css" rel="stylesheet">
 <link rel="stylesheet" href="../css/bootstrap-table.css" />
@@ -23,10 +23,7 @@
 <script src="../js/bootstrap-table-zh-CN.js"></script>
 
 
-<!--[if lt IE 9]>
-    <script src="js/html5shiv.min.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
+
 <style>
 </style>
 </head>
@@ -84,7 +81,7 @@
 							</a>
 						</div>
 						<div class="panel panel-default menu-first">
-							<a data-toggle="collapse" data-parent="#accordion" href="#One"
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
 								aria-expanded="true" aria-controls="collapseOne"> <i
 								class="icon-user-md icon-large"></i> 管理员管理
 							</a>
@@ -105,7 +102,7 @@
 						</div>
 						<div class="panel panel-default menu-first">
 							<a class="collapsed" data-toggle="collapse"
-								data-parent="#accordion" href="#Two" aria-expanded="false"
+								data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
 								aria-controls="collapseTwo"> <i class="icon-book icon-large"></i>
 								用户管理
 							</a>
@@ -123,7 +120,7 @@
 						</div>
 						<div class="panel panel-default menu-first">
 							<a class="collapsed" data-toggle="collapse"
-								data-parent="#accordion" href="#Three" aria-expanded="false"
+								data-parent="#accordion" href="#collapseThree" aria-expanded="false"
 								aria-controls="collapseThree"> <i
 								class="icon-book icon-large"></i> 题库管理
 							</a>
@@ -143,7 +140,7 @@
 
 						<div class="panel panel-default menu-first">
 							<a class="collapsed" data-toggle="collapse"
-								data-parent="#accordion" href="#Four" aria-expanded="false"
+								data-parent="#accordion" href="#collapseFour" aria-expanded="false"
 								aria-controls="collapseFour"> <i
 								class="icon-book icon-large"></i> 测试管理
 							</a>
@@ -194,24 +191,7 @@
 					<table id="checkAdmin">
 						
 					</table>
-					<!--
-                        	作者：18274763345@163.com
-                        	时间：2016-08-31
-                        	描述：下侧页码，做分页操作
-                       -->
-					<!-- <ul class="pagination right">
-						<li class="disabled"><a href="#" aria-label="Previous"><span
-								aria-hidden="true">&laquo;</span></a></li>
-						<li class="active">
-						<a href="#">1 <span class="sr-only">(current)</span></a>
-						</li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li><a href="#" aria-label="Next"><span
-								aria-hidden="true">&raquo;</span></a></li>
-					</ul> -->
+				
 				</div>
 				<!--右侧内容结束-->
 			</div>
@@ -246,56 +226,58 @@
 		})
 
 		//进来后显示所有管理员的信息,需要判定是sa								
+		
 		$('#checkAdmin').bootstrapTable({
 			method : 'get',
 			url : '../../admin/allAdmin',
+			height : $(window).height() - 200,
 			cache : false,
 			striped : true,
 			pagination : true,
 			dataType : "json",
-			pageList : [ 2, 5, 8 ],
-			pageSize : 2,
+			pageList : [5,10,20,50],
+			pageSize : 5,
 			pageNumber : 1,
 			search : true,
-			sidePagination : 'server',
+			sidePagination : 'client',
 			showColumns : true,
 			minimumCountColumns : 2,
 			clickToSelect : true,
 			showToggle : true,
 			columns : [ {
-				field : 'state',
+				field : '',
 				checkbox : true
 			}, {
 				field : 'aid',
 				title : 'ID',
-				sortable : true
+				sortable : true,
+				align: 'center'
 			}, {
 				field : 'aname',
 				title : '姓名',
+				align: 'center'
 			}, {
 				field : 'apwd',
 				title : '密码',
+				align: 'center'
 			}, {
 				field : 'issuper',
 				title : '管理员级别',
-				sortable : true
+				sortable : true,
+				align: 'center'
 			}, {
 				field : 'status',
 				title : '状态',
-				sortable : true
+				sortable : true,
+				align: 'center'
 			} //,
 			//	            {field : 'operate',title: '操作',width: 100,align: 'center',valign: 'middle',formatter:function(){
 			//	            		
 			//	            }} 
-			],
-			onLoadSuccess : function() {
-				//mif.showErrorMessageBox("数据加载成功");
-			},
-			onLoadError : function() {
-				mif.showErrorMessageBox("数据加载失败！");
-			}
-
+			]
+			
 		},"json");
+		
 	</script>
 </body>
 

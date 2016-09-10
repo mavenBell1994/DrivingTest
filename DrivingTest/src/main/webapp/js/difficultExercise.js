@@ -73,7 +73,12 @@ function showQuiz(data){
 	var answers=data.answer.split("@");
 	var str="";
 	right=answers[answers.length-1];
-	var img='<img src="'+data.pic+'"/>';
+	var img;
+	if(data.pic!=null){
+		 img='<img src="'+data.pic+'"/><p style="margin-top: 10px;text-align: center;"><span style="color: #1dacf9; cursor: pointer; font-size: 12px;">点击放大</span></p>';
+		$("#quizPics").html(img);
+	}
+	
 	for(var i=0;i<answers.length-1;i++){
 		str+='<p  data-answer="16" onclick="choseAnswer(\''+answers[i]+'\','+i+','+data.qid+','+data.errTotal+')" class="choseP">';
 			str+='<i id="optionImg'+i+'" ></i><span style="font-size: 18px;">'+answers[i]+'</span>';
@@ -83,7 +88,7 @@ function showQuiz(data){
 	type='<p class="weizuo">'+data.qtype+'，请选择你认为正确的答案！</p>';
 	$("#qtype").html(type);
 	$("#options-container").html(str);
-	$("#quizPics").html(img);
+	
 	
 	//点击选项的时候把值存在cookie里，在显示题目的时候，根据qid进行匹配，匹配到显示自己的做题记录
 	if($.cookie('recordAnswer')!=undefined && $.cookie('recordAnswer')!=null){

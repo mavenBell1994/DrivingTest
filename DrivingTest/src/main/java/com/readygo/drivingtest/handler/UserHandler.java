@@ -7,23 +7,28 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.google.gson.Gson;
-import com.readygo.drivingtest.entity.Admin;
-import com.readygo.drivingtest.serviceimpl.AdminServiceImpl;
+import com.readygo.drivingtest.entity.User;
+import com.readygo.drivingtest.serviceimpl.UserServiceImpl;
 
+/**
+ * 9.9
+ * @author Hong
+ *
+ */
 @Controller
-@RequestMapping("/admin")
-public class AdminHandler {
+@RequestMapping("/user")
+public class UserHandler {
 	@Autowired
-	private AdminServiceImpl asimpl ;
+	private UserServiceImpl usimpl ;
 	
-	@RequestMapping("/allAdmin")
-	public void allAdmin(PrintWriter out){
-		List<Admin> allAdmin = asimpl.getAllAdmin();
-		for(Admin a : allAdmin){
+	@RequestMapping("/allUsers")
+	public void allUsers(PrintWriter out){
+		List<User> allUsers = usimpl.allUsers();
+		for(User a : allUsers){
 			System.out.println(a);
 		}
 		Gson gson=new Gson();
-		out.println(gson.toJson(allAdmin));
+		out.println(gson.toJson(allUsers));
 		out.flush();
 		out.close();
 	}

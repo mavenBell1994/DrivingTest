@@ -16,7 +16,6 @@ public class Quiz {
 
 	public Quiz(int qid, String question, String answer, int pid, String pic, String qtype, int errTotal, int rn,
 			String explain) {
-		super();
 		this.qid = qid;
 		this.question = question;
 		this.answer = answer;

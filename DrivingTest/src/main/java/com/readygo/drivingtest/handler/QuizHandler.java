@@ -39,4 +39,21 @@ public class QuizHandler {
 		out.close();
 		return "redirect:/page/difficultExercise.jsp";
 	}
+	
+	/**
+	 * hong,9-10
+	 * @param out显示所有的quiz
+	 */
+	@RequestMapping("/allQuiz")
+	public void findAllDiffQuizs(PrintWriter out){
+		List<Quiz> quizs=quizService.allQuiz();
+		Gson gson=new Gson();
+		for(Quiz q:quizs){
+			System.out.println(q);
+		}
+		out.println(gson.toJson(quizs));
+		out.flush();
+		out.close();
+	}
+	
 }

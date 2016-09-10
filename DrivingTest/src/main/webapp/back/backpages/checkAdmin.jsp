@@ -81,8 +81,9 @@
 							</a>
 						</div>
 						<div class="panel panel-default menu-first">
-							<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
-								aria-expanded="true" aria-controls="collapseOne"> <i
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapseOne" aria-expanded="true"
+								aria-controls="collapseOne"> <i
 								class="icon-user-md icon-large"></i> 管理员管理
 							</a>
 
@@ -102,9 +103,9 @@
 						</div>
 						<div class="panel panel-default menu-first">
 							<a class="collapsed" data-toggle="collapse"
-								data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
-								aria-controls="collapseTwo"> <i class="icon-book icon-large"></i>
-								用户管理
+								data-parent="#accordion" href="#collapseTwo"
+								aria-expanded="false" aria-controls="collapseTwo"> <i
+								class="icon-book icon-large"></i> 用户管理
 							</a>
 							<div id="collapseTwo" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
@@ -120,14 +121,14 @@
 						</div>
 						<div class="panel panel-default menu-first">
 							<a class="collapsed" data-toggle="collapse"
-								data-parent="#accordion" href="#collapseThree" aria-expanded="false"
-								aria-controls="collapseThree"> <i
+								data-parent="#accordion" href="#collapseThree"
+								aria-expanded="false" aria-controls="collapseThree"> <i
 								class="icon-book icon-large"></i> 题库管理
 							</a>
 
 							<div id="collapseThree" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
-									<li><a href="checkAllQuiz.jsp"><i class="icon-user"></i>
+									<li><a href="getAllQuiz.jsp"><i class="icon-user"></i>
 											查看题库</a></li>
 									<li><a href="checkChapter.jsp"><i class="icon-edit"></i>
 											查看章节</a></li>
@@ -140,8 +141,8 @@
 
 						<div class="panel panel-default menu-first">
 							<a class="collapsed" data-toggle="collapse"
-								data-parent="#accordion" href="#collapseFour" aria-expanded="false"
-								aria-controls="collapseFour"> <i
+								data-parent="#accordion" href="#collapseFour"
+								aria-expanded="false" aria-controls="collapseFour"> <i
 								class="icon-book icon-large"></i> 测试管理
 							</a>
 
@@ -166,32 +167,24 @@
 					<ol class="breadcrumb">
 						<li><a href="index.jsp"><span
 								class="glyphicon glyphicon-home"></span>&nbsp;后台首页</a></li>
-						<li class="active">管理员管理 - 表格</li>
+						<li class="active">系统管理 - 表格</li>
 					</ol>
-					<div class="input-group line left">
-						<span class="input-group-addon" id="basic-addon2"><span
-							class="glyphicon glyphicon-search"></span></span> <input type="text"
-							class="form-control" placeholder="输入关键字搜索"
-							aria-describedby="basic-addon2">
-					</div>
-					<select class="form-control line left">
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-					</select> <a href="#" class=" btn btn-primary "><span
-						class="glyphicon glyphicon-search"></span></a> <a href="#"
-						class=" btn btn-primary "><span
-						class="glyphicon glyphicon-download"></span></a> <a href="#"
-						class="btn btn-primary" data-toggle="modal" data-target="#add1"
-						title="添加"><span class="glyphicon glyphicon-plus"></a> <br />
+					<a href="#" class=" btn btn-primary ">
+						<span class="glyphicon glyphicon-search"></span>
+					</a> 
+					<a href="#" class=" btn btn-primary ">
+						<span class="glyphicon glyphicon-download"></span>
+					</a> 
+					<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#add1" title="添加">
+						<span class="glyphicon glyphicon-plus">
+					</a> 
+					<br />
 					<br />
 
-					<table id="checkAdmin">
-						
+					<table id="checkAdmin" >
+
 					</table>
-				
+
 				</div>
 				<!--右侧内容结束-->
 			</div>
@@ -235,8 +228,8 @@
 			striped : true,
 			pagination : true,
 			dataType : "json",
-			pageList : [5,10,20,50],
-			pageSize : 5,
+			pageList : [2,5,10],
+			pageSize : 1,
 			pageNumber : 1,
 			search : true,
 			sidePagination : 'client',
@@ -244,40 +237,53 @@
 			minimumCountColumns : 2,
 			clickToSelect : true,
 			showToggle : true,
+			
 			columns : [ {
 				field : '',
+				valign: 'middle',
 				checkbox : true
 			}, {
 				field : 'aid',
 				title : 'ID',
 				sortable : true,
+				valign: 'middle',
 				align: 'center'
 			}, {
 				field : 'aname',
 				title : '姓名',
+				valign: 'middle',
 				align: 'center'
 			}, {
 				field : 'apwd',
 				title : '密码',
-				align: 'center'
+				valign: 'middle',
+				align: 'center',
+				visible : false
 			}, {
 				field : 'issuper',
 				title : '管理员级别',
 				sortable : true,
+				valign: 'middle',
 				align: 'center'
 			}, {
 				field : 'status',
 				title : '状态',
 				sortable : true,
+				valign: 'middle',
 				align: 'center'
-			} //,
-			//	            {field : 'operate',title: '操作',width: 100,align: 'center',valign: 'middle',formatter:function(){
-			//	            		
-			//	            }} 
+			} ,{field : 'operate',title: '操作',width: 100,align: 'center',valign: 'middle',
+					formatter:function(value,row,index){
+						var edit ;
+						var del ;
+						edit = '<a></a>';
+						
+						return edit + del;
+					}
+			} 
 			]
 			
 		},"json");
-		
+	
 	</script>
 </body>
 

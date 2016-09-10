@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+
 <div class="jkbd-main-header-top" data-item="jkbd-main-header-top">
 	<div class="inner jkbd-width wid-auto">
 		<div class="float-l" data-item="header-cityinfo">
@@ -43,7 +44,7 @@
 			</div>
 		</div>
 		<div class="auth-info fl cl">
-			<span id="login_cname"> <a href="javascript:show()">用户：${cname.cname}</a>
+			<span id="login_cname"> <a href="#">用户：${cname.cname}</a>
 			</span>
 			<span style="display: none" id="cid">${cname.cid}</span>
 			<span style="display: none" id="cname">${cname.cname}</span>

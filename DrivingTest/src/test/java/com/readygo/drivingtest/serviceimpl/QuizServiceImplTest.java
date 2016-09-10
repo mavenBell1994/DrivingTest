@@ -30,5 +30,13 @@ public class QuizServiceImplTest {
 		List<Quiz> ls=quizService.allQuiz();
 		System.out.println(ls);
 	}
-	
+	/**
+	 * hong,9-10
+	 * 测试获取所有quiz
+	 */
+	@Test
+	public void testGetQuizByQid() {
+		Quiz ls=quizService.getQuizByQid(1);
+		System.out.println(ls);
+	}
 }

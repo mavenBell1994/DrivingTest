@@ -227,6 +227,7 @@ function favorSave(){
 //获取所有难题
 function showFavorSave(qid){
 	var cid=$("#cid").text();
+	alert("cid"+cid);
 	if(cid>0){
 		$.post("selfErrors/getFavorSave",{"cid":cid},function(data){
 			if(data!=null){

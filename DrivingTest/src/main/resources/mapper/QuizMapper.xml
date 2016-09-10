@@ -26,4 +26,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from quiz 
 	</select>
 	
+	<select id="getQuizByQid" resultType="Quiz" parameterType="int">
+		select * from quiz where qid=#{qid}
+	</select>
+	
 </mapper>

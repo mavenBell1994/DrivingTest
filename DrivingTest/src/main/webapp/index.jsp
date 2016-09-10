@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<%-- <%@ page isELIgnored="true"%> 消除el表达式--%>
+
 
 <!DOCTYPE html>
 <html>
@@ -249,14 +251,14 @@
 							<label for="userName" class="col-sm-3 control-label">用户名:</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" id="cname" name="cname"
-									placeholder="请输入用户名">
+									placeholder="请输入用户名" onblur="checklogin()">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="password" class="col-sm-3 control-label">密&nbsp;&nbsp;&nbsp;码:</label>
 							<div class="col-sm-8">
 								<input type="password" class="form-control" id="cpwd"
-									name="cpwd" placeholder="请输入密码">
+									name="cpwd" placeholder="请输入密码"  onblur="checklogin()">
 							</div>
 						</div>
 						<div class="form-group">

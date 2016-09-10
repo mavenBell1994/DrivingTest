@@ -4,13 +4,13 @@ import com.readygo.drivingtest.entity.SelfErrors;
 
 public interface SelfErrorsMapper {
 
-	int updateErrorSave(SelfErrors selfErrors);
+	public int updateErrorSave(SelfErrors selfErrors);
 
-	int updateSave(SelfErrors selfErrors);
+	public int updateSave(SelfErrors selfErrors);
 
-	SelfErrors getSelfErrors(int cid);
+	public SelfErrors getSelfErrors(int cid);
 
-	int updateRemoveErrorSave(String errorSave);
+	public int updateRemoveErrorSave(String errorSave);
 
-	int updateRemoveFavorSave(String saves);
+	public int updateRemoveFavorSave(String saves);
 }

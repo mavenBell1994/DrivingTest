@@ -12,12 +12,13 @@ import com.readygo.drivingtest.serviceimpl.UserServiceImpl;
 
 /**
  * 9.9
+ * 后台用户处理的hangdler
  * @author Hong
  *
  */
 @Controller
-@RequestMapping("/user")
-public class UserHandler {
+@RequestMapping("/backuser")
+public class BackUserHandler {
 	@Autowired
 	private UserServiceImpl usimpl ;
 	

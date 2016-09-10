@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.google.gson.Gson;
 import com.readygo.drivingtest.entity.Admin;
+import com.readygo.drivingtest.entity.TestRecord;
 import com.readygo.drivingtest.serviceimpl.AdminServiceImpl;
+import com.readygo.drivingtest.serviceimpl.TestRecordServiceImpl;
 
 /**
  * 后台admin的hangdler
@@ -16,19 +18,19 @@ import com.readygo.drivingtest.serviceimpl.AdminServiceImpl;
  *
  */
 @Controller
-@RequestMapping("/backadmin")
-public class AdminHandler {
+@RequestMapping("/backTestRec")
+public class BackTestRecordHandler {
 	@Autowired
-	private AdminServiceImpl asimpl ;
+	private TestRecordServiceImpl trsi ;
 	
-	@RequestMapping("/allAdmin")
-	public void allAdmin(PrintWriter out){
-		List<Admin> allAdmin = asimpl.getAllAdmin();
-		for(Admin a : allAdmin){
+	@RequestMapping("/allTest")
+	public void allTest(PrintWriter out){
+		List<TestRecord> allTest = trsi.allTest();
+		for(TestRecord a : allTest){
 			System.out.println(a);
 		}
 		Gson gson=new Gson();
-		out.println(gson.toJson(allAdmin));
+		out.println(gson.toJson(allTest));
 		out.flush();
 		out.close();
 	}

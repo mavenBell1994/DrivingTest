@@ -32,4 +32,9 @@ public class QuizServiceImpl implements QuizService {
 	public List<Quiz> allQuiz() {
 		return quizMapper.allQuiz();
 	}
+
+	@Override
+	public Quiz getQuizByQid(int qid) {
+		return quizMapper.getQuizByQid(qid);
+	}
 }

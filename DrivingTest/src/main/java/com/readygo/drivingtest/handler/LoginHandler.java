@@ -48,7 +48,6 @@ public class LoginHandler {
 			map.put("cname", userService.login(user));
 			return true;
 		}else{
-			System.out.println(userService.login(user)+"未查询");
 			map.remove("cname");
 			return false;
 		}

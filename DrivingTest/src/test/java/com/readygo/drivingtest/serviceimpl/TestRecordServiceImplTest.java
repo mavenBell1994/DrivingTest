@@ -8,9 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.readygo.drivingtest.entity.Admin;
 import com.readygo.drivingtest.entity.TestRecord;
-import com.readygo.drivingtest.service.AdminService;
 import com.readygo.drivingtest.service.TestRecordService;
 /**
  * 测试testRecordMapper等

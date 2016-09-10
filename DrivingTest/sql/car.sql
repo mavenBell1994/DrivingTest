@@ -174,3 +174,56 @@ select q.*,rownum rn from(select * from quiz  order by errTotal desc) q
 select qq.* from
 (select q.*,rownum rn from quiz q  order by errTotal desc) qq where 100>=rn;
 
+
+--------------------
+--------------------
+--hong,9-10
+--评论分析
+drop table comment ;
+create table comment (
+	comId int primary key,
+	cid	int,
+	qid	int,					--外键。
+	comDate	date,				--考虑存完整时间包含时分秒，还是考虑存当天
+	comContent varchar2(500),
+	commentTemp varchar2(100)
+);
+drop sequence seq_comment_comId;
+create sequence seq_comment_comId start with 100001 increment by 1;
+insert into comment values ( seq_comment_comId.nextval , ? , ? , sysdate , ? , '' );
+
+
+
+--发帖blog
+drop table blog;
+create table blog(
+	bid int primary key ,
+	cid	int ,
+	bTitle	varchar2(50),		--标题
+	bContent blob,				--内容,blob可以存放最大长度4G
+	bpics	varchar2(50),		--图片,存放帖子里的图片路径
+	bDate	date,				--发帖时间,这里放完整时间。
+	bPraise	int					--点赞数
+		constraint check_blog_bPraise check ( bPraise >= 0 ),				
+	bTemp	varchar2(200)
+
+);
+drop sequence seq_blog_bid;
+create sequence seq_blog_bid start with 1001 increment by 1;
+insert into blog values ( seq_blog_bid.nextval , ? , ? , ? , ? sysdate , 0 , '');
+
+
+
+--发帖回复表
+create table answer(
+	ansId int primary key,
+	bid int	,
+	cid int ,
+	ansContent	varchar2(200),	--回复内容
+	ansDate date,				--回复时间
+	andTemp	varchar2(100)		
+);
+drop sequence seq_answer_ansId;
+create sequence seq_answer_ansId start with 1001 increment by 1;
+insert into blog values ( seq_answer_ansId.nextval , ? , ? , ? , sysdate , 0 , '');
+

@@ -125,7 +125,7 @@
 
 							<div id="collapseThree" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
-									<li><a href="checkAllQuiz.jsp"><i class="icon-user"></i>
+									<li><a href="getAllQuiz.jsp"><i class="icon-user"></i>
 											查看题库</a></li>
 									<li><a href="checkChapter.jsp"><i class="icon-edit"></i>
 											查看章节</a></li>

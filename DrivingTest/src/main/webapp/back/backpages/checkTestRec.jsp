@@ -13,12 +13,15 @@
 <link rel="icon" href="../img/logo.png" />
 <title>DrivingTest后台管理系统</title>
 <link href="../css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/bootstrap-table.css" />
 <link rel="stylesheet" href="../css/mmss.css" />
 <link rel="stylesheet" href="../css/font-awesome.min.css" />
-<!--[if lt IE 9]>
-    <script src="js/html5shiv.min.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
+
+<script src="../js/jquery-1.11.3.js"></script>
+<script src="../js/bootstrap.js"></script>
+<script src="../js/bootstrap-table.js"></script>
+<script src="../js/bootstrap-table-zh-CN.js"></script>
+
 <style>
 </style>
 </head>
@@ -123,7 +126,7 @@
 
 							<div id="collapseThree" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
-									<li><a href="checkAllQuiz.jsp"><i class="icon-user"></i>
+									<li><a href="getAllQuiz.jsp"><i class="icon-user"></i>
 											查看题库</a></li>
 									<li><a href="checkChapter.jsp"><i class="icon-edit"></i>
 											查看章节</a></li>

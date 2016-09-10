@@ -82,7 +82,7 @@
 								href="#collapseOne" aria-expanded="false"
 								aria-controls="collapseOne"> <i
 								class="icon-user-md icon-large"></i> 管理员管理
-							</a> </a>
+							</a>
 
 							<div id="collapseOne" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
@@ -93,7 +93,8 @@
 											图表p2留着做样本</a></li>
 									<li><a href="checkAdmin.jsp"><i class="icon-trash"></i>
 											查看所有管理员</a></li>
-									<li><a href="checkAdminSelf.jsp"><i class="icon-list"></i>查看当前管理员</a></li>
+									<li><a href="checkAdminSelf.jsp"><i class="icon-list"></i>查看当前管理员</a>
+									</li>
 								</ul>
 							</div>
 						</div>
@@ -102,7 +103,7 @@
 								data-parent="#accordion" href="#collapseTwo"
 								aria-expanded="false" aria-controls="collapseTwo"> <i
 								class="icon-book icon-large"></i> 用户管理
-							</a> </a>
+							</a>
 							<div id="collapseTwo" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
 									<li><a href="checkAllUsers.jsp"><i class="icon-user"></i>
@@ -120,15 +121,16 @@
 								data-parent="#accordion" href="#collapseThree"
 								aria-expanded="true" aria-controls="collapseThree"> <i
 								class="icon-book icon-large"></i> 题库管理
-							</a> </a>
+							</a>
 
 							<div id="collapseThree" class="panel-collapse collapse in">
 								<ul class="nav nav-list menu-second">
-									<li><a href="checkAllQuiz.jsp"><i class="icon-user"></i>
+									<li><a href="getAllQuiz.jsp"><i class="icon-edit"></i>
 											查看题库</a></li>
 									<li><a href="checkChapter.jsp"><i class="icon-edit"></i>
 											查看章节</a></li>
-									<li><a href="checkCertify.jsp"><i class="icon-trash"></i>查看资格证</a></li>
+									<li><a href="checkCertify.jsp"><i class="icon-trash"></i>查看资格证</a>
+									</li>
 									<li><a href="#"><i class="icon-list"></i> 子选项4</a></li>
 								</ul>
 							</div>
@@ -139,7 +141,7 @@
 								data-parent="#accordion" href="#collapseFour"
 								aria-expanded="false" aria-controls="collapseFour"> <i
 								class="icon-book icon-large"></i> 测试管理
-							</a> </a>
+							</a>
 
 							<div id="collapseFour" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
@@ -162,21 +164,13 @@
 					<ol class="breadcrumb">
 						<li><a href="index.jsp"><span
 								class="glyphicon glyphicon-home"></span>&nbsp;后台首页</a></li>
-						<li class="active">系统管理 - 表格</li>
+						<li class="active">题库管理 - 表格</li>
 					</ol>
-					<a href="#" class=" btn btn-primary ">
-						<span class="glyphicon glyphicon-search"></span>
-					</a> 
-					<a href="#" class=" btn btn-primary ">
-						<span class="glyphicon glyphicon-download"></span>
-					</a> 
-					<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#add1" title="添加">
-						<span class="glyphicon glyphicon-plus">
-					</a> 
+
 					<br />
-					<br />
-					
-					<table id="allQuiz" >
+
+
+					<table id="getQuizs">
 
 					</table>
 
@@ -190,82 +184,65 @@
 		<p class="text-center text-white">版权所有&copy;ReadyGo小组</p>
 	</footer>
 
+
 	<script>
-			/*Bootlint工具用于对页面中的HTML标签以及Bootstrapclass的使用进行检测*/
-			(function() {
-				var s = document.createElement("script");
-				s.onload = function() {
-					bootlint.showLintReportForCurrentDocument([]);
-				};
-				s.src = "../js/bootlint.js";
-				document.body.appendChild(s)
-			})();
 			
+		//初始化表格
+					
+		$('#getQuizs').bootstrapTable({
+			method : 'get',
+			url : '../../quiz/allQuiz',
+			height : $(window).height() - 200,
+			cache : false,
+			striped : true,
+			pagination : true,
+			dataType : "json",
+			pageList : [5,10,20],
+			pageSize : 2,
+			pageNumber : 1,
+			search : true,
+			sidePagination : 'client',
+			showColumns : true,
+			minimumCountColumns : 2,
+			clickToSelect : true,
+			showToggle : true,
+
+			columns : [ {
+				field : '',
+				checkbox : true
+			}, {
+				field : 'qid',
+				title : 'ID',
+				sortable : true,
+				align: 'center'
+			},  {
+				field : 'pid',
+				title : '章节ID',
+				sortable : true,
+				align: 'center'
+			}, {
+				field : 'pic',
+				title : '图片',
+				align: 'center'
+			} , {
+				field : 'qtype',
+				title : '题目类型',
+				sortable : true,
+				align: 'center'
+			} , {
+				field : 'errtotal',
+				title : '错误总数',
+				sortable : true,
+				align: 'center'
+			} 
 			
-			$('#allQuiz').bootstrapTable({
-				method : 'get',
-				url : '../../quiz/allQuiz',
-				height : $(window).height() - 200,
-				cache : false,
-				striped : true,
-				pagination : true,
-				dataType : "json",
-				pageList : [5,10,20],
-				pageSize : 2,
-				pageNumber : 1,
-				search : true,
-				sidePagination : 'client',
-				showColumns : true,
-				minimumCountColumns : 2,
-				clickToSelect : true,
-				showToggle : true,
-	
-				columns : [ {
-					field : '',
-					checkbox : true
-				}, {
-					field : 'qid',
-					title : 'ID',
-					sortable : true,
-					align: 'center'
-				}, {
-					field : 'question',
-					title : '问题',
-					align: 'center' ,
-					visible : false
-				}, {
-					field : 'answer',
-					title : '答案',
-					align: 'center',
-					visible : false
-				}, {
-					field : 'pid',
-					title : '章节ID',
-					sortable : true,
-					align: 'center'
-				}, {
-					field : 'pic',
-					title : '图片',
-					align: 'center'
-				} , {
-					field : 'qtype',
-					title : '题目类型',
-					sortable : true,
-					align: 'center'
-				} , {
-					field : 'errtotal',
-					title : '错误总数',
-					sortable : true,
-					align: 'center'
-				} 
-				
-				//,
-				//	            {field : 'operate',title: '操作',width: 100,align: 'center',valign: 'middle',formatter:function(){
-				//	            		
-				//	            }} 
-				]
-				
-			});
+			//,
+			//	            {field : 'operate',title: '操作',width: 100,align: 'center',valign: 'middle',formatter:function(){
+			//	            		
+			//	            }} 
+			]
+			
+		},"json");
 			
 			
 		</script>

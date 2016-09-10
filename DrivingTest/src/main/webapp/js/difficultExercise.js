@@ -8,6 +8,7 @@ var rightCount=0;
 var errorCount=0;
 var rightRate=0;
 var flag=true;
+var quiz;//正在显示的题目
 //作为是否记录对错的标志
 $(function(){
 	var cid=$("#cid").val();
@@ -61,7 +62,7 @@ function showPre(){
 	
 }
 //显示一条测试题的内容data，题号应该和data对应
-var quiz;
+
 function showQuiz(data){
 	//通过异步加载把是否收藏显示出来
 	showFavorSave(data.qid);
@@ -114,7 +115,7 @@ function showQuiz(data){
 			}
 		}
 	}
-	
+	$("#DiffQuizExplain").html(quiz.explain);//难题解析
 }
 function choseAnswer(answer,i,qid,errTotal){
 //把自己的选项和题号存在cookie里
@@ -252,15 +253,32 @@ $("#choseQuiz td").bind("click",function(data){
 function seeDetail(){
 	if ($("#analyseContainer").attr("class") == "explain-fenxi-container close") {
 		$("#analyseContainer").attr("class", "explain-fenxi-container");
+		
 	} else {
 		$("#analyseContainer").attr("class", "explain-fenxi-container close");
 	}
 }
 
-
-
-
-
+/*我要分析
+*/function WeAnalyse(){
+	content=$("#comContent").val("");
+	$("#dialog-base-container").css("display","block");
+}
+/*点击X关闭*/
+function dialogClose(){
+	$("#dialog-base-container").css("display","none");
+}
+/*分析框计数*/
+function contentNum(){
+	var content=$("#comContent").val();
+	var length=content.length;
+	var wordNum=240-length;
+	if(wordNum<=0){
+		$("#comContent").val(content.substring(0,239));
+		$("#contentNum").html(length+"/240");
+	}
+	$("#contentNum").html(length+"/240");
+}
 
 
 

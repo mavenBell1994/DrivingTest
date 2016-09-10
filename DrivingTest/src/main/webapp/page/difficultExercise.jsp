@@ -277,8 +277,8 @@
 										data-item="explain-star" class="star-leave star-5"></i></i>
 								</p>
 								<p data-item="explain-content" class="wapper">
-								<p>
-									《道路交通安全法》第一百条：<br>驾驶拼装的机动车或者已达到报废标准的机动车上道路行驶的，公安机关交通管理部门应当予以收缴，强制报废。<br>对驾驶前款所列机动车上道路行驶的驾驶人，处200元以上2000元以下罚款，并吊销机动车驾驶证（非行驶证）。
+								<p id="DiffQuizExplain" style="color: #b28850;font-size: 18px;">
+									<!-- 《道路交通安全法》第一百条：<br>驾驶拼装的机动车或者已达到报废标准的机动车上道路行驶的，公安机关交通管理部门应当予以收缴，强制报废。<br>对驾驶前款所列机动车上道路行驶的驾驶人，处200元以上2000元以下罚款，并吊销机动车驾驶证（非行驶证）。 -->
 								</p>
 								</p>
 							</div>
@@ -301,7 +301,8 @@
 											</p>
 											<p class="word-break">200以上！2000以下！吊销驾驶证，不是行驶证！！</p>
 											<p class="date">2015-12-20</p>
-										</div></li>
+										</div>
+									</li>
 									<li class=""><img
 										src="http://q.qlogo.cn/qqapp/100289478/D49932715EC027D28C8AF6FA10800BE6/100">
 										<div class="item">
@@ -733,7 +734,27 @@
 		<!-- /.modal-dialog -->
 	</div>
 	<!-- /.modal -->
-	
+	<!-- 我要分析 -->
+	<div id="dialog-base-container" style="display: none;">
+		<div data-item="dialog-6" class="dialog-wrap " style="">
+			<div class="jkbd-dialog-backdrop"></div>
+			<div style="width: 390px;" class="dialog-main nofotter"
+				data-item="dialog-main">
+				<span title="关闭" data-item="close" class="dialog_close" onclick="dialogClose()">×</span>
+				<div class="body no-title" data-item="body" style="">
+					<div class="dianping-comment-container">
+						<h2>我要分析</h2>
+						<div class="textarea-wapper">
+							<textarea placeholder="快来和小伙伴分享一下想法吧！" rows="6" data-item="textarea" name="content" id="comContent" onkeyup="contentNum()"></textarea>
+							<div data-item="font-limit" class="font-limit" id="contentNum">0/240</div>
+						</div>
+						<button data-item="submit" type="button">提交</button>
+					</div>
+				</div>
+				<div class="footer btns0"></div>
+			</div>
+		</div>
+	</div>
 	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
 	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/formlogin.js"></script>

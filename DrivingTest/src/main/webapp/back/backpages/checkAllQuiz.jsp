@@ -183,7 +183,7 @@
 						class="btn btn-primary" data-toggle="modal" data-target="#add1"
 						title="添加"><span class="glyphicon glyphicon-plus"></a> <br />
 					<br />
-					<table id="allQuiz">
+					<table id="allQuiz" style="table-layout: fixed">
 
 					</table>
 
@@ -207,84 +207,70 @@
 				s.src = "../js/bootlint.js";
 				document.body.appendChild(s)
 			})();
-
-			//    添加编辑模态框
-			$('#add').on('show.bs.modal', function(event) {
-				var button = $(event.relatedTarget) // Button that triggered the modal
-				var recipient = button.data('whatever') // Extract info from data-* attributes
-					// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-					// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-				var modal = $(this)
-				modal.find('.modal-title').text('' + recipient)
-				modal.find('.modal-body input').val(recipient)
-			})
 			
 			
-		$('#allQuiz').bootstrapTable({
-			method : 'get',
-			url : '../../quiz/allQuiz',
-			height : $(window).height() - 200,
-			cache : false,
-			striped : true,
-			pagination : true,
-			dataType : "json",
-			pageList : [5,10,20,50],
-			pageSize : 1,
-			pageNumber : 1,
-			search : true,
-			sidePagination : 'client',
-			showColumns : true,
-			minimumCountColumns : 2,
-			clickToSelect : true,
-			showToggle : true,
-			columns : [ {
-				field : '',
-				checkbox : true
-			}, {
-				field : 'qid',
-				title : 'ID',
-				sortable : true,
-				align: 'center'
-			}, {
-				field : 'question',
-				title : '问题',
-				align: 'center'
-			}, {
-				field : 'answer',
-				title : '答案',
-				align: 'center'
-			}, {
-				field : 'pid',
-				title : '章节ID',
-				sortable : true,
-				align: 'center'
-			}, {
-				field : 'pic',
-				title : '图片',
-				align: 'center'
-			} , {
-				field : 'qtype',
-				title : '题目类型',
-				sortable : true,
-				align: 'center'
-			} , {
-				field : 'errtotal',
-				title : '错误总数',
-				sortable : true,
-				align: 'center'
-			} 
-			
-			
-			
-			
-			//,
-			//	            {field : 'operate',title: '操作',width: 100,align: 'center',valign: 'middle',formatter:function(){
-			//	            		
-			//	            }} 
-			]
-			
-		},"json");
-			
+			$('#allQuiz').bootstrapTable({
+				method : 'get',
+				url : '../../quiz/allQuiz',
+				height : $(window).height() - 200,
+				cache : false,
+				striped : true,
+				pagination : true,
+				dataType : "json",
+				pageList : [5,10,20],
+				pageSize : 1,
+				pageNumber : 1,
+				search : true,
+				sidePagination : 'client',
+				showColumns : true,
+				minimumCountColumns : 2,
+				clickToSelect : true,
+				showToggle : true,
+	
+				columns : [ {
+					field : '',
+					checkbox : true
+				}, {
+					field : 'qid',
+					title : 'ID',
+					sortable : true,
+					align: 'center'
+				}, {
+					field : 'question',
+					title : '问题',
+					align: 'center' ,
+				}, {
+					field : 'answer',
+					title : '答案',
+					align: 'center'
+				}, {
+					field : 'pid',
+					title : '章节ID',
+					sortable : true,
+					align: 'center'
+				}, {
+					field : 'pic',
+					title : '图片',
+					align: 'center'
+				} , {
+					field : 'qtype',
+					title : '题目类型',
+					sortable : true,
+					align: 'center'
+				} , {
+					field : 'errtotal',
+					title : '错误总数',
+					sortable : true,
+					align: 'center'
+				} 
+				
+				//,
+				//	            {field : 'operate',title: '操作',width: 100,align: 'center',valign: 'middle',formatter:function(){
+				//	            		
+				//	            }} 
+				]
+				
+			},"json");
 			
 			
 		</script>

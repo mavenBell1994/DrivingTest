@@ -81,8 +81,9 @@
 							</a>
 						</div>
 						<div class="panel panel-default menu-first">
-							<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
-								aria-expanded="true" aria-controls="collapseOne"> <i
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapseOne" aria-expanded="true"
+								aria-controls="collapseOne"> <i
 								class="icon-user-md icon-large"></i> 管理员管理
 							</a>
 
@@ -102,9 +103,9 @@
 						</div>
 						<div class="panel panel-default menu-first">
 							<a class="collapsed" data-toggle="collapse"
-								data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
-								aria-controls="collapseTwo"> <i class="icon-book icon-large"></i>
-								用户管理
+								data-parent="#accordion" href="#collapseTwo"
+								aria-expanded="false" aria-controls="collapseTwo"> <i
+								class="icon-book icon-large"></i> 用户管理
 							</a>
 							<div id="collapseTwo" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
@@ -120,8 +121,8 @@
 						</div>
 						<div class="panel panel-default menu-first">
 							<a class="collapsed" data-toggle="collapse"
-								data-parent="#accordion" href="#collapseThree" aria-expanded="false"
-								aria-controls="collapseThree"> <i
+								data-parent="#accordion" href="#collapseThree"
+								aria-expanded="false" aria-controls="collapseThree"> <i
 								class="icon-book icon-large"></i> 题库管理
 							</a>
 
@@ -140,8 +141,8 @@
 
 						<div class="panel panel-default menu-first">
 							<a class="collapsed" data-toggle="collapse"
-								data-parent="#accordion" href="#collapseFour" aria-expanded="false"
-								aria-controls="collapseFour"> <i
+								data-parent="#accordion" href="#collapseFour"
+								aria-expanded="false" aria-controls="collapseFour"> <i
 								class="icon-book icon-large"></i> 测试管理
 							</a>
 
@@ -188,10 +189,10 @@
 						title="添加"><span class="glyphicon glyphicon-plus"></a> <br />
 					<br />
 
-					<table id="checkAdmin">
-						
+					<table id="checkAdmin" >
+
 					</table>
-				
+
 				</div>
 				<!--右侧内容结束-->
 			</div>
@@ -235,7 +236,7 @@
 			striped : true,
 			pagination : true,
 			dataType : "json",
-			pageList : [5,10,20,50],
+			pageList : [2,5,10],
 			pageSize : 1,
 			pageNumber : 1,
 			search : true,
@@ -244,40 +245,52 @@
 			minimumCountColumns : 2,
 			clickToSelect : true,
 			showToggle : true,
+			
 			columns : [ {
 				field : '',
+				valign: 'middle',
 				checkbox : true
 			}, {
 				field : 'aid',
 				title : 'ID',
 				sortable : true,
+				valign: 'middle',
 				align: 'center'
 			}, {
 				field : 'aname',
 				title : '姓名',
+				valign: 'middle',
 				align: 'center'
 			}, {
 				field : 'apwd',
 				title : '密码',
+				valign: 'middle',
 				align: 'center'
 			}, {
 				field : 'issuper',
 				title : '管理员级别',
 				sortable : true,
+				valign: 'middle',
 				align: 'center'
 			}, {
 				field : 'status',
 				title : '状态',
 				sortable : true,
+				valign: 'middle',
 				align: 'center'
-			} //,
-			//	            {field : 'operate',title: '操作',width: 100,align: 'center',valign: 'middle',formatter:function(){
-			//	            		
-			//	            }} 
+			} ,{field : 'operate',title: '操作',width: 100,align: 'center',valign: 'middle',
+					formatter:function(value,row,index){
+						var edit ;
+						var del ;
+						edit = '<a></a>';
+						
+						return edit + del;
+					}
+			} 
 			]
 			
 		},"json");
-		
+	
 	</script>
 </body>
 

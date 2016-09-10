@@ -222,7 +222,7 @@
 		
 		$('#checkAdmin').bootstrapTable({
 			method : 'get',
-			url : '../../admin/allAdmin',
+			url : '../../backadmin/allAdmin',
 			height : $(window).height() - 200,
 			cache : false,
 			striped : true,

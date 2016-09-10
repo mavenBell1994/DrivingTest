@@ -219,7 +219,7 @@
 			//加载所有用户的数据
 		$('#allUsers').bootstrapTable({
 			method : 'get',
-			url : '../../user/allUsers',
+			url : '../../backuser/allUsers',
 			height : $(window).height() - 200,
 			cache : false,
 			striped : true,

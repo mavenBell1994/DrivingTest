@@ -209,7 +209,7 @@
 		//进来后显示所有管理员的信息,需要判定是sa								
 			$('#getAllQuiz').bootstrapTable({
 				method : 'get',
-				url : '../../quiz/allQuiz',
+				url : '../../backquiz/allQuiz',
 				cache : false,
 				striped : true,
 				pagination : true,

@@ -10,8 +10,13 @@ import com.google.gson.Gson;
 import com.readygo.drivingtest.entity.Admin;
 import com.readygo.drivingtest.serviceimpl.AdminServiceImpl;
 
+/**
+ * 后台admin的hangdler
+ * @author Hong
+ *
+ */
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("/backadmin")
 public class AdminHandler {
 	@Autowired
 	private AdminServiceImpl asimpl ;

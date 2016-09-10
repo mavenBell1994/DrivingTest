@@ -19,7 +19,6 @@
 
 </head>
 <body class=" " id="body">
-
 	<c:choose>
 		<c:when test="${cname.cname==null}">
 			<jsp:include page="/page/top.jsp"></jsp:include>

@@ -4,15 +4,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 使用映射接口的方式，命名空间的值必须与映射接口的全限定名一样 -->
 <mapper namespace="com.readygo.drivingtest.mapper.QuizMapper">
-	<select id="getAllDiffQuizs" resultType="Quiz">
+
+	<select id="findAllDiffQuizs" resultType="Quiz">
 		select qq.* from
-		(select q.*,rownum rn from quiz q order by errTotal desc) qq where 100>=rn
+		(select
+		q.*,rownum rn from quiz q order by errTotal desc) qq where 100>=rn
 	</select>
-	<select id="getDiffQuizById" resultType="Quiz" parameterType="int">
-	select qq.* from
-		(select q.*,rownum rn from quiz q order by errTotal desc) qq where 100>=rn  and qid=#{qid}
+
+	<select id="findDiffQuizById" resultType="Quiz" parameterType="int">
+		select qq.* from
+		(select q.*,rownum rn from quiz q order by errTotal
+		desc) qq where 100>=rn and qid=#{qid}
 	</select>
-	<update id="updateErrorTotal" parameterType="int">
-	update quiz set errTotal=errTotal+1 where qid=#{qid}
+
+	<update id="addErrTotal" parameterType="int">
+		update quiz set
+		errTotal=errTotal+1 where qid=#{qid}
 	</update>
+	
+	<select id="allQuiz" resultType="Quiz">
+		select * from quiz 
+	</select>
+	
 </mapper>

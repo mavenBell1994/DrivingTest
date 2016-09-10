@@ -15,10 +15,12 @@
 <link href="../css/bootstrap.css" rel="stylesheet">
 <link rel="stylesheet" href="../css/mmss.css" />
 <link rel="stylesheet" href="../css/font-awesome.min.css" />
-<!--[if lt IE 9]>
-    <script src="js/html5shiv.min.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
+
+<script src="../js/jquery-1.11.3.js"></script>
+<script src="../js/bootstrap.js"></script>
+<script src="../js/bootstrap-table.js"></script>
+<script src="../js/bootstrap-table-zh-CN.js"></script>
+
 <style>
 </style>
 </head>
@@ -87,12 +89,11 @@
 									<!--<li>
 											<a href="p1.jsp"><i class="icon-user"></i> 表格p1留着做样本</a>
 										</li>-->
-									<li><a href="p2.jsp"><i
-											class="icon-edit"></i> 图表p2留着做样本</a></li>
-									<li><a href="checkAdmin.jsp"><i
-											class="icon-trash"></i> 查看所有管理员</a></li>
-									<li><a href="checkAdminSelf.jsp"><i
-											class="icon-list"></i>查看当前管理员</a></li>
+									<li><a href="p2.jsp"><i class="icon-edit"></i>
+											图表p2留着做样本</a></li>
+									<li><a href="checkAdmin.jsp"><i class="icon-trash"></i>
+											查看所有管理员</a></li>
+									<li><a href="checkAdminSelf.jsp"><i class="icon-list"></i>查看当前管理员</a></li>
 								</ul>
 							</div>
 						</div>
@@ -104,12 +105,12 @@
 							</a> </a>
 							<div id="collapseTwo" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
-									<li><a href="checkAllUsers.jsp"><i
-											class="icon-user"></i> 查看所有用户</a></li>
-									<li><a href="checkChartInfo.jsp"><i
-											class="icon-edit"></i> 查看聊天记录</a></li>
-									<li><a href="checkReport.jsp"><i
-											class="icon-edit"></i> 查看举报建议</a></li>
+									<li><a href="checkAllUsers.jsp"><i class="icon-user"></i>
+											查看所有用户</a></li>
+									<li><a href="checkChartInfo.jsp"><i class="icon-edit"></i>
+											查看聊天记录</a></li>
+									<li><a href="checkReport.jsp"><i class="icon-edit"></i>
+											查看举报建议</a></li>
 
 								</ul>
 							</div>
@@ -123,12 +124,11 @@
 
 							<div id="collapseThree" class="panel-collapse collapse in">
 								<ul class="nav nav-list menu-second">
-									<li><a href="checkAllQuiz.jsp"><i
-											class="icon-user"></i> 查看题库</a></li>
-									<li><a href="checkChapter.jsp"><i
-											class="icon-edit"></i> 查看章节</a></li>
-									<li><a href="checkCertify.jsp"><i
-											class="icon-trash"></i>查看资格证</a></li>
+									<li><a href="checkAllQuiz.jsp"><i class="icon-user"></i>
+											查看题库</a></li>
+									<li><a href="checkChapter.jsp"><i class="icon-edit"></i>
+											查看章节</a></li>
+									<li><a href="checkCertify.jsp"><i class="icon-trash"></i>查看资格证</a></li>
 									<li><a href="#"><i class="icon-list"></i> 子选项4</a></li>
 								</ul>
 							</div>
@@ -143,10 +143,10 @@
 
 							<div id="collapseFour" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
-									<li><a href="checkTestRec.jsp"><i
-											class="icon-user"></i> 查看测试成绩</a></li>
-									<li><a href="checkDifficulty.jsp"><i
-											class="icon-edit"></i> 查看难题</a></li>
+									<li><a href="checkTestRec.jsp"><i class="icon-user"></i>
+											查看测试成绩</a></li>
+									<li><a href="checkDifficulty.jsp"><i class="icon-edit"></i>
+											查看难题</a></li>
 
 								</ul>
 							</div>
@@ -183,117 +183,10 @@
 						class="btn btn-primary" data-toggle="modal" data-target="#add1"
 						title="添加"><span class="glyphicon glyphicon-plus"></a> <br />
 					<br />
-					<table
-						class="table table-bordered table-striped text-center bg-info">
-						<thead>
+					<table id="allQuiz">
 
-						</thead>
-						<tbody>
-
-							<!-- Modal begin-->
-
-							<!--添加-->
-							<!--
-                                    	作者：18274763345@163.com
-                                    	时间：2016-08-31
-                                    	描述：添加操作
-                                    -->
-							<div class="modal fade" id="add1" tabindex="-1" role="dialog"
-								aria-labelledby="add11">
-								<div class="modal-dialog" role="document">
-									<div class="modal-content">
-										<div class="modal-header">
-											<button type="button" class="close" data-dismiss="modal"
-												aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-											<h4 class="modal-title" id="add11">添加</h4>
-										</div>
-										<div class="modal-body">
-											<ul>
-												<li><label><span>序号 ：</span></label> <input type="text"
-													disabled="disabled" value="1001" /></li>
-												<li><label><span>用户名 ：</span></label> <input
-													type="text" /></li>
-												<li><label><span>密码 ：</span></label> <input type="text" />
-												</li>
-												<li><label><span>状态：</span></label> <select>
-														<option>正常</option>
-														<option>使用中</option>
-														<option>销毁</option>
-												</select></li>
-
-											</ul>
-										</div>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-default btn-sm"
-												data-dismiss="modal">取消</button>
-											<button type="button" class="btn btn-primary btn-sm">保存</button>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<!--
-                                    	修改
-                                    -->
-							<div class="modal fade" id="edit" tabindex="-1" role="dialog"
-								aria-labelledby="edit">
-								<div class="modal-dialog" role="document">
-									<div class="modal-content">
-										<div class="modal-header">
-											<button type="button" class="close" data-dismiss="edit"
-												aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-											<h4 class="modal-title" id="myModalLabel1">编辑</h4>
-										</div>
-										<div class="modal-body">
-											<ul>
-												<li><label><span>序号 ：</span></label> <input type="text"
-													disabled="disabled" value="1001" /></li>
-												<li><label><span>用户名 ：</span></label> <input
-													type="text" /></li>
-												<li><label><span>密码 ：</span></label> <input type="text" />
-												</li>
-												<li><label><span>状态 ：</span></label> <select>
-														<option>正常</option>
-														<option>使用中</option>
-														<option>销毁</option>
-												</select></li>
-
-											</ul>
-										</div>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-default btn-sm"
-												data-dismiss="modal">取消</button>
-											<button type="button" class="btn btn-primary btn-sm">保存</button>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<!--Modal end-->
-
-						</tbody>
 					</table>
-					<!--
-                        	作者：18274763345@163.com
-                        	时间：2016-08-31
-                        	描述：下侧页码，做分页操作
-                       -->
-					<ul class="pagination right">
-						<li class="disabled"><a href="#" aria-label="Previous"><span
-								aria-hidden="true">&laquo;</span></a></li>
-						<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a>
-						</li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li><a href="#" aria-label="Next"><span
-								aria-hidden="true">&raquo;</span></a></li>
-					</ul>
+
 				</div>
 				<!--右侧内容结束-->
 			</div>
@@ -304,8 +197,6 @@
 		<p class="text-center text-white">版权所有&copy;ReadyGo小组</p>
 	</footer>
 
-	<script src="../js/jquery-1.11.3.js"></script>
-	<script src="../js/bootstrap.js"></script>
 	<script>
 			/*Bootlint工具用于对页面中的HTML标签以及Bootstrapclass的使用进行检测*/
 			(function() {
@@ -327,6 +218,75 @@
 				modal.find('.modal-title').text('' + recipient)
 				modal.find('.modal-body input').val(recipient)
 			})
+			
+			
+		$('#allQuiz').bootstrapTable({
+			method : 'get',
+			url : '../../quiz/allQuiz',
+			height : $(window).height() - 200,
+			cache : false,
+			striped : true,
+			pagination : true,
+			dataType : "json",
+			pageList : [5,10,20,50],
+			pageSize : 1,
+			pageNumber : 1,
+			search : true,
+			sidePagination : 'client',
+			showColumns : true,
+			minimumCountColumns : 2,
+			clickToSelect : true,
+			showToggle : true,
+			columns : [ {
+				field : '',
+				checkbox : true
+			}, {
+				field : 'qid',
+				title : 'ID',
+				sortable : true,
+				align: 'center'
+			}, {
+				field : 'question',
+				title : '问题',
+				align: 'center'
+			}, {
+				field : 'answer',
+				title : '答案',
+				align: 'center'
+			}, {
+				field : 'pid',
+				title : '章节ID',
+				sortable : true,
+				align: 'center'
+			}, {
+				field : 'pic',
+				title : '图片',
+				align: 'center'
+			} , {
+				field : 'qtype',
+				title : '题目类型',
+				sortable : true,
+				align: 'center'
+			} , {
+				field : 'errtotal',
+				title : '错误总数',
+				sortable : true,
+				align: 'center'
+			} 
+			
+			
+			
+			
+			//,
+			//	            {field : 'operate',title: '操作',width: 100,align: 'center',valign: 'middle',formatter:function(){
+			//	            		
+			//	            }} 
+			]
+			
+		},"json");
+			
+			
+			
 		</script>
 </body>
 

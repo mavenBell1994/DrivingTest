@@ -16,15 +16,20 @@ public class QuizServiceImpl implements QuizService {
 
 	@Override
 	public List<Quiz> findAllDiffQuizs() {
-		return quizMapper.getAllDiffQuizs();
+		return quizMapper.findAllDiffQuizs();
 	}
 
 	@Override
 	public Quiz findDiffQuizById(int qid) {
-		return quizMapper.getDiffQuizById(qid);
+		return quizMapper.findDiffQuizById(qid);
 	}
 	@Override
 	public boolean addErrTotal(int qid) {
-		return quizMapper.updateErrorTotal(qid)>0;
+		return quizMapper.addErrTotal(qid) > 0;
+	}
+
+	@Override
+	public List<Quiz> allQuiz() {
+		return quizMapper.allQuiz();
 	}
 }

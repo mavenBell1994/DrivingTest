@@ -20,5 +20,15 @@ public class QuizServiceImplTest {
 		List<Quiz> ls=quizService.findAllDiffQuizs();
 		System.out.println(ls);
 	}
-
+	
+	/**
+	 * hong,9-10
+	 * 测试获取所有quiz
+	 */
+	@Test
+	public void testAllQuiz() {
+		List<Quiz> ls=quizService.allQuiz();
+		System.out.println(ls);
+	}
+	
 }

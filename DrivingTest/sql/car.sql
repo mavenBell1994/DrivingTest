@@ -53,6 +53,7 @@ create table CarUSER(
 );
 select *from CarUSER
 drop sequence seq_cid;
+update caruser set icon='images/car.jpg' where cname='lc'
 create sequence seq_cid start with 1;
 delete from CarUSER;
 

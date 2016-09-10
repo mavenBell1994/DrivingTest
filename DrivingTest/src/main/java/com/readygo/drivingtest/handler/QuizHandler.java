@@ -56,4 +56,20 @@ public class QuizHandler {
 		out.close();
 	}
 	
+	
+	/**
+	 * hong,9-10
+	 * @param out显示所有的quiz
+	 */
+	@RequestMapping("/getQuizByQid")
+	public void getQuizByQid(PrintWriter out,int qid){
+		Quiz quiz=quizService.getQuizByQid(qid);
+		Gson gson=new Gson();
+		System.out.println(quiz);
+		out.println(gson.toJson(quiz));
+		out.flush();
+		out.close();
+	}
+	
+	
 }

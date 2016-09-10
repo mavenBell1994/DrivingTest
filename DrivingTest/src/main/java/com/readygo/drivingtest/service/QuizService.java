@@ -17,4 +17,10 @@ public interface QuizService {
 	 * @return:所有的quiz
 	 */
 	public List<Quiz> allQuiz();
+	/**
+	 * hong,910
+	 * @param qid
+	 * @return:返回指定qid的quiz
+	 */
+	public Quiz getQuizByQid(int qid);
 }

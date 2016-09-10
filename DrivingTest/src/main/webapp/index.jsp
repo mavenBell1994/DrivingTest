@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%-- <%@ page isELIgnored="true"%> --%>
+<%-- <%@ page isELIgnored="true"%> 消除el表达式--%>
 
 <!DOCTYPE html>
 <html>
@@ -37,7 +37,7 @@
 						src="images/logo_erji.png" alt="驾考宝典" class="no-bg"></a>
 					<ul class="nav float-l float-l-ul cl" id="navUl">
 						<li data-item="nav-home" class="li-h current"><a
-							href="http://www.jiakaobaodian.com/hengyang">首页<%=session.getAttribute("cname")%></a></li>
+							href="http://www.jiakaobaodian.com/hengyang">首页</a></li>
 						<li data-item="nav-mnks" class=""><a
 							href="http://www.jiakaobaodian.com/mnks/hengyang.html">模拟考试</a></li>
 						<li data-item="nav-tiku" class=""><a

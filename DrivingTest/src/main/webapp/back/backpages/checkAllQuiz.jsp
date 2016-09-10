@@ -164,26 +164,19 @@
 								class="glyphicon glyphicon-home"></span>&nbsp;后台首页</a></li>
 						<li class="active">系统管理 - 表格</li>
 					</ol>
-					<div class="input-group line left">
-						<span class="input-group-addon" id="basic-addon2"><span
-							class="glyphicon glyphicon-search"></span></span> <input type="text"
-							class="form-control" placeholder="输入关键字搜索"
-							aria-describedby="basic-addon2">
-					</div>
-					<select class="form-control line left">
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-					</select> <a href="#" class=" btn btn-primary "><span
-						class="glyphicon glyphicon-search"></span></a> <a href="#"
-						class=" btn btn-primary "><span
-						class="glyphicon glyphicon-download"></span></a> <a href="#"
-						class="btn btn-primary" data-toggle="modal" data-target="#add1"
-						title="添加"><span class="glyphicon glyphicon-plus"></a> <br />
+					<a href="#" class=" btn btn-primary ">
+						<span class="glyphicon glyphicon-search"></span>
+					</a> 
+					<a href="#" class=" btn btn-primary ">
+						<span class="glyphicon glyphicon-download"></span>
+					</a> 
+					<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#add1" title="添加">
+						<span class="glyphicon glyphicon-plus">
+					</a> 
 					<br />
-					<table id="allQuiz" style="table-layout: fixed">
+					<br />
+					
+					<table id="allQuiz" >
 
 					</table>
 
@@ -218,7 +211,7 @@
 				pagination : true,
 				dataType : "json",
 				pageList : [5,10,20],
-				pageSize : 1,
+				pageSize : 2,
 				pageNumber : 1,
 				search : true,
 				sidePagination : 'client',
@@ -239,10 +232,12 @@
 					field : 'question',
 					title : '问题',
 					align: 'center' ,
+					visible : false
 				}, {
 					field : 'answer',
 					title : '答案',
-					align: 'center'
+					align: 'center',
+					visible : false
 				}, {
 					field : 'pid',
 					title : '章节ID',
@@ -270,7 +265,7 @@
 				//	            }} 
 				]
 				
-			},"json");
+			});
 			
 			
 		</script>

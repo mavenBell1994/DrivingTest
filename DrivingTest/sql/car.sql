@@ -182,8 +182,7 @@ select qq.* from
 drop table comment ;
 create table comment (
 	comId int primary key,
-	cid	int
-		constraint comment_caruser_cid foreign key(cid) references caruser(cid),
+	cid	int,
 	qid	int,					--外键。
 	comDate	date,				--考虑存完整时间包含时分秒，还是考虑存当天
 	comContent varchar2(500),
@@ -199,8 +198,7 @@ insert into comment values ( seq_comment_comId.nextval , ? , ? , sysdate , ? , '
 drop table blog;
 create table blog(
 	bid int primary key ,
-	cid	int 
-		constraint blog_caruser_cid foreign key(cid) references caruser(cid),
+	cid	int ,
 	bTitle	varchar2(50),		--标题
 	bContent blob,				--内容,blob可以存放最大长度4G
 	bpics	varchar2(50),		--图片,存放帖子里的图片路径
@@ -219,10 +217,8 @@ insert into blog values ( seq_blog_bid.nextval , ? , ? , ? , ? sysdate , 0 , '')
 --发帖回复表
 create table answer(
 	ansId int primary key,
-	bid int						--外键
-		constraint answer_blog_bid foreign key(bid) references blog(bid),
-	cid int 					--外键
-		constraint answer_caruser_cid foreign key(cid) references caruser(cid),
+	bid int	,
+	cid int ,
 	ansContent	varchar2(200),	--回复内容
 	ansDate date,				--回复时间
 	andTemp	varchar2(100)		

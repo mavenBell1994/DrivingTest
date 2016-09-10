@@ -179,18 +179,18 @@ select qq.* from
 --------------------
 --hong,9-10
 --评论分析
-drop table comment ;
-create table comment (
+drop table comments ;
+create table comments(
 	comId int primary key,
-	cid	int,
+	cid	int,					--外键。
 	qid	int,					--外键。
 	comDate	date,				--考虑存完整时间包含时分秒，还是考虑存当天
-	comContent varchar2(500),
+	comContent varchar2(500),   --评论内容
 	commentTemp varchar2(100)
 );
-drop sequence seq_comment_comId;
-create sequence seq_comment_comId start with 100001 increment by 1;
-insert into comment values ( seq_comment_comId.nextval , ? , ? , sysdate , ? , '' );
+drop sequence seq_comments_comId;
+create sequence seq_comments_comId start with 100001 increment by 1;
+insert into comments values ( seq_comments_comId.nextval , ? , ? , sysdate , ? , '' );
 
 
 

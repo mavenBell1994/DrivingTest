@@ -745,10 +745,10 @@
 					<div class="dianping-comment-container">
 						<h2>我要分析</h2>
 						<div class="textarea-wapper">
-							<textarea placeholder="快来和小伙伴分享一下想法吧！" rows="6" data-item="textarea" name="content" id="comContent" onkeyup="contentNum()"></textarea>
+							<textarea placeholder="快来和小伙伴分享一下想法吧！" rows="6" data-item="textarea" name="comContent" id="comContent" onkeyup="contentNum()"></textarea>
 							<div data-item="font-limit" class="font-limit" id="contentNum">0/240</div>
 						</div>
-						<button data-item="submit" type="button">提交</button>
+						<button data-item="submit" type="button" onclick="addComments(${cname.cid})">提交</button>
 					</div>
 				</div>
 				<div class="footer btns0"></div>

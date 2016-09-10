@@ -280,7 +280,19 @@ function contentNum(){
 	$("#contentNum").html(length+"/240");
 }
 
-
+//点击提交评论执行添加评论的操作
+function addComments(cid){
+	//发送异步请求进行添加
+	var comContent=$("#comContent").val();
+	if(cid>0){
+		$.post("comments/addComments",{"cid":cid,"qid":quiz.qid,"comContent":comContent},function(data){
+			alert(data);
+			if(data){
+				$("#dialog-base-container").css("display","none");
+			}
+		},"json");
+	}
+}
 
 
 

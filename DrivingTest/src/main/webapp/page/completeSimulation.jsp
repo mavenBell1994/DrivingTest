@@ -16,13 +16,13 @@
 <!--bootstrap的引入  -->
 <script src="bootstrap-3.3.7/js/jquery.min.js"></script>
 <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
-
+<script type="text/javascript" src="js/completeSimulation.js"></script>
 <!-- 跳过未做的题 样式 skip -->
 <!--做错的题  样式error-->
 </head>
 <body class=" " id="body">
 	<div id="simple-container" class="simple-container">
-		<c:choose>
+<c:choose>
 	<c:when test="${cname.cname==null}">
 		<jsp:include page="/page/top.jsp"></jsp:include>
 	</c:when>
@@ -70,9 +70,25 @@
 							<fieldset class="kaosheng-info">
 								<legend>考生信息</legend>
 								<div>
-									<img alt="" src="images/diandian.png">
+										<c:choose>
+											<c:when test="${cname.icon==null}">
+											<img alt="" src="images/diandian.png">
+											</c:when>
+											<c:otherwise>
+												<img alt="" src="${cname.icon}">
+											</c:otherwise>
+										</c:choose>
 									<p class="name">
-										考生姓名：<span class="nickname ellipsis">我是车神</span>
+										考生姓名：<span class="nickname ellipsis">
+										<c:choose>
+											<c:when test="${cname.cname==null}">
+											我是车神
+											</c:when>
+											<c:otherwise>
+												${cname.cname}
+											</c:otherwise>
+										</c:choose>
+										</span>
 									</p>
 									<p>考试题数：100题</p>
 									<p>考试时间：45分钟</p>

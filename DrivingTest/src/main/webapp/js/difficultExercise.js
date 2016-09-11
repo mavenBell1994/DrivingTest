@@ -116,7 +116,7 @@ function showQuiz(data){
 		}
 	}
 	$("#DiffQuizExplain").html(quiz.explain);//难题解析
-	
+	showAnalyse();
 }
 function choseAnswer(answer,i,qid,errTotal){
 //把自己的选项和题号存在cookie里
@@ -227,7 +227,6 @@ function favorSave(){
 //获取所有难题
 function showFavorSave(qid){
 	var cid=$("#cid").text();
-	alert("cid"+cid);
 	if(cid>0){
 		$.post("selfErrors/getFavorSave",{"cid":cid},function(data){
 			if(data!=null){
@@ -301,34 +300,53 @@ function addComments(cid){
 		},"json");
 	}
 }
-//显示评论的方法
+//获取所有评论的方法，commentsData评论,dataLength当前的评论数
+var commentsData;
+var dataLength;
 function showAnalyse(){
-	var cname=$("#cname").text();
-	var icon=$("#icon").text();
 	$.post("comments/getAllComByQid",{"qid":quiz.qid},function(data){
 		if(data!=null){
-			var strCom="";
-			for(var i=0;i<data.length;i++){
-				strCom+=' <li >';
-				if(icon==null || icon==""){
-					strCom+=' <img src="images/diandian.png">';
-				}else{
-					strCom+=' <img src="../pics"'+icon+'>';
-				}
-				strCom+='<div class="item">';
-				strCom+='<p class="header">';
-				strCom+='<span title="快点拿到手吧！！" style="font-size: 16px;color: #999;">'+cname+'</span>';
-				strCom+='</p>';
-				strCom+='<p class="word-break" style="font-size: 18px;margin-bottom: 8px;">'+data[i].comContent+'</p>';
-				strCom+='<p style="color: #a09f9f; position: absolute;right: 0;top: 0;">'+data[i].comDate.substring(0,data[i].comDate.indexOf(" ") )+'</p>';
-				strCom+='</div>';
-				strCom+='</li> ';
+			commentsData=data;
+			dataLength=data.length;;
+			if(dataLength>=3){
+				dataLength=3;
 			}
-			$("#listComs").html(strCom);
+			seeAnalyse(data,dataLength);
 		}
 	},"json");
 }
-
+//查看分析
+function seeAnalyse(data,dataLength){
+	var cname=$("#cname").text();
+	var icon=$("#icon").text();
+	var strCom="";
+	for(var i=0;i<dataLength;i++){
+		strCom+=' <li >';
+		if(icon==null || icon==""){
+			strCom+=' <img src="images/diandian.png">';
+		}else{
+			strCom+=' <img src="../pics"'+icon+'>';
+		}
+		strCom+='<div class="item">';
+		strCom+='<p class="header">';
+		strCom+='<span title="快点拿到手吧！！" style="font-size: 16px;color: #999;">'+cname+'</span>';
+		strCom+='</p>';
+		strCom+='<p class="word-break" style="font-size: 18px;margin-bottom: 8px;">'+data[i].comContent+'</p>';
+		strCom+='<p style="color: #a09f9f; position: absolute;right: 0;top: 0;">'+data[i].comDate.substring(0,data[i].comDate.indexOf(" ") )+'</p>';
+		strCom+='</div>';
+		strCom+='</li> ';
+	}
+	$("#listComs").html(strCom);
+}
+//加载更多
+function loadMore(){
+	dataLength=3+dataLength;
+	if(commentsData.length>dataLength){
+		seeAnalyse(commentsData,dataLength);
+	}else{
+		seeAnalyse(commentsData,commentsData.length);
+	}
+}
 //点击放大图片的功能
 function showBigImg(pic){
 	pic="../"+pic;

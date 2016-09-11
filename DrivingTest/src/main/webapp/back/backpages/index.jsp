@@ -145,8 +145,6 @@
 								<ul class="nav nav-list menu-second">
 									<li><a href="checkTestRec.jsp"><i class="icon-user"></i>
 											查看测试成绩</a></li>
-									<li><a href="checkDifficulty.jsp"><i class="icon-edit"></i>
-											查看难题</a></li>
 
 
 								</ul>

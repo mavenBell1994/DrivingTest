@@ -14,7 +14,7 @@
 <title>DrivingTest后台管理系统</title>
 <link href="../css/bootstrap.css" rel="stylesheet">
 <link rel="stylesheet" href="../css/mmss.css" />
-<link rel="stylesheet" href="../css/font-awesome.min.css" />
+<link rel="stylesheet" href="../css/font-awesome.min.css" />	
 <!--[if lt IE 9]>
     <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>

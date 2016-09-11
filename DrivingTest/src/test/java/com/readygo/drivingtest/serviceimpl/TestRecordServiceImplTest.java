@@ -21,7 +21,7 @@ public class TestRecordServiceImplTest {
 	@Autowired
 	private TestRecordService trs;
 	@Test
-	public void testFindAllDiffQuizs() {
+	public void testFindAllQuizs() {
 		List<TestRecord> allTest = trs.allTest();
 		System.out.println( allTest );
 	}

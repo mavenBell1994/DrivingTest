@@ -41,19 +41,15 @@ public class LoginHandler {
 	@RequestMapping("/login")
 	@ResponseBody
 	public int login(@ModelAttribute(value="cname")User user,ModelMap map){
-		System.out.println("我进来了");
 		if(userService.login(user)!=null){
 			if(userService.login(user).getStatus()==0){
 				map.remove("cname");
-				System.out.println("未激活");
 				return -1;
 			}
 			map.put("cname", userService.login(user));
-			System.out.println("登录成功");
 			return 0;
 		}else{
 			map.remove("cname");
-			System.out.println("登录失败");
 			return 1;
 		}
 	}

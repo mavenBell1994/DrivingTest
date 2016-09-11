@@ -96,7 +96,7 @@ drop sequence seq_pid;
 create sequence seq_pid start with 1;
 insert into part values (seq_pid.nextval,'第一章');
 insert into part values (seq_pid.nextval,'第二章');
-
+select * from part;
 
 
 

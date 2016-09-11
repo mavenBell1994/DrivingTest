@@ -167,16 +167,7 @@ create table SelfErrors(
 );
 select * from selferrors
 
---用户评论表
-drop table comments;
-create table comments(
-	ctid number primary key, --表主键
-	cid number, --用户ID 
-	content varchar(200),--用户评论内容
-	reply varchar(200),--用户被评论的内容
-	support number --被支持点赞的次数
-)
-create sequence seq_comments_ctid start with 1 ;
+--去掉之前的comments表
 
 insert into SelfErrors values(121,'','');
 --样例   insert into SelfErrors values ( ?,? );			
@@ -211,8 +202,12 @@ create table comments(
 );
 drop sequence seq_comments_comId;
 create sequence seq_comments_comId start with 100001 increment by 1;
-insert into comments values ( seq_comments_comId.nextval , ? , ? , sysdate , ? , '' );
+--insert into comments values ( seq_comments_comId.nextval , ? , ? , sysdate , ? , '' );
+insert into comments values ( seq_comments_comId.nextval , 1 , 1 , sysdate , '不错。很好' , '' );
+insert into comments values ( seq_comments_comId.nextval , 1 , 2 , sysdate , '不爽啊。做错了。' , '' );
+insert into comments values ( seq_comments_comId.nextval , 1 , 3 , sysdate , '好可惜。。这样都做错了' , '' );
 select *from comments;
+
 --发帖blog
 drop table blog;
 create table blog(

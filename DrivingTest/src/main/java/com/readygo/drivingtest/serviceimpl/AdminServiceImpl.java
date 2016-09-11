@@ -6,11 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.readygo.drivingtest.entity.Admin;
-import com.readygo.drivingtest.entity.User;
 import com.readygo.drivingtest.mapper.AdminMapper;
-import com.readygo.drivingtest.mapper.UserMapper;
 import com.readygo.drivingtest.service.AdminService;
-import com.readygo.drivingtest.service.UserService;
 
 @Service("adminService")
 public class AdminServiceImpl implements AdminService {

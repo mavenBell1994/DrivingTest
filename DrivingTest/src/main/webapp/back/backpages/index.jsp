@@ -20,6 +20,10 @@
     <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
+
+<script src="../js/jquery-1.11.3.js"></script>
+<script src="../js/bootstrap.js"></script>
+
 <style>
 </style>
 </head>
@@ -145,8 +149,6 @@
 								<ul class="nav nav-list menu-second">
 									<li><a href="checkTestRec.jsp"><i class="icon-user"></i>
 											查看测试成绩</a></li>
-									<li><a href="checkDifficulty.jsp"><i class="icon-edit"></i>
-											查看难题</a></li>
 
 
 								</ul>
@@ -176,22 +178,10 @@
 		<p class="text-center text-white">版权所有&copy;ReadyGo小组</p>
 	</footer>
 
-	<script src="../js/jquery-1.11.3.js"></script>
-	<script src="../js/bootstrap.js"></script>
 	<script>
-			/*Bootlint工具用于对页面中的HTML标签以及Bootstrapclass的使用进行检测*/
-			(function() {
-				var s = document.createElement("script");
-				s.onload = function() {
-					bootlint.showLintReportForCurrentDocument([]);
-				};
-				s.src = "../js/bootlint.js";
-				document.body.appendChild(s)
-			})();
 
 
-
-		</script>
+	</script>
 </body>
 
 </html>

@@ -96,7 +96,7 @@ drop sequence seq_pid;
 create sequence seq_pid start with 1;
 insert into part values (seq_pid.nextval,'第一章');
 insert into part values (seq_pid.nextval,'第二章');
-
+select * from part;
 
 
 
@@ -165,8 +165,12 @@ create table SelfErrors(
        errorSave varchar2(4000),        --进行字符拼接。1,2,23,55   ,可以使用@或者,    
        save varchar2(4000)
 );
+insert into SelfErrors values(8,'','');
+delete from SelfErrors;
+
 select * from selferrors
 
+--去掉之前的comments表
 --用户评论表
 drop table comments;
 create table comments(
@@ -177,6 +181,7 @@ create table comments(
 	support number --被支持点赞的次数
 )
 create sequence seq_comments_ctid start with 1 ;
+>>>>>>> branch 'master' of ssh://git@github.com/mavenBell1994/DrivingTest.git
 
 insert into SelfErrors values(121,'','');
 --样例   insert into SelfErrors values ( ?,? );			
@@ -211,8 +216,12 @@ create table comments(
 );
 drop sequence seq_comments_comId;
 create sequence seq_comments_comId start with 100001 increment by 1;
-insert into comments values ( seq_comments_comId.nextval , ? , ? , sysdate , ? , '' );
+--insert into comments values ( seq_comments_comId.nextval , ? , ? , sysdate , ? , '' );
+insert into comments values ( seq_comments_comId.nextval , 1 , 1 , sysdate , '不错。很好' , '' );
+insert into comments values ( seq_comments_comId.nextval , 1 , 2 , sysdate , '不爽啊。做错了。' , '' );
+insert into comments values ( seq_comments_comId.nextval , 1 , 3 , sysdate , '好可惜。。这样都做错了' , '' );
 select *from comments;
+
 --发帖blog
 drop table blog;
 create table blog(

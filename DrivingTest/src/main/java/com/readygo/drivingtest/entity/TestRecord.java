@@ -75,6 +75,12 @@ public class TestRecord {
 		this.qID = qID;
 		this.recTemp = recTemp;
 	}
+	@Override
+	public String toString() {
+		return "TestRecord [recId=" + recId + ", cid=" + cid + ", testType=" + testType + ", testKind=" + testKind
+				+ ", testDate=" + testDate + ", errorCount=" + errorCount + ", qID=" + qID + ", recTemp=" + recTemp
+				+ "]";
+	}
 	
 	
 	

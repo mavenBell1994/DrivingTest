@@ -142,7 +142,12 @@ drop sequence seq_testRecord_recid ;
 create sequence seq_testRecord_recid start with 10001 increment by 1 ;
 --样例
 --insert into TestRecord values ( seq_testRecord_recid.val , ? , '科目一' ,'顺序练习' , to_date(sysdate,'yyyy-MM-dd') , ? ,?,null );
-insert into TestRecord values ( seq_testRecord_recid.val , ? , '科目一' ,'顺序练习' , to_date(sysdate,'yyyy-MM-dd') , ? ,?,null )
+insert into TestRecord values ( seq_testRecord_recid.nextval , ? , '科目一' ,'顺序练习' , to_date(sysdate,'yyyy-MM-dd') , ? ,?,null );
+
+insert into TestRecord values ( seq_testRecord_recid.nextval , 1 , '科目一' ,'顺序练习' , sysdate, 1 ,'@2',null );
+insert into TestRecord values ( seq_testRecord_recid.nextval , 1 , '科目四' ,'难题练习' , sysdate, 2 ,'@2@6',null );
+insert into TestRecord values ( seq_testRecord_recid.nextval , 1 , '科目一' ,'顺序练习' , sysdate, 3 ,'@2@5@6',null );
+insert into TestRecord values ( seq_testRecord_recid.nextval , 1 , '科目四' ,'难题练习' , sysdate, 4 ,'@2@6@7@4',null );
 select * from testRecord;
 
 select * from caruser;

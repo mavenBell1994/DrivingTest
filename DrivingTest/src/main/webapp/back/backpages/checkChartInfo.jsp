@@ -108,7 +108,7 @@
 									<li><a href="checkAllUsers.jsp"><i class="icon-user"></i>
 											查看所有用户</a></li>
 									<li><a href="checkChartInfo.jsp"><i class="icon-edit"></i>
-											查看聊天记录</a></li>
+											查看我要分析</a></li>
 									<li><a href="checkReport.jsp"><i class="icon-edit"></i>
 											查看举报建议</a></li>
 
@@ -147,8 +147,6 @@
 								<ul class="nav nav-list menu-second">
 									<li><a href="checkTestRec.jsp"><i class="icon-user"></i>
 											查看测试成绩</a></li>
-									<li><a href="checkDifficulty.jsp"><i class="icon-edit"></i>
-											查看难题</a></li>
 
 								</ul>
 							</div>

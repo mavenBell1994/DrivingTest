@@ -7,9 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.google.gson.Gson;
-import com.readygo.drivingtest.entity.Admin;
 import com.readygo.drivingtest.entity.TestRecord;
-import com.readygo.drivingtest.serviceimpl.AdminServiceImpl;
 import com.readygo.drivingtest.serviceimpl.TestRecordServiceImpl;
 
 /**

@@ -83,7 +83,7 @@
 								href="#collapseOne" aria-expanded="false"
 								aria-controls="collapseOne"> <i
 								class="icon-user-md icon-large"></i> 管理员管理
-							</a> </a>
+							</a>  
 
 							<div id="collapseOne" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
@@ -104,7 +104,7 @@
 								data-parent="#accordion" href="#collapseTwo"
 								aria-expanded="false" aria-controls="collapseTwo"> <i
 								class="icon-book icon-large"></i> 用户管理
-							</a> </a>
+							</a>  
 							<div id="collapseTwo" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
 									<li><a href="checkAllUsers.jsp"><i class="icon-user"></i>
@@ -122,7 +122,7 @@
 								data-parent="#accordion" href="#collapseThree"
 								aria-expanded="true" aria-controls="collapseThree"> <i
 								class="icon-book icon-large"></i> 题库管理
-							</a> </a>
+							</a>  
 
 							<div id="collapseThree" class="panel-collapse collapse in">
 								<ul class="nav nav-list menu-second">
@@ -142,7 +142,7 @@
 								data-parent="#accordion" href="#collapseFour"
 								aria-expanded="false" aria-controls="collapseFour"> <i
 								class="icon-book icon-large"></i> 测试管理
-							</a> </a>
+							</a>  
 
 							<div id="collapseFour" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
@@ -300,15 +300,6 @@
 	<script src="../js/jquery-1.11.3.js"></script>
 	<script src="../js/bootstrap.js"></script>
 	<script>
-			/*Bootlint工具用于对页面中的HTML标签以及Bootstrapclass的使用进行检测*/
-			(function() {
-				var s = document.createElement("script");
-				s.onload = function() {
-					bootlint.showLintReportForCurrentDocument([]);
-				};
-				s.src = "../js/bootlint.js";
-				document.body.appendChild(s)
-			})();
 
 			//    添加编辑模态框
 			$('#add').on('show.bs.modal', function(event) {

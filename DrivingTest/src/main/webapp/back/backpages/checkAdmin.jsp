@@ -196,15 +196,6 @@
 
 
 	<script>
-		/*Bootlint工具用于对页面中的HTML标签以及Bootstrapclass的使用进行检测*/
-		(function() {
-			var s = document.createElement("script");
-			s.onload = function() {
-				bootlint.showLintReportForCurrentDocument([]);
-			};
-			s.src = "../js/bootlint.js";
-			document.body.appendChild(s)
-		})();
 
 		//    添加编辑模态框
 		$('#add').on('show.bs.modal', function(event) {

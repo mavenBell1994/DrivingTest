@@ -17,7 +17,7 @@ function register() {
 			}
 			$("#span1").html("");
 			$.post("user/checkcname",{"cname":$("#cname").val().trim()},function(data){
-					if(data.length>4){
+					if(data!=null && data!=""){
 						$("#span1").html("用户名已存在！");
 					}else{
 						$("#span1").html('<img src="images/1.gif" >');

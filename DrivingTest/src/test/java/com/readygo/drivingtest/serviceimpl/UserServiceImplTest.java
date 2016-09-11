@@ -26,8 +26,8 @@ public class UserServiceImplTest {
 	
 	@Test
 	public void testChecklogin() {
-		User user=userservice.checkcname("lc");
-		System.out.println(user);
+		User u=userservice.checkcname(new User("lc"));
+		System.out.println(u);
 	}
 /*	@Test
 	public void testRegister() {
@@ -41,9 +41,12 @@ public class UserServiceImplTest {
 	}*/
 	@Test
 	public void testActive() {
-		userMapper.active("zx");
+		userservice.active(new User("lc"));
 	}
-	
+	@Test
+	public void testActive1() {
+		userservice.active1(123);
+	}
 	/**
 	 * hong
 	 */

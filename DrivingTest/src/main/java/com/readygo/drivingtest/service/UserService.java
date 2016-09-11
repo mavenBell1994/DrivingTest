@@ -10,9 +10,11 @@ public interface UserService {
 
 	public boolean register(User user);
 
-	public User checkcname(String cname);
+	public User checkcname(User user);
 
-	public int active(String cname);
+	public void active(User user);//激活status
+	
+	public void active1(Integer cid);//建立用户对应的selferror表，错题和收藏
 	
 	public List<User> allUsers();
 }

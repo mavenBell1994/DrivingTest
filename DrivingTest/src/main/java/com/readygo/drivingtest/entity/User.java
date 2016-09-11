@@ -14,6 +14,17 @@ public class User {
 	
 	public User() {
 	}
+	
+	public User(Integer cid) {
+		super();
+		this.cid = cid;
+	}
+
+	public User(String cname) {
+		super();
+		this.cname = cname;
+	}
+
 	public User(Integer cid, String cname, String cpwd, String email, String icon, String tel, String sex, String addr,
 			Integer status, String regdate) {
 		this.cid = cid;

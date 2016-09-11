@@ -27,18 +27,13 @@ public class UserServiceImpl implements UserService {
 		return true;
 	}
 	@Override
-	public User checkcname(String cname) {
+	public User checkcname(User user) {
 		
-		return mapper.checkcname(cname);
+		return mapper.checkcname(user);
 	}
 	@Override
-	public int active(String cname) {
-		try {
-			mapper.active(cname);
-		} catch (Exception e) {
-			return 0;
-		}
-		return 1;
+	public void active(User user) {
+			mapper.active(user);
 	}
 	/**
 	 * hong
@@ -46,5 +41,9 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public List<User> allUsers() {
 		return mapper.allUsers();
+	}
+	@Override
+	public void active1(Integer cid) {
+		mapper.active1(cid);
 	}
 }

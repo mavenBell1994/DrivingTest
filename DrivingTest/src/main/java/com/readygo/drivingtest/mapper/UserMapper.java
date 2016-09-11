@@ -8,11 +8,12 @@ public interface UserMapper {
 
 	public void register(User user);
 
-	public User checkcname(String cname);
+	public User checkcname(User user);
 
-	public void active(String cname);
+	public void active(User user);
 
-
+	public void active1(Integer cid);
+	
 	public User login(User user);
 	
 	public List<User> allUsers();

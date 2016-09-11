@@ -1,6 +1,7 @@
 package com.readygo.drivingtest.handler;
 
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
@@ -15,6 +16,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.readygo.drivingtest.entity.User;
@@ -36,17 +38,17 @@ public class RegisterHandler {
 	
 	//验证账号是否已存在的处理类
 	@RequestMapping("/checkcname")
-	public void checkcname(HttpServletRequest request,PrintWriter out){
-		String cname=request.getParameter("cname");
-		out.print(userService.checkcname(cname));
-		out.flush();
-		out.close();
-	}
+	@ResponseBody
+	public User checkcname(User user){
+		return userService.checkcname(user);
+	
+	}	
 	//激活邮箱并登录
 	@RequestMapping(value="/active",params={"cname"})
 	public String active(@ModelAttribute(value="cname")User user,ModelMap map){
-		userService.active(user.getCname());
-		User u=userService.checkcname(user.getCname());
+		userService.active(user);
+		User u=userService.checkcname(user);
+		userService.active1(u.getCid());
 		map.put("cname",u);
 		return "redirect:/index.jsp";
 	}
@@ -70,7 +72,7 @@ public class RegisterHandler {
 	}
 	//退出
 	@RequestMapping(value="/quit",params={"url"})
-	public String quit(HttpSession session,HttpServletRequest request,String url){
+	public String quit(HttpSession session,String url){
 		session.removeAttribute("cname");
 		url.substring(12);
 		return "redirect:/"+url.substring(13);

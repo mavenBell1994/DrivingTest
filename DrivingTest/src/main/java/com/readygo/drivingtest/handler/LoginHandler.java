@@ -28,18 +28,15 @@ public class LoginHandler {
 	}
 	//判断验证码是否正确
 	@RequestMapping("/checkverify")
-	public void checkcname(HttpServletRequest request,PrintWriter out,HttpSession session){
-		boolean status;
+	@ResponseBody
+	public boolean checkcname(HttpServletRequest request,PrintWriter out,HttpSession session){
 		String str=request.getParameter("verify");
 		String code=(String) session.getAttribute("signcode");
 		if(str.equals(code)){
-			status=true;
+			return true;
 		}else{
-			status=false;
+			return false;
 		}
-		out.print(status);
-		out.flush();
-		out.close();
 	}
 	@RequestMapping("/login")
 	@ResponseBody

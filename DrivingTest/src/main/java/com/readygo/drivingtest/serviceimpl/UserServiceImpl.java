@@ -55,4 +55,28 @@ public class UserServiceImpl implements UserService {
 	public boolean upateUserIcon(User user) {
 		return mapper.upateUserIcon(user)>0;
 	}
+	/**
+	 * 增加carUser信息
+	 * @param user
+	 * @return
+	 */
+	public int addUser(User user) {
+		return mapper.addUser(user);
+	}
+	/**
+	 * 删除carUser信息
+	 * @param user
+	 * @return
+	 */
+	public int delUser(int cid) {
+		return mapper.delUser(cid);
+	}
+	/**
+	 * 修改carUser信息
+	 * @param user
+	 * @return
+	 */
+	public int updateUser(User user) {
+		return mapper.updateUser(user);
+	}
 }

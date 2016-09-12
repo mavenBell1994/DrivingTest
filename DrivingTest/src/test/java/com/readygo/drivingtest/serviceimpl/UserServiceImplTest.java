@@ -2,6 +2,7 @@ package com.readygo.drivingtest.serviceimpl;
 
 import static org.junit.Assert.*;
 
+import java.util.Date;
 import java.util.List;
 
 import org.junit.Test;
@@ -58,4 +59,36 @@ public class UserServiceImplTest {
 		}
 	}
 	
+	/**
+	 * hong9-12
+	 * 测试添加user
+	 */
+	@Test
+	public void testAddUser(){
+		User user = new User( "go" ,"go" ,"491003@qq.com" ,"" ,"" ,"男" ,"测试地址" ,0 );
+		int result = usimpl.addUser(user);
+		System.out.println(result);
+	}
+	
+	/**
+	 * hong9-12
+	 * 测试删除user
+	 */
+	@Test
+	public void testDelUser(){
+		Integer cid = 21;
+		int result = usimpl.delUser(cid);
+		System.out.println(result);
+	}
+	
+	/**
+	 * hong9-12
+	 * 测试修改user
+	 */
+	@Test
+	public void testUpdateUser(){
+		User user = new User( 21,"go" ,"go" ,"491003118@qq.com" ,"" ,"" ,"男" ,"测试地址" ,0 );
+		int result = usimpl.updateUser(user);
+		System.out.println(result);
+	}
 }

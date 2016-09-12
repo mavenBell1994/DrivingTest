@@ -63,4 +63,6 @@ public class AdminServiceImpl implements AdminService {
 	public int updateAdmin(Admin admin) {
 		return mapper.updateAdmin(admin);
 	}
+
+
 }

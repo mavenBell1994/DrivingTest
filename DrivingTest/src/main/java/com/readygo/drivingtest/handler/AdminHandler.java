@@ -57,7 +57,7 @@ public class AdminHandler {
 	 * 删除admin
 	 * @param out
 	 */
-	@RequestMapping("/addAdmin")
+	@RequestMapping("/delAdmin")
 	public void delAdmin(int aid,PrintWriter out){
 		int result = asimpl.delAdmin(aid);
 		if( result == 1 ){
@@ -73,7 +73,7 @@ public class AdminHandler {
 	 * 修改admin
 	 * @param out
 	 */
-	@RequestMapping("/addAdmin")
+	@RequestMapping("/updateAdmin")
 	public void updateAdmin(Admin admin,PrintWriter out){
 		int result = asimpl.updateAdmin(admin);
 		if( result == 1 ){

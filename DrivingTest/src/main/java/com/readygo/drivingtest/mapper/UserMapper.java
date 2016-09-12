@@ -21,4 +21,29 @@ public interface UserMapper {
 	public int updateUserIcon(String location);
 //修改用户的头像
 	public int upateUserIcon(User user);
+
+	
+	/**
+	 * 增加carUser信息
+	 * hong9-12
+	 * @param user
+	 * @return
+	 */
+	public int addUser(User user);
+	
+	/**
+	 * 删除carUser信息
+	 * hong9-12
+	 * @param cid
+	 * @return
+	 */
+	public int delUser(int cid);
+	
+	/**
+	 * 修改carUser信息
+	 * hong9-12
+	 * @param user
+	 * @return
+	 */
+	public int updateUser(User user);
 }

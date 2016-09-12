@@ -177,8 +177,48 @@
 						class="glyphicon glyphicon-plus"></a> <br /> <br />
 
 					<table id="getAllQuiz">
-						
+
 					</table>
+
+					<div class="modal fade" id="add1" tabindex="-1" role="dialog"
+						aria-labelledby="add11">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal"
+										aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+									<h4 class="modal-title" id="add11">添加</h4>
+								</div>
+
+								<div class="modal-body">
+									<ul>
+										<li><label><span>序号 ：</span></label> <input type="text"
+											disabled="disabled" value="1001" /></li>
+										<li><label><span>用户名 ：</span></label> <input type="text" /></li>
+										<li><label><span>密码 ：</span></label> <input type="text" />
+										</li>
+										<li><label><span>状态：</span></label> <select>
+												<option>正常</option>
+												<option>使用中</option>
+												<option>销毁</option>
+										</select></li>
+
+									</ul>
+								</div>
+
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default btn-sm"
+										data-dismiss="modal">取消</button>
+									<button type="button" class="btn btn-primary btn-sm">保存</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
 
 				</div>
 				<!--右侧内容结束-->

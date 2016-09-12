@@ -39,7 +39,7 @@ public class BackQuizHandler {
 	
 	/**
 	 * hong,9-10
-	 * @param out显示所有的quiz
+	 * @param out指定ID的quiz
 	 */
 	@RequestMapping("/getQuizByQid")
 	public void getQuizByQid(PrintWriter out,int qid){
@@ -51,5 +51,18 @@ public class BackQuizHandler {
 		out.close();
 	}
 	
+	/**
+	 * 修改Quiz
+	 * @param out
+	 * @param qid
+	 */
+	@RequestMapping("/updateQuiz")
+	public void updateQuiz(Quiz quiz,PrintWriter out){
+		Gson gson=new Gson();
+		System.out.println(quiz);
+		out.println(gson.toJson(quiz));
+		out.flush();
+		out.close();
+	}
 	
 }

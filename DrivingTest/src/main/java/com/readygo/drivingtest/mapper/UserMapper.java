@@ -17,4 +17,8 @@ public interface UserMapper {
 	public User login(User user);
 	
 	public List<User> allUsers();
+
+	public int updateUserIcon(String location);
+//修改用户的头像
+	public int upateUserIcon(User user);
 }

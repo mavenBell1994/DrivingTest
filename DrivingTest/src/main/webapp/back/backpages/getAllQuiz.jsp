@@ -151,7 +151,6 @@
 								<ul class="nav nav-list menu-second">
 									<li><a href="checkTestRec.jsp"><i class="icon-user"></i>
 											查看测试成绩</a></li>
-
 								</ul>
 							</div>
 						</div>
@@ -175,7 +174,6 @@
 					</a> <a href="#" class="btn btn-primary" data-toggle="modal"
 						data-target="#add1" title="添加"> <span
 						class="glyphicon glyphicon-plus"></a> <br /> <br />
-
 					<table id="getAllQuiz">
 
 					</table>
@@ -225,13 +223,73 @@
 			</div>
 		</div>
 	</section>
-
+<!-- 模态框（Modal） -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog" >
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">×</button>
+<!-- 						<img class="center-block" alt="" src="images/log-car.jpg"> -->	
+						<h3>
+							<span class="glyphicon glyphicon-user" id="myModalLabel" style="color:navy; margin-left: 123px;" >&nbsp;ReadyGo</span> 
+						</h3>
+			<!-- 					<h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4>
+ -->				</div>
+				<div class="modal-body">
+				<!-- 登陆表单 -->
+					<form class="form-horizontal" role="form">
+						<div class="form-group" >
+								<label for="userName" class="col-sm-3 control-label">用户名:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="userName"
+									placeholder="请输入用户名" >
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" class="col-sm-3 control-label">密码:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="password"
+									placeholder="请输入密码" >
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-info btn-lg " >登  录</button>&nbsp;&nbsp;&nbsp;&nbsp;
+							<button type="submit" class="btn btn-info btn-lg " >取消</button>
+							</div>
+						</div>
+						
+					</form>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
 	<footer class="bg-primary navbar-fixed-bottom">
 		<p class="text-center text-white">版权所有&copy;ReadyGo小组</p>
 	</footer>
 
 
 	<script>
+	$(function(){
+		$('#myModal').modal({
+			show:false ,//设置模式窗关闭
+			backdrop:'static'
+		});
+	});
+	function editModel() { 
+		$('#myModal').modal({
+			keyboard : true,
+			show : true,//设置模式窗关闭
+			backdrop : 'static',
+		});
+		
+	}
 	var date;
 		//    添加编辑模态框
 		$('#add').on('show.bs.modal', function(event) {
@@ -303,7 +361,8 @@
 					
 				} ,{field : 'operate',title: '操作',width: 100,align: 'center',valign: 'middle',
 						formatter:function(value,row,index){
-							var edit = '<a onclick="member_edit(\''+ row.qid + '\')">编辑</a> ';  
+						/* 	var edit = '<a onclick="member_edit(\''+ row.qid + '\')">编辑</a> ';   */
+							var edit = '<a onclick="editModel()">编辑</a> '; 
 							var del = '<a onclick="member_del(\''+ row.qid +'\')">删除</a> '; 
 							var str = edit + "&nbsp;" + del;
 							return str;
@@ -389,6 +448,7 @@
 			});
 		}
 		 */
+		 
 		function member_del(id){
 			alert(id);
 		}

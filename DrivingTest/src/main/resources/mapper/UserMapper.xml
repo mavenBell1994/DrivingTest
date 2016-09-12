@@ -23,4 +23,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="active1" parameterType="Int">
 		insert into selferrors values(#{cid},'','')
 	</insert>
+	<update id="upateUserIcon" parameterType="User">
+		update caruser set icon=#{icon} where cid=#{cid}
+	</update>
 </mapper>

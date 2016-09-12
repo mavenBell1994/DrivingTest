@@ -29,7 +29,7 @@ public class LoginHandler {
 	//判断验证码是否正确
 	@RequestMapping("/checkverify")
 	@ResponseBody
-	public boolean checkcname(HttpServletRequest request,PrintWriter out,HttpSession session){
+	public boolean checkcname(HttpServletRequest request,HttpSession session){
 		String str=request.getParameter("verify");
 		String code=(String) session.getAttribute("signcode");
 		if(str.equals(code)){
@@ -40,13 +40,17 @@ public class LoginHandler {
 	}
 	@RequestMapping("/login")
 	@ResponseBody
-	public boolean login(@ModelAttribute(value="cname")User user,ModelMap map){
+	public int login(@ModelAttribute(value="cname")User user,ModelMap map){
 		if(userService.login(user)!=null){
+			if(userService.login(user).getStatus()==0){
+				map.remove("cname");
+				return -1;
+			}
 			map.put("cname", userService.login(user));
-			return true;
+			return 0;
 		}else{
 			map.remove("cname");
-			return false;
+			return 1;
 		}
 	}
 }

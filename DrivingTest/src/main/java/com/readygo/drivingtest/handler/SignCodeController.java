@@ -77,7 +77,7 @@ public class SignCodeController {
         g.dispose();
         ImageIO.write(image, "JPEG", response.getOutputStream());
         response.getOutputStream().flush();
-
+        response.getOutputStream().close();
     }
 	
 	//创建颜色

@@ -17,4 +17,8 @@ public interface UserService {
 	public void active1(Integer cid);//建立用户对应的selferror表，错题和收藏
 	
 	public List<User> allUsers();
-}
+
+	public boolean upateUserIcon(User user);
+
+/*	public boolean updateUserIcon(String location);
+*/}

@@ -58,9 +58,13 @@ public class BackQuizHandler {
 	 */
 	@RequestMapping("/updateQuiz")
 	public void updateQuiz(Quiz quiz,PrintWriter out){
-		Gson gson=new Gson();
-		System.out.println(quiz);
-		out.println(gson.toJson(quiz));
+		int result = quizService.updateQuiz(quiz);
+		System.out.println(result);
+		if(result ==1){
+			out.println(true);
+		}else{
+			out.println(false);
+		}
 		out.flush();
 		out.close();
 	}

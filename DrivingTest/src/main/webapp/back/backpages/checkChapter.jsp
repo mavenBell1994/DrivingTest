@@ -83,7 +83,7 @@
 								href="#collapseOne" aria-expanded="false"
 								aria-controls="collapseOne"> <i
 								class="icon-user-md icon-large"></i> 管理员管理
-							</a> </a>
+							</a>  
 
 							<div id="collapseOne" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
@@ -104,7 +104,7 @@
 								data-parent="#accordion" href="#collapseTwo"
 								aria-expanded="false" aria-controls="collapseTwo"> <i
 								class="icon-book icon-large"></i> 用户管理
-							</a> </a>
+							</a>  
 							<div id="collapseTwo" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
 									<li><a href="checkAllUsers.jsp"><i class="icon-user"></i>
@@ -122,7 +122,7 @@
 								data-parent="#accordion" href="#collapseThree"
 								aria-expanded="true" aria-controls="collapseThree"> <i
 								class="icon-book icon-large"></i> 题库管理
-							</a> </a>
+							</a>  
 
 							<div id="collapseThree" class="panel-collapse collapse in">
 								<ul class="nav nav-list menu-second">
@@ -142,7 +142,7 @@
 								data-parent="#accordion" href="#collapseFour"
 								aria-expanded="false" aria-controls="collapseFour"> <i
 								class="icon-book icon-large"></i> 测试管理
-							</a> </a>
+							</a>  
 
 							<div id="collapseFour" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
@@ -176,117 +176,10 @@
 					</a> 
 					<br />
 					<br />
-					<table
-						class="table table-bordered table-striped text-center bg-info">
-						<thead>
-
-						</thead>
-						<tbody>
-
-							<!-- Modal begin-->
-
-							<!--添加-->
-							<!--
-                                    	作者：18274763345@163.com
-                                    	时间：2016-08-31
-                                    	描述：添加操作
-                                    -->
-							<div class="modal fade" id="add1" tabindex="-1" role="dialog"
-								aria-labelledby="add11">
-								<div class="modal-dialog" role="document">
-									<div class="modal-content">
-										<div class="modal-header">
-											<button type="button" class="close" data-dismiss="modal"
-												aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-											<h4 class="modal-title" id="add11">添加</h4>
-										</div>
-										<div class="modal-body">
-											<ul>
-												<li><label><span>序号 ：</span></label> <input type="text"
-													disabled="disabled" value="1001" /></li>
-												<li><label><span>用户名 ：</span></label> <input
-													type="text" /></li>
-												<li><label><span>密码 ：</span></label> <input type="text" />
-												</li>
-												<li><label><span>状态：</span></label> <select>
-														<option>正常</option>
-														<option>使用中</option>
-														<option>销毁</option>
-												</select></li>
-
-											</ul>
-										</div>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-default btn-sm"
-												data-dismiss="modal">取消</button>
-											<button type="button" class="btn btn-primary btn-sm">保存</button>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<!--
-                                    	修改
-                                    -->
-							<div class="modal fade" id="edit" tabindex="-1" role="dialog"
-								aria-labelledby="edit">
-								<div class="modal-dialog" role="document">
-									<div class="modal-content">
-										<div class="modal-header">
-											<button type="button" class="close" data-dismiss="edit"
-												aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-											<h4 class="modal-title" id="myModalLabel1">编辑</h4>
-										</div>
-										<div class="modal-body">
-											<ul>
-												<li><label><span>序号 ：</span></label> <input type="text"
-													disabled="disabled" value="1001" /></li>
-												<li><label><span>用户名 ：</span></label> <input
-													type="text" /></li>
-												<li><label><span>密码 ：</span></label> <input type="text" />
-												</li>
-												<li><label><span>状态 ：</span></label> <select>
-														<option>正常</option>
-														<option>使用中</option>
-														<option>销毁</option>
-												</select></li>
-
-											</ul>
-										</div>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-default btn-sm"
-												data-dismiss="modal">取消</button>
-											<button type="button" class="btn btn-primary btn-sm">保存</button>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<!--Modal end-->
-
-						</tbody>
+					<table id="allPart">
+						
 					</table>
-					<!--
-                        	作者：18274763345@163.com
-                        	时间：2016-08-31
-                        	描述：下侧页码，做分页操作
-                       -->
-					<ul class="pagination right">
-						<li class="disabled"><a href="#" aria-label="Previous"><span
-								aria-hidden="true">&laquo;</span></a></li>
-						<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a>
-						</li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li><a href="#" aria-label="Next"><span
-								aria-hidden="true">&raquo;</span></a></li>
-					</ul>
+					
 				</div>
 				<!--右侧内容结束-->
 			</div>
@@ -297,18 +190,7 @@
 		<p class="text-center text-white">版权所有&copy;ReadyGo小组</p>
 	</footer>
 
-	<script src="../js/jquery-1.11.3.js"></script>
-	<script src="../js/bootstrap.js"></script>
 	<script>
-			/*Bootlint工具用于对页面中的HTML标签以及Bootstrapclass的使用进行检测*/
-			(function() {
-				var s = document.createElement("script");
-				s.onload = function() {
-					bootlint.showLintReportForCurrentDocument([]);
-				};
-				s.src = "../js/bootlint.js";
-				document.body.appendChild(s)
-			})();
 
 			//    添加编辑模态框
 			$('#add').on('show.bs.modal', function(event) {
@@ -320,6 +202,48 @@
 				modal.find('.modal-title').text('' + recipient)
 				modal.find('.modal-body input').val(recipient)
 			})
+			
+			//初始化表格数据
+			$('#allPart').bootstrapTable({
+				method : 'get',
+				url : '../../backpart/allPart',
+				cache : false,
+				striped : true,
+				pagination : true,
+				dataType : "json",
+				pageList : [1,3,5,8,10],
+				pageSize : 3,
+				pageNumber : 1,
+				search : true,
+				sidePagination : 'client',
+				showColumns : true,
+				minimumCountColumns : 2,
+				clickToSelect : true,
+				showToggle : true,
+				columns : [ {
+					field : '',
+					checkbox : true
+				}, {
+					field : 'pid',
+					title : 'ID',
+					sortable : true,
+					align: 'center'
+				}, {
+					field : 'pname',
+					title : '章节名',
+					align : 'center' 
+				},{field : 'operate',title: '操作',width: 100,align: 'center',valign: 'middle',
+						formatter:function(value,row,index){
+							var edit = '<a onclick="member_edit(\''+ row.qid + '\')">编辑</a> ';  
+							var del = '<a onclick="member_del(\''+ row.qid +'\')">删除</a> '; 
+							var str = edit + "&nbsp;" + del;
+							return str;
+						}
+				} 
+				]
+			
+			});
+			
 		</script>
 </body>
 

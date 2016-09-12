@@ -20,6 +20,8 @@
     <script src="js/respond.min.js"></script>
     <![endif]-->
 <script src="../js/Chart.js"></script>
+<script src="../js/jquery-1.11.3.js"></script>
+<script src="../js/bootstrap.js"></script>
 </head>
 
 <body>
@@ -79,7 +81,7 @@
 								href="#collapseOne" aria-expanded="true"
 								aria-controls="collapseOne"> <i
 								class="icon-user-md icon-large"></i> 管理员管理
-							</a> </a>
+							</a>
 
 							<div id="collapseOne" class="panel-collapse collapse in">
 								<ul class="nav nav-list menu-second">
@@ -100,7 +102,7 @@
 								data-parent="#accordion" href="#collapseTwo"
 								aria-expanded="false" aria-controls="collapseTwo"> <i
 								class="icon-book icon-large"></i> 用户管理
-							</a> </a>
+							</a>
 							<div id="collapseTwo" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
 									<li><a href="checkAllUsers.jsp"><i class="icon-user"></i>
@@ -118,7 +120,7 @@
 								data-parent="#accordion" href="#collapseThree"
 								aria-expanded="false" aria-controls="collapseThree"> <i
 								class="icon-book icon-large"></i> 题库管理
-							</a> </a>
+							</a>
 
 							<div id="collapseThree" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
@@ -138,7 +140,7 @@
 								data-parent="#accordion" href="#collapseFour"
 								aria-expanded="false" aria-controls="collapseFour"> <i
 								class="icon-book icon-large"></i> 测试管理
-							</a> </a>
+							</a>
 
 							<div id="collapseFour" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
@@ -182,10 +184,9 @@
 		<p class="text-center text-white">版权所有&copy;ReadyGo小组</p>
 	</footer>
 
-	<script src="../js/jquery-1.11.3.js"></script>
-	<script src="../js/bootstrap.js"></script>
+
 	<script>
-			/*Bootlint工具用于对页面中的HTML标签以及Bootstrapclass的使用进行检测*/
+/* 			Bootlint工具用于对页面中的HTML标签以及Bootstrapclass的使用进行检测
 			(function() {
 				var s = document.createElement("script");
 				s.onload = function() {
@@ -193,7 +194,8 @@
 				};
 				s.src = "../js/bootlint.js";
 				document.body.appendChild(s)
-			})();
+			})(); 
+*/
 			/*Chart的数据*/
 			function lineChart() {
 				var ctx = document.getElementById('canvas').getContext("2d")

@@ -40,4 +40,12 @@ public interface QuizMapper {
 	 * @return
 	 */
 	public int insertQuiz(Quiz quiz);
+	
+	/**
+	 * 删除quiz
+	 * hong9-12
+	 * @param quiz
+	 * @return
+	 */
+	public int deleteQuiz(int qid);
 }

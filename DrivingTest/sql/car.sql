@@ -86,6 +86,7 @@ insert into quiz values (seq_qid.nextval,' 对未取得驾驶证驾驶机动车�
 insert into quiz values (seq_qid.nextval,'  对违法驾驶发生重大交通事故且构成犯罪的，不追究其刑事责任。','A.正确@B.错误@B',1,null,'判断题','《道路交通安全法》第一百零一条：违反道路交通安全法律、法规的规定，发生重大交通事故，构成犯罪的，依法追究刑事责任，并由公安机关交通管理部门吊销机动车驾驶证。',300);
 
 select *from quiz;
+delete from quiz where qid = 30;
 --章节表
 drop table part;
 create table part(

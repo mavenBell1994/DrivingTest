@@ -45,4 +45,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			#{explain},#{errTotal})
 	</insert>
 	
+	<delete id="deleteQuiz" parameterType="int">
+		delete from quiz where qid = #{qid}
+	</delete>
+	
 </mapper>

@@ -47,4 +47,9 @@ public class QuizServiceImpl implements QuizService {
 	public int insertQuiz(Quiz quiz) {
 		return quizMapper.insertQuiz(quiz);
 	}
+
+	@Override
+	public int deleteQuiz(int qid) {
+		return quizMapper.deleteQuiz(qid);
+	}
 }

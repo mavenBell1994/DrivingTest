@@ -51,7 +51,7 @@ create table CarUSER(
 	status number,
 	regdate date
 );
-select *from CarUSER
+select *from CarUSER;
 drop sequence seq_cid;
 update caruser set icon='images/car.jpg' where cname='lc'
 create sequence seq_cid start with 1;

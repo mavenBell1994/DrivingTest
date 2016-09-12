@@ -20,10 +20,32 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="allUsers" resultType="User">
 		select * from carUser
 	</select>
+	
 	<insert id="active1" parameterType="Int">
 		insert into selferrors values(#{cid},'','')
 	</insert>
+	
 	<update id="upateUserIcon" parameterType="User">
 		update caruser set icon=#{icon} where cid=#{cid}
 	</update>
+	
+	<!-- 增加、删除、修改 -->
+	<insert id="addUser" parameterType="User">
+		insert into CARUSER values
+		(seq_cid.nextval,#{cname},#{cpwd},#{email},#{icon},#{tel},#{sex},#{addr},#{status},sysdate)
+	</insert>
+	
+	<delete id="delUser" parameterType="int">
+		delete from carUser where cid=#{cid}
+	</delete>
+	
+	<update id="updateUser" parameterType="User">
+		update carUser set 
+			cname = #{cname},cpwd = #{cpwd},
+			email = #{email},icon = #{icon},
+			tel = #{tel},sex = #{sex},
+			addr = #{addr},status = #{status}
+		where cid=#{cid}
+	</update>
+	
 </mapper>

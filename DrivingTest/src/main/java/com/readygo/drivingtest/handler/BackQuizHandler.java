@@ -69,4 +69,22 @@ public class BackQuizHandler {
 		out.close();
 	}
 	
+	/**
+	 * 插入Quiz
+	 * @param out
+	 * @param qid
+	 */
+	@RequestMapping("/updateQuiz")
+	public void insertQuiz(Quiz quiz,PrintWriter out){
+		int result = quizService.insertQuiz(quiz);
+		System.out.println(result);
+		if(result ==1){
+			out.println(true);
+		}else{
+			out.println(false);
+		}
+		out.flush();
+		out.close();
+	}
+	
 }

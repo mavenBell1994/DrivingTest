@@ -45,10 +45,7 @@ public class QuizServiceImplTest {
 	 */
 	@Test
 	public void testUpdateQuiz() {
-		Integer qid = 11;
-		Integer pid = 1;
-		Integer errTotal = 123;
-		Quiz quiz = new Quiz(qid,"测试用的题目","A.不是a@B.就是我@C.a说的对@D.c没有问题@B",pid,"f:\\mywork\\pics","科目1","测试一下ZZZzzz",errTotal);
+		Quiz quiz = new Quiz(30,"测试用的题目","A.不是a@B.就是我@C.a说的对@D.c没有问题@B",1,"f:\\mywork\\pics","判断题","测试一下ZZZzzz",123);
 		
 		quiz.setErrTotal(quiz.getErrTotal() + 1);
 		System.out.println(quiz);

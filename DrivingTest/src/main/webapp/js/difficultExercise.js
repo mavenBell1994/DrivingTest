@@ -325,7 +325,7 @@ function seeAnalyse(data,dataLength){
 		if(icon==null || icon==""){
 			strCom+=' <img src="images/diandian.png">';
 		}else{
-			strCom+=' <img src="../pics"'+icon+'>';
+			strCom+=' <img src="'+icon+'">';
 		}
 		strCom+='<div class="item">';
 		strCom+='<p class="header">';

@@ -46,4 +46,13 @@ public class UserServiceImpl implements UserService {
 	public void active1(Integer cid) {
 		mapper.active1(cid);
 	}
+	/**
+	 * location 用户头像的地址
+	 * 更新用户的头像
+	 */
+	
+	@Override
+	public boolean upateUserIcon(User user) {
+		return mapper.upateUserIcon(user)>0;
+	}
 }

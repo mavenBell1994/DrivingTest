@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:util="http://www.springframework.org/schema/util"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:aop="http://www.springframework.org/schema/aop" 
-	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -15,42 +12,43 @@
         http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
-        
-    <!--以注解的方式配置bean,指定bean所在的包,自动扫描 -->
-	<context:component-scan base-package="com.readygo.drivingtest"/>
-	
+
+	<!--以注解的方式配置bean,指定bean所在的包,自动扫描 -->
+	<context:component-scan base-package="com.readygo.drivingtest" />
+
 	<!-- 引入外部属性文件 -->
 	<context:property-placeholder location="classpath:db.properties" />
 
 	<!-- 数据源 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
-		<property name="driverClassName" value="${jdbc.driverClassName}"/>
-		<property name="url" value="${jdbc.url}"/>
-		<property name="username" value="${jdbc.username}"/>
-		<property name="password" value="${jdbc.password}"/>
-		<property name="initialSize" value="${jdbc.initialSize}"/>
-		<property name="minIdle" value="${jdbc.minIdle}"/>
-		<property name="maxTotal" value="${jdbc.maxTotal}"/>
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="initialSize" value="${jdbc.initialSize}" />
+		<property name="minIdle" value="${jdbc.minIdle}" />
+		<property name="maxTotal" value="${jdbc.maxTotal}" />
 	</bean>
-	
+
 	<!-- 配置Mybatis框架整合 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="dataSource"/>
-		<property name="typeAliasesPackage" value="com.readygo.drivingtest.entity"/><!-- 定义采用别名包 -->
-		<property name="mapperLocations" value="classpath:mapper/*Mapper.xml"/>
+		<property name="dataSource" ref="dataSource" />
+		<property name="typeAliasesPackage" value="com.readygo.drivingtest.entity" /><!-- 
+			定义采用别名包 -->
+		<property name="mapperLocations" value="classpath:mapper/*Mapper.xml" />
 	</bean>
-	
+
 	<!--创建映射接口代理实现对象,创建bean的名称默认为映射接口名首字母小写 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.readygo.drivingtest.mapper"/>
-		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/> 
+		<property name="basePackage" value="com.readygo.drivingtest.mapper" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
 	<!-- 邮件发送处理 -->
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
-		<property name="host" value="${mail.smtp.host}"/>
-		<property name="username" value="${mail.smtp.username}"/>
-		<property name="password" value="${mail.smtp.password}"/>
-		
+		<property name="host" value="${mail.smtp.host}" />
+		<property name="username" value="${mail.smtp.username}" />
+		<property name="password" value="${mail.smtp.password}" />
+
 		<property name="javaMailProperties">
 			<props>
 				<prop key="mail.smtp.auth">${mail.smtp.auth}</prop>
@@ -59,12 +57,19 @@
 		</property>
 	</bean>
 	<!-- 响应处理，视图处理器配置 -->
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-	 	<property name="prefix" value="/page/"></property>
-	 	<property name="suffix" value=".jsp"></property>
-	 </bean>
-	 
-	 <!-- 默认静态资源的请求处理 --><!-- spring会拦截所有请求，加上后可以加载静态资源，如图片 -->
-	 <mvc:default-servlet-handler/>
-	 <mvc:annotation-driven></mvc:annotation-driven>
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/page/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+
+	<!-- 默认静态资源的请求处理 --><!-- spring会拦截所有请求，加上后可以加载静态资源，如图片 -->
+	<mvc:default-servlet-handler />
+	<mvc:annotation-driven></mvc:annotation-driven>
+	 <!-- 多部分文件上传 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="104857600" />
+		<property name="maxInMemorySize" value="4096" />
+		<property name="defaultEncoding" value="UTF-8"></property>
+	</bean> 
 </beans>

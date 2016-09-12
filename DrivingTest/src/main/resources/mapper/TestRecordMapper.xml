@@ -8,4 +8,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from testRecord
 	</select>
 	
+	<!-- 增加、删除、修改 -->
+	<insert id="addTestRecord" parameterType="TestRecord">
+		insert into TestRecord values 
+		( seq_testRecord_recid.nextval , #{cid} , #{testType} ,#{testKind} 
+		, sysdate , #{errorCount} ,#{qID},#{recTemp} )
+		
+	</insert>
+	
+	<delete id="delTestRecord" parameterType="int">
+		delete from TestRecord where recId=#{recid}
+	</delete>
+	
+	<update id="updateTestRecord" parameterType="TestRecord">
+		update TestRecord set 
+			testType = #{testType} ,testKind = #{testKind} ,
+			errorCount= #{errorCount} ,qID = #{qID} ,
+			recTemp = #{recTemp}
+		where recId=#{recId}
+	</update>
+	
 </mapper>

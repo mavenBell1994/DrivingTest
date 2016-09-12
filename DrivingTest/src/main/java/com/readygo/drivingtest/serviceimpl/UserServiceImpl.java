@@ -57,6 +57,7 @@ public class UserServiceImpl implements UserService {
 	}
 	/**
 	 * 增加carUser信息
+	 * hong-913
 	 * @param user
 	 * @return
 	 */
@@ -65,6 +66,7 @@ public class UserServiceImpl implements UserService {
 	}
 	/**
 	 * 删除carUser信息
+	 * hong-913
 	 * @param user
 	 * @return
 	 */
@@ -73,6 +75,7 @@ public class UserServiceImpl implements UserService {
 	}
 	/**
 	 * 修改carUser信息
+	 * hong-913
 	 * @param user
 	 * @return
 	 */

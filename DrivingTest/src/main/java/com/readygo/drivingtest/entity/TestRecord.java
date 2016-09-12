@@ -10,9 +10,10 @@ public class TestRecord {
 	private String testType ;
 	private String testKind ;
 	private String testDate ;
-	private int errorCount;
+	private Integer errorCount;
 	private String qID ;
 	private String recTemp;
+	
 	public Integer getRecId() {
 		return recId;
 	}
@@ -43,10 +44,10 @@ public class TestRecord {
 	public void setTestDate(String testDate) {
 		this.testDate = testDate;
 	}
-	public int getErrorCount() {
+	public Integer getErrorCount() {
 		return errorCount;
 	}
-	public void setErrorCount(int errorCount) {
+	public void setErrorCount(Integer errorCount) {
 		this.errorCount = errorCount;
 	}
 	public String getqID() {
@@ -63,8 +64,7 @@ public class TestRecord {
 	}
 	public TestRecord() {
 	}
-	
-	public TestRecord(Integer recId, Integer cid, String testType, String testKind, String testDate, int errorCount,
+	public TestRecord(Integer recId, Integer cid, String testType, String testKind, String testDate, Integer errorCount,
 			String qID, String recTemp) {
 		this.recId = recId;
 		this.cid = cid;
@@ -75,12 +75,21 @@ public class TestRecord {
 		this.qID = qID;
 		this.recTemp = recTemp;
 	}
+	public TestRecord(Integer cid, String testType, String testKind, Integer errorCount, String qID, String recTemp) {
+		this.cid = cid;
+		this.testType = testType;
+		this.testKind = testKind;
+		this.errorCount = errorCount;
+		this.qID = qID;
+		this.recTemp = recTemp;
+	}
 	@Override
 	public String toString() {
 		return "TestRecord [recId=" + recId + ", cid=" + cid + ", testType=" + testType + ", testKind=" + testKind
 				+ ", testDate=" + testDate + ", errorCount=" + errorCount + ", qID=" + qID + ", recTemp=" + recTemp
 				+ "]";
 	}
+	
 	
 	
 	

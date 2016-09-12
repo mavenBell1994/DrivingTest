@@ -28,26 +28,46 @@ public class QuizServiceImpl implements QuizService {
 		return quizMapper.addErrTotal(qid) > 0;
 	}
 
+	/**
+	 * 获取所有的quiz
+	 * hong-913
+	 */
 	@Override
 	public List<Quiz> allQuiz() {
 		return quizMapper.allQuiz();
 	}
-
+	
+	/**
+	 * 根据qid查询
+	 * hong-913
+	 */
 	@Override
 	public Quiz getQuizByQid(int qid) {
 		return quizMapper.getQuizByQid(qid);
 	}
 
+	/**
+	 * 修改quiz
+	 * hong-913
+	 */
 	@Override
 	public int updateQuiz(Quiz quiz) {
 		return quizMapper.updateQuiz(quiz);
 	}
 
+	/**
+	 * 插入quiz
+	 * hong-913
+	 */
 	@Override
 	public int insertQuiz(Quiz quiz) {
 		return quizMapper.insertQuiz(quiz);
 	}
 
+	/**
+	 * 更新quiz
+	 * hong-913
+	 */
 	@Override
 	public int deleteQuiz(int qid) {
 		return quizMapper.deleteQuiz(qid);

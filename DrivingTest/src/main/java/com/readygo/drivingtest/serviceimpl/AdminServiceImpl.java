@@ -41,6 +41,7 @@ public class AdminServiceImpl implements AdminService {
 	 * @param admin
 	 * @return
 	 */
+	@Override
 	public int addAdmin(Admin admin) {
 		return mapper.addAdmin(admin);
 	}
@@ -51,6 +52,7 @@ public class AdminServiceImpl implements AdminService {
 	 * @param aid
 	 * @return
 	 */
+	@Override
 	public int delAdmin(int aid) {
 		return mapper.delAdmin(aid);
 	}
@@ -60,6 +62,7 @@ public class AdminServiceImpl implements AdminService {
 	 * @param admin
 	 * @return
 	 */
+	@Override
 	public int updateAdmin(Admin admin) {
 		return mapper.updateAdmin(admin);
 	}

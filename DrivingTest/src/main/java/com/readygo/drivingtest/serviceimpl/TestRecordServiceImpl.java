@@ -19,6 +19,39 @@ public class TestRecordServiceImpl implements TestRecordService {
 		return trm.allTest();
 	}
 
+	/**
+	 * hong9-13
+	 * 增加testRecord
+	 * @param testRecord
+	 * @return
+	 */
+	@Override
+	public int addTestRecord(TestRecord testRecord) {
+		return trm.addTestRecord(testRecord);
+	}
+	
+	/**
+	 * hong9-13
+	 * 删除
+	 * @param recId
+	 * @return
+	 */
+	@Override
+	public int delTestRecord(int recId) {
+		return trm.delTestRecord(recId);
+	}
+
+	/**
+	 * hong9-13
+	 * 修改testRecord
+	 * @param testRecord
+	 * @return
+	 */
+	@Override
+	public int updateTestRecord(TestRecord testRecord) {
+		return trm.updateTestRecord(testRecord);
+	}
+
 
 	
 

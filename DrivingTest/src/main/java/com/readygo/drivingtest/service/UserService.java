@@ -20,5 +20,7 @@ public interface UserService {
 
 	public boolean upateUserIcon(User user);
 
+	public User selectUserById(int cid);//查询用户
+
 /*	public boolean updateUserIcon(String location);
 */}

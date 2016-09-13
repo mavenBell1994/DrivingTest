@@ -21,4 +21,6 @@ public interface UserMapper {
 	public int updateUserIcon(String location);
 //修改用户的头像
 	public int upateUserIcon(User user);
+
+	public User selectUserById(int cid);
 }

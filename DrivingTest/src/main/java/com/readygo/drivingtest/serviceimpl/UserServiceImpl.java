@@ -55,4 +55,8 @@ public class UserServiceImpl implements UserService {
 	public boolean upateUserIcon(User user) {
 		return mapper.upateUserIcon(user)>0;
 	}
+	@Override
+	public User selectUserById(int cid) {
+		return mapper.selectUserById(cid);
+	}
 }

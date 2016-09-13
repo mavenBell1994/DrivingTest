@@ -221,18 +221,23 @@ create table blog(
 	bid int primary key ,
 	cid	int ,
 	bTitle	varchar2(50),		--标题
-	bContent blob,				--内容,blob可以存放最大长度4G
+	bContent varchar2(1000),				--内容,blob可以存放最大长度4G
 	bpics	varchar2(50),		--图片,存放帖子里的图片路径
 	bDate	date,				--发帖时间,这里放完整时间。
-	bPraise	int					--点赞数
-		constraint check_blog_bPraise check ( bPraise >= 0 ),				
+	bPraise	int,				--点赞数			
 	bTemp	varchar2(200)
 
 );
+--注意：bContent字段，暂时使用varchar2(1000),以后修改为blob。
+--暂时存在bug
 drop sequence seq_blog_bid;
 create sequence seq_blog_bid start with 1001 increment by 1;
 insert into blog values ( seq_blog_bid.nextval , ? , ? , ? , ? sysdate , 0 , '');
 
+insert into blog values ( seq_blog_bid.nextval , 1 , '测试标题1' , '这是一个测试内容' , '', sysdate , 0 , '');
+insert into blog values ( seq_blog_bid.nextval , 1 , '测试标题2' , '22这是一个测试内容' , '', sysdate , 0 , '');
+
+select * from blog;
 
 
 --发帖回复表

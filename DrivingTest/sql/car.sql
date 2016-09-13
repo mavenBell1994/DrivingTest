@@ -61,6 +61,8 @@ insert into CARUSER values(seq_cid.nextval,'lc','123456','15273423853@163.com','
 
 insert into caruser values(seq_cid.nextval,'hm','a','2947432415@qq.com',null,'18274727632','女',null,1,to_date('2016-3-4','yyyy-MM-dd'));
 insert into CARUSER values(seq_cid.nextval,'lc','123456','13i59189@163.com','','','男','',1,sysdate);
+insert into CARUSER values(seq_cid.nextval,'mm','123456','15273423853@163.com','','','','',1,sysdate)
+
 delete from CARUSER;
 select *from CARUSER
 --题目表
@@ -180,8 +182,8 @@ create table comments(
 	reply varchar(200),--用户被评论的内容
 	support number --被支持点赞的次数
 )
+select *from comments
 create sequence seq_comments_ctid start with 1 ;
->>>>>>> branch 'master' of ssh://git@github.com/mavenBell1994/DrivingTest.git
 
 insert into SelfErrors values(121,'','');
 --样例   insert into SelfErrors values ( ?,? );			

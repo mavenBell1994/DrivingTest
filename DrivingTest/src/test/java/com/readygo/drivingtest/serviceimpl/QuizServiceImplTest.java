@@ -14,7 +14,7 @@ import com.readygo.drivingtest.service.QuizService;
 @ContextConfiguration("classpath:spring.xml")
 public class QuizServiceImplTest {
 	@Autowired
-	private QuizService quizService;
+	QuizService quizService;
 	@Test
 	public void testFindAllDiffQuizs() {
 		List<Quiz> ls=quizService.findAllDiffQuizs();
@@ -38,5 +38,42 @@ public class QuizServiceImplTest {
 	public void testGetQuizByQid() {
 		Quiz ls=quizService.getQuizByQid(1);
 		System.out.println(ls);
+	}	
+	/**
+	 * hong,9-12
+	 * 测试修改quiz
+	 */
+	@Test
+	public void testUpdateQuiz() {
+		Quiz quiz = new Quiz(30,"测试用的题目","A.不是a@B.就是我@C.a说的对@D.c没有问题@B",1,"f:\\mywork\\pics","判断题","测试一下ZZZzzz",123);
+		
+		quiz.setErrTotal(quiz.getErrTotal() + 1);
+		System.out.println(quiz);
+		int result = quizService.updateQuiz(quiz);
+		System.out.println(result);
 	}
+	
+	/**
+	 * hong,9-12
+	 * 测试插入quiz
+	 */
+	@Test
+	public void testInsertQuiz() {
+		Quiz quiz = new Quiz("测试用的题目","A.不是a@B.就是我@C.a说的对@D.c没有问题@B",1,"f:\\mywork\\pics","判断题","测试一下ZZZzzz",300);
+		System.out.println(quiz.toString());
+		int result = quizService.insertQuiz(quiz);
+		System.out.println(result);
+	}
+	
+	/**
+	 * hong,9-12
+	 * 测试删除quiz
+	 */
+	@Test
+	public void testDeleteQuiz() {
+		Integer qid = 31;
+		int result = quizService.deleteQuiz(qid);
+		System.out.println(result);
+	}
+	
 }

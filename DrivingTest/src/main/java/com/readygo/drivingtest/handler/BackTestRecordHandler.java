@@ -21,6 +21,10 @@ public class BackTestRecordHandler {
 	@Autowired
 	private TestRecordServiceImpl trsi ;
 	
+	/**
+	 * 查看所有的测试成绩信息
+	 * @param out
+	 */
 	@RequestMapping("/allTest")
 	public void allTest(PrintWriter out){
 		List<TestRecord> allTest = trsi.allTest();
@@ -32,5 +36,59 @@ public class BackTestRecordHandler {
 		out.flush();
 		out.close();
 	}
-
+	
+	/**
+	 * hong9-13
+	 * 添加TestRecord
+	 * @param TestRecord
+	 * @param out
+	 */
+	@RequestMapping("/addTestRecord")
+	public void addTestRecord(TestRecord testRecord,PrintWriter out){
+		int result = trsi.addTestRecord(testRecord);
+		if(result==1){
+			out.println(true);
+		}else{
+			out.println(false);			
+		}
+		out.flush();
+		out.close();
+	}
+	
+	/**
+	 * hong9-13
+	 * 删除TestRecord
+	 * @param TestRecord
+	 * @param out
+	 */
+	@RequestMapping("/delTestRecord")
+	public void delTestRecord(int recId,PrintWriter out){
+		int result = trsi.delTestRecord(recId);
+		if(result==1){
+			out.println(true);
+		}else{
+			out.println(false);			
+		}
+		out.flush();
+		out.close();
+	}
+	
+	/**
+	 * hong9-13
+	 * 修改TestRecord
+	 * @param TestRecord
+	 * @param out
+	 */
+	@RequestMapping("/updateTestRecord")
+	public void updateTestRecord(TestRecord testRecord,PrintWriter out){
+		int result = trsi.updateTestRecord(testRecord);
+		if(result==1){
+			out.println(true);
+		}else{
+			out.println(false);			
+		}
+		out.flush();
+		out.close();
+	}
+	
 }

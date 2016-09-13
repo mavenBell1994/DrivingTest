@@ -21,6 +21,10 @@ public class AdminHandler {
 	@Autowired
 	private AdminServiceImpl asimpl ;
 	
+	/**
+	 * 获取所有admin的信息
+	 * @param out
+	 */
 	@RequestMapping("/allAdmin")
 	public void allAdmin(PrintWriter out){
 		List<Admin> allAdmin = asimpl.getAllAdmin();
@@ -32,5 +36,54 @@ public class AdminHandler {
 		out.flush();
 		out.close();
 	}
+
+	/**
+	 * 增加admin
+	 * @param out
+	 */
+	@RequestMapping("/addAdmin")
+	public void addAdmin(Admin admin,PrintWriter out){
+		int result = asimpl.addAdmin(admin);
+		if( result == 1 ){
+			out.println( true );
+		}else{
+			out.println(false);
+		}
+		out.flush();
+		out.close();
+	}
+	
+	/**
+	 * 删除admin
+	 * @param out
+	 */
+	@RequestMapping("/delAdmin")
+	public void delAdmin(int aid,PrintWriter out){
+		int result = asimpl.delAdmin(aid);
+		if( result == 1 ){
+			out.println( true );
+		}else{
+			out.println(false);
+		}
+		out.flush();
+		out.close();
+	}
+	
+	/**
+	 * 修改admin
+	 * @param out
+	 */
+	@RequestMapping("/updateAdmin")
+	public void updateAdmin(Admin admin,PrintWriter out){
+		int result = asimpl.updateAdmin(admin);
+		if( result == 1 ){
+			out.println( true );
+		}else{
+			out.println(false);
+		}
+		out.flush();
+		out.close();
+	}
+	
 
 }

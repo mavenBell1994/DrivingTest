@@ -23,4 +23,28 @@ public interface QuizService {
 	 * @return:返回指定qid的quiz
 	 */
 	public Quiz getQuizByQid(int qid);
+	
+	/**
+	 * 修改quiz
+	 * @param quiz
+	 * @return
+	 */
+	public int updateQuiz(Quiz quiz);
+
+	/**
+	 * 插入quiz
+	 * hong9-12
+	 * @param quiz
+	 * @return
+	 */
+	public int insertQuiz(Quiz quiz);
+	
+	/**
+	 * 删除quiz
+	 * hong9-12
+	 * @param quiz
+	 * @return
+	 */
+	public int deleteQuiz(int qid);
+
 }

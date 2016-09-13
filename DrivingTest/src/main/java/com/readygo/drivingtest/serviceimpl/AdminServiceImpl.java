@@ -34,4 +34,38 @@ public class AdminServiceImpl implements AdminService {
 	public List<Admin> getAllAdmin() {
 		return mapper.getAllAdmin();
 	}
+	
+	/**
+	 * 添加admin
+	 * hong9-12
+	 * @param admin
+	 * @return
+	 */
+	@Override
+	public int addAdmin(Admin admin) {
+		return mapper.addAdmin(admin);
+	}
+	
+	/**
+	 * 根据aid删除指定admin
+	 * hong9-12
+	 * @param aid
+	 * @return
+	 */
+	@Override
+	public int delAdmin(int aid) {
+		return mapper.delAdmin(aid);
+	}
+	
+	/**
+	 * 修改admin
+	 * @param admin
+	 * @return
+	 */
+	@Override
+	public int updateAdmin(Admin admin) {
+		return mapper.updateAdmin(admin);
+	}
+
+
 }

@@ -23,4 +23,30 @@ public interface UserService {
 	public User selectUserById(int cid);//查询用户
 
 /*	public boolean updateUserIcon(String location);
-*/}
+*/
+	
+	/**
+	 * 增加carUser信息
+	 * hong9-12
+	 * @param user
+	 * @return
+	 */
+	public int addUser(User user);
+	
+	/**
+	 * 删除carUser信息
+	 * hong9-12
+	 * @param cid
+	 * @return
+	 */
+	public int delUser(int cid);
+	
+	/**
+	 * 修改carUser信息
+	 * hong9-12
+	 * @param user
+	 * @return
+	 */
+	public int updateUser(User user);
+	
+}

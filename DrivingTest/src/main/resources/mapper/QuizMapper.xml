@@ -14,7 +14,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="findDiffQuizById" resultType="Quiz" parameterType="int">
 		select qq.* from
 		(select q.*,rownum rn from quiz q order by errTotal
-		desc) qq where 100>=rn and qid=#{qid}
+		desc) qq where 100>=rn , qid=#{qid}
 	</select>
 
 	<update id="addErrTotal" parameterType="int">
@@ -29,5 +29,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getQuizByQid" resultType="Quiz" parameterType="int">
 		select * from quiz where qid=#{qid}
 	</select>
+	
+	<update id="updateQuiz" parameterType="Quiz" >
+		update quiz set 
+			question = #{question} , answer = #{answer} ,
+			pid = #{pid} , pic = #{pic} ,
+			qtype = #{qtype} , errTotal = #{errTotal} ,
+			explain = #{explain} 
+		where qid = #{qid}
+	</update>
+	
+	<insert id="insertQuiz" parameterType="Quiz" >
+		insert into quiz values (seq_qid.nextval,#{question},#{answer},
+			#{pid},#{pic},#{qtype},
+			#{explain},#{errTotal})
+	</insert>
+	
+	<delete id="deleteQuiz" parameterType="int">
+		delete from quiz where qid = #{qid}
+	</delete>
 	
 </mapper>

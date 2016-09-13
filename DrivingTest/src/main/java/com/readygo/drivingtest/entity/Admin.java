@@ -9,11 +9,17 @@ public class Admin {
 	private String apwd;
 	private Integer issuper;
 	private Integer status;
-	
+
 	public Admin() {
 	}
 	public Admin(Integer aid, String aname, String apwd, Integer issuper, Integer status) {
 		this.aid = aid;
+		this.aname = aname;
+		this.apwd = apwd;
+		this.issuper = issuper;
+		this.status = status;
+	}
+	public Admin(String aname, String apwd, Integer issuper, Integer status) {
 		this.aname = aname;
 		this.apwd = apwd;
 		this.issuper = issuper;

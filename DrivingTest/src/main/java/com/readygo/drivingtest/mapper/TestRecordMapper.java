@@ -16,5 +16,29 @@ public interface TestRecordMapper {
 	 * @return:所有测试成绩
 	 */
 	public List<TestRecord> allTest();
+
+	/**
+	 * hong9-13
+	 * 增加testRecord
+	 * @param testRecord
+	 * @return
+	 */
+	public int addTestRecord(TestRecord testRecord);
+
+	/**
+	 * hong9-13
+	 * 删除testRecord
+	 * @param recId
+	 * @return
+	 */
+	public int delTestRecord(int recId);
+
+	/**
+	 * hong9-13
+	 * 修改testRecord
+	 * @param testRecord
+	 * @return
+	 */
+	public int updateTestRecord(TestRecord testRecord);
 	
 }

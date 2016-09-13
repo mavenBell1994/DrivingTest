@@ -14,4 +14,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from carAdmin 
 	</select>
 	
+	<insert id="addAdmin" parameterType="Admin">
+		insert into carAdmin values ( seq_caradmin_aid.nextval, #{aname}, #{apwd}, #{issuper}, #{status} )
+	</insert>
+	
+	<delete id="delAdmin" parameterType="int">
+		delete from carAdmin where aid = #{aid}
+	</delete>
+	
+	<update id="updateAdmin" parameterType="Admin">
+		update carAdmin set
+			aname = #{aname}, apwd = #{apwd},
+			issuper = #{issuper}, status = #{status}		
+		where aid = #{aid}
+	</update>
+	
 </mapper>

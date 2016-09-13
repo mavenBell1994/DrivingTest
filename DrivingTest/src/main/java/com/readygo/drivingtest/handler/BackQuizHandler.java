@@ -1,12 +1,10 @@
 package com.readygo.drivingtest.handler;
 
 import java.io.PrintWriter;
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.google.gson.Gson;
@@ -14,7 +12,7 @@ import com.readygo.drivingtest.entity.Quiz;
 import com.readygo.drivingtest.service.QuizService;
 
 @Controller
-@RequestMapping("/backquiz")
+@RequestMapping("/backQuizHandler")
 public class BackQuizHandler {
 	@Autowired
 	private QuizService quizService;
@@ -39,7 +37,7 @@ public class BackQuizHandler {
 	
 	/**
 	 * hong,9-10
-	 * @param out显示所有的quiz
+	 * @param out指定ID的quiz
 	 */
 	@RequestMapping("/getQuizByQid")
 	public void getQuizByQid(PrintWriter out,int qid){
@@ -47,6 +45,60 @@ public class BackQuizHandler {
 		Gson gson=new Gson();
 		System.out.println(quiz);
 		out.println(gson.toJson(quiz));
+		out.flush();
+		out.close();
+	}
+	
+	/**
+	 * 修改Quiz
+	 * @param out
+	 * @param qid
+	 */
+	@RequestMapping("/updateQuiz")
+	public void updateQuiz(Quiz quiz,PrintWriter out){
+		int result = quizService.updateQuiz(quiz);
+		System.out.println(result);
+		if(result == 1){
+			out.println(true);
+		}else{
+			out.println(false);
+		}
+		out.flush();
+		out.close();
+	}
+	
+	/**
+	 * 插入Quiz
+	 * @param out
+	 * @param qid
+	 */
+	@RequestMapping("/insertQuiz")
+	public void insertQuiz(Quiz quiz,PrintWriter out){
+		int result = quizService.insertQuiz(quiz);
+		System.out.println(result);
+		if(result == 1){
+			out.println(true);
+		}else{
+			out.println(false);
+		}
+		out.flush();
+		out.close();
+	}
+	
+	/**
+	 * 删除Quiz
+	 * @param out
+	 * @param qid
+	 */
+	@RequestMapping("/deleteQuiz")
+	public void deleteQuiz(Integer qid,PrintWriter out){
+		int result = quizService.deleteQuiz(qid);
+		System.out.println(result);
+		if(result == 1){
+			out.println(true);
+		}else{
+			out.println(false);
+		}
 		out.flush();
 		out.close();
 	}

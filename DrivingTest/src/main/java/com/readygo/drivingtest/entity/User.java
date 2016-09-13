@@ -16,12 +16,10 @@ public class User {
 	}
 	
 	public User(Integer cid) {
-		super();
 		this.cid = cid;
 	}
 
 	public User(String cname) {
-		super();
 		this.cname = cname;
 	}
 
@@ -38,6 +36,36 @@ public class User {
 		this.status = status;
 		this.regdate = regdate;
 	}
+	
+	
+
+	//主要使用于插入
+	public User(String cname, String cpwd, String email, String icon, String tel, String sex, String addr,
+			Integer status) {
+		this.cname = cname;
+		this.cpwd = cpwd;
+		this.email = email;
+		this.icon = icon;
+		this.tel = tel;
+		this.sex = sex;
+		this.addr = addr;
+		this.status = status;
+	}
+	
+	//主要使用于修改
+	public User(Integer cid, String cname, String cpwd, String email, String icon, String tel, String sex, String addr,
+			Integer status) {
+		this.cid = cid;
+		this.cname = cname;
+		this.cpwd = cpwd;
+		this.email = email;
+		this.icon = icon;
+		this.tel = tel;
+		this.sex = sex;
+		this.addr = addr;
+		this.status = status;
+	}
+
 	public User(String cname, String cpwd) {
 		this.cname = cname;
 		this.cpwd = cpwd;

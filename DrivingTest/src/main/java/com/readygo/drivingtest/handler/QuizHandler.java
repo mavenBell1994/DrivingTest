@@ -59,7 +59,7 @@ public class QuizHandler {
 	
 	/**
 	 * hong,9-10
-	 * @param out显示所有的quiz
+	 * @param out显示指定qid的quiz
 	 */
 	@RequestMapping("/getQuizByQid")
 	public void getQuizByQid(PrintWriter out,int qid){

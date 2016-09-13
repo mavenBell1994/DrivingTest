@@ -31,7 +31,7 @@ public class TestRecordServiceImplTest {
 	}
 	
 	/**
-	 * 测试获取所有的测试信息
+	 * 测试插入测试信息
 	 */
 	@Test
 	public void testAddTestRecord() {
@@ -41,7 +41,7 @@ public class TestRecordServiceImplTest {
 	}
 	
 	/**
-	 * 测试获取所有的测试信息
+	 * 测试删除测试信息
 	 */
 	@Test
 	public void testDelTestRecord() {
@@ -51,7 +51,7 @@ public class TestRecordServiceImplTest {
 	}
 	
 	/**
-	 * 测试获取所有的测试信息
+	 * 测试修改测试信息
 	 */
 	@Test
 	public void testUpdateTestRecord() {

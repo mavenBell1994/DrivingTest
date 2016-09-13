@@ -58,7 +58,7 @@ public class BackTestRecordHandler {
 	/**
 	 * hong9-13
 	 * 删除TestRecord
-	 * @param TestRecord
+	 * @param recId
 	 * @param out
 	 */
 	@RequestMapping("/delTestRecord")

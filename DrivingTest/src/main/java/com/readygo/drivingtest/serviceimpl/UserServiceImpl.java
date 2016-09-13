@@ -55,12 +55,18 @@ public class UserServiceImpl implements UserService {
 	public boolean upateUserIcon(User user) {
 		return mapper.upateUserIcon(user)>0;
 	}
+
+	@Override
+	public User selectUserById(int cid) {
+		return mapper.selectUserById(cid);
+	}
 	/**
 	 * 增加carUser信息
 	 * hong-913
 	 * @param user
 	 * @return
 	 */
+	@Override
 	public int addUser(User user) {
 		return mapper.addUser(user);
 	}
@@ -70,6 +76,7 @@ public class UserServiceImpl implements UserService {
 	 * @param user
 	 * @return
 	 */
+	@Override
 	public int delUser(int cid) {
 		return mapper.delUser(cid);
 	}
@@ -79,6 +86,7 @@ public class UserServiceImpl implements UserService {
 	 * @param user
 	 * @return
 	 */
+	@Override
 	public int updateUser(User user) {
 		return mapper.updateUser(user);
 	}

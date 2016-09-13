@@ -22,6 +22,9 @@ public interface UserMapper {
 //修改用户的头像
 	public int upateUserIcon(User user);
 
+
+	public User selectUserById(int cid);
+
 	
 	/**
 	 * 增加carUser信息

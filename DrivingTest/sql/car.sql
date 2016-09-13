@@ -61,6 +61,8 @@ insert into CARUSER values(seq_cid.nextval,'lc','123456','15273423853@163.com','
 
 insert into caruser values(seq_cid.nextval,'hm','a','2947432415@qq.com',null,'18274727632','女',null,1,to_date('2016-3-4','yyyy-MM-dd'));
 insert into CARUSER values(seq_cid.nextval,'lc','123456','13i59189@163.com','','','男','',1,sysdate);
+insert into CARUSER values(seq_cid.nextval,'mm','123456','15273423853@163.com','','','','',1,sysdate)
+
 delete from CARUSER;
 select *from CARUSER
 --题目表

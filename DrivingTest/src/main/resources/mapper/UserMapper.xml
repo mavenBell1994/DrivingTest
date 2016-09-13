@@ -28,6 +28,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="upateUserIcon" parameterType="User">
 		update caruser set icon=#{icon} where cid=#{cid}
 	</update>
+
+	<select id="selectUserById" resultType="User" parameterType="int">
+		select *from carUser where cid=#{cid}
+	</select>
+
 	
 	<!-- 增加、删除、修改 -->
 	<insert id="addUser" parameterType="User">

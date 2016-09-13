@@ -111,4 +111,10 @@ public class RegisterHandler {
 		}
 		
 	}
+	//根据id查询用户
+	@RequestMapping("/selectUserById")
+	@ResponseBody
+	public User selectUserById(String cid){
+		return userService.selectUserById(Integer.parseInt(cid));
+	}
 }

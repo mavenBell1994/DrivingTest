@@ -311,41 +311,49 @@ function showAnalyse(){
 			if(dataLength>=3){
 				dataLength=3;
 			}
-			seeAnalyse(data,dataLength);
+			showComs(data,dataLength);
 		}
 	},"json");
 }
-//查看分析
-function seeAnalyse(data,dataLength){
-	var cname=$("#cname").text();
-	var icon=$("#icon").text();
-	var strCom="";
+function showComs(data,dataLength){
+	$("#listComs").html("");
 	for(var i=0;i<dataLength;i++){
-		strCom+=' <li >';
-		if(icon==null || icon==""){
-			strCom+=' <img src="images/diandian.png">';
-		}else{
-			strCom+=' <img src="'+icon+'">';
-		}
-		strCom+='<div class="item">';
-		strCom+='<p class="header">';
-		strCom+='<span title="快点拿到手吧！！" style="font-size: 16px;color: #999;">'+cname+'</span>';
-		strCom+='</p>';
-		strCom+='<p class="word-break" style="font-size: 18px;margin-bottom: 8px;">'+data[i].comContent+'</p>';
-		strCom+='<p style="color: #a09f9f; position: absolute;right: 0;top: 0;">'+data[i].comDate.substring(0,data[i].comDate.indexOf(" ") )+'</p>';
-		strCom+='</div>';
-		strCom+='</li> ';
+		seeAnalyse(data[i]);
 	}
-	$("#listComs").html(strCom);
+}
+//查看分析data一条评论
+function seeAnalyse(data){
+		if(data.cid>0){
+			var cname="";
+			var icon="";
+			var strCom="";
+			$.post("user/selectUserById",{"cid":data.cid},function(userData){
+				console.info(userData);
+				cname=userData.cname;
+				icon=userData.icon;
+				strCom+=' <li >';
+				if(icon==null || icon==""){
+					strCom+=' <img src="images/diandian.png">';
+				}else{
+					strCom+=' <img src="'+icon+'">';
+				}
+				strCom+='<div class="item">';
+				strCom+='<p class="header">';
+				strCom+='<span title="快点拿到手吧！！" style="font-size: 16px;color: #999;">'+cname+'</span>';
+				strCom+='</p>';
+				strCom+='<p class="word-break" style="font-size: 18px;margin-bottom: 8px;">'+data.comContent+'</p>';
+				strCom+='<p style="color: #a09f9f; position: absolute;right: 0;top: 0;">'+data.comDate.substring(0,data.comDate.indexOf(" ") )+'</p>';
+				strCom+='</div>';
+				strCom+='</li> ';
+			$("#listComs").append(strCom);
+			},"json");
+		}
+		
 }
 //加载更多
 function loadMore(){
 	dataLength=3+dataLength;
-	if(commentsData.length>dataLength){
-		seeAnalyse(commentsData,dataLength);
-	}else{
-		seeAnalyse(commentsData,commentsData.length);
-	}
+	showComs(commentsData,dataLength);
 }
 //点击放大图片的功能
 function showBigImg(pic){

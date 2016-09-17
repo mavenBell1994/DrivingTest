@@ -40,7 +40,8 @@ public class BackQuizHandler {
 	 * @param out指定ID的quiz
 	 */
 	@RequestMapping("/getQuizByQid")
-	public void getQuizByQid(PrintWriter out,int qid){
+	public void getQuizByQid(int qid,PrintWriter out){
+		System.out.println(qid);
 		Quiz quiz=quizService.getQuizByQid(qid);
 		Gson gson=new Gson();
 		System.out.println(quiz);
@@ -57,6 +58,7 @@ public class BackQuizHandler {
 	@RequestMapping("/updateQuiz")
 	public void updateQuiz(Quiz quiz,PrintWriter out){
 		int result = quizService.updateQuiz(quiz);
+		System.out.println(quiz);
 		System.out.println(result);
 		if(result == 1){
 			out.println(true);

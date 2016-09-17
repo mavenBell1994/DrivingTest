@@ -169,7 +169,7 @@
 					</ol>
 					<a href="#" class=" btn btn-primary "> <span
 						class="glyphicon glyphicon-search"></span>
-					</a> <a href="#" class=" btn btn-primary "> <span
+					</a> <a class=" btn btn-primary "> <span
 						class="glyphicon glyphicon-download"></span>
 					</a> <a class="btn btn-primary" title="添加" onclick="addQuiz()"> <span
 						class="glyphicon glyphicon-plus"></a> <br /> <br />
@@ -197,7 +197,7 @@
 					<!-- 						<img class="center-block" alt="" src="images/log-car.jpg"> -->
 					<h3>
 						<span class="glyphicon glyphicon-user" id="myModalLabel"
-							style="color: navy; margin-left: 123px;">&nbsp;ReadyGo-Quiz编辑</span>
+							style="color: navy; margin-left: 123px;"></span>
 					</h3>
 					<!-- 					<h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4>
  -->
@@ -259,9 +259,9 @@
 
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-20">
-								<button type="submit" class="btn btn-info btn-lg " onclick="confirmEdit()">确定修改</button>
+								<button type="submit" class="btn btn-info btn-lg " onclick="confirmEdit()" style="margin-left:48px;">&nbsp;确&nbsp;定&nbsp;</button>
 								&nbsp;&nbsp;&nbsp;&nbsp;
-								<button type="submit" class="btn btn-info btn-lg ">取消编辑</button>
+								<button type="submit" class="btn btn-info btn-lg " style="margin-left:50px;">&nbsp;取&nbsp;消&nbsp;</button>
 							</div>
 						</div>
 
@@ -297,18 +297,19 @@
 		}
 		//将modal的值置空
 		function initQuizModel(){
-			$('#QID').val();
-			$('#问题').val();
-			$('#答案').val();
-			$('#章节ID').val();
-			$('#图片路径').val();
-			$('#题目类型').val();
-			$('#题目详解').val();
-			$('#errTotal').val();
+			$('#QID').val("");
+			$('#问题').val("");
+			$('#答案').val("");
+			$('#章节ID').val("");
+			$('#图片路径').val("");
+			$('#题目类型').val("");
+			$('#题目详解').val("");
+			$('#errTotal').val("");
 		}
 		
 		//显示指定qid的quiz
 		function editModel(qid) {
+			$('#myModalLabel').html("&nbsp;ReadyGo-Quiz编辑");
 			initQuizModel();
 			//赋值
 			$.get("../../backQuizHandler/getQuizByQid", {
@@ -326,37 +327,57 @@
 				}
 			}, "json");
 			showModel();
+			initQuizModel();
 		}
 		//确定修改
 		function confirmEdit(){
-			//获取值
-			var qid = $('#QID').val();
-			var question = $('#问题').val();
-			var answer = $('#答案').val();
-			var pid = $('#章节ID').val();
-			var pic = $('#图片路径').val();
-			var qtype = $('#题目类型').val();
-			var explain = $('#题目详解').val();
-			var errTotal = $('#errTotal').val();
-			alert(qid+" "+" errTotal:"+errTotal);
-			//传值修改
-			$.post("../../backQuizHandler/updateQuiz", {
-				"qid":qid,"question":question,"answer":answer,
-				"pid":pid,"pic":pic,"qtype":qtype,"explain":explain,
-				"errTotal":errTotal
-			}, function(data) {
-				if (data) {
-					alert("修改成功");
-					$('#getAllQuiz').bootstrapTable('refresh');
-				}
-			}, "json");
+			//区分修改还是增加
+			var resultType = switchType();
+			
+			if(resultType == "添加"){
+				//添加操作
+				alert("添加");
+				
+			}else{
+				initQuizModel();
+				//获取值
+				var qid = $('#QID').val();
+				var question = $('#问题').val();
+				var answer = $('#答案').val();
+				var pid = $('#章节ID').val();
+				var pic = $('#图片路径').val();
+				var qtype = $('#题目类型').val();
+				var explain = $('#题目详解').val();
+				var errTotal = $('#errTotal').val();
+				alert(qid+" "+" errTotal:"+errTotal);
+				//传值修改
+				$.get("../../backQuizHandler/updateQuiz", {
+					"qid":qid,"question":question,"answer":answer,
+					"pid":pid,"pic":pic,"qtype":qtype,"explain":explain,
+					"errTotal":errTotal
+				}, function(data) {
+						alert("修改///");
+					if (data) {
+						alert("修改成功")
+						//$('#getAllQuiz').bootstrapTable('refresh');
+					}
+				}, "json");
+			}
 		}
-		
+		//区分增加和修改
+		function switchType(){
+			var type = $('#myModalLabel').html();
+			alert(type);
+			if( type.indexOf("添加") > 0 ){
+				return "添加";
+			}
+			return "修改";
+		}
 		
 		//添加新的quiz
 		function addQuiz(){
+			$('#myModalLabel').html("&nbsp;ReadyGo-Quiz添加");
 			initQuizModel();
-			
 			showModel();
 		
 		}

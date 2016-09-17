@@ -83,7 +83,7 @@
 								href="#collapseOne" aria-expanded="false"
 								aria-controls="collapseOne"> <i
 								class="icon-user-md icon-large"></i> 管理员管理
-							</a>  
+							</a>
 
 							<div id="collapseOne" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
@@ -104,7 +104,7 @@
 								data-parent="#accordion" href="#collapseTwo"
 								aria-expanded="false" aria-controls="collapseTwo"> <i
 								class="icon-book icon-large"></i> 用户管理
-							</a>  
+							</a>
 							<div id="collapseTwo" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
 									<li><a href="checkAllUsers.jsp"><i class="icon-user"></i>
@@ -122,7 +122,7 @@
 								data-parent="#accordion" href="#collapseThree"
 								aria-expanded="true" aria-controls="collapseThree"> <i
 								class="icon-book icon-large"></i> 题库管理
-							</a>  
+							</a>
 
 							<div id="collapseThree" class="panel-collapse collapse in">
 								<ul class="nav nav-list menu-second">
@@ -142,7 +142,7 @@
 								data-parent="#accordion" href="#collapseFour"
 								aria-expanded="false" aria-controls="collapseFour"> <i
 								class="icon-book icon-large"></i> 测试管理
-							</a>  
+							</a>
 
 							<div id="collapseFour" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
@@ -165,86 +165,229 @@
 								class="glyphicon glyphicon-home"></span>&nbsp;后台首页</a></li>
 						<li class="active">系统管理 - 表格</li>
 					</ol>
-					<a href="#" class=" btn btn-primary ">
-						<span class="glyphicon glyphicon-search"></span>
-					</a> 
-					<a href="#" class=" btn btn-primary ">
-						<span class="glyphicon glyphicon-download"></span>
-					</a> 
-					<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#add1" title="添加">
-						<span class="glyphicon glyphicon-plus">
-					</a> 
-					<br />
-					<br />
+					<a href="#" class=" btn btn-primary "> <span
+						class="glyphicon glyphicon-search"></span>
+					</a> <a href="#" class=" btn btn-primary "> <span
+						class="glyphicon glyphicon-download"></span>
+					</a> <a  class="btn btn-primary" title="添加" onclick="addPart()"> <span
+						class="glyphicon glyphicon-plus"></a> <br /> <br />
 					<table id="allPart">
-						
+
 					</table>
-					
+
 				</div>
 				<!--右侧内容结束-->
 			</div>
 		</div>
 	</section>
+	
+		<!-- 模态框（Modal） -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">×</button>
+					<!-- 						<img class="center-block" alt="" src="images/log-car.jpg"> -->
+					<h3>
+						<span class="glyphicon glyphicon-user" id="myModalLabel"
+							style="color: navy; margin-left: 123px;"></span>
+					</h3>
+					<!-- 					<h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4>
+ -->
+				</div>
+				<div class="modal-body">
+					<!-- 登陆表单 -->
+					<form class="form-horizontal" role="form">
+						<div class="form-group" id="divQid">
+							<label for="userName" class="col-sm-3 control-label">pid:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="pid" readonly="true">
+							</div>
+						</div>
+
+
+						<div class="form-group">
+							<label for="password" class="col-sm-3 control-label">章节名称:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="pname">
+							</div>
+						</div>
+						
+
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-20">
+								<button type="submit" class="btn btn-info btn-lg " onclick="confirmEdit()" style="margin-left:48px;">&nbsp;确&nbsp;定&nbsp;</button>
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								<button type="submit" class="btn btn-info btn-lg " style="margin-left:50px;">&nbsp;取&nbsp;消&nbsp;</button>
+							</div>
+						</div>
+
+					</form>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+	
 
 	<footer class="bg-primary navbar-fixed-bottom">
 		<p class="text-center text-white">版权所有&copy;ReadyGo小组</p>
 	</footer>
 
 	<script>
-
-			//    添加编辑模态框
-			$('#add').on('show.bs.modal', function(event) {
-				var button = $(event.relatedTarget) // Button that triggered the modal
-				var recipient = button.data('whatever') // Extract info from data-* attributes
-					// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-					// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-				var modal = $(this)
-				modal.find('.modal-title').text('' + recipient)
-				modal.find('.modal-body input').val(recipient)
-			})
-			
-			//初始化表格数据
-			$('#allPart').bootstrapTable({
-				method : 'get',
-				url : '../../backpart/allPart',
-				cache : false,
-				striped : true,
-				pagination : true,
-				dataType : "json",
-				pageList : [1,3,5,8,10],
-				pageSize : 3,
-				pageNumber : 1,
-				search : true,
-				sidePagination : 'client',
-				showColumns : true,
-				minimumCountColumns : 2,
-				clickToSelect : true,
-				showToggle : true,
-				columns : [ {
-					field : '',
-					checkbox : true
-				}, {
-					field : 'pid',
-					title : 'ID',
-					sortable : true,
-					align: 'center'
-				}, {
-					field : 'pname',
-					title : '章节名',
-					align : 'center' 
-				},{field : 'operate',title: '操作',width: 100,align: 'center',valign: 'middle',
-						formatter:function(value,row,index){
-							var edit = '<a onclick="member_edit(\''+ row.qid + '\')">编辑</a> ';  
-							var del = '<a onclick="member_del(\''+ row.qid +'\')">删除</a> '; 
-							var str = edit + "&nbsp;" + del;
-							return str;
-						}
-				} 
-				]
-			
+		$(function() {
+			$('#myModal').modal({
+				show : false,//设置模式窗关闭
+				backdrop : 'static'
 			});
-			
-		</script>
+		});
+
+		function showModel() {
+			$('#myModal').modal({
+				keyboard : true,
+				show : true,//设置模式窗关闭
+				backdrop : 'static',
+			});
+		}
+		//将modal的值置空
+		function initPartModel() {
+			$('#pid').val("");
+			$('#pname').val("");
+		}
+
+		//显示指定pid的quiz
+		function editModel(pid,pname) {
+			$('#myModalLabel').html("&nbsp;ReadyGo-Part编辑");
+			initPartModel();
+			//赋值
+			$('#pid').val(pid);
+			$('#pname').val(pname);
+
+			showModel();
+		}
+		//确定修改
+		function confirmEdit() {
+			//区分修改还是增加
+			var resultType = switchType();
+			alert(resultType);
+			if(resultType == "添加"){
+				//添加操作
+				//获取值
+				var pname = $('#pname').val();
+				
+				//传值增加
+				$.get("../../backpart/addPart", {"pname":pname},function(data){
+					if(data){
+						alert("成功添加");
+					}
+				});
+			}else{
+				//修改操作
+				//获取值
+				var pid = $('#pid').val();
+				var pname = $('#pname').val();
+				
+				//传值修改
+				$.post("../../backpart/updatePart", {
+					"pid" : pid,
+					"pname" : pname,
+				}, function(data) {
+					alert("修改///");
+					if (data) {
+						alert("修改成功")
+						//$('#getAllPart').bootstrapTable('refresh');
+					}
+				}, "json");
+				
+			}
+		}
+		//区分增加和修改
+		function switchType(){
+			var type = $('#myModalLabel').html();
+			if( type.indexOf("添加") > 0 ){
+				return "添加";
+			}
+			return "修改";
+		}
+
+		//添加新的part
+		function addPart() {
+			$('#myModalLabel').html("&nbsp;ReadyGo-Part添加");
+			initPartModel();
+			showModel();
+
+		}
+
+		//删除指定part
+		function member_del(pid) {
+			if (confirm("确定删除？" + pid)) {
+				$.get("../../backpart/delPart", {
+					"pid" : pid
+				}, function(data) {
+					if (data) {
+						alert("删除成功!!!");
+					}
+				}, "json");
+				$('#getAllPart').bootstrapTable('refresh');
+			}
+		}
+
+		//初始化表格数据
+		$('#allPart').bootstrapTable(
+				{
+					method : 'get',
+					url : '../../backpart/allPart',
+					cache : false,
+					striped : true,
+					pagination : true,
+					dataType : "json",
+					pageList : [ 1, 3, 5, 8, 10 ],
+					pageSize : 3,
+					pageNumber : 1,
+					search : true,
+					sidePagination : 'client',
+					showColumns : true,
+					minimumCountColumns : 2,
+					clickToSelect : true,
+					showToggle : true,
+					columns : [
+							{
+								field : '',
+								checkbox : true
+							},
+							{
+								field : 'pid',
+								title : 'ID',
+								sortable : true,
+								align : 'center'
+							},
+							{
+								field : 'pname',
+								title : '章节名',
+								align : 'center'
+							},
+							{
+								field : 'operate',
+								title : '操作',
+								width : 100,
+								align : 'center',
+								valign : 'middle',
+								formatter : function(value, row, index) {
+									var edit = '<a onclick="editModel(\''
+										+ row.pid + '\',\'' + row.pname + '\')">编辑</a> ';
+									var del = '<a onclick="member_del(\''
+										+ row.pid + '\')">删除</a> ';
+									var str = edit + "&nbsp;" + del;
+									return str;
+								}
+							} ]
+
+				});
+	</script>
 </body>
 
 </html>

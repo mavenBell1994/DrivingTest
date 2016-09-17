@@ -1,6 +1,4 @@
 package com.readygo.drivingtest.handler;
-import java.io.PrintWriter;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.google.gson.Gson;
 import com.readygo.drivingtest.entity.User;
+import com.readygo.drivingtest.entity.User;
 import com.readygo.drivingtest.serviceimpl.UserServiceImpl;
 
 /**
@@ -88,5 +89,16 @@ public class BackUserHandler {
 		out.flush();
 		out.close();
 	}
-	
+	/**
+	 * 获取指定ID的user
+	 * @param out
+	 */
+	@RequestMapping("/getUserById")
+	public void getUserById(int cid,PrintWriter out){
+		User user = usimpl.getUserById(cid);
+		Gson gson=new Gson();
+		out.println(gson.toJson(user));
+		out.flush();
+		out.close();
+	}
 }

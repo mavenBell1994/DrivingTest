@@ -90,4 +90,13 @@ public class UserServiceImpl implements UserService {
 	public int updateUser(User user) {
 		return mapper.updateUser(user);
 	}
+	/**
+	 * 根据cid获取user信息
+	 */
+	@Override
+	public User getUserById(int cid) {
+		return mapper.getUserById(cid);
+	}
+	
+
 }

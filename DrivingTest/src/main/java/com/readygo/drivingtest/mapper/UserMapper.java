@@ -49,4 +49,11 @@ public interface UserMapper {
 	 * @return
 	 */
 	public int updateUser(User user);
+	
+	/**
+	 * 根据cid获取user
+	 * @param cid
+	 * @return
+	 */
+	public User getUserById(int cid);
 }

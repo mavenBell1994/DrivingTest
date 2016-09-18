@@ -52,5 +52,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			addr = #{addr},status = #{status}
 		where cid=#{cid}
 	</update>
+	<!-- 后台根据cid获取user,后面可以合并 -->
+	<select id="getUserById" resultType="User" parameterType="int">
+		select *from carUser where cid=#{cid}
+	</select>
 	
 </mapper>

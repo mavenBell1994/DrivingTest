@@ -328,7 +328,7 @@
 						alert("成功添加");
 						$('#checkAdmin').bootstrapTable('refresh');
 					}
-				});
+				},"json");
 			} else {
 				//修改操作
 				//获取值

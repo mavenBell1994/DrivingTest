@@ -163,13 +163,9 @@
 					<ol class="breadcrumb">
 						<li><a href="index.jsp"><span
 								class="glyphicon glyphicon-home"></span>&nbsp;后台首页</a></li>
-						<li class="active">系统管理 - 表格</li>
+						<li class="active">章节管理 - 表格</li>
 					</ol>
-					<a href="#" class=" btn btn-primary "> <span
-						class="glyphicon glyphicon-search"></span>
-					</a> <a href="#" class=" btn btn-primary "> <span
-						class="glyphicon glyphicon-download"></span>
-					</a> <a  class="btn btn-primary" title="添加" onclick="addPart()"> <span
+					<a class="btn btn-primary" title="添加" onclick="addPart()"> <span
 						class="glyphicon glyphicon-plus"></a> <br /> <br />
 					<table id="allPart">
 
@@ -180,8 +176,8 @@
 			</div>
 		</div>
 	</section>
-	
-		<!-- 模态框（Modal） -->
+
+	<!-- 模态框（Modal） -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -214,13 +210,15 @@
 								<input type="text" class="form-control" id="pname">
 							</div>
 						</div>
-						
+
 
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-20">
-								<button type="submit" class="btn btn-info btn-lg " onclick="confirmEdit()" style="margin-left:48px;">&nbsp;确&nbsp;定&nbsp;</button>
+								<button class="btn btn-info btn-lg "
+									onclick="confirmEdit()" style="margin-left: 48px;">&nbsp;确&nbsp;定&nbsp;</button>
 								&nbsp;&nbsp;&nbsp;&nbsp;
-								<button type="submit" class="btn btn-info btn-lg " style="margin-left:50px;">&nbsp;取&nbsp;消&nbsp;</button>
+								<button class="btn btn-info btn-lg "
+									style="margin-left: 50px;">&nbsp;取&nbsp;消&nbsp;</button>
 							</div>
 						</div>
 
@@ -232,7 +230,7 @@
 		<!-- /.modal-dialog -->
 	</div>
 	<!-- /.modal -->
-	
+
 
 	<footer class="bg-primary navbar-fixed-bottom">
 		<p class="text-center text-white">版权所有&copy;ReadyGo小组</p>
@@ -260,7 +258,7 @@
 		}
 
 		//显示指定pid的quiz
-		function editModel(pid,pname) {
+		function editModel(pid, pname) {
 			$('#myModalLabel').html("&nbsp;ReadyGo-Part编辑");
 			initPartModel();
 			//赋值
@@ -274,25 +272,27 @@
 			//区分修改还是增加
 			var resultType = switchType();
 			alert(resultType);
-			if(resultType == "添加"){
+			if (resultType == "添加") {
 				//添加操作
 				//获取值
 				var pname = $('#pname').val();
-				
+
 				//传值增加
-				$.get("../../backpart/addPart", {"pname":pname},function(data){
-					if(data){
+				$.get("../../backpart/addPart", {
+					"pname" : pname
+				}, function(data) {
+					if (data) {
 						alert("成功添加");
 					}
 				});
-			}else{
+			} else {
 				//修改操作
 				//获取值
 				var pid = $('#pid').val();
 				var pname = $('#pname').val();
-				
+
 				//传值修改
-				$.post("../../backpart/updatePart", {
+				$.get("../../backpart/updatePart", {
 					"pid" : pid,
 					"pname" : pname,
 				}, function(data) {
@@ -302,13 +302,13 @@
 						//$('#getAllPart').bootstrapTable('refresh');
 					}
 				}, "json");
-				
+
 			}
 		}
 		//区分增加和修改
-		function switchType(){
+		function switchType() {
 			var type = $('#myModalLabel').html();
-			if( type.indexOf("添加") > 0 ){
+			if (type.indexOf("添加") > 0) {
 				return "添加";
 			}
 			return "修改";
@@ -378,9 +378,10 @@
 								valign : 'middle',
 								formatter : function(value, row, index) {
 									var edit = '<a onclick="editModel(\''
-										+ row.pid + '\',\'' + row.pname + '\')">编辑</a> ';
+											+ row.pid + '\',\'' + row.pname
+											+ '\')">编辑</a> ';
 									var del = '<a onclick="member_del(\''
-										+ row.pid + '\')">删除</a> ';
+											+ row.pid + '\')">删除</a> ';
 									var str = edit + "&nbsp;" + del;
 									return str;
 								}

@@ -34,4 +34,10 @@ public interface AdminService {
 	 */
 	public int updateAdmin(Admin admin);
 	
+	/**
+	 * 根据id获取指定admin
+	 * @param aid
+	 * @return
+	 */
+	public Admin getAdminById(int aid);
 }

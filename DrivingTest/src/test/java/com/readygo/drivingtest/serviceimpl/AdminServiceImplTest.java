@@ -59,4 +59,14 @@ public class AdminServiceImplTest {
 		System.out.println( result );
 	}
 	
+	/**
+	 * 查询指定admin的信息
+	 */
+	@Test
+	public void testGetAdminById() {
+		int aid = 1002;
+		Admin a = as.getAdminById(aid);
+		System.out.println( a );
+	}
+	
 }

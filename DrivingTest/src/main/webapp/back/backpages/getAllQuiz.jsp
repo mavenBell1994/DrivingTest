@@ -167,11 +167,7 @@
 								class="glyphicon glyphicon-home"></span>&nbsp;后台首页</a></li>
 						<li class="active">系统管理 - 表格</li>
 					</ol>
-					<a href="#" class=" btn btn-primary "> <span
-						class="glyphicon glyphicon-search"></span>
-					</a> <a class=" btn btn-primary "> <span
-						class="glyphicon glyphicon-download"></span>
-					</a> <a class="btn btn-primary" title="添加" onclick="addQuiz()"> <span
+					<a class="btn btn-primary" title="添加" onclick="addQuiz()"> <span
 						class="glyphicon glyphicon-plus"></a> <br /> <br />
 					<table id="getAllQuiz">
 
@@ -259,9 +255,11 @@
 
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-20">
-								<button type="submit" class="btn btn-info btn-lg " onclick="confirmEdit()" style="margin-left:48px;">&nbsp;确&nbsp;定&nbsp;</button>
+								<button type="submit" class="btn btn-info btn-lg "
+									onclick="confirmEdit()" style="margin-left: 48px;">&nbsp;确&nbsp;定&nbsp;</button>
 								&nbsp;&nbsp;&nbsp;&nbsp;
-								<button type="submit" class="btn btn-info btn-lg " style="margin-left:50px;">&nbsp;取&nbsp;消&nbsp;</button>
+								<button type="submit" class="btn btn-info btn-lg "
+									style="margin-left: 50px;">&nbsp;取&nbsp;消&nbsp;</button>
 							</div>
 						</div>
 
@@ -287,8 +285,8 @@
 				backdrop : 'static'
 			});
 		});
-		
-		function showModel(){
+
+		function showModel() {
 			$('#myModal').modal({
 				keyboard : true,
 				show : true,//设置模式窗关闭
@@ -296,7 +294,7 @@
 			});
 		}
 		//将modal的值置空
-		function initQuizModel(){
+		function initQuizModel() {
 			$('#QID').val("");
 			$('#问题').val("");
 			$('#答案').val("");
@@ -306,7 +304,7 @@
 			$('#题目详解').val("");
 			$('#errTotal').val("");
 		}
-		
+
 		//显示指定qid的quiz
 		function editModel(qid) {
 			$('#myModalLabel').html("&nbsp;ReadyGo-Quiz编辑");
@@ -330,15 +328,15 @@
 			initQuizModel();
 		}
 		//确定修改
-		function confirmEdit(){
+		function confirmEdit() {
 			//区分修改还是增加
 			var resultType = switchType();
-			
-			if(resultType == "添加"){
+
+			if (resultType == "添加") {
 				//添加操作
 				alert("添加");
-				
-			}else{
+
+			} else {
 				initQuizModel();
 				//获取值
 				var qid = $('#QID').val();
@@ -349,14 +347,19 @@
 				var qtype = $('#题目类型').val();
 				var explain = $('#题目详解').val();
 				var errTotal = $('#errTotal').val();
-				alert(qid+" "+" errTotal:"+errTotal);
+				alert(qid + " " + " errTotal:" + errTotal);
 				//传值修改
 				$.get("../../backQuizHandler/updateQuiz", {
-					"qid":qid,"question":question,"answer":answer,
-					"pid":pid,"pic":pic,"qtype":qtype,"explain":explain,
-					"errTotal":errTotal
+					"qid" : qid,
+					"question" : question,
+					"answer" : answer,
+					"pid" : pid,
+					"pic" : pic,
+					"qtype" : qtype,
+					"explain" : explain,
+					"errTotal" : errTotal
 				}, function(data) {
-						alert("修改///");
+					alert("修改///");
 					if (data) {
 						alert("修改成功")
 						//$('#getAllQuiz').bootstrapTable('refresh');
@@ -365,26 +368,26 @@
 			}
 		}
 		//区分增加和修改
-		function switchType(){
+		function switchType() {
 			var type = $('#myModalLabel').html();
 			alert(type);
-			if( type.indexOf("添加") > 0 ){
+			if (type.indexOf("添加") > 0) {
 				return "添加";
 			}
 			return "修改";
 		}
-		
+
 		//添加新的quiz
-		function addQuiz(){
+		function addQuiz() {
 			$('#myModalLabel').html("&nbsp;ReadyGo-Quiz添加");
 			initQuizModel();
 			showModel();
-		
+
 		}
-	
+
 		//删除指定quiz
 		function member_del(id) {
-			if(  confirm("确定删除？"+id)  ){
+			if (confirm("确定删除？" + id)) {
 				$.get("../../backQuizHandler/deleteQuiz", {
 					"qid" : id
 				}, function(data) {
@@ -480,8 +483,6 @@
 								}
 							} ]
 				});
-
-		
 	</script>
 </body>
 

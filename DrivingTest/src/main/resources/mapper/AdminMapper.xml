@@ -14,6 +14,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from carAdmin 
 	</select>
 	
+	<!-- 增加、删除、修改 -->
 	<insert id="addAdmin" parameterType="Admin">
 		insert into carAdmin values ( seq_caradmin_aid.nextval, #{aname}, #{apwd}, #{issuper}, #{status} )
 	</insert>
@@ -28,5 +29,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			issuper = #{issuper}, status = #{status}		
 		where aid = #{aid}
 	</update>
+	
+	
+	<!-- 获取指定ID的admin -->
+	<select id="getAdminById" parameterType="int" resultType="Admin">
+		select * from carAdmin where aid=#{aid}
+	</select>
 	
 </mapper>

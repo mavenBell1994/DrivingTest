@@ -44,7 +44,7 @@
 			</div>
 		</div>
 		<div class="auth-info fl cl">
-			<span id="login_cname"> <a href="page/personCenter.jsp">用户：${cname.cname}</a>
+			<span id="login_cname"> <a href="javascript:toPageErrQuiz()">用户：${cname.cname}</a>
 			</span>
 			<span style="display: none" id="cid">${cname.cid}</span>
 			<span style="display: none" id="cname">${cname.cname}</span>
@@ -68,3 +68,9 @@
 		<div class="inner-bar" data-item="jindu-inner-bar"></div>
 	</div>
 </div>
+<script src="bootstrap-3.3.7/js/jquery.min.js"></script>
+<script>
+	function toPageErrQuiz(){
+		location.href="page/personCenter.jsp";
+	}
+</script>

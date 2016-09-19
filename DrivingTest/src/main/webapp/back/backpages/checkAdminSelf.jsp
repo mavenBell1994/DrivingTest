@@ -122,7 +122,6 @@
 									<li><a href="checkChapter.jsp"><i class="icon-edit"></i>
 											查看章节</a></li>
 									<li><a href="checkCertify.jsp"><i class="icon-trash"></i>查看资格证</a></li>
-									<li><a href="#"><i class="icon-list"></i> 子选项4</a></li>
 								</ul>
 							</div>
 						</div>

@@ -117,7 +117,6 @@
 									<li><a href="#"><i class="icon-user"></i> 查看题库</a></li>
 									<li><a href="#"><i class="icon-edit"></i> 查看章节</a></li>
 									<li><a href="#"><i class="icon-trash"></i>查看资格证</a></li>
-									<li><a href="#"><i class="icon-list"></i> 子选项4</a></li>
 								</ul>
 							</div>
 						</div>

@@ -89,11 +89,6 @@
 
 							<div id="collapseOne" class="panel-collapse collapse in">
 								<ul class="nav nav-list menu-second">
-									<!--<li>
-											<a href="p1.jsp"><i class="icon-user"></i> 表格p1留着做样本</a>
-										</li>-->
-									<li><a href="p2.jsp"><i class="icon-edit"></i>
-											图表p2留着做样本</a></li>
 									<li><a href="checkAdmin.jsp"><i class="icon-trash"></i>
 											查看所有管理员</a></li>
 									<li><a href="checkAdminSelf.jsp"><i class="icon-list"></i>查看当前管理员</a>
@@ -225,7 +220,13 @@
 						<div class="form-group">
 							<label for="text" class="col-sm-3 control-label">密码:</label>
 							<div class="col-sm-8">
-								<input type="password" class="form-control" id="apwd">
+								<input type="text" class="form-control" id="apwd">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="text" class="col-sm-3 control-label">确认密码:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="confirmPwd">
 							</div>
 						</div>
 
@@ -282,6 +283,7 @@
 			$('#apwd').val("");
 			$('#issuper').val("");
 			$('#status').val("");
+			$('#confirmPwd').val("");
 		}
 
 		//显示指定id的Admin
@@ -299,6 +301,7 @@
 						$('#apwd').val(data.apwd);
 						$('#issuper').val(data.issuper);
 						$('#status').val(data.status);
+						$('#confirmPwd').val("");
 					}
 			}, "json");
 			showModel();
@@ -316,6 +319,8 @@
 				var apwd = $('#apwd').val();
 				var issuper = $('#issuper').val();
 				var status = $('#status').val();
+				//要判断密码一致
+				var confirmPwd = $('#confirmPwd').val();
 
 				//传值增加
 				$.get("../../backadmin/addAdmin", {
@@ -337,6 +342,9 @@
 				var apwd = $('#apwd').val();
 				var issuper = $('#issuper').val();
 				var status = $('#status').val();
+				
+				var confirmPwd = $('#confirmPwd').val();
+				
 
 
 				//传值修改

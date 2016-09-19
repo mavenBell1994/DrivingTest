@@ -286,7 +286,7 @@
 							<div class="col-sm-offset-2 col-sm-10">
 								<br />
 								<button class="btn btn-info btn-lg center-block"
-									style="width: 240px;" type="submit">登 录</button>
+									style="width: 240px;">登 录</button>
 							</div>
 						</div>
 

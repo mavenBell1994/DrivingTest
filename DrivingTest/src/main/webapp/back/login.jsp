@@ -129,13 +129,13 @@ html, body {
 			</div>
 			<div class="login-content ">
 				<div class="form">
-					<form action="#" method="post">
+					<form>
 						<div class="form-group">
 							<div class="col-xs-12  ">
 								<div class="input-group">
 									<span class="input-group-addon"><span
 										class="glyphicon glyphicon-user"></span></span> <input type="text"
-										id="username" name="username" class="form-control"
+										id="aname" name="aname" class="form-control"
 										placeholder="用户名">
 								</div>
 							</div>
@@ -145,15 +145,17 @@ html, body {
 								<div class="input-group">
 									<span class="input-group-addon"><span
 										class="glyphicon glyphicon-lock"></span></span> <input
-										type="password" id="password" name="password"
+										type="password" id="apwd" name="apwd"
 										class="form-control" placeholder="密码">
 								</div>
 							</div>
 						</div>
 						<div class="form-group form-actions">
 							<div class="col-xs-4 col-xs-offset-4 " style="margin: 0 37%;">
-								<a href="backpages/index.jsp" class="btn btn-sm btn-info"><span
-									class="glyphicon glyphicon-off"></span> 登录</a>
+								<!-- <button class="btn btn-sm btn-info" type="submit"><span
+									class="glyphicon glyphicon-off"></span> 登录</button> -->
+									<input class="btn btn-sm btn-info" type="button"
+									class="glyphicon glyphicon-off" value="登录" onclick="checkbacklogin()"/>
 							</div>
 						</div>
 						<div class="form-group">
@@ -177,6 +179,32 @@ html, body {
 
 	<script src="js/jquery-1.11.3.js"></script>
 	<script src="js/bootstrap.js"></script>
+	<script type="text/javascript">
+	function checkbacklogin(){
+		if($("#aname").val().trim()=="" || $("#apwd").val()==""){
+			alert("用户名或密码不能为空！");
+		}else{
+			$.post("../backadmin/login",{"aname":$("#aname").val().trim(),"apwd":$("#apwd").val()},function(data){
+				if(data==0){
+					alert("用户名或密码错误！");
+					init();
+				}else if(data==-1){
+					alert("该用户正在使用中！");
+					init();
+				}else{
+					location.href="backpages/index.jsp";
+				}
+			},"json");
+		}
+	}
+	function init(){
+		$("#aname").val("");
+		$("#apwd").val("");
+	}
+	$(function(){
+		init();
+	});
+	</script>
 	<script>
 		/*Bootlint工具用于对页面中的HTML标签以及Bootstrapclass的使用进行检测
 		(function () {

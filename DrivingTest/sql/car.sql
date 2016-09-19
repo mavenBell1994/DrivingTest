@@ -127,7 +127,7 @@ insert into carAdmin values ( seq_caradmin_aid.nextval , 'sa','a',1,1 );--super�
 insert into carAdmin values ( seq_caradmin_aid.nextval , 'lc','a',1,1 );--super管理员
 insert into carAdmin values ( seq_caradmin_aid.nextval , 'hmm','a',0,1 );--默认普通管理员
 select * from carAdmin;
-
+update caradmin set status=1 where aname='lc'
 
 ------------------
 --测试成绩表TestRecord

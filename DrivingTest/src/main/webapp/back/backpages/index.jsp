@@ -58,10 +58,11 @@
 						<li class="text-center"><a href="#"><span
 								class="text-primary">帮助中心</span></a></li>
 						<li class="divider"><a href="#"></a></li>
-						<li class="text-center"><a href="login.jsp"><span
-								class="text-primary">退出</span></a></li>
+						<li class="text-center"><a href="javascript:quitback()"><span
+								class="text-primary">退出&nbsp;${admin.aname}</span></a></li>
 					</ul></li>
 			</ul>
+			<input type="hidden" id="loginaname" value="${admin.aname}"/>
 		</div>
 	</header>
 
@@ -85,7 +86,7 @@
 								href="#collapseOne" aria-expanded="true"
 								aria-controls="collapseOne"> <i
 								class="icon-user-md icon-large"></i> 管理员管理
-							</a> </a>
+							</a> 
 
 							<div id="collapseOne" class="panel-collapse collapse ">
 								<ul class="nav nav-list menu-second">
@@ -101,7 +102,7 @@
 								data-parent="#accordion" href="#collapseTwo"
 								aria-expanded="false" aria-controls="collapseTwo"> <i
 								class="icon-book icon-large"></i> 用户管理
-							</a> </a>
+							</a> 
 							<div id="collapseTwo" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
 									<li><a href="checkAllUsers.jsp"><i class="icon-user"></i>
@@ -119,7 +120,7 @@
 								data-parent="#accordion" href="#collapseThree"
 								aria-expanded="false" aria-controls="collapseThree"> <i
 								class="icon-book icon-large"></i> 题库管理
-							</a> </a>
+							</a> 
 
 							<div id="collapseThree" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
@@ -137,7 +138,7 @@
 								data-parent="#accordion" href="#collapseFour"
 								aria-expanded="false" aria-controls="collapseFour"> <i
 								class="icon-book icon-large"></i> 测试管理
-							</a> </a>
+							</a>
 
 							<div id="collapseFour" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
@@ -173,7 +174,14 @@
 	</footer>
 
 	<script>
-
+	 function quitback(){
+		 console.info()
+		 $.post("../../backadmin/quit",{aname:$("#loginaname").val()},function(data){
+			 if(data){
+				 location.href="../login.jsp";
+			 }
+		 },"json");
+	 }
 
 	</script>
 </body>

@@ -85,5 +85,17 @@ public class AdminHandler {
 		out.close();
 	}
 	
-
+	/**
+	 * 获取指定ID的admin
+	 * @param out
+	 */
+	@RequestMapping("/getAdminById")
+	public void getAdminById(int aid,PrintWriter out){
+		Admin admin = asimpl.getAdminById(aid);
+		Gson gson=new Gson();
+		out.println(gson.toJson(admin));
+		out.flush();
+		out.close();
+	}
+	
 }

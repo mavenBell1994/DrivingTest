@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.google.gson.Gson;
@@ -40,7 +41,8 @@ public class BackQuizHandler {
 	 * @param out指定ID的quiz
 	 */
 	@RequestMapping("/getQuizByQid")
-	public void getQuizByQid(PrintWriter out,int qid){
+	public void getQuizByQid(int qid,PrintWriter out){
+		System.out.println(qid);
 		Quiz quiz=quizService.getQuizByQid(qid);
 		Gson gson=new Gson();
 		System.out.println(quiz);
@@ -57,6 +59,7 @@ public class BackQuizHandler {
 	@RequestMapping("/updateQuiz")
 	public void updateQuiz(Quiz quiz,PrintWriter out){
 		int result = quizService.updateQuiz(quiz);
+		System.out.println(quiz);
 		System.out.println(result);
 		if(result == 1){
 			out.println(true);

@@ -89,11 +89,6 @@
 
 							<div id="collapseOne" class="panel-collapse collapse ">
 								<ul class="nav nav-list menu-second">
-									<!--<li>
-											<a href="p1.html"><i class="icon-user"></i> 表格p1留着做样本</a>
-										</li>-->
-									<li><a href="p2.jsp"><i class="icon-edit"></i>
-											图表p2留着做样本</a></li>
 									<li><a href="checkAdmin.jsp"><i class="icon-trash"></i>
 											查看所有管理员</a></li>
 									<li><a href="checkAdminSelf.jsp"><i class="icon-list"></i>查看当前管理员</a>
@@ -134,7 +129,6 @@
 											查看章节</a></li>
 									<li><a href="checkCertify.jsp"><i class="icon-trash"></i>查看资格证</a>
 									</li>
-									<li><a href="#"><i class="icon-list"></i> 子选项4</a></li>
 								</ul>
 							</div>
 						</div>

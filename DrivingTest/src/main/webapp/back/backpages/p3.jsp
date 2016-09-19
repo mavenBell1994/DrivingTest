@@ -84,11 +84,6 @@
 
 							<div id="collapseOne" class="panel-collapse collapse in">
 								<ul class="nav nav-list menu-second">
-									<!--<li>
-											<a href="p1.jsp"><i class="icon-user"></i> 表格p1留着做样本</a>
-										</li>-->
-									<li><a href="p2.jsp"><i class="icon-edit"></i>
-											图表p2留着做样本</a></li>
 									<li><a href="p3.jsp"><i class="icon-trash"></i>
 											这里是"查看所有管理员"</a></li>
 									<li><a href="#"><i class="icon-list"></i>这里是"查看个人信息"</a></li>
@@ -122,7 +117,6 @@
 									<li><a href="#"><i class="icon-user"></i> 查看题库</a></li>
 									<li><a href="#"><i class="icon-edit"></i> 查看章节</a></li>
 									<li><a href="#"><i class="icon-trash"></i>查看资格证</a></li>
-									<li><a href="#"><i class="icon-list"></i> 子选项4</a></li>
 								</ul>
 							</div>
 						</div>

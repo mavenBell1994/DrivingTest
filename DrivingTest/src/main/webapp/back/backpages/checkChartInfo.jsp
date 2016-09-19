@@ -20,7 +20,7 @@
 <script src="../js/jquery-1.11.3.js"></script>
 <script src="../js/bootstrap.js"></script>
 <script src="../js/bootstrap-table.js"></script>
-<script src="../js/bootstrap-table-zh-CN.js"></script> 
+<script src="../js/bootstrap-table-zh-CN.js"></script>
 
 <style>
 </style>
@@ -84,15 +84,10 @@
 								href="#collapseOne" aria-expanded="false"
 								aria-controls="collapseOne"> <i
 								class="icon-user-md icon-large"></i> 管理员管理
-							</a>  
+							</a>
 
 							<div id="collapseOne" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
-									<!--<li>
-											<a href="p1.jsp"><i class="icon-user"></i> 表格p1留着做样本</a>
-										</li>-->
-									<li><a href="p2.jsp"><i class="icon-edit"></i>
-											图表p2留着做样本</a></li>
 									<li><a href="checkAdmin.jsp"><i class="icon-trash"></i>
 											查看所有管理员</a></li>
 									<li><a href="checkAdminSelf.jsp"><i class="icon-list"></i>查看当前管理员</a>
@@ -105,7 +100,7 @@
 								data-parent="#accordion" href="#collapseTwo"
 								aria-expanded="true" aria-controls="collapseTwo"> <i
 								class="icon-book icon-large"></i> 用户管理
-							</a>  
+							</a>
 							<div id="collapseTwo" class="panel-collapse collapse in">
 								<ul class="nav nav-list menu-second">
 									<li><a href="checkAllUsers.jsp"><i class="icon-user"></i>
@@ -124,7 +119,7 @@
 								data-parent="#accordion" href="#collapseThree"
 								aria-expanded="false" aria-controls="collapseThree"> <i
 								class="icon-book icon-large"></i> 题库管理
-							</a>  
+							</a>
 
 							<div id="collapseThree" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
@@ -134,7 +129,6 @@
 											查看章节</a></li>
 									<li><a href="checkCertify.jsp"><i class="icon-trash"></i>查看资格证</a>
 									</li>
-									<li><a href="#"><i class="icon-list"></i> 子选项4</a></li>
 								</ul>
 							</div>
 						</div>
@@ -144,7 +138,7 @@
 								data-parent="#accordion" href="#collapseFour"
 								aria-expanded="false" aria-controls="collapseFour"> <i
 								class="icon-book icon-large"></i> 测试管理
-							</a>  
+							</a>
 
 							<div id="collapseFour" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
@@ -167,116 +161,321 @@
 								class="glyphicon glyphicon-home"></span>&nbsp;后台首页</a></li>
 						<li class="active">系统管理 - 表格</li>
 					</ol>
-					<a href="#" class=" btn btn-primary ">
-						<span class="glyphicon glyphicon-search"></span>
-					</a> 
-					<a href="#" class=" btn btn-primary ">
-						<span class="glyphicon glyphicon-download"></span>
-					</a> 
-					<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#add1" title="添加">
-						<span class="glyphicon glyphicon-plus">
-					</a> 
-					<br />
-					<br />
+					<a class="btn btn-primary" title="添加" onclick="addChart()"> <span
+						class="glyphicon glyphicon-plus"></a> <br /> <br />
 					<table id="allChart">
- 						
+
 					</table>
-					 
+
 				</div>
 				<!--右侧内容结束-->
 			</div>
 		</div>
 	</section>
 
+
+	<!-- 模态框（Modal） -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">×</button>
+					<!-- 						<img class="center-block" alt="" src="images/log-car.jpg"> -->
+					<h3>
+						<span class="glyphicon glyphicon-user" id="myModalLabel"
+							style="color: navy; margin-left: 123px;"></span>
+					</h3>
+
+				</div>
+				<div class="modal-body">
+					<!-- 登陆表单 -->
+					<form class="form-horizontal" role="form">
+						<div class="form-group" id="divQid">
+							<label for="userName" class="col-sm-3 control-label">评论ID:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="comId" readonly="true">
+							</div>
+						</div>
+
+
+						<div class="form-group">
+							<label for="password" class="col-sm-3 control-label">用户ID:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="cid">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="text" class="col-sm-3 control-label">问题ID:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="qid">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="password" class="col-sm-3 control-label">评论时间:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="comDate">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="password" class="col-sm-3 control-label">评论内容:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="comContent">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="password" class="col-sm-3 control-label">备注:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="commentTemp">
+							</div>
+						</div>
+
+
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-20">
+								<button class="btn btn-info btn-lg " onclick="confirmEdit()"
+									style="margin-left: 48px;">&nbsp;确&nbsp;定&nbsp;</button>
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								<button class="btn btn-info btn-lg " style="margin-left: 50px;">&nbsp;取&nbsp;消&nbsp;</button>
+							</div>
+						</div>
+
+					</form>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+
 	<footer class="bg-primary navbar-fixed-bottom">
 		<p class="text-center text-white">版权所有&copy;ReadyGo小组</p>
 	</footer>
- 	
-	<script>
 
-			//    添加编辑模态框
-			$('#add').on('show.bs.modal', function(event) {
-				var button = $(event.relatedTarget) // Button that triggered the modal
-				var recipient = button.data('whatever') // Extract info from data-* attributes
-					// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-					// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-				var modal = $(this)
-				modal.find('.modal-title').text('' + recipient)
-				modal.find('.modal-body input').val(recipient)
-			})
-			
-					//初始化表格数据
-		$('#allChart').bootstrapTable({
-			method : 'get',
-			url : '../../backChartInfo/allChart',
-			height : $(window).height() - 200,
-			cache : false,
-			striped : true,
-			pagination : true,
-			dataType : "json",
-			pageList : [1,2,5,10],
-			pageSize : 3,
-			pageNumber : 1,
-			search : true,
-			sidePagination : 'client',
-			showColumns : true,
-			minimumCountColumns : 2,
-			clickToSelect : true,
-			showToggle : true,
-			
-			columns : [ {
-				field : '',
-				valign: 'middle',
-				checkbox : true
-			}, {
-				field : 'comId',
-				title : '评论ID',
-				sortable : true,
-				valign: 'middle',
-				align: 'center'
-			}, {
-				field : 'cid',
-				title : '用户ID',
-				valign: 'middle',
-				sortable : true,
-				align: 'center'
-			}, {
-				field : 'qid',
-				title : '题目ID',
-				valign: 'middle',
-				sortable : true,
-				align: 'center'
-			}, {
-				field : 'comDate',
-				title : '评论时间',
-				sortable : true,
-				valign: 'middle',
-				align: 'center'
-			}, {
-				field : 'comContent',
-				title : '评论内容',
-				sortable : true,
-				valign: 'middle',
-				align: 'center'
-			}, {
-				field : 'commentTemp',
-				title : '备注',
-				sortable : true,
-				valign: 'middle',
-				align: 'center'
-			} ,{field : 'operate',title: '操作',width: 100,align: 'center',valign: 'middle',
-					formatter:function(value,row,index){
-						var edit = '<a onclick="member_edit(\''+ row.qid + '\')">编辑</a> ';  
-						var del = '<a onclick="member_del(\''+ row.qid +'\')">删除</a> '; 
-						var str = edit + "&nbsp;" + del;
-						return str;
+	<script>
+		$(function() {
+			$('#myModal').modal({
+				show : false,//设置模式窗关闭
+				backdrop : 'static'
+			});
+		});
+
+		function showModel() {
+			$('#myModal').modal({
+				keyboard : true,
+				show : true,//设置模式窗关闭
+				backdrop : 'static',
+			});
+		}
+		//将modal的值置空
+		function initChartModel() {
+			$('#comId').val("");
+			$('#cid').val("");
+			$('#qid').val("");
+			$('#comDate').val("");
+			$('#comContent').val("");
+			$('#commentTemp').val("");
+		}
+
+		//显示指定id的Chart
+		function editModel(comId) {
+			$('#myModalLabel').html("&nbsp;ReadyGo-Chart编辑");
+			initChartModel();
+
+			//赋值
+			$.get("../../backChartInfo/getComById", {
+				"comId" : comId
+			}, function(data) {
+				if (data) {
+					$('#comId').val(data.comId);
+					$('#cid').val(data.cid);
+					$('#qid').val(data.qid);
+					$('#comDate').val(data.comDate);
+					$('#comContent').val(data.comContent);
+					$('#commentTemp').val(data.commentTemp);
+				}
+			}, "json");
+			showModel();
+		}
+
+		//确定修改
+		function confirmEdit() {
+			//区分修改还是增加
+			var resultType = switchType();
+			alert(resultType);
+			if (resultType == "添加") {
+				//添加操作
+				//获取值
+				var cid = $('#cid').val();
+				var qid = $('#qid').val();
+				var comDate = $('#comDate').val();
+				var comContent = $('#comContent').val();
+				var commentTemp = $('#commentTemp').val();
+
+				//传值增加
+				$.get("../../backChartInfo/addChartInfo", {
+					"cid" : cid,
+					"qid" : qid,
+					"comDate" : comDate,
+					"comContent" : comContent,
+					"commentTemp" : commentTemp
+				}, function(data) {
+					if (data) {
+						alert("成功添加");
+						$('#allChart').bootstrapTable('refresh');
 					}
-			} 
-			]
-			
-		},"json");
-			
-		</script>
+				}, "json");
+			} else {
+				//修改操作
+				//获取值
+				var comId = $('#comId').val();
+				var cid = $('#cid').val();
+				var qid = $('#qid').val();
+				var comDate = $('#comDate').val();
+				var comContent = $('#comContent').val();
+				var commentTemp = $('#commentTemp').val();
+
+				//传值修改
+				$.get("../../backChartInfo/updateChartInfo", {
+					"comId" : comId,
+					"cid" : cid,
+					"qid" : qid,
+					"comDate" : comDate,
+					"comContent" : comContent,
+					"commentTemp" : commentTemp
+				}, function(data) {
+					alert("修改///");
+					if (data) {
+						alert("修改成功")
+						$('#allChart').bootstrapTable('refresh');
+					}
+				}, "json");
+
+			}
+		}
+		//区分增加和修改
+		function switchType() {
+			var type = $('#myModalLabel').html();
+			if (type.indexOf("添加") > 0) {
+				return "添加";
+			}
+			return "修改";
+		}
+
+		//添加新的Chart
+		function addChart() {
+			$('#myModalLabel').html("&nbsp;ReadyGo-Chart添加");
+			initChartModel();
+			showModel();
+		}
+
+		//删除指定Chart
+		function member_del(comId) {
+			if (confirm("确定删除？" + comId)) {
+				$.get("../../backChartInfo/delChartInfo", {
+					"comId" : comId
+				}, function(data) {
+					if (data) {
+						alert("删除成功!!!");
+						$('#allChart').bootstrapTable('refresh');
+					}
+				}, "json");
+			}
+		}
+
+		//初始化表格数据
+		$('#allChart').bootstrapTable(
+				{
+					method : 'get',
+					url : '../../backChartInfo/allChart',
+					height : $(window).height() - 200,
+					cache : false,
+					striped : true,
+					pagination : true,
+					dataType : "json",
+					pageList : [ 1, 2, 5, 10 ],
+					pageSize : 3,
+					pageNumber : 1,
+					search : true,
+					sidePagination : 'client',
+					showColumns : true,
+					minimumCountColumns : 2,
+					clickToSelect : true,
+					showToggle : true,
+
+					columns : [
+							{
+								field : '',
+								valign : 'middle',
+								checkbox : true
+							},
+							{
+								field : 'comId',
+								title : '评论ID',
+								sortable : true,
+								valign : 'middle',
+								align : 'center'
+							},
+							{
+								field : 'comId',
+								title : '用户ID',
+								valign : 'middle',
+								sortable : true,
+								align : 'center'
+							},
+							{
+								field : 'qid',
+								title : '题目ID',
+								valign : 'middle',
+								sortable : true,
+								align : 'center'
+							},
+							{
+								field : 'comDate',
+								title : '评论时间',
+								sortable : true,
+								valign : 'middle',
+								align : 'center'
+							},
+							{
+								field : 'comContent',
+								title : '评论内容',
+								sortable : true,
+								valign : 'middle',
+								align : 'center'
+							},
+							{
+								field : 'commentTemp',
+								title : '备注',
+								sortable : true,
+								valign : 'middle',
+								align : 'center'
+							},
+							{
+								field : 'operate',
+								title : '操作',
+								width : 100,
+								align : 'center',
+								valign : 'middle',
+								formatter : function(value, row, index) {
+									var edit = '<a onclick="editModel(\''
+										+ row.comId 
+										+ '\')">编辑</a> ';
+									var del = '<a onclick="member_del(\''
+											+ row.comId + '\')">删除</a> ';
+									var str = edit + "&nbsp;" + del;
+									return str;
+								}
+							} ]
+
+				}, "json");
+	</script>
 </body>
 
 </html>

@@ -66,6 +66,17 @@ public class AdminServiceImpl implements AdminService {
 	public int updateAdmin(Admin admin) {
 		return mapper.updateAdmin(admin);
 	}
+	
+
+	/**
+	 * 根据id获取指定admin
+	 * @param aid
+	 * @return
+	 */
+	@Override
+	public Admin getAdminById(int aid) {
+		return mapper.getAdminById(aid);
+	}
 
 
 }

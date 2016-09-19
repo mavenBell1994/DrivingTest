@@ -89,11 +89,6 @@
 
 							<div id="collapseOne" class="panel-collapse collapse in">
 								<ul class="nav nav-list menu-second">
-									<!--<li>
-											<a href="p1.jsp"><i class="icon-user"></i> 表格p1留着做样本</a>
-										</li>-->
-									<li><a href="p2.jsp"><i class="icon-edit"></i>
-											图表p2留着做样本</a></li>
 									<li><a href="checkAdmin.jsp"><i class="icon-trash"></i>
 											查看所有管理员</a></li>
 									<li><a href="checkAdminSelf.jsp"><i class="icon-list"></i>查看当前管理员</a>
@@ -134,7 +129,6 @@
 											查看章节</a></li>
 									<li><a href="checkCertify.jsp"><i class="icon-trash"></i>查看资格证</a>
 									</li>
-									<li><a href="#"><i class="icon-list"></i> 子选项4</a></li>
 								</ul>
 							</div>
 						</div>
@@ -150,7 +144,7 @@
 								<ul class="nav nav-list menu-second">
 									<li><a href="checkTestRec.jsp"><i class="icon-user"></i>
 											查看测试成绩</a></li>
-									
+
 
 								</ul>
 							</div>
@@ -168,19 +162,11 @@
 								class="glyphicon glyphicon-home"></span>&nbsp;后台首页</a></li>
 						<li class="active">系统管理 - 表格</li>
 					</ol>
-					<a href="#" class=" btn btn-primary ">
-						<span class="glyphicon glyphicon-search"></span>
-					</a> 
-					<a href="#" class=" btn btn-primary ">
-						<span class="glyphicon glyphicon-download"></span>
-					</a> 
-					<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#add1" title="添加">
-						<span class="glyphicon glyphicon-plus">
-					</a> 
-					<br />
-					<br />
 
-					<table id="checkAdmin" >
+					<a class="btn btn-primary" title="添加" onclick="addAdmin()"> <span
+						class="glyphicon glyphicon-plus"></a> <br /> <br />
+
+					<table id="checkAdmin">
 
 					</table>
 
@@ -190,26 +176,224 @@
 		</div>
 	</section>
 
+	<!-- 模态框（Modal） -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">×</button>
+					<!-- 						<img class="center-block" alt="" src="images/log-car.jpg"> -->
+					<h3>
+						<span class="glyphicon glyphicon-user" id="myModalLabel"
+							style="color: navy; margin-left: 123px;"></span>
+					</h3>
+				
+				</div>
+				<div class="modal-body">
+					<!-- 登陆表单 -->
+					<form class="form-horizontal" role="form">
+						<div class="form-group" id="divQid">
+							<label for="userName" class="col-sm-3 control-label">aid:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="aid" readonly="true">
+							</div>
+						</div>
+
+
+						<div class="form-group">
+							<label for="password" class="col-sm-3 control-label">名称:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="aname">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="password" class="col-sm-3 control-label">状态:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="status">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="text" class="col-sm-3 control-label">密码:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="apwd">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="text" class="col-sm-3 control-label">确认密码:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="confirmPwd">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="password" class="col-sm-3 control-label">级别:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="issuper">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-20">
+								<button class="btn btn-info btn-lg " onclick="confirmEdit()"
+									style="margin-left: 48px;">&nbsp;确&nbsp;定&nbsp;</button>
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								<button class="btn btn-info btn-lg " style="margin-left: 50px;">&nbsp;取&nbsp;消&nbsp;</button>
+							</div>
+						</div>
+
+					</form>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+
+
 	<footer class="bg-primary navbar-fixed-bottom">
 		<p class="text-center text-white">版权所有&copy;ReadyGo小组</p>
 	</footer>
 
 
 	<script>
+		$(function() {
+			$('#myModal').modal({
+				show : false,//设置模式窗关闭
+				backdrop : 'static'
+			});
+		});
 
-		//    添加编辑模态框
-		$('#add').on('show.bs.modal', function(event) {
-			var button = $(event.relatedTarget) // Button that triggered the modal
-			var recipient = button.data('whatever') // Extract info from data-* attributes
-			// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-			// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-			var modal = $(this)
-			modal.find('.modal-title').text('' + recipient)
-			modal.find('.modal-body input').val(recipient)
-		})
+		function showModel() {
+			$('#myModal').modal({
+				keyboard : true,
+				show : true,//设置模式窗关闭
+				backdrop : 'static',
+			});
+		}
+		//将modal的值置空
+		function initAdminModel() {
+			$('#aid').val("");
+			$('#aname').val("");
+			$('#apwd').val("");
+			$('#issuper').val("");
+			$('#status').val("");
+			$('#confirmPwd').val("");
+		}
+
+		//显示指定id的Admin
+		function editModel(aid) {
+			$('#myModalLabel').html("&nbsp;ReadyGo-Admin编辑");
+			initAdminModel();
+			
+			//赋值
+			$.get("../../backadmin/getAdminById", {
+				"aid" : aid
+			}, function(data) {
+					if(data){
+						$('#aid').val(data.aid);
+						$('#aname').val(data.aname);
+						$('#apwd').val(data.apwd);
+						$('#issuper').val(data.issuper);
+						$('#status').val(data.status);
+						$('#confirmPwd').val("");
+					}
+			}, "json");
+			showModel();
+		}
+		
+		//确定修改
+		function confirmEdit() {
+			//区分修改还是增加
+			var resultType = switchType();
+			alert(resultType);
+			if (resultType == "添加") {
+				//添加操作
+				//获取值
+				var aname = $('#aname').val();
+				var apwd = $('#apwd').val();
+				var issuper = $('#issuper').val();
+				var status = $('#status').val();
+				//要判断密码一致
+				var confirmPwd = $('#confirmPwd').val();
+
+				//传值增加
+				$.get("../../backadmin/addAdmin", {
+					"aname" : aname,
+					"apwd" : apwd,
+					"issuper" : issuper,
+					"status" : status
+				}, function(data) {
+					if (data) {
+						alert("成功添加");
+						$('#checkAdmin').bootstrapTable('refresh');
+					}
+				},"json");
+			} else {
+				//修改操作
+				//获取值
+				var aid = $('#aid').val();
+				var aname = $('#aname').val();
+				var apwd = $('#apwd').val();
+				var issuper = $('#issuper').val();
+				var status = $('#status').val();
+				
+				var confirmPwd = $('#confirmPwd').val();
+				
+
+
+				//传值修改
+				$.get("../../backadmin/updateAdmin", {
+					"aid" : aid,
+					"aname" : aname,
+					"apwd" : apwd,
+					"issuper" : issuper,
+					"status" : status
+				}, function(data) {
+					alert("修改///");
+					if (data) {
+						alert("修改成功")
+						$('#checkAdmin').bootstrapTable('refresh');
+					}
+				}, "json");
+
+			}
+		}
+		//区分增加和修改
+		function switchType() {
+			var type = $('#myModalLabel').html();
+			if (type.indexOf("添加") > 0) {
+				return "添加";
+			}
+			return "修改";
+		}
+
+		//添加新的Admin
+		function addAdmin() {
+			$('#myModalLabel').html("&nbsp;ReadyGo-Admin添加");
+			initAdminModel();
+			showModel();
+		}
+
+		//删除指定Admin
+		function member_del(aid) {
+			if (confirm("确定删除？" + aid)) {
+				$.get("../../backadmin/delAdmin", {
+					"aid" : aid
+				}, function(data) {
+					if (data) {
+						alert("删除成功!!!");
+					}
+				}, "json");
+				$('#checkAdmin').bootstrapTable('refresh');
+			}
+		}
 
 		//进来后显示所有管理员的信息,需要判定是sa								
-		
 		$('#checkAdmin').bootstrapTable({
 			method : 'get',
 			url : '../../backadmin/allAdmin',
@@ -218,8 +402,8 @@
 			striped : true,
 			pagination : true,
 			dataType : "json",
-			pageList : [2,5,10],
-			pageSize : 1,
+			pageList : [ 1,2, 5, 10 ],
+			pageSize : 5,
 			pageNumber : 1,
 			search : true,
 			sidePagination : 'client',
@@ -227,53 +411,58 @@
 			minimumCountColumns : 2,
 			clickToSelect : true,
 			showToggle : true,
-			
+
 			columns : [ {
 				field : '',
-				valign: 'middle',
+				valign : 'middle',
 				checkbox : true
 			}, {
 				field : 'aid',
 				title : 'ID',
 				sortable : true,
-				valign: 'middle',
-				align: 'center'
+				valign : 'middle',
+				align : 'center'
 			}, {
 				field : 'aname',
 				title : '姓名',
-				valign: 'middle',
-				align: 'center'
+				valign : 'middle',
+				align : 'center'
 			}, {
 				field : 'apwd',
 				title : '密码',
-				valign: 'middle',
-				align: 'center',
+				valign : 'middle',
+				align : 'center',
 				visible : false
 			}, {
 				field : 'issuper',
 				title : '管理员级别',
 				sortable : true,
-				valign: 'middle',
-				align: 'center'
+				valign : 'middle',
+				align : 'center'
 			}, {
 				field : 'status',
 				title : '状态',
 				sortable : true,
-				valign: 'middle',
-				align: 'center'
-			} ,{field : 'operate',title: '操作',width: 100,align: 'center',valign: 'middle',
-					formatter:function(value,row,index){
-						var edit ;
-						var del ;
-						edit = '<a></a>';
-						
-						return edit + del;
-					}
-			} 
-			]
-			
-		},"json");
-	
+				valign : 'middle',
+				align : 'center'
+			}, {
+				field : 'operate',
+				title : '操作',
+				width : 100,
+				align : 'center',
+				valign : 'middle',
+				formatter : function(value, row, index) {
+					var edit = '<a onclick="editModel(\''
+						+ row.aid 
+						+ '\')">编辑</a> ';
+					var del = '<a onclick="member_del(\''
+							+ row.aid + '\')">删除</a> ';
+					var str = edit + "&nbsp;" + del;
+					return str;
+				}
+			} ]
+
+		}, "json");
 	</script>
 </body>
 

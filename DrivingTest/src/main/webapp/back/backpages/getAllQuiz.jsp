@@ -90,11 +90,6 @@
 
 							<div id="collapseOne" class="panel-collapse collapse">
 								<ul class="nav nav-list menu-second">
-									<!--<li>
-											<a href="p1.jsp"><i class="icon-user"></i> 表格p1留着做样本</a>
-										</li>-->
-									<li><a href="p2.jsp"><i class="icon-edit"></i>
-											图表p2留着做样本</a></li>
 									<li><a href="checkAdmin.jsp"><i class="icon-trash"></i>
 											查看所有管理员</a></li>
 									<li><a href="checkAdminSelf.jsp"><i class="icon-list"></i>查看当前管理员</a>
@@ -135,7 +130,6 @@
 											查看章节</a></li>
 									<li><a href="checkCertify.jsp"><i class="icon-trash"></i>查看资格证</a>
 									</li>
-									<li><a href="#"><i class="icon-list"></i> 子选项4</a></li>
 								</ul>
 							</div>
 						</div>
@@ -167,55 +161,12 @@
 								class="glyphicon glyphicon-home"></span>&nbsp;后台首页</a></li>
 						<li class="active">系统管理 - 表格</li>
 					</ol>
-					<a href="#" class=" btn btn-primary "> <span
-						class="glyphicon glyphicon-search"></span>
-					</a> <a href="#" class=" btn btn-primary "> <span
-						class="glyphicon glyphicon-download"></span>
-					</a> <a href="#" class="btn btn-primary" data-toggle="modal"
-						data-target="#add1" title="添加"> <span
+					<a class="btn btn-primary" title="添加" onclick="addQuiz()"> <span
 						class="glyphicon glyphicon-plus"></a> <br /> <br />
 					<table id="getAllQuiz">
 
 					</table>
 
-					<div class="modal fade" id="add1" tabindex="-1" role="dialog"
-						aria-labelledby="add11">
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal"
-										aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
-									<h4 class="modal-title" id="add11">添加</h4>
-								</div>
-
-								<div class="modal-body">
-									<ul>
-										<li><label><span>序号 ：</span></label> <input type="text"
-											disabled="disabled" value="1001" /></li>
-										<li><label><span>用户名 ：</span></label> <input type="text" /></li>
-										<li><label><span>密码 ：</span></label> <input type="text" />
-										</li>
-										<li><label><span>状态：</span></label> <select>
-												<option>正常</option>
-												<option>使用中</option>
-												<option>销毁</option>
-										</select></li>
-
-									</ul>
-								</div>
-
-								<div class="modal-footer">
-									<button type="button" class="btn btn-default btn-sm"
-										data-dismiss="modal">取消</button>
-									<button type="button" class="btn btn-primary btn-sm">保存</button>
-								</div>
-
-							</div>
-						</div>
-					</div>
 
 
 				</div>
@@ -223,45 +174,89 @@
 			</div>
 		</div>
 	</section>
-<!-- 模态框（Modal） -->
+
+
+	<!-- 模态框（Modal） -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog" >
+		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">×</button>
-<!-- 						<img class="center-block" alt="" src="images/log-car.jpg"> -->	
-						<h3>
-							<span class="glyphicon glyphicon-user" id="myModalLabel" style="color:navy; margin-left: 123px;" >&nbsp;ReadyGo</span> 
-						</h3>
-			<!-- 					<h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4>
- -->				</div>
+					<!-- 						<img class="center-block" alt="" src="images/log-car.jpg"> -->
+					<h3>
+						<span class="glyphicon glyphicon-user" id="myModalLabel"
+							style="color: navy; margin-left: 123px;"></span>
+					</h3>
+					<!-- 					<h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4>
+ -->
+				</div>
 				<div class="modal-body">
-				<!-- 登陆表单 -->
+					<!-- 登陆表单 -->
 					<form class="form-horizontal" role="form">
-						<div class="form-group" >
-								<label for="userName" class="col-sm-3 control-label">用户名:</label>
+						<div class="form-group" id="divQid">
+							<label for="userName" class="col-sm-3 control-label">QID:</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="userName"
-									placeholder="请输入用户名" >
+								<input type="text" class="form-control" id="QID" readonly="true">
+							</div>
+						</div>
+
+
+						<div class="form-group">
+							<label for="password" class="col-sm-3 control-label">错误总数:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="errTotal">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="password" class="col-sm-3 control-label">密码:</label>
+							<label for="password" class="col-sm-3 control-label">图片路径:</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="password"
-									placeholder="请输入密码" >
+								<input type="text" class="form-control" id="图片路径">
 							</div>
 						</div>
-						
 						<div class="form-group">
-							<div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" class="btn btn-info btn-lg " >登  录</button>&nbsp;&nbsp;&nbsp;&nbsp;
-							<button type="submit" class="btn btn-info btn-lg " >取消</button>
+							<label for="password" class="col-sm-3 control-label">题目类型:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="题目类型">
 							</div>
 						</div>
-						
+						<div class="form-group">
+							<label for="password" class="col-sm-3 control-label">章节ID:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="章节ID">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="password" class="col-sm-3 control-label">问题:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="问题">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" class="col-sm-3 control-label">答案:</label>
+							<div class="col-sm-8">
+								<textarea rows="" cols="" id="答案" class="form-control"></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" class="col-sm-3 control-label">题目详解:</label>
+							<div class="col-sm-8">
+								<textarea rows="" cols="" id="题目详解" class="form-control"></textarea>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-20">
+								<button type="submit" class="btn btn-info btn-lg "
+									onclick="confirmEdit()" style="margin-left: 48px;">&nbsp;确&nbsp;定&nbsp;</button>
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								<button type="submit" class="btn btn-info btn-lg "
+									style="margin-left: 50px;">&nbsp;取&nbsp;消&nbsp;</button>
+							</div>
+						</div>
+
 					</form>
 				</div>
 			</div>
@@ -270,189 +265,219 @@
 		<!-- /.modal-dialog -->
 	</div>
 	<!-- /.modal -->
+
+
 	<footer class="bg-primary navbar-fixed-bottom">
 		<p class="text-center text-white">版权所有&copy;ReadyGo小组</p>
 	</footer>
 
 
 	<script>
-	$(function(){
-		$('#myModal').modal({
-			show:false ,//设置模式窗关闭
-			backdrop:'static'
+		$(function() {
+			$('#myModal').modal({
+				show : false,//设置模式窗关闭
+				backdrop : 'static'
+			});
 		});
-	});
-	function editModel() { 
-		$('#myModal').modal({
-			keyboard : true,
-			show : true,//设置模式窗关闭
-			backdrop : 'static',
-		});
-		
-	}
-	var date;
-		//    添加编辑模态框
-		$('#add').on('show.bs.modal', function(event) {
-			var button = $(event.relatedTarget) // Button that triggered the modal
-			var recipient = button.data('whatever') // Extract info from data-* attributes
-			// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-			// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-			var modal = $(this)
-			modal.find('.modal-title').text('' + recipient)
-			modal.find('.modal-body input').val(recipient)
-		})
 
-		//进来后显示所有管理员的信息,需要判定是sa								
-			$('#getAllQuiz').bootstrapTable({
-				method : 'get',
-				url : '../../backQuizHandler/allQuiz',
-				cache : false,
-				striped : true,
-				pagination : true,
-				dataType : "json",
-				pageList : [1,3,5,8,10],
-				pageSize : 3,
-				pageNumber : 1,
-				search : true,
-				sidePagination : 'client',
-				showColumns : true,
-				minimumCountColumns : 2,
-				clickToSelect : true,
-				showToggle : true,
-				columns : [ {
-					field : '',
-					checkbox : true
-				}, {
-					field : 'qid',
-					title : 'ID',
-					sortable : true,
-					align: 'center'
-				}, {
-					field : 'question',
-					title : '问题',
-					align : 'center' 
-				}, {
-					field : 'answer',
-					title : '答案',
-					align: 'center'
-				}, {
-					field : 'pid',
-					title : '章节ID',
-					sortable : true,
-					align: 'center'
-				}, {
-					field : 'pic',
-					title : '图片',
-					align: 'center'
-				} , {
-					field : 'qtype',
-					title : '题目类型',
-					sortable : true,
-					align: 'center'
-				} , {
-					field : 'errtotal',
-					title : '错误总数',
-					sortable : true,
-					align: 'center'
-				}, {
-					field : 'explain',
-					title : '题目详解',
-					align: 'center',
-					
-				} ,{field : 'operate',title: '操作',width: 100,align: 'center',valign: 'middle',
-						formatter:function(value,row,index){
-						/* 	var edit = '<a onclick="member_edit(\''+ row.qid + '\')">编辑</a> ';   */
-							var edit = '<a onclick="editModel()">编辑</a> '; 
-							var del = '<a onclick="member_del(\''+ row.qid +'\')">删除</a> '; 
-							var str = edit + "&nbsp;" + del;
-							return str;
-						}
-				} 
-				]
-			
+		function showModel() {
+			$('#myModal').modal({
+				keyboard : true,
+				show : true,//设置模式窗关闭
+				backdrop : 'static',
 			});
-		
-		//error
-		/* function member_edit(qid) {
-			$.post("../../quiz/getQuizByQid",{"qid":qid},function(data){
-				$("input[name='qid']").val(data.qid);
-				$("input[name='问题']").val(data.question);
-				$("input[name='答案']").val(data.answer);
-				$("input[name='章节ID']").val(data.pid);
-				$("input[name='图片路径']").val(data.pic);
-				$("input[name='题目类型']").val(data.qtype);
-				$("input[name='题目详解']").val(data.explain);
-				$("input[name='错误总数']").val(data.errtotal);
-			},"json"); 
-			
-			layer.open({
-				type : 1,
-				title : '修改用户信息',
-				maxmin : true,
-				shadeClose : false, //点击遮罩关闭层
-				area : [ '800px', '' ],
-				content : $('#add_member_style'),
-				btn : [ '提交', '取消' ],
-				yes : function(index, layero) {
-					var num = 0;
-					var str = "";
-					$(".add_member input[type$='text']").each(
-							function(n) {
-								if ($(this).val() == "") {
-									layer.alert(str += "" + $(this).attr("name")
-											+ "不能为空！\r\n", {
-										title : '提示框',
-										icon : 0,
-									});
-									num++;
-									return false;
-								}
-							});
-					if (num > 0) {
-						return false;
-					} else {
-						var qid		= $("input[name='qid']").val();
-						var question= $("input[name='问题']").val();
-						var answer	= $("input[name='答案']").val();
-						var pid		= $("input[name='章节ID']").val();
-						var pic		= $("input[name='图片路径']").val();
-						var qtype	= $("input[name='题目类型']").val();
-						var explain	= $("input[name='题目详解']").val();
-						var errtotal= $("input[name='错误总数']").val();
-						
-						$.post("../../quiz/updateQuiz",{qid:qid,question:question,answer:answer,pid:pid,pic:pic,qtype:qtype,explain:explain,errtotal:errtotal},
-								function(data){
-								if(data){
-									layer.alert('修改成功！', {
-										title : '提示框',
-										icon : 1,
-									});
-								}else{
-									layer.alert('修改失败！', {
-										title : '提示框',
-										icon : 1,
-									});
-								}
-						});
-						$("input[name='qid']").val();
-						$("input[name='问题']").val();
-						$("input[name='答案']").val();
-						$("input[name='章节ID']").val();
-						$("input[name='图片路径']").val();
-						$("input[name='题目类型']").val();
-						$("input[name='题目详解']").val();
-						$("input[name='错误总数']").val();
-						layer.close(index);
-					}
+		}
+		//将modal的值置空
+		function initQuizModel() {
+			$('#QID').val("");
+			$('#问题').val("");
+			$('#答案').val("");
+			$('#章节ID').val("");
+			$('#图片路径').val("");
+			$('#题目类型').val("");
+			$('#题目详解').val("");
+			$('#errTotal').val("");
+		}
+
+		//显示指定qid的quiz
+		function editModel(qid) {
+			$('#myModalLabel').html("&nbsp;ReadyGo-Quiz编辑");
+			initQuizModel();
+			//赋值
+			$.get("../../backQuizHandler/getQuizByQid", {
+				"qid" : qid
+			}, function(data) {
+				if (data) {
+					$('#QID').val(data.qid);
+					$('#问题').val(data.question);
+					$('#答案').val(data.answer);
+					$('#章节ID').val(data.pid);
+					$('#图片路径').val(data.pic);
+					$('#题目类型').val(data.qtype);
+					$('#题目详解').val(data.explain);
+					$('#errTotal').val(data.errTotal);
 				}
-			});
+			}, "json");
+			showModel();
+			initQuizModel();
 		}
-		 */
-		 
-		function member_del(id){
-			alert(id);
+		//确定修改
+		function confirmEdit() {
+			//区分修改还是增加
+			var resultType = switchType();
+
+			if (resultType == "添加") {
+				//添加操作
+				alert("添加");
+
+			} else {
+				initQuizModel();
+				//获取值
+				var qid = $('#QID').val();
+				var question = $('#问题').val();
+				var answer = $('#答案').val();
+				var pid = $('#章节ID').val();
+				var pic = $('#图片路径').val();
+				var qtype = $('#题目类型').val();
+				var explain = $('#题目详解').val();
+				var errTotal = $('#errTotal').val();
+				alert(qid + " " + " errTotal:" + errTotal);
+				//传值修改
+				$.get("../../backQuizHandler/updateQuiz", {
+					"qid" : qid,
+					"question" : question,
+					"answer" : answer,
+					"pid" : pid,
+					"pic" : pic,
+					"qtype" : qtype,
+					"explain" : explain,
+					"errTotal" : errTotal
+				}, function(data) {
+					alert("修改///");
+					if (data) {
+						alert("修改成功")
+						//$('#getAllQuiz').bootstrapTable('refresh');
+					}
+				}, "json");
+			}
 		}
-</script>
+		//区分增加和修改
+		function switchType() {
+			var type = $('#myModalLabel').html();
+			alert(type);
+			if (type.indexOf("添加") > 0) {
+				return "添加";
+			}
+			return "修改";
+		}
+
+		//添加新的quiz
+		function addQuiz() {
+			$('#myModalLabel').html("&nbsp;ReadyGo-Quiz添加");
+			initQuizModel();
+			showModel();
+
+		}
+
+		//删除指定quiz
+		function member_del(id) {
+			if (confirm("确定删除？" + id)) {
+				$.get("../../backQuizHandler/deleteQuiz", {
+					"qid" : id
+				}, function(data) {
+					if (data) {
+						alert("删除成功!!!");
+					}
+				}, "json");
+				$('#getAllQuiz').bootstrapTable('refresh');
+			}
+		}
+		//进来后显示所有管理员的信息,需要判定是sa								
+		$('#getAllQuiz').bootstrapTable(
+				{
+					method : 'get',
+					url : '../../backQuizHandler/allQuiz',
+					cache : false,
+					striped : true,
+					pagination : true,
+					dataType : "json",
+					pageList : [ 1, 3, 5, 8, 10 ],
+					pageSize : 3,
+					pageNumber : 1,
+					search : true,
+					sidePagination : 'client',
+					showColumns : true,
+					minimumCountColumns : 2,
+					clickToSelect : true,
+					showToggle : true,
+					columns : [
+							{
+								field : '',
+								checkbox : true
+							},
+							{
+								field : 'qid',
+								title : 'ID',
+								sortable : true,
+								align : 'center'
+							},
+							{
+								field : 'question',
+								title : '问题',
+								align : 'center'
+							},
+							{
+								field : 'answer',
+								title : '答案',
+								align : 'center'
+							},
+							{
+								field : 'pid',
+								title : '章节ID',
+								sortable : true,
+								align : 'center'
+							},
+							{
+								field : 'pic',
+								title : '图片',
+								align : 'center'
+							},
+							{
+								field : 'qtype',
+								title : '题目类型',
+								sortable : true,
+								align : 'center'
+							},
+							{
+								field : 'errTotal',
+								title : '错误总数',
+								sortable : true,
+								align : 'center'
+							},
+							{
+								field : 'explain',
+								title : '题目详解',
+								align : 'center',
+
+							},
+							{
+								field : 'operate',
+								title : '操作',
+								width : 100,
+								align : 'center',
+								valign : 'middle',
+								formatter : function(value, row, index) {
+									/* 	var edit = '<a onclick="member_edit(\''+ row.qid + '\')">编辑</a> ';   */
+									var edit = '<a onclick="editModel(\''
+											+ row.qid + '\')">编辑</a> ';
+									var del = '<a onclick="member_del(\''
+											+ row.qid + '\')">删除</a> ';
+									var str = edit + "&nbsp;" + del;
+									return str;
+								}
+							} ]
+				});
+	</script>
 </body>
 
 </html>

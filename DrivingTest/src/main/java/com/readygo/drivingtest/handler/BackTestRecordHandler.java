@@ -91,4 +91,22 @@ public class BackTestRecordHandler {
 		out.close();
 	}
 	
+	/**
+	 * 根据ID获取指定的测试
+	 * @param recId
+	 * @param out
+	 */
+	@RequestMapping("/getTestRecordById")
+	public void getTestRecordById(int recId,PrintWriter out){
+		TestRecord tr = trsi.getTestRecordById(recId);
+		if(tr == null || "".equals(tr)){
+			
+		}else{
+			Gson gson=new Gson();
+			out.println(gson.toJson(tr));
+		}
+		out.flush();
+		out.close();
+	}
+	
 }

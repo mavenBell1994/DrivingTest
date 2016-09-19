@@ -23,13 +23,13 @@
 <body class=" ">
 	<div id="simple-container" class="simple-container">
 		<c:choose>
-	<c:when test="${cname.cname==null}">
-		<jsp:include page="/page/top.jsp"></jsp:include>
-	</c:when>
-	<c:otherwise>
-		<jsp:include page="/page/top1.jsp"></jsp:include>	
-	</c:otherwise>
-</c:choose>
+			<c:when test="${cname.cname==null}">
+				<jsp:include page="/page/top.jsp"></jsp:include>
+			</c:when>
+			<c:otherwise>
+				<jsp:include page="/page/top1.jsp"></jsp:include>
+			</c:otherwise>
+		</c:choose>
 		<div class="jkbd-main-header-nav-zhanwei" data-item="nav-zhanwei"></div>
 		<div class="jkbd-main-header-nav erjiyemian"
 			data-item="jkbd-main-header-nav">
@@ -83,7 +83,7 @@
 					href="http://www.jiakaobaodian.com/mnks/car-hengyang.html">模拟考试</a><span
 					class="gap">&gt;</span> <a
 					href="http://www.jiakaobaodian.com/mnks/car-kemu1-hengyang.html">科目一</a><span
-					class="gap">&gt;</span> <a class="mylink"  >难题练习</a>
+					class="gap">&gt;</span> <a class="mylink">难题练习</a>
 				</label>
 			</div>
 			<div
@@ -91,14 +91,17 @@
 				<div class="lianxi-container news-left">
 					<div class="shiti-container " data-item="shiti-container">
 						<div class="shiti-item cl">
-							<p class="shiti-content" data-item="shiti-content" >
-								<b>难</b>
-								<span id="quizTitle"><!-- 1/100. 对驾驶拼装机动车上路行驶的驾驶人，会受到下列哪种处罚？ --></span> 
+							<p class="shiti-content" data-item="shiti-content">
+								<b>难</b> <span id="quizTitle">
+									<!-- 1/100. 对驾驶拼装机动车上路行驶的驾驶人，会受到下列哪种处罚？ -->
+								</span>
 							</p>
-							<span class="favor-tag " data-action="login" onclick="favorSave()" id="favor-tag">收藏</span>
+							<span class="favor-tag " data-action="login"
+								onclick="favorSave()" id="favor-tag">收藏</span>
 							<div class="shiti-wapper cl">
 								<div class="shiti-item-left float-l">
-									<div class="options-container " data-item="options-container" id="options-container">
+									<div class="options-container " data-item="options-container"
+										id="options-container">
 										<!-- <p class="" data-answer="16">
 											<i></i><span>A. 处15日以下拘留</span>
 										</p>
@@ -118,9 +121,10 @@
 						</div>
 					</div>
 					<div class="tip-container" data-item="tip-container" id="qtype">
-					<!-- 	<p class="weizuo">单选题，请选择你认为正确的答案！</p> -->
+						<!-- 	<p class="weizuo">单选题，请选择你认为正确的答案！</p> -->
 					</div>
-					<div class="static-container" data-item="static-container" id="quizResult">
+					<div class="static-container" data-item="static-container"
+						id="quizResult">
 						<!-- 错误率<b>45%</b>做错人数<b>40782638</b> -->
 					</div>
 					<div class="tiku-jindu-container cl"
@@ -132,17 +136,21 @@
 						</div>
 					</div>
 					<div class="shiti-buttons cl">
-						<button class="li0 float-l" type="button" data-item="prev" onclick="javascript:showPre()">上一题</button>
-						<button class="float-l" type="button" data-item="next" onclick="javascript:showNext()">下一题</button>
-						<button class="datika grey-b zkdtk float-r" onclick="javascript:showCard()">展开答题卡</button>
-						<button class="grey-b float-r" type="button" data-item="see-answer" onclick="seeDetail()">查看详解</button>
+						<button class="li0 float-l" type="button" data-item="prev"
+							onclick="javascript:showPre()">上一题</button>
+						<button class="float-l" type="button" data-item="next"
+							onclick="javascript:showNext()">下一题</button>
+						<button class="datika grey-b zkdtk float-r"
+							onclick="javascript:showCard()">展开答题卡</button>
+						<button class="grey-b float-r" type="button"
+							data-item="see-answer" onclick="seeDetail()">查看详解</button>
 					</div>
 					<div class="tongji-container cl" data-item="tongji-container">
 						<label class="daduinext float-l"><input type="checkbox"
-							checked="checked" data-item="daduinext" id="autoNext"><span>答对自动下一题</span></label> 
-							<label class="x-dadui float-l" >答对：<span id="answerRight"></span></label> 
-							<label class="x-dacuo float-l">答错：<span id="answerError"></span></label> 
-							<label class="x-lv float-l">正确率：<span id="rightRate"></span></label>
+							checked="checked" data-item="daduinext" id="autoNext"><span>答对自动下一题</span></label>
+						<label class="x-dadui float-l">答对：<span id="answerRight"></span></label>
+						<label class="x-dacuo float-l">答错：<span id="answerError"></span></label>
+						<label class="x-lv float-l">正确率：<span id="rightRate"></span></label>
 						<!-- 	<label class="x-sync float-l" data-action="tips_sync">登录保存做题进度</label> -->
 					</div>
 
@@ -275,7 +283,7 @@
 										data-item="explain-star" class="star-leave star-5"></i></i>
 								</p>
 								<p data-item="explain-content" class="wapper">
-								<p id="DiffQuizExplain" style="color: #b28850;font-size: 18px;">
+								<p id="DiffQuizExplain" style="color: #b28850; font-size: 18px;">
 									<!-- 《道路交通安全法》第一百条：<br>驾驶拼装的机动车或者已达到报废标准的机动车上道路行驶的，公安机关交通管理部门应当予以收缴，强制报废。<br>对驾驶前款所列机动车上道路行驶的驾驶人，处200元以上2000元以下罚款，并吊销机动车驾驶证（非行驶证）。 -->
 								</p>
 								</p>
@@ -301,9 +309,11 @@
 											<p class="date">2015-12-20</p>
 										</div>
 									</li>  -->
-									
+
 								</ul>
-								<button data-item="loadmore-dianping" type="button" class="more-btn loadmore" data-cursor="11166575" data-topic="802200" onclick="loadMore()">加载更多</button>
+								<button data-item="loadmore-dianping" type="button"
+									class="more-btn loadmore" data-cursor="11166575"
+									data-topic="802200" onclick="loadMore()">加载更多</button>
 							</div>
 						</div>
 					</div>
@@ -334,7 +344,7 @@
 							<div class="fenxi-content-container ef-content"
 								data-item="fenxi-content-container">
 								<ul data-item="list"></ul>
-								<button class="more-btn loadmore" style="" >加载更多</button>
+								<button class="more-btn loadmore" style="">加载更多</button>
 							</div>
 						</div>
 					</div>
@@ -395,8 +405,8 @@
 				</div>
 				<div class="modal-body">
 					<!-- 登陆表单 -->
-					<form class="form-horizontal" role="form" action=""
-						method="post" id="login" onsubmit="return login()">
+					<form class="form-horizontal" role="form" action="" method="post"
+						id="login" onsubmit="return login()">
 						<div class="form-group">
 							<label for="userName" class="col-sm-3 control-label">用户名:</label>
 							<div class="col-sm-8">
@@ -451,26 +461,32 @@
 	<!-- /.modal -->
 	<!-- 我要分析 -->
 	<div id="dialog-base-container" style="display: none;">
-		<div data-item="dialog-6" class="dialog-wrap " style="" id="analyseDialog">
+		<div data-item="dialog-6" class="dialog-wrap " style=""
+			id="analyseDialog">
 			<div class="jkbd-dialog-backdrop"></div>
 			<div style="width: 390px;" class="dialog-main nofotter"
 				data-item="dialog-main">
-				<span title="关闭" data-item="close" class="dialog_close" onclick="dialogClose()">×</span>
+				<span title="关闭" data-item="close" class="dialog_close"
+					onclick="dialogClose()">×</span>
 				<div class="body no-title" data-item="body" style="">
 					<div class="dianping-comment-container">
 						<h2>我要分析</h2>
 						<div class="textarea-wapper">
-							<textarea placeholder="快来和小伙伴分享一下想法吧！" rows="6" data-item="textarea" name="comContent" id="comContent" onkeyup="contentNum()"></textarea>
+							<textarea placeholder="快来和小伙伴分享一下想法吧！" rows="6"
+								data-item="textarea" name="comContent" id="comContent"
+								onkeyup="contentNum()"></textarea>
 							<div data-item="font-limit" class="font-limit" id="contentNum">0/240</div>
 						</div>
-						<button data-item="submit" type="button" onclick="addComments(${cname.cid})">提交</button>
+						<button data-item="submit" type="button"
+							onclick="addComments(${cname.cid})">提交</button>
 					</div>
 				</div>
 				<div class="footer btns0"></div>
 			</div>
 		</div>
 		<!--点击放大图片  -->
-		<div data-item="dialog-2" class="dialog-wrap alert" style="" id="bigImgDialog">
+		<div data-item="dialog-2" class="dialog-wrap alert" style=""
+			id="bigImgDialog">
 			<div class="jkbd-dialog-backdrop"></div>
 			<div style="width: 550px;" class="dialog-main "
 				data-item="dialog-main">
@@ -479,13 +495,14 @@
 					<!-- <img style="width: 500px; height: auto;" src="images/banner1.png"> -->
 				</div>
 				<div class="footer btns1">
-					<button class="i0" data-value="0" type="button" onclick="bigImgClose()">确定</button>
+					<button class="i0" data-value="0" type="button"
+						onclick="bigImgClose()">确定</button>
 				</div>
 			</div>
 		</div>
 	</div>
-	
-	
+
+
 	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
 	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/formlogin.js"></script>

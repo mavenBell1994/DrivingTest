@@ -28,4 +28,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where recId=#{recId}
 	</update>
 	
+	<!-- 根据ID获取指定 -->
+	<select id="getTestRecordById" resultType="TestRecord" parameterType="int">
+		select * from testRecord where recId=#{recId}
+	</select>
+	
 </mapper>

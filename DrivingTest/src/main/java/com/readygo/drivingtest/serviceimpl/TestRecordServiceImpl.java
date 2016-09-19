@@ -51,6 +51,16 @@ public class TestRecordServiceImpl implements TestRecordService {
 	public int updateTestRecord(TestRecord testRecord) {
 		return trm.updateTestRecord(testRecord);
 	}
+	
+	/**
+	 * 根据ID获取指定的测试成绩
+	 * @param recId
+	 * @return
+	 */
+	@Override
+	public TestRecord getTestRecordById(int recId) {
+		return trm.getTestRecordById(recId);
+	}
 
 
 	

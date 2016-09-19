@@ -190,7 +190,7 @@
 				</div>
 				<div class="modal-body">
 					<!-- 登陆表单 -->
-					<form class="form-horizontal" role="form">
+					<form class="form-horizontal" role="form" onsubmit="return confirmEdit()">
 						<div class="form-group" id="divQid">
 							<label for="userName" class="col-sm-3 control-label">cid:</label>
 							<div class="col-sm-8">
@@ -264,10 +264,8 @@
 
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-20">
-								<button class="btn btn-info btn-lg " onclick="confirmEdit()"
-									style="margin-left: 48px;">&nbsp;确&nbsp;定&nbsp;</button>
-								&nbsp;&nbsp;&nbsp;&nbsp;
-								<button class="btn btn-info btn-lg " style="margin-left: 50px;">&nbsp;取&nbsp;消&nbsp;</button>
+								<button class="btn btn-info btn-lg " 
+									style="margin-left: 48px;" >确定</button>/>
 							</div>
 						</div>
 
@@ -358,7 +356,7 @@
 				var addr = $('#addr').val();
 
 				//传值增加
-				$.get("../../backuser/addUser", {
+				$.post("../../backuser/addUser", {
 					"cname" : cname,
 					"cpwd" : cpwd,
 					"email" : email,
@@ -370,9 +368,10 @@
 				}, function(data) {
 					if (data) {
 						alert("成功添加");
-						$('#allUsers').bootstrapTable('refresh');
+						location.href="checkAllUsers.jsp";
 					}
 				}, "json");
+				return false;
 			} else {
 				//修改操作
 				//获取值
@@ -400,11 +399,11 @@
 				}, function(data) {
 					alert("修改///");
 					if (data) {
-						alert("修改成功")
-						$('#allUsers').bootstrapTable('refresh');
+						alert("修改成功");
+						location.href="checkAllUsers.jsp";
 					}
 				}, "json");
-
+				return false;
 			}
 		}
 		//区分增加和修改

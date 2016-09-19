@@ -1,12 +1,16 @@
 package com.readygo.drivingtest.handler;
 
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
+import com.readygo.drivingtest.entity.Quiz;
 import com.readygo.drivingtest.entity.SelfErrors;
 import com.readygo.drivingtest.service.QuizService;
 import com.readygo.drivingtest.service.SelfErrorsService;
@@ -79,7 +83,46 @@ public class SelfErrorsHandler {
 		out.flush();
 		out.close();
 	}
-
+//	获取所有的错题信息
+	@RequestMapping("/getSelfErrors")
+	@ResponseBody
+	public List<Quiz>  getSelfErrors(SelfErrors selfErrors){
+		SelfErrors errors= selfErrorsService.getSelfErrors(selfErrors.getCid());
+		String[] errorSaves=null;
+		if(errors.getErrorSave()!=null){
+		 errorSaves=errors.getErrorSave().split("@");
+		}else{
+			return null;
+		}
+		List<Quiz> quizs=new ArrayList<Quiz>();
+		for (String qid : errorSaves) {
+			if(qid!=null && !qid.equals("")){
+				Quiz q=quizService.getQuizByQid(Integer.parseInt(qid));
+				quizs.add(q);
+			}
+		}
+			return quizs;
+	}
+//	获取所有的收藏信息
+	@RequestMapping("/getSelfSaves")
+	@ResponseBody
+	public List<Quiz> getSelfSaves(SelfErrors selfErrors){
+		SelfErrors selferrors= selfErrorsService.getSelfErrors(selfErrors.getCid());
+		String[] saves=null;
+		if(selferrors.getSave()!=null){
+			saves=selferrors.getSave().split("@");
+			}else{
+				return null;
+			}
+		List<Quiz> quiz=new ArrayList<Quiz>();
+		for (String qid : saves) {
+			if(qid!=null && !qid.equals("")){
+				Quiz q=quizService.getQuizByQid(Integer.parseInt(qid));
+				quiz.add(q);
+			}
+		}
+			return quiz;
+	}
 	//收藏
 	@RequestMapping(value ="/getFavorSave")
 	public void getFavorSave(SelfErrors selfErrors,PrintWriter out) {

@@ -194,7 +194,7 @@
 				</div>
 				<div class="modal-body">
 					<!-- 登陆表单 -->
-					<form class="form-horizontal" role="form">
+					<form class="form-horizontal" role="form" onsubmit="return confirmEdit()">
 						<div class="form-group" id="divQid">
 							<label for="userName" class="col-sm-3 control-label">QID:</label>
 							<div class="col-sm-8">
@@ -251,9 +251,6 @@
 							<div class="col-sm-offset-2 col-sm-20">
 								<button type="submit" class="btn btn-info btn-lg "
 									onclick="confirmEdit()" style="margin-left: 48px;">&nbsp;确&nbsp;定&nbsp;</button>
-								&nbsp;&nbsp;&nbsp;&nbsp;
-								<button type="submit" class="btn btn-info btn-lg "
-									style="margin-left: 50px;">&nbsp;取&nbsp;消&nbsp;</button>
 							</div>
 						</div>
 
@@ -328,10 +325,30 @@
 
 			if (resultType == "添加") {
 				//添加操作
-				alert("添加");
-
+				//获取值
+				var question = $('#问题').val();
+				var answer = $('#答案').val();
+				var pid = $('#章节ID').val();
+				var pic = $('#图片路径').val();
+				var qtype = $('#题目类型').val();
+				var explain = $('#题目详解').val();
+				var errTotal = $('#errTotal').val();
+				//传值添加
+				$.post("../../backQuizHandler/insertQuiz", {
+					"question" : question,
+					"answer" : answer,
+					"pid" : pid,
+					"pic" : pic,
+					"qtype" : qtype,
+					"explain" : explain,
+					"errTotal" : errTotal
+				}, function(data) {
+					if (data) {
+						location.href = "getAllQuiz.jsp";
+					}
+				}, "json");
+				return false;
 			} else {
-				initQuizModel();
 				//获取值
 				var qid = $('#QID').val();
 				var question = $('#问题').val();
@@ -341,9 +358,8 @@
 				var qtype = $('#题目类型').val();
 				var explain = $('#题目详解').val();
 				var errTotal = $('#errTotal').val();
-				alert(qid + " " + " errTotal:" + errTotal);
 				//传值修改
-				$.get("../../backQuizHandler/updateQuiz", {
+				$.post("../../backQuizHandler/updateQuiz", {
 					"qid" : qid,
 					"question" : question,
 					"answer" : answer,
@@ -353,12 +369,11 @@
 					"explain" : explain,
 					"errTotal" : errTotal
 				}, function(data) {
-					alert("修改///");
 					if (data) {
-						alert("修改成功")
-						//$('#getAllQuiz').bootstrapTable('refresh');
+						location.href = "getAllQuiz.jsp";
 					}
 				}, "json");
+				return false;
 			}
 		}
 		//区分增加和修改

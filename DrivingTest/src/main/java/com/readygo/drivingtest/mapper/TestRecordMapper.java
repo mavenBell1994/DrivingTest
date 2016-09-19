@@ -40,5 +40,11 @@ public interface TestRecordMapper {
 	 * @return
 	 */
 	public int updateTestRecord(TestRecord testRecord);
-	
+
+	/**
+	 * 根据ID获取指定的测试成绩
+	 * @param recId
+	 * @return
+	 */
+	public TestRecord getTestRecordById(int recId);	
 }

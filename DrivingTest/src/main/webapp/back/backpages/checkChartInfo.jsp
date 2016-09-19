@@ -191,7 +191,7 @@
 				</div>
 				<div class="modal-body">
 					<!-- 登陆表单 -->
-					<form class="form-horizontal" role="form">
+					<form class="form-horizontal" role="form" onsubmit="return confirmEdit()">
 						<div class="form-group" id="divQid">
 							<label for="userName" class="col-sm-3 control-label">评论ID:</label>
 							<div class="col-sm-8">
@@ -238,10 +238,8 @@
 
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-20">
-								<button class="btn btn-info btn-lg " onclick="confirmEdit()"
+								<button class="btn btn-info btn-lg " 
 									style="margin-left: 48px;">&nbsp;确&nbsp;定&nbsp;</button>
-								&nbsp;&nbsp;&nbsp;&nbsp;
-								<button class="btn btn-info btn-lg " style="margin-left: 50px;">&nbsp;取&nbsp;消&nbsp;</button>
 							</div>
 						</div>
 
@@ -328,7 +326,7 @@
 				}, function(data) {
 					if (data) {
 						alert("成功添加");
-						$('#allChart').bootstrapTable('refresh');
+						location.href="checkChartInfo.jsp";
 					}
 				}, "json");
 			} else {
@@ -353,11 +351,12 @@
 					alert("修改///");
 					if (data) {
 						alert("修改成功")
-						$('#allChart').bootstrapTable('refresh');
+						location.href="checkChartInfo.jsp";
 					}
 				}, "json");
 
 			}
+			return false;
 		}
 		//区分增加和修改
 		function switchType() {
@@ -383,7 +382,7 @@
 				}, function(data) {
 					if (data) {
 						alert("删除成功!!!");
-						$('#allChart').bootstrapTable('refresh');
+						location.href="checkChartInfo.jsp";
 					}
 				}, "json");
 			}

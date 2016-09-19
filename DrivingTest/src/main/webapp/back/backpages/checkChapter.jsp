@@ -189,7 +189,7 @@
 				</div>
 				<div class="modal-body">
 					<!-- 登陆表单 -->
-					<form class="form-horizontal" role="form">
+					<form class="form-horizontal" role="form" onsubmit="return confirmEdit()">
 						<div class="form-group" id="divQid">
 							<label for="userName" class="col-sm-3 control-label">pid:</label>
 							<div class="col-sm-8">
@@ -209,10 +209,7 @@
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-20">
 								<button class="btn btn-info btn-lg "
-									onclick="confirmEdit()" style="margin-left: 48px;">&nbsp;确&nbsp;定&nbsp;</button>
-								&nbsp;&nbsp;&nbsp;&nbsp;
-								<button class="btn btn-info btn-lg "
-									style="margin-left: 50px;">&nbsp;取&nbsp;消&nbsp;</button>
+									 style="margin-left: 48px;">&nbsp;确&nbsp;定&nbsp;</button>
 							</div>
 						</div>
 
@@ -277,8 +274,10 @@
 				}, function(data) {
 					if (data) {
 						alert("成功添加");
+						location.href="checkChapter.jsp";
 					}
 				});
+				
 			} else {
 				//修改操作
 				//获取值
@@ -293,11 +292,12 @@
 					alert("修改///");
 					if (data) {
 						alert("修改成功")
-						//$('#getAllPart').bootstrapTable('refresh');
+						location.href="checkChapter.jsp";
 					}
 				}, "json");
 
 			}
+			return false;
 		}
 		//区分增加和修改
 		function switchType() {
@@ -324,9 +324,9 @@
 				}, function(data) {
 					if (data) {
 						alert("删除成功!!!");
+						location.href="checkChapter.jsp";
 					}
 				}, "json");
-				$('#getAllPart').bootstrapTable('refresh');
 			}
 		}
 

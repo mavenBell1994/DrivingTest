@@ -326,6 +326,7 @@
 			if (resultType == "添加") {
 				//添加操作
 				//不允许后台添加
+				return false;
 			} else {
 				//修改操作
 				//获取值
@@ -356,7 +357,7 @@
 						location.href="checkTestRec.jsp";
 					}
 				}, "json");
-
+				return false;
 			}
 		}
 		//区分增加和修改

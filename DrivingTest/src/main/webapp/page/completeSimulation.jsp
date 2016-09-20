@@ -13,6 +13,7 @@
 <link rel="stylesheet" id="bsCss">
 <link href="css/public.css" rel="stylesheet" type="text/css">
 <link href="css/top.css" rel="stylesheet" type="text/css">
+<link href="css/dialog.css" rel="stylesheet" type="text/css">
 <!--bootstrap的引入  -->
 <script src="bootstrap-3.3.7/js/jquery.min.js"></script>
 <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -103,16 +104,16 @@
 								<legend>考试题目</legend>
 								<div class="problemContainer">
 
-									<div class="problem">
+									<div class="problem" id="answer">
 										<div class="problem-title">
 											<i>1.</i>
-											<p class="problem-p">打开位置灯开关，（如图所示）亮起。</p>
+											<p class="problem-p" id="questions">打开位置灯开关，（如图所示）亮起。</p>
 										</div>
 										<p>A、正确</p>
 										<p>B、错误</p>
 									</div>
 									<div class="result">
-										<div class="options">
+										<div class="options" id="checkanswer">
 											<label>请选择：</label>
 											<button class="option-btn" type="button">A</button>
 											<button class="option-btn" type="button">B</button>
@@ -129,7 +130,7 @@
 					<div class="info-middle">
 						<fieldset class="time-info">
 							<legend>剩余时间</legend>
-							<span data-item="left-time">00:00</span>
+							<span data-item="left-time" id="time">45:00</span>
 						</fieldset>
 						<fieldset class="tip-container">
 							<legend>提示信息</legend>
@@ -355,6 +356,20 @@
 		<!-- /.modal-dialog -->
 	</div>
 	<!-- /.modal -->
+	<!-- 提示 -->
+	<div id="dialog-base-container" style="display: block;">
+		<div data-item="dialog-1" class="dialog-wrap alert" style="">
+			<div class="jkbd-dialog-backdrop"></div>
+			<div style="width: 350px;" class="dialog-main "
+				data-item="dialog-main">
+				<h2 class="title">温馨提示</h2>
+				<div class="body " data-item="body">按交管部门通知，科目一考试系统全面更新。全真模拟考试下不能修改答案，每做一题，系统自动计算错误题数，及格标准为90分。</div>
+				<div class="footer btns1">
+					<button class="i0" data-value="0" type="button" onclick="closedialog()">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<script>
 		function show() {
 			$("#bsCss").attr("href", "bootstrap-3.3.7/css/bootstrap.min.css");
@@ -369,7 +384,7 @@
 			$('#myModal').on('hide.bs.modal', function() {
 				$("#bsCss").attr("href", "");
 			});
-	}
+		}
 	</script>
 </body>
 </html>

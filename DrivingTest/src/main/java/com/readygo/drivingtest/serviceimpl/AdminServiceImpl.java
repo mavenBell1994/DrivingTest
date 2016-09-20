@@ -22,8 +22,8 @@ public class AdminServiceImpl implements AdminService {
 	
 	//登录后将status字段改为使用中
 	@Override
-	public void islogin(Admin admin) {
-		mapper.islogin(admin);
+	public void islogin(String aname) {
+		mapper.islogin(aname);
 	}
 	
 	/**
@@ -43,7 +43,12 @@ public class AdminServiceImpl implements AdminService {
 	 */
 	@Override
 	public int addAdmin(Admin admin) {
-		return mapper.addAdmin(admin);
+		try {
+			mapper.addAdmin(admin);
+		} catch (Exception e) {
+			return 0;
+		}
+		return 1;
 	}
 	
 	/**
@@ -54,7 +59,12 @@ public class AdminServiceImpl implements AdminService {
 	 */
 	@Override
 	public int delAdmin(int aid) {
-		return mapper.delAdmin(aid);
+		try {
+			mapper.delAdmin(aid);
+		} catch (Exception e) {
+			return 0;
+		}
+		return 1;
 	}
 	
 	/**
@@ -64,7 +74,12 @@ public class AdminServiceImpl implements AdminService {
 	 */
 	@Override
 	public int updateAdmin(Admin admin) {
-		return mapper.updateAdmin(admin);
+		try {
+			mapper.updateAdmin(admin);
+		} catch (Exception e) {
+			return 0;
+		}
+		return 1;
 	}
 	
 
@@ -78,5 +93,9 @@ public class AdminServiceImpl implements AdminService {
 		return mapper.getAdminById(aid);
 	}
 
+	@Override
+	public void quit(String aname) {
+		mapper.quit(aname);
+	}
 
 }

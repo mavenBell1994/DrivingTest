@@ -29,7 +29,8 @@
 </head>
 
 <body>
-	<header>
+	<jsp:include page="top.jsp"></jsp:include>
+	<%-- <header>
 		<div class="container-fluid navbar-fixed-top bg-primary">
 			<ul class="nav navbar-nav  left">
 				<li class="text-white h4">&nbsp;&nbsp;&nbsp;&nbsp;<span
@@ -64,7 +65,7 @@
 			</ul>
 			<input type="hidden" id="loginaname" value="${admin.aname}"/>
 		</div>
-	</header>
+	</header> --%>
 
 	<section>
 		<div class="container-fluid">
@@ -173,17 +174,6 @@
 		<p class="text-center text-white">版权所有&copy;ReadyGo小组</p>
 	</footer>
 
-	<script>
-	 function quitback(){
-		 console.info()
-		 $.post("../../backadmin/quit",{aname:$("#loginaname").val()},function(data){
-			 if(data){
-				 location.href="../login.jsp";
-			 }
-		 },"json");
-	 }
-
-	</script>
 </body>
 
 </html>

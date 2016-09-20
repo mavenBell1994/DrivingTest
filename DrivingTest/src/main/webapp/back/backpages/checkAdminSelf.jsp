@@ -24,7 +24,8 @@
 </head>
 
 <body>
-	<header>
+	<jsp:include page="top.jsp"></jsp:include>
+	<!-- <header>
 		<div class="container-fluid navbar-fixed-top bg-primary">
 			<ul class="nav navbar-nav  left">
 				<li class="text-white h4">&nbsp;&nbsp;&nbsp;&nbsp;<span
@@ -58,7 +59,7 @@
 					</ul></li>
 			</ul>
 		</div>
-	</header>
+	</header> -->
 
 	<section>
 		<div class="container-fluid">

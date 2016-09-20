@@ -127,7 +127,6 @@ public class AdminHandler {
 	@RequestMapping("/quit")
 	@ResponseBody
 	public boolean quitback(HttpSession session,String aname) {
-		System.out.println("我进来啦");
 		adminService.quit(aname);
 		System.out.println(aname);
 		session.removeAttribute("admin");

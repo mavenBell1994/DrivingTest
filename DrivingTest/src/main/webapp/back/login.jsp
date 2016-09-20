@@ -13,6 +13,10 @@
 <title>DrivingTest后台管理系统</title>
 <link href="css/bootstrap.css" rel="stylesheet">
 
+
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
 <!--[if lt IE 9]>
   <script src="js/html5shiv.min.js"></script>
   <script src="js/respond.min.js"></script>
@@ -135,8 +139,7 @@ html, body {
 								<div class="input-group">
 									<span class="input-group-addon"><span
 										class="glyphicon glyphicon-user"></span></span> <input type="text"
-										id="aname" name="aname" class="form-control"
-										placeholder="用户名">
+										id="aname" name="aname" class="form-control" placeholder="用户名">
 								</div>
 							</div>
 						</div>
@@ -145,8 +148,8 @@ html, body {
 								<div class="input-group">
 									<span class="input-group-addon"><span
 										class="glyphicon glyphicon-lock"></span></span> <input
-										type="password" id="apwd" name="apwd"
-										class="form-control" placeholder="密码">
+										type="password" id="apwd" name="apwd" class="form-control"
+										placeholder="密码">
 								</div>
 							</div>
 						</div>
@@ -154,8 +157,9 @@ html, body {
 							<div class="col-xs-4 col-xs-offset-4 " style="margin: 0 37%;">
 								<!-- <button class="btn btn-sm btn-info" type="submit"><span
 									class="glyphicon glyphicon-off"></span> 登录</button> -->
-									<input class="btn btn-sm btn-info" type="button"
-									class="glyphicon glyphicon-off" value="登录" onclick="checkbacklogin()"/>
+								<input class="btn btn-sm btn-info" type="button"
+									class="glyphicon glyphicon-off" value="登录"
+									onclick="checkbacklogin()" />
 							</div>
 						</div>
 						<div class="form-group">
@@ -177,8 +181,6 @@ html, body {
 	</div>
 
 
-	<script src="js/jquery-1.11.3.js"></script>
-	<script src="js/bootstrap.js"></script>
 	<script type="text/javascript">
 	function checkbacklogin(){
 		if($("#aname").val().trim()=="" || $("#apwd").val()==""){
@@ -205,16 +207,6 @@ html, body {
 		init();
 	});
 	</script>
-	<script>
-		/*Bootlint工具用于对页面中的HTML标签以及Bootstrapclass的使用进行检测
-		(function () {
-		    var s = document.createElement("script");
-		    s.onload = function () {
-		        bootlint.showLintReportForCurrentDocument([]);
-		    };
-		    s.src = "js/bootlint.js";
-		    document.body.appendChild(s)
-		})();*/
-	</script>
+
 </body>
 </html>

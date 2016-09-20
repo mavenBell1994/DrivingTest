@@ -266,7 +266,7 @@
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-20">
 								<button class="btn btn-info btn-lg " 
-									style="margin-left: 48px;" >确定</button>/>
+									style="margin-left: 48px;" >确定</button>
 							</div>
 						</div>
 

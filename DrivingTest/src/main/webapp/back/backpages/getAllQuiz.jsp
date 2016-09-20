@@ -219,7 +219,12 @@
 						<div class="form-group">
 							<label for="password" class="col-sm-3 control-label">题目类型:</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="题目类型">
+								<select class="form-control" id="题目类型">
+									<option>--</option>
+									<option>判断题</option>
+									<option>选择题</option>
+									
+								</select>
 							</div>
 						</div>
 						<div class="form-group">
